@@ -59,8 +59,3 @@ from [arquivo.pt](https://arquivo.pt), Portugal's public web archive, and
 reflects the original pages as crawled in 2009. It belongs to its original
 authors/publishers. Check arquivo.pt's own terms of use before any further
 redistribution of the HTML itself.
-
-## Citation
-
-If you use this dataset, please cite it via its Zenodo DOI (see the badge on
-this repository) and the accompanying thesis.
