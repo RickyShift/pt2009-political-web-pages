@@ -1,0 +1,702 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="http://www.ghacks.net/wp-content/plugins/css-compress.php/wp-content/themes/magatheme/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="gHacks technology news RSS Feed" href="http://www.ghacks.net/feed/" />
+<link rel="alternate" type="application/atom+xml" title="gHacks technology news Atom Feed" href="http://www.ghacks.net/feed/atom/" />
+<link rel="pingback" href="http://www.ghacks.net/xmlrpc.php" />
+<title>Get to know Linux: ps command</title>
+
+<!--[if lt IE 7]><style type="text/css">
+.sidebars li {display:inline-block;padding-top:1px;}
+</style><![endif]-->
+
+
+<link rel="alternate" type="application/rss+xml" title="gHacks technology news &raquo; Get to know Linux: ps command Comments Feed" href="http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/feed/" />
+<link rel='stylesheet' id='wp-polls-css'  href='http://www.ghacks.net/wp-content/plugins/wp-polls/polls-css.css?ver=2.50' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-pagenavi-css'  href='http://www.ghacks.net/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.50' type='text/css' media='all' />
+<script type='text/javascript' src='http://www.ghacks.net/wp-includes/js/jquery/jquery.js?ver=1.3.2'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpAjax = {
+	noPerm: "You do not have permission to do that.",
+	broken: "An unidentified error has occurred."
+};
+try{convertEntities(wpAjax);}catch(e){};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.ghacks.net/wp-includes/js/wp-ajax-response.js?ver=20090128'></script>
+<script type='text/javascript' src='http://www.ghacks.net/wp-includes/js/thickbox/thickbox.js?ver=3.1-20090123'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var wpajaxeditcomments = {
+	AEC_PluginUrl: "http://www.ghacks.net/wp-content/plugins/wp-ajax-edit-comments",
+	AEC_CanScroll: "0",
+	AEC_Minutes: "minutes",
+	AEC_Minute: "minute",
+	AEC_And: "and",
+	AEC_Seconds: "seconds",
+	AEC_Second: "second",
+	AEC_Moderation: "Mark for Moderation?",
+	AEC_Approve: "Approve Comment?",
+	AEC_Spam: "Mark as Spam?",
+	AEC_Delete: "Delete this comment?",
+	AEC_Anon: "Anonymous",
+	AEC_Loading: "Loading...",
+	AEC_LoadSuccessful: "Comment Loaded Successfully",
+	AEC_Saving: "Saving...",
+	AEC_Saved: "Comment Successfully Saved",
+	AEC_Delink: "De-link Successful"
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.ghacks.net/wp-content/plugins/wp-ajax-edit-comments/js/wp-ajax-edit-comments.js?ver=2.3'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.ghacks.net/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.ghacks.net/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='gHacks technology news' href='http://www.ghacks.net' />
+<link rel='start' title='Welcome to gHacks.net' href='http://www.ghacks.net/2005/10/03/welcome/' />
+<link rel='prev' title='Secure Google Accounts With Cell Phone Numbers' href='http://www.ghacks.net/2009/07/01/secure-google-accounts-with-cell-phone-numbers/' />
+<link rel='next' title='5 Things we’re still missing from our Smartphones' href='http://www.ghacks.net/2009/07/01/5-things-we%e2%80%99re-still-missing-from-our-smartphones/' />
+<meta name="generator" content="WordPress 2.8.1" />
+
+<!-- all in one seo pack 1.5.7 [785,853] -->
+<meta name="description" content="Over the years there have been certain commands that have really helped me out of a bind. One of those commands is the ps command. The ps stands for process" />
+<meta name="keywords" content="process status,processes,ps,advice,linux,open source,tutorials basic,software" />
+<link rel="canonical" href="http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/" />
+<!-- /all in one seo pack -->
+<link rel="stylesheet" href="http://www.ghacks.net/wp-content/plugins/wp-ajax-edit-comments/css/edit-comments.css" type="text/css" media="screen"  /><!-- Ajax Edit Comments -->
+<!--[if IE]>
+<style>
+  .clearfix {display: inline-block;}
+  /* Hides from IE-mac \*/
+  * html .clearfix {height: 1%;}
+  .clearfix {display: block;}
+  /* End hide from IE-mac */
+</style>
+<![endif]-->
+<link rel="stylesheet" href="http://www.ghacks.net/wp-includes/js/thickbox/thickbox.css" type="text/css" media="all"  /><style type="text/css" media="screen">
+
+/* Begin Contact Form ][ CSS */
+.contactform {
+	position: static;
+	overflow: hidden;
+}
+
+.contactleft {
+	width: 25%;
+	text-align: right;
+	clear: both;
+	float: left;
+	display: inline;
+	padding: 4px;
+	margin: 5px 0;
+    font-weight: bold;
+}
+
+.contactright {
+	width: 70%;
+	text-align: left;
+	float: right;
+	display: inline;
+	padding: 4px;
+	margin: 5px 0;
+}
+
+.contacterror {
+	border: 2px solid #ff0000;
+}
+/* End Contact Form ][ CSS */
+
+	</style>
+
+<style type="text/css">
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 6px;
+	line-height: 8px;
+	height: 8px;
+	background-image: url('http://www.ghacks.net/wp-content/plugins/wp-polls/images/default/pollbg.gif');
+	border: 1px solid #c8c8c8;
+}
+</style>
+<!--ajax edit comments --><script type='text/javascript'>
+tb_pathToImage = 'http://www.ghacks.net/wp-includes/js/thickbox/loadingAnimation.gif';tb_closeImage = 'http://www.ghacks.net/wp-includes/js/thickbox/tb-close.png';
+</script>
+      </head>
+<body>
+
+<div class="wrapper">
+
+    <div class="header">
+    <div class="clr"></div>
+	<div style="float: left"><a href="http://www.ghacks.net/"><img src="http://www.ghacks.net/wp-content/themes/magatheme/img/ghacks.jpg" height="73px" alt="ghacks Technology News" width="250px" border="0" /></a>
+	</div>
+	<div style="float: right">
+	<!-- BEGIN STANDARD TAG - 728 x 90 - GHacks.net: ROS - DO NOT MODIFY -->
+<script type="text/javascript" src="http://ad.yieldmanager.com/st?ad_type=ad&amp;ad_size=728x90&amp;section=390373"></script>
+<!-- END TAG -->
+</div>
+
+    <div class="clr"></div>
+    <ul class="bottomnav">
+<!-- google_ad_section_start -->
+        <li><a href="http://www.ghacks.net">Home</a></li>
+        <li><a href="http://www.splitreason.com/ghacks/" rel="nofollow" target="_blank">T-Shirts</a></li>
+		<li><a href="http://ghacks.tradepub.com/" rel="nofollow" target="_blank">Free Magazines</a></li>
+		<li><a href="http://www.ghacks.net/category/windows">Windows</a></li>
+		<li><a href="http://www.ghacks.net/category/operating-systems/linux/">Linux</a></li>
+		<li><a href="http://www.ghacks.net/category/software/">Software</a></li>
+		<li><a href="http://www.ghacks.net/category/browsing/internet-explorer-browsing/">Internet Explorer</a></li>
+		<li><a href="http://www.ghacks.net/category/browsing/firefox/">Firefox</a></li>
+		<li><a href="http://www.ghacks.net/category/email">Email</a></li>
+		<li><a href="http://www.ghacks.net/contact/contact/"><font color="#EC8C38">Contact</font></a></li>
+		<li><a href="http://www.ghacks.net/advertising-options/"><font color="#EC8C38">Advertise</font></a></li>
+		<li><a href="http://www.ghacks.net/ghacksnet-feed-list/"><font color="#EC8C38">RSS</font></a></li>
+		<li class="searchbox"><form id="searchformbottom" method="get" action="/index.php"><input type="text" name="s" id="s" size="20" onclick="if(this.value == 'Search...') this.value='';" onblur="if(this.value.length == 0) this.value='Search...';" value="Search..." tabindex="1" /></form></li>
+    </ul> 
+   <!-- google_ad_section_end -->
+    <!--<div class="solidline"></div>-->
+    </div>    <div class="main">
+<!-- google_ad_section_start -->
+            <div class="article">
+            <ul class="extendspost">
+                <li>Author: <a href="http://www.ghacks.net/author/jack/" title="Posts by Jack Wallen">Jack Wallen</a></li>
+             </ul>
+            <h1>Get to know Linux: ps command</h1>
+
+            <div class="content">
+<script type="text/javascript"><!--
+google_ad_client = "pub-5406364303442190";
+/* 336x280, created 7/6/08 */
+google_ad_slot = "2528346899";
+google_ad_width = 336;
+google_ad_height = 280;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br />
+            <p>Over the years there have been certain commands that have really helped me out of a bind. One of those commands is the <em>ps</em> command. The <em>ps </em>stands for <em>process status</em> and it tells you, as you would expect, the status of a process. This is a fast way to know if an application or command is running on a Linux system. Oh sure you could fire up a swell GUI for the same purpose, but that GUI does you no good if you are working on a headless server installation or working on a remote machine. In those instances the <em>ps </em>command is your best bet for helping to manage processes.</p>
+<p>You will be glad to know that the <em>ps</em> command will most certainly be already installed on your Linux machine, so there is no need to worry about installation.</p>
+<p><span id="more-14023"></span><strong>Command structure</strong></p>
+<p>The basic command structure for <em>ps </em>is:</p>
+<p>ps OPTION</p>
+<p>Of course every good Linux command offers a lot of options, and <em>ps</em> is no exception. For this command we will just outline the best groupings of options together instead of just listing all of (or the best) options. This way you can skip right down to the command you need to use.</p>
+<p><strong>Show list of processes owned by a specific user</strong></p>
+<p>Say I want to list all processes owned by user <em>jlwallen</em>. To do this I could enter one of two commands:</p>
+<p><em>ps ux</em></p>
+<p>This will list out all processes that are owned by the user issuing the command. The results for this command will look like:</p>
+<p><code>USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND<br />
+jlwallen   560  0.0  0.3  18312  7376 ?        SNs  19:40   0:00 /etc/alternativ<br />
+jlwallen   561  0.0  0.1   7316  3932 pts/0    SNs  19:40   0:00 bash<br />
+jlwallen  1137  0.0  0.0   1644   416 ?        S    19:47   0:00 sleep 8<br />
+jlwallen  1141  0.0  0.0   1644   420 ?        S    19:47   0:00 sleep 8<br />
+jlwallen  1142  0.0  0.0   4384  1012 pts/0    RN+  19:48   0:00 ps ux</code></p>
+<p>You can also get a similar listing with the command:</p>
+<p><em>ps U jlwallen</em></p>
+<p>The results of this command will be:</p>
+<p><code>PID TTY      STAT   TIME COMMAND<br />
+560 ?        SNs    0:00 /etc/alternatives/x-terminal-emulator<br />
+561 pts/0    SNs    0:00 bash<br />
+1223 ?        S      0:00 sleep 8<br />
+1227 ?        S      0:00 sleep 8<br />
+1228 pts/0    RN+    0:00 ps U jlwallen</code></p>
+<p><strong>Show all processes</strong></p>
+<p>To see every process on your system you would enter the command:</p>
+<p><em>ps aux</em></p>
+<p>The results of this command would look similar to that of <em>ps ux</em> only it would show the process of every user as well as the system.</p>
+<p><strong>List the details of a single process</strong></p>
+<p>What about when you want to see the details of only a single process? Imagine issuing the command <em>ps ux</em> and having to search through all of the listings to find the information about the one process you are trying to gain information about. Say, for example, you need to find the PID (Process ID) of the currently running daemon for Dansguardian. You can use the <em>ps</em> command and pipe the results to the <em>grep</em> command to search the listing for a specific string and print out only the matching strings. To do this issue the command:</p>
+<p><em>ps aux | grep dansguardian</em></p>
+<p>which will print out something like:</p>
+<p><code>113       2596  0.0  0.5  17852 11460 ?        Ss   06:49   0:00 /usr/sbin/dansguardian</code></p>
+<p>Now you can see the PID of Dansguardian is 2596. You can kill this with the <em>kill 2956 </em>command.</p>
+<p><strong>Final thoughts</strong></p>
+<p>There are many more uses for the <em>ps</em> command as well as many more ways to use the <em>ps </em>command. The above three examples are the most often used, but don&#8217;t think you are limited to only those uses. Issue the command <em>man ps</em> and you will see a full listing of all the <em>ps</em> options available to you.</p>
+<script type="text/javascript"><!--
+google_ad_client = "pub-5406364303442190";
+/* 300x250, created 2/27/09 */
+google_ad_slot = "1148508964";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+<br />
+				<ul class="bookmark">
+	<li><a class="reddit" href="http://www.reddit.com/submit?url=http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/&amp;title=Get to know Linux: ps command" title="Reddit">Reddit</a></li>
+	<li><a class="stumbleupon" href="http://www.stumbleupon.com/submit?url=http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/&amp;title=Get to know Linux: ps command">StumbleUpon</a></li>
+	<li><a class="delicious" href="http://delicious.com/save" onclick="window.open('http://delicious.com/save?v=5&amp;noui&amp;jump=close&amp;url='+encodeURIComponent('http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/')+'&amp;title='+encodeURIComponent('Get to know Linux: ps command'),'delicious', 'toolbar=no,width=550,height=550'); return false;" target="_blank">Delicious</a></li>
+<li><a class="digg" href="http://digg.com/submit?phase=2 &amp;url=http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/ &amp;title=Get to know Linux: ps command" title="Digg this story">Digg</a></li>	
+<li><a class="twitter" href="http://twitter.com/home?status=Read:%20http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/">Twitter</a></li>
+</ul><br />
+<br /><p class="tags">
+<font color="#CC6633">Tags: </font><a href="http://www.ghacks.net/tag/process-status/" rel="tag">process status</a>, <a href="http://www.ghacks.net/tag/processes/" rel="tag">processes</a>, <a href="http://www.ghacks.net/tag/ps/" rel="tag">ps</a><br /><font color="#CC6633">Categories:</font> <a href="http://www.ghacks.net/category/advice/" title="View all posts in Advice" rel="category tag">Advice</a>,  <a href="http://www.ghacks.net/category/operating-systems/linux/" title="View all posts in Linux" rel="category tag">Linux</a>,  <a href="http://www.ghacks.net/category/open-source/" title="View all posts in Open Source" rel="category tag">Open Source</a>,  <a href="http://www.ghacks.net/category/tutorials-basic/" title="View all posts in Tutorials Basic" rel="category tag">Tutorials Basic</a>,  <a href="http://www.ghacks.net/category/software/" title="View all posts in software" rel="category tag">software</a></p>
+
+
+<div class="navigation">
+<div class="alignleft"><b>Previous Post:</b>
+<a href="http://www.ghacks.net/2009/07/01/secure-google-accounts-with-cell-phone-numbers/">Secure Google Accounts With Cell Phone Numbers</a></div><br />
+<div class="alignleft"><b>Next Post:</b>
+<a href="http://www.ghacks.net/2009/07/01/5-things-we%e2%80%99re-still-missing-from-our-smartphones/">5 Things we’re still missing from our Smartphones</a></div>
+</div> <!-- end navigation --><br />
+<br /><h3>Related posts:</h3><a href='http://www.ghacks.net/2009/02/25/linux-process-management-command-line/' rel='bookmark' title='Permanent Link: Linux Process Management: Command Line'>Linux Process Management: Command Line</a><br /><a href='http://www.ghacks.net/2009/05/30/linux-tips-encrypting-and-decrypting-files-from-command-line-with-gpg/' rel='bookmark' title='Permanent Link: Linux tips: Encrypting and decrypting files from command line with gpg'>Linux tips: Encrypting and decrypting files from command line with gpg</a><br /><a href='http://www.ghacks.net/2009/02/18/linux-command-line-fu/' rel='bookmark' title='Permanent Link: Linux Command Line Fu'>Linux Command Line Fu</a><br /><a href='http://www.ghacks.net/2005/12/14/windows-xp-command-line-list/' rel='bookmark' title='Permanent Link: Windows Xp Command Line List'>Windows Xp Command Line List</a><br /><a href='http://www.ghacks.net/2009/04/05/old-school-linux-solutions-finger/' rel='bookmark' title='Permanent Link: Old School Linux Solutions: finger'>Old School Linux Solutions: finger</a><br /><br />
+
+           
+
+		<h3 id="pings">Trackbacks/Pingbacks</h3>
+
+	<ol class="commentlist">
+			<li class="pingback even thread-even depth-1" id="comment-841943">
+				<div id="div-comment-841943" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://tech-blog.iblogger.org/2009/06/get-to-know-linux-ps-command/' rel='external nofollow' class='url' target="_blank">Get to know Linux: ps command | Tech Talk</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/comment-page-1/#comment-841943">July 1, 2009 at 6:41 am</a></div>
+
+		<p>[...] Get to know Linux: ps command [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+		<li class="pingback odd alt thread-odd thread-alt depth-1" id="comment-842851">
+				<div id="div-comment-842851" class="comment-body">
+				<div class="comment-author vcard">
+				<cite class="fn"><a href='http://www.mashcentral.com/2009/06/get-to-know-linux-ps-command/' rel='external nofollow' class='url' target="_blank">Get to know Linux: ps command | Mash Central</a></cite> <span class="says">says:</span>		</div>
+
+		<div class="comment-meta commentmetadata"><a href="http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/comment-page-1/#comment-842851">July 2, 2009 at 4:39 am</a></div>
+
+		<p>[...] See the rest here: Get to know Linux: ps command [...]</p>
+
+		<div class="reply">
+				</div>
+				</div>
+		</li>
+	</ol>
+	
+           
+	<div class="navigation">
+		<div class="alignleft"></div>
+		<div class="alignright"></div>
+	</div>
+ 
+
+
+<div id="respond">
+
+<div class="solidline"></div>
+<h3>Leave a Reply &nbsp; Subscribe To <a href='http://www.ghacks.net/2009/07/01/get-to-know-linux-ps-command/feed/'>Comment Rss</a></h3>
+<div class="solidline"></div>
+
+<div class="cancel-comment-reply">
+	<small><a rel="nofollow" id="cancel-comment-reply-link" href="/2009/07/01/get-to-know-linux-ps-command/#respond" style="display:none;">Click here to cancel reply.</a></small>
+</div>
+
+
+<form action="http://www.ghacks.net/wp-comments-post.php" method="post" id="commentform">
+
+
+<p><input type="text" name="author" id="author" value="" size="22" tabindex="1"  />
+<label for="author"><small>Name </small></label></p>
+
+<p><input type="text" name="email" id="email" value="" size="22" tabindex="2"  />
+<label for="email"><small>Mail (will not be published) </small></label></p>
+
+<p><input type="text" name="url" id="url" value="" size="22" tabindex="3" />
+<label for="url"><small>Website</small></label></p>
+
+
+<p><textarea name="comment" id="comment" cols="75%" rows="10" tabindex="4"></textarea></p>
+
+<p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
+<input type='hidden' name='comment_post_ID' value='14023' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p>
+
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" />
+	<label for="subscribe">Notify me of followup comments via e-mail</label>
+	</p>
+
+
+
+</form>
+
+</div>
+
+ <!-- google_ad_section_end -->
+        </div></div>
+    <div class="clr"></div>
+		
+    
+    <div class="navigation">
+        <div class="alignleft"></div>
+        <div class="alignright"></div>
+    </div>
+    
+        </div>
+
+    
+    <div class="sidebars">
+        <div class="sidebar2">           <!-- BEGIN STANDARD TAG - 300 x 250, 300x600 - GHacks.net: ROS - DO NOT MODIFY -->
+<script type="text/javascript" src="http://ad.yieldmanager.com/st?ad_type=ad&amp;ad_size=300x250,300x600&amp;section=390373"></script>
+<!-- END TAG -->
+        </div>
+                
+        <div class="sidebar3">
+            
+
+                           <div class="block">
+                <h3 class="boxedin">Recent Posts</h3>
+                                        <ul>
+                                                <li><a href="http://www.ghacks.net/2009/07/09/check-html-with-cse-html-validator-lite/">Check HTML With CSE HTML Validator Lite</a></li>
+                                                <li><a href="http://www.ghacks.net/2009/07/09/improve-online-reading-with-readability-bookmarklet/">Improve Online Reading With Readability Bookmarklet</a></li>
+                                                <li><a href="http://www.ghacks.net/2009/07/09/block-websites-from-appearing-in-firefox-history/">Block Websites From Appearing In Firefox History</a></li>
+                                                <li><a href="http://www.ghacks.net/2009/07/09/identify-the-digital-camera-a-photo-was-taken-with-on-flickr/">Identify The Digital Camera A Photo Was Taken With On Flickr</a></li>
+                                                <li><a href="http://www.ghacks.net/2009/07/09/stumbleupon-url-shortening-service-su-pr-out-of-beta/">Stumbleupon URL Shortening Service Su.pr Out Of Beta</a></li>
+                                            </ul>
+            </div>
+			
+			 <div class="block">
+                <h3 class="boxedin">Popular Articles</h3>
+                    <ul>
+<li><a href="http://www.ghacks.net/2009/06/01/4chan-cleaner-and-image-expander/">4 Chan</a></li>
+<li><a href="http://www.ghacks.net/2005/12/09/free-file-host-list-december-2005/">File Host</a></li>
+<li><a href="http://www.ghacks.net/2007/02/14/list-of-free-music-sites/">Free Movie Sites</a></li>
+<li><a href="http://www.ghacks.net/2006/05/01/howto-watch-abc-tv-streams-outside-the-usa/">How to watch ABC TV</a></li>
+<li><a href="http://www.ghacks.net/2009/06/04/12-imdb-userscripts/">IMDB</a></li>
+<li><a href="http://www.ghacks.net/2008/08/17/free-itunes-alternative-froddle-pod/">iTunes Alternative</a></li>
+<li><a href="http://www.ghacks.net/2009/02/09/gmail-90-tools-and-tips-to-make-you-a-gmail-pro/">Gmail</a></li>
+<li><a href="http://www.ghacks.net/2009/05/24/portable-google-browser-google-chrome/">Google Browser</a></li>
+<li><a href="http://www.ghacks.net/2008/12/15/jqsexe/">Jqs.exe</a></li>
+<li><a href="http://www.ghacks.net/2008/09/21/save-network-bandwidth/">Network Bandwidth</a></li>
+<li><a href="http://www.ghacks.net/2009/05/28/network-monitoring-software/">Network Monitoring Software</a></li>
+<li><a href="http://www.ghacks.net/2007/12/10/ways-to-open-office-docx-documents/">Open Docx</a></li>
+<li><a href="http://www.ghacks.net/2008/01/04/5-rapidshare-search-engines/">Rapidshare Search</a></li>
+<li><a href="http://www.ghacks.net/2008/09/21/vista-start-menu/">Vista Start Menu</a></li>
+<li><a href="http://www.ghacks.net/2005/12/19/watch-tv-with-your-pc/">Watch TV with your PC</a></li>
+<li><a href="http://www.ghacks.net/2006/08/04/free-web-proxy-list/">Web Proxy</a></li>
+<li><a href="http://www.ghacks.net/2009/04/26/the-10-best-windows-backup-software-programs/">Windows Backup Software</a></li>
+<li><a href="http://www.ghacks.net/2009/05/29/windows-defender/">Windows Defender</a></li>
+<li><a href="http://www.ghacks.net/2008/10/01/windows-vista-theme-customization/">Windows Vista Theme</a></li>
+                    </ul>
+				</div>
+
+ <div class="block">
+                <h3 class="boxedin">Software Updates</h3>
+<ul>
+    <li>
+        <a href="http://www.orbitdownloader.com/download.htm" target="_blank">
+        Orbit Downloader 2.8.14</a>
+    </li>
+    <li>
+        <a href="http://finalbuilds.edskes.net/iecollection.htm" target="_blank">
+        Internet Explorer Collection 1.5.0.0</a>
+    </li>
+    <li>
+        <a href="http://www.nirsoft.net/utils/bluetooth_viewer.html" target="_blank">
+        BluetoothView 1.30</a>
+    </li>
+    <li>
+        <a href="http://personalfirewall.comodo.com/download_firewall.html" target="_blank">
+        Comodo Internet Security 3.10.102363.531</a>
+    </li>
+    <li>
+        <a href="http://www.digitalvolcano.co.uk/content/duplicate-cleaner/downloaddcmenu" target="_blank">
+        Duplicate Cleaner 1.3.1</a>
+    </li>
+</ul>
+<div align="right">by <a href="http://appnews.net/" target="_blank">Appnews</a></div>				</div>			
+
+
+
+            <div class="block">
+                <h3 class="boxedin">Topics</h3>
+                    <ul>
+                    	<li class="cat-item cat-item-18"><a href="http://www.ghacks.net/category/advice/" title="View all posts filed under Advice">Advice</a>
+</li>
+	<li class="cat-item cat-item-4973"><a href="http://www.ghacks.net/category/ask-the-readers/" title="View all posts filed under ask the readers">ask the readers</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://www.ghacks.net/category/browsing/" title="View all posts filed under Browsing">Browsing</a>
+<ul class='children'>
+	<li class="cat-item cat-item-28"><a href="http://www.ghacks.net/category/browsing/firefox/" title="View all posts filed under firefox">firefox</a>
+</li>
+	<li class="cat-item cat-item-7724"><a href="http://www.ghacks.net/category/browsing/google-chrome-browsing/" title="View all posts filed under Google Chrome">Google Chrome</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="http://www.ghacks.net/category/browsing/ie/" title="View all posts filed under ie">ie</a>
+</li>
+	<li class="cat-item cat-item-11447"><a href="http://www.ghacks.net/category/browsing/internet-explorer-browsing/" title="View all posts filed under Internet Explorer">Internet Explorer</a>
+</li>
+	<li class="cat-item cat-item-30"><a href="http://www.ghacks.net/category/browsing/opera/" title="View all posts filed under opera">opera</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://www.ghacks.net/category/cams/" title="View all posts filed under Cams">Cams</a>
+</li>
+	<li class="cat-item cat-item-10680"><a href="http://www.ghacks.net/category/compilations/" title="View all posts filed under Compilations">Compilations</a>
+</li>
+	<li class="cat-item cat-item-9703"><a href="http://www.ghacks.net/category/desktopmanager/" title="View all posts filed under Desktop Manager">Desktop Manager</a>
+</li>
+	<li class="cat-item cat-item-5"><a href="http://www.ghacks.net/category/email/" title="View all posts filed under Email">Email</a>
+</li>
+	<li class="cat-item cat-item-16"><a href="http://www.ghacks.net/category/entertainment/" title="View all posts filed under Entertainment">Entertainment</a>
+<ul class='children'>
+	<li class="cat-item cat-item-21"><a href="http://www.ghacks.net/category/entertainment/cool/" title="View all posts filed under Cool">Cool</a>
+</li>
+	<li class="cat-item cat-item-12"><a href="http://www.ghacks.net/category/entertainment/funny/" title="View all posts filed under Funny">Funny</a>
+</li>
+	<li class="cat-item cat-item-15"><a href="http://www.ghacks.net/category/entertainment/games/" title="View all posts filed under Games">Games</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-48"><a href="http://www.ghacks.net/category/gadgets/" title="View all posts filed under Gadgets">Gadgets</a>
+</li>
+	<li class="cat-item cat-item-41"><a href="http://www.ghacks.net/category/ghacknet-tools/" title="View all posts filed under gHack.net Tools">gHack.net Tools</a>
+</li>
+	<li class="cat-item cat-item-31"><a href="http://www.ghacks.net/category/ghacks/" title="View all posts filed under ghacks">ghacks</a>
+</li>
+	<li class="cat-item cat-item-35"><a href="http://www.ghacks.net/category/google/" title="View all posts filed under Google">Google</a>
+</li>
+	<li class="cat-item cat-item-13"><a href="http://www.ghacks.net/category/hacking/" title="View all posts filed under Hacking">Hacking</a>
+</li>
+	<li class="cat-item cat-item-26"><a href="http://www.ghacks.net/category/hardware/" title="View all posts filed under Hardware">Hardware</a>
+</li>
+	<li class="cat-item cat-item-32"><a href="http://www.ghacks.net/category/ipod/" title="View all posts filed under iPod">iPod</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://www.ghacks.net/category/knowledge/" title="View all posts filed under Knowledge">Knowledge</a>
+</li>
+	<li class="cat-item cat-item-36"><a href="http://www.ghacks.net/category/misc/" title="View all posts filed under Misc">Misc</a>
+</li>
+	<li class="cat-item cat-item-44"><a href="http://www.ghacks.net/category/mobile-computing/" title="View all posts filed under Mobile Computing">Mobile Computing</a>
+<ul class='children'>
+	<li class="cat-item cat-item-45"><a href="http://www.ghacks.net/category/mobile-computing/notebooks/" title="View all posts filed under Notebooks">Notebooks</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-53"><a href="http://www.ghacks.net/category/mobiles/" title="View all posts filed under Mobiles">Mobiles</a>
+<ul class='children'>
+	<li class="cat-item cat-item-8278"><a href="http://www.ghacks.net/category/mobiles/google-android-mobiles/" title="View all posts filed under Google Android">Google Android</a>
+</li>
+	<li class="cat-item cat-item-54"><a href="http://www.ghacks.net/category/mobiles/iphone/" title="View all posts filed under iPhone">iPhone</a>
+</li>
+	<li class="cat-item cat-item-55"><a href="http://www.ghacks.net/category/mobiles/nokia/" title="View all posts filed under Nokia">Nokia</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-50"><a href="http://www.ghacks.net/category/music-and-video/" title="View all posts filed under Music and Video">Music and Video</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="http://www.ghacks.net/category/music-industry/" title="View all posts filed under Music Industry">Music Industry</a>
+</li>
+	<li class="cat-item cat-item-11657"><a href="http://www.ghacks.net/category/networks/" title="View all posts filed under Networks">Networks</a>
+<ul class='children'>
+	<li class="cat-item cat-item-11658"><a href="http://www.ghacks.net/category/networks/server-networks/" title="View all posts filed under Server">Server</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-42"><a href="http://www.ghacks.net/category/online-services/" title="View all posts filed under Online Services">Online Services</a>
+</li>
+	<li class="cat-item cat-item-6"><a href="http://www.ghacks.net/category/open-source/" title="View all posts filed under Open Source">Open Source</a>
+</li>
+	<li class="cat-item cat-item-22"><a href="http://www.ghacks.net/category/operating-systems/" title="View all posts filed under Operating Systems">Operating Systems</a>
+<ul class='children'>
+	<li class="cat-item cat-item-23"><a href="http://www.ghacks.net/category/operating-systems/linux/" title="View all posts filed under Linux">Linux</a>
+</li>
+	<li class="cat-item cat-item-9592"><a href="http://www.ghacks.net/category/operating-systems/mac-operating-systems/" title="View all posts filed under Mac">Mac</a>
+</li>
+	<li class="cat-item cat-item-24"><a href="http://www.ghacks.net/category/operating-systems/windows/" title="View all posts filed under Windows">Windows</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-9"><a href="http://www.ghacks.net/category/p2p/" title="View all posts filed under P2p">P2p</a>
+</li>
+	<li class="cat-item cat-item-25"><a href="http://www.ghacks.net/category/polls/" title="View all posts filed under Polls">Polls</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="http://www.ghacks.net/category/project/" title="News relating to the gHacks Project">Project</a>
+</li>
+	<li class="cat-item cat-item-40"><a href="http://www.ghacks.net/category/references/" title="View all posts filed under References">References</a>
+</li>
+	<li class="cat-item cat-item-46"><a href="http://www.ghacks.net/category/revenue-sources/" title="View all posts filed under Revenue Sources">Revenue Sources</a>
+<ul class='children'>
+	<li class="cat-item cat-item-57"><a href="http://www.ghacks.net/category/revenue-sources/adsense/" title="View all posts filed under Adsense">Adsense</a>
+</li>
+	<li class="cat-item cat-item-52"><a href="http://www.ghacks.net/category/revenue-sources/referrals/" title="View all posts filed under Adsense Referrals">Adsense Referrals</a>
+</li>
+	<li class="cat-item cat-item-51"><a href="http://www.ghacks.net/category/revenue-sources/affiliates/" title="View all posts filed under Affiliates">Affiliates</a>
+</li>
+	<li class="cat-item cat-item-47"><a href="http://www.ghacks.net/category/revenue-sources/cpm-ads/" title="View all posts filed under CPM Ads">CPM Ads</a>
+</li>
+	<li class="cat-item cat-item-49"><a href="http://www.ghacks.net/category/revenue-sources/text-links/" title="View all posts filed under Text Links">Text Links</a>
+</li>
+</ul>
+</li>
+	<li class="cat-item cat-item-58"><a href="http://www.ghacks.net/category/science/" title="View all posts filed under Science">Science</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://www.ghacks.net/category/search-engines/" title="Search Engine News">Search Engines</a>
+</li>
+	<li class="cat-item cat-item-17"><a href="http://www.ghacks.net/category/security/" title="View all posts filed under Security">Security</a>
+</li>
+	<li class="cat-item cat-item-59"><a href="http://www.ghacks.net/category/software/" title="View all posts filed under software">software</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://www.ghacks.net/category/spyware/" title="View all posts filed under Spyware">Spyware</a>
+</li>
+	<li class="cat-item cat-item-27"><a href="http://www.ghacks.net/category/the-web/" title="View all posts filed under The Web">The Web</a>
+</li>
+	<li class="cat-item cat-item-8"><a href="http://www.ghacks.net/category/tools/" title="View all posts filed under Tools">Tools</a>
+</li>
+	<li class="cat-item cat-item-6990"><a href="http://www.ghacks.net/category/troubleshooting/" title="View all posts filed under troubleshooting">troubleshooting</a>
+</li>
+	<li class="cat-item cat-item-39"><a href="http://www.ghacks.net/category/tutorials-advanced/" title="View all posts filed under Tutorials Advanced">Tutorials Advanced</a>
+</li>
+	<li class="cat-item cat-item-38"><a href="http://www.ghacks.net/category/tutorials-basic/" title="View all posts filed under Tutorials Basic">Tutorials Basic</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="http://www.ghacks.net/category/uncategorized/" title="View all posts filed under Uncategorized">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-10054"><a href="http://www.ghacks.net/category/webdevelopment/" title="View all posts filed under Web Development">Web Development</a>
+</li>
+	<li class="cat-item cat-item-43"><a href="http://www.ghacks.net/category/zune/" title="View all posts filed under Zune">Zune</a>
+</li>
+                    </ul>
+				</div>
+                    </div>
+        
+        <div class="sidebar3">
+		            <div class="block">		<div class="side_align">
+
+		<!-- BEGIN STANDARD TAG - 160 x 600 - GHacks.net: ROS - DO NOT MODIFY -->
+<script type="text/javascript" src="http://ad.yieldmanager.com/st?ad_type=ad&amp;ad_size=160x600&amp;section=390373"></script>
+<!-- END TAG -->
+<!-- Start Technorati Media Pixel -->
+<div id="technoratimedia-pixel">
+<script type="text/javascript" src="http://triad.technorati.com/technoratimedia-pixel.js"></script>
+</div>
+<!-- End Technorati Media Pixel -->
+            </div>  </div>
+			
+			            <div class="block">
+                <h3 class="boxedin">Links</h3>
+                    <ul>
+					   <li><a href="http://www.askvg.com/" target="_blank">Ask VG</a></li>
+					   <li><a href="http://blog.brothersoft.com/" target="_blank">Brothersoft Blog</a></li>
+<li><a href="http://www.cypherhackz.net/" target="_blank">Cypherhacks</a></li>
+					   <li><a href="http://www.connectedinternet.co.uk/" target="_blank">Connected Internet</a></li>
+					   <li><a href="http://www.donationcoder.com/" target="_blank">Donation Coder</a></li>
+					   <li><a href="http://freewaregenius.com/" target="_blank">Freeware Genius</a></li>
+					   <li><a href="http://www.hackyourday.com/" target="_blank">Hack Your Day</a></li>
+					   <li><a href="http://www.onetipaday.com/" target="_blank">One Tip A Day</a></li>
+					   <li><a href="http://www.otakugadgets.com/" target="_blank">Otaku Gadgets</a></li>
+<li><a href="http://windows7news.com/pre-order-windows-7/" target="_blank">Pre-Order Windows 7</a></li>
+<li><a href="http://www.rarst.net/" target="_blank">Rarst</a></li>
+					   <li><a href="http://www.raymond.cc/" target="_blank">Raymond.cc</a></li>
+					   <li><a href="http://joeanderson.co.uk/blog/" target="_blank">Webby's World</a></li>
+					   <li><a href="http://windows7news.com/" target="_blank">Windows 7</a></li>
+					   <li><a href="http://windows7news.com/forum/" target="_blank">Windows 7 Forum</a></li>
+					   <li><a href="http://windows8news.com/" target="_blank">Windows 8</a></li>
+
+			        </ul>
+            </div>            
+
+  <div class="block">
+                <h3 class="boxedin">Popular Tags</h3>
+<ul>
+<li><a href="http://www.ghacks.net/tag/email/">Email</a></li>
+<li><a href="http://www.ghacks.net/tag/firefox/">Firefox</a></li>
+<li><a href="http://www.ghacks.net/tag/firefox-add-on/">Firefox Add-on</a></li>
+<li><a href="http://www.ghacks.net/tag/google/">Google</a></li>
+<li><a href="http://www.ghacks.net/tag/internet-explorer/">Internet Explorer</a></li>
+<li><a href="http://www.ghacks.net/tag/linux/">Linux</a></li>
+<li><a href="http://www.ghacks.net/tag/microsoft/">Microsoft</a></li>
+<li><a href="http://www.ghacks.net/tag/opera/">Opera</a></li>
+<li><a href="http://www.ghacks.net/tag/portable-software/">Portable Software</a></li>
+<li><a href="http://www.ghacks.net/tag/security/">Security</a></li>
+<li><a href="http://www.ghacks.net/tag/software/">Software</a></li>
+<li><a href="http://www.ghacks.net/tag/windows/">Windows</a></li>
+<li><a href="http://www.ghacks.net/tag/web-browser/">Web Browser</a></li>
+<li><a href="http://www.ghacks.net/tag/windows-software/">Windows Software</a></li>
+<li><a href="http://www.ghacks.net/tag/windows-vista/">Windows Vista</a></li>
+<li><a href="http://www.ghacks.net/tag/windows-xp/">Windows XP</a></li>
+</ul>
+    </div>      
+
+
+<div class="block">
+                <h3 class="boxedin">Follow This Blog</h3>
+<a href="http://feedproxy.google.com/Ghacksnet" rel="nofollow" target="_blank"><img src="http://www.ghacks.net/feed-icon-28x28.png" width="28px" height="28px" alt="Ghacks Full Feed" border="0" /></a>&nbsp;<a href="http://twitter.com/ghacksnews" rel="nofollow" target="_blank"><img src="http://www.ghacks.net/wp-content/themes/magatheme/img/twitter.jpg" width="23px" alt="Twitter" height="28px" /></a>&nbsp;&nbsp;<a href="http://www.ghacks.net/ghacksnet-feed-list/">All Feeds</a>
+<br /><br />
+            </div>     
+            
+                    </div>
+    </div>    
+    <div class="clr"></div>
+    
+        <div class="footer clr">
+        <div class="sidebars">
+            <div class="footerleft">
+                                <h3 class="boxedin">About Ghacks</h3>
+                <p>Ghacks is a technology blog that was founded in 2005 by Martin Brinkmann. It has since then become one of the most popular technology sites on the Internet with five authors and regular contributions from freelance writers.</p>
+                            </div>
+            <div class="footermid">
+                &nbsp;
+                            </div>
+            <div class="footerright">
+                    <h3 class="boxedin">Authors</h3>
+					<a href="http://www.ghacks.net/author/joe/" rel="nofollow">Joe Anderson</a><br />
+					<a href="http://www.ghacks.net/author/martin/" rel="nofollow">Martin Brinkmann</a> (Senior Editor)<br />
+					<a href="http://www.ghacks.net/author/cheryl/" rel="nofollow">Cheryl Correa</a><br />
+					<a href="http://www.ghacks.net/author/orrett/" rel="nofollow">Orrett Morgan</a><br />
+					<a href="http://www.ghacks.net/author/danielpataki/" rel="nofollow">Daniel Pataki</a><br />
+					<a href="http://www.ghacks.net/author/davidp/" rel="nofollow">David Pierce</a><br />
+					<a href="http://www.ghacks.net/author/jack/" rel="nofollow">Jack Wallen</a><br />
+			              </div>
+        <div class="clr"></div>
+        </div>
+    </div>
+    
+    <div class="basement clr">
+        <p>&copy; 2005-2009 Ghacks.net. All Rights Reserved. <a href="http://www.ghacks.net/privacy-policy/" rel="nofollow">Privacy Policy</a> - <a href="http://www.ghacks.net/about-us/" rel="nofollow">About Us</a></p>
+        <p><script type='text/javascript'>
+/* <![CDATA[ */
+var pollsL10n = {
+	ajax_url: "http://www.ghacks.net/wp-content/plugins/wp-polls/wp-polls.php",
+	text_wait: "Your last request is still being processed. Please wait a while ...",
+	text_valid: "Please choose a valid poll answer.",
+	text_multiple: "Maximum number of choices allowed: ",
+	show_loading: "1",
+	show_fading: "1"
+};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://www.ghacks.net/wp-content/plugins/wp-polls/polls-js.js?ver=2.50'></script>
+	<!-- Kontera ContentLink -->
+    <script type="text/javascript">
+	var dc_UnitID = 14;
+	var dc_PublisherID = 94263;
+	var dc_AdLinkColor = '#0072bc';
+	var dc_isBoldActive = 'no';
+	var dc_open_new_win = 'yes';
+	var dc_adprod='ADL';
+    </script>
+    <script type="text/javascript" src="http://kona.kontera.com/javascript/lib/KonaLibInline.js"></script>
+    <!-- Kontera ContentLink -->
+    </p>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-111230-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+    </div>
+</div>
+</body>
+</html>

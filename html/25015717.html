@@ -1,0 +1,751 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head><script type="text/javascript" src="http://www.haloscan.com/load/alguresporferreira"> </script>
+<SCRIPT language=JavaScript>
+<!--
+<!--// Copyright 1996 - Tomer and Yehuda Shiran
+// This example will appear in our forthcoming book on JavaScript.
+// Feel free to "steal" this code provided that you leave this notice as is.
+// Additional examples from the book can be found at http://www.geocities.com/SiliconValley/9000/
+// For more information contact Tomer or Yehuda Shiran <yshiran@iil.intel.com>
+
+// set speed of banner (pause in milliseconds between addition of new character)
+var speed = 30 
+
+// decrease value to increase speed (must be positive)
+// set pause between completion of message and beginning of following message
+var pause = 3000
+
+// increase value to increase pause
+// set initial values
+var timerID = null
+var bannerRunning = false
+
+// create array
+var ar = new Array()
+
+// assign the strings to the array's elements
+ar[0] = "..:: Algures por Ferreira ::.."
+ar[1] = "..:: O blog onde expresso o que sinto, o que vejo, o que ouÃ§o. Enfim..., onde digo tudo aquilo que me apetece dizer! ::.."
+
+// assign index of current message
+var message = 0
+
+// empty string initialization
+var state = ""
+
+// no value is currently being displayed
+clearState()
+
+// stop the banner if it is currently running
+function stopBanner() { 
+// if banner is currently running 
+if (bannerRunning) 
+// stop the banner 
+clearTimeout(timerID) 
+// timer is now stopped 
+timerRunning = false
+}
+
+// start the banner
+function startBanner() { 
+// make sure the banner is stopped 
+stopBanner() 
+// start the banner from the current position 
+showBanner()
+}
+
+// assign state a string of "0" characters of the length of the current message
+function clearState() { 
+// initialize to empty string 
+state = "" 
+// create string of same length containing 0 digits 
+for (var i = 0; i < ar[message].length; ++i) { 
+state += "0" 
+}
+}
+
+// display the current message
+function showBanner() { 
+// if the current message is done 
+if (getString()) { 
+// increment message 
+message++ 
+// if new message is out of range wrap around to first message 
+if (ar.length <= message) 
+message = 0 
+// new message is first displayed as empty string 
+clearState() 
+// display next character after pause milliseconds 
+timerID = setTimeout("showBanner()", pause) 
+} 
+else { 
+// initialize to empty string 
+var str = "" 
+// built string to be displayed (only character selected thus far are displayed) 
+for (var j = 0; j < state.length; ++j) { 
+str += (state.charAt(j) == "1") ? ar[message].charAt(j) : " " 
+} 
+// partial string is placed in status bar 
+window.status = str 
+// add another character after speed milliseconds 
+timerID = setTimeout("showBanner()", speed) 
+}
+}
+
+function getString() { 
+// set variable to true (it will stay true unless proven otherwise) 
+var full = true 
+// set variable to false if a free space is found in string (a not-displayed char) 
+for (var j = 0; j < state.length; ++j) { 
+// if character at index j of current message has not been placed in displayed string 
+if (state.charAt(j) == 0) 
+full = false 
+} 
+// return true immediately if no space found (avoid infinitive loop later) 
+if (full) return true 
+// search for random until free space found (braoken up via break statement) 
+while (1) { 
+// a random number (between 0 and state.length - 1 == message.length - 1) 
+var num = getRandom(ar[message].length) 
+// if free space found break infinitive loop 
+if (state.charAt(num) == "0") 
+break 
+} 
+// replace the 0 character with 1 character at place found 
+state = state.substring(0, num) + "1" + state.substring(num + 1, state.length) 
+// return false because the string was not full (free space was found) 
+return false
+}
+
+function getRandom(max) { 
+// create instance of current date 
+var now = new Date() 
+// create a random number (good generator) 
+var num = now.getTime() * now.getSeconds() * Math.random() 
+// cut random number to value between 0 and max - 1, inclusive 
+return num % max
+}
+startBanner()
+// -->
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+window.open(theURL,winName,features);
+}
+//-->
+</SCRIPT>
+
+
+  <title>algures por ferreira: PS com 40,3% nas intenções de voto.</title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="generator" content="Blogger" />
+<link rel="icon" type="image/vnd.microsoft.icon" href="http://www.blogger.com/favicon.ico"/>
+<link rel="alternate" type="application/atom+xml" title="algures por ferreira - Atom" href="http://alguresporferreira.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="algures por ferreira - RSS" href="http://alguresporferreira.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="algures por ferreira - Atom" href="http://www.blogger.com/feeds/14516167/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=14516167" />
+<link rel="alternate" type="application/atom+xml" title="algures por ferreira - Atom" href="http://alguresporferreira.blogspot.com/feeds/1514132613447360595/comments/default" />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/static/v1/v-css/3727950723-blog_controls.css"/> <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=14516167&zx=39577ae4-7039-4b62-a41f-baea03817f31"/>
+
+  <style type="text/css">
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Minima Black
+Designer: Douglas Bowman
+URL:      www.stopdesign.com
+Date:     26 Feb 2004
+----------------------------------------------- */
+<!--WEBBOT bot="HTMLMarkup" startspan ALT="Site Meter" -->
+<script type="text/javascript" language="JavaScript">var site="s18alguresporferreira"</script>
+<script type="text/javascript" language="JavaScript1.2" src="http://s18.sitemeter.com/js/counter.js?site=s18alguresporferreira">
+</script>
+<noscript>
+<a href="http://s18.sitemeter.com/stats.asp?site=s18alguresporferreira" target="_top">
+<img src="http://s18.sitemeter.com/meter.asp?site=s18alguresporferreira" alt="Site Meter" border="0"/></a>
+</noscript>
+<!-- Copyright (c)2005 Site Meter -->
+<!--WEBBOT bot="HTMLMarkup" Endspan -->
+
+
+
+body {
+  background:#000;
+  margin:0;
+  padding:40px 20px;
+  font:x-small "Trebuchet MS",Trebuchet,Verdana,Sans-Serif;
+  text-align:center;
+  color:#ccc;
+  font-size/* */:/**/small;
+  font-size: /**/small;
+  }
+a:link {
+  color:#9ad;
+  text-decoration:none;
+  }
+a:visited {
+  color:#a7a;
+  text-decoration:none;
+  }
+a:hover {
+  color:#ad9;
+  text-decoration:underline;
+  }
+a img {
+  border-width:0;
+  }
+
+/* Header
+----------------------------------------------- */
+#header {
+  width:660px;
+  margin:0 auto 10px;
+  border:1px solid #333;
+  }
+#blog-title {
+  margin:5px 5px 0;
+  padding:20px 20px .25em;
+  border:1px solid #222;
+  border-width:1px 1px 0;
+  font-size:200%;
+  line-height:1.2em;
+  color:#ccc;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  }
+#blog-title a {
+  color:#ccc;
+  text-decoration:none;
+  }
+#blog-title a:hover {
+  color:#ad9;
+  }
+#description {
+  margin:0 5px 5px;
+  padding:0 20px 20px;
+  border:1px solid #222;
+  border-width:0 1px 1px;
+  font:78%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:#777;
+  }
+
+
+/* Content
+----------------------------------------------- */
+#content {
+  width:660px;
+  margin:0 auto;
+  padding:0;
+  text-align:left;
+  }
+#main {
+  width:410px;
+  float:left;
+  }
+#sidebar {
+  width:220px;
+  float:right;
+  }
+
+
+/* Headings
+----------------------------------------------- */
+h2 {
+  margin:1.5em 0 .75em;
+  font:bold 78%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:#777;
+  }
+
+
+/* Posts
+----------------------------------------------- */
+.date-header {
+  margin:1.5em 0 .5em;
+  }
+.post {
+  margin:.5em 0 1.5em;
+  border-bottom:1px dotted #444;
+  padding-bottom:1.5em;
+  }
+.post-title {
+  margin:.25em 0 0;
+  padding:0 0 4px;
+  font-size:140%;
+  line-height:1.4em;
+  color:#ad9;
+  }
+.post-title a {
+  text-decoration:none;
+  color:#ad9;
+  }
+.post-title a:hover {
+  color:#fff;
+  }
+.post div {
+  margin:0 0 .75em;
+  line-height:1.6em;
+  }
+p.post-footer {
+  margin:-.25em 0 0;
+  color:#333;
+  }
+.post-footer em, .comment-link {
+  font:78%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+.post-footer em {
+  font-style:normal;
+  color:#777;
+  margin-right:.6em;
+  }
+.comment-link {
+  margin-left:.6em;
+  }
+.post img {
+  padding:4px;
+  border:1px solid #222;
+  }
+.post blockquote {
+  margin:1em 20px;
+  }
+.post blockquote p {
+  margin:.75em 0;
+  }
+
+
+/* Comments
+----------------------------------------------- */
+#comments h4 {
+  margin:1em 0;
+  font:bold 78%/1.6em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:#999;
+  }
+#comments h4 strong {
+  font-size:130%;
+  }
+#comments-block {
+  margin:1em 0 1.5em;
+  line-height:1.6em;
+  }
+#comments-block dt {
+  margin:.5em 0;
+  }
+#comments-block dd {
+  margin:.25em 0 0;
+  }
+#comments-block dd.comment-timestamp {
+  margin:-.25em 0 2em;
+  font:78%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+#comments-block dd p {
+  margin:0 0 .75em;
+  }
+.deleted-comment {
+  font-style:italic;
+  color:gray;
+  }
+
+
+/* Sidebar Content
+----------------------------------------------- */
+#sidebar ul {
+  margin:0 0 1.5em;
+  padding:0 0 1.5em;
+  border-bottom:1px dotted #444;
+  list-style:none;
+  }
+#sidebar li {
+  margin:0;
+  padding:0 0 .25em 15px;
+  text-indent:-15px;
+  line-height:1.5em;
+  }
+#sidebar p {
+  color:#999;
+  line-height:1.5em;
+  }
+
+
+/* Profile
+----------------------------------------------- */
+#profile-container {
+  margin:0 0 1.5em;
+  border-bottom:1px dotted #444;
+  padding-bottom:1.5em;
+  }
+.profile-datablock {
+  margin:.5em 0 .5em;
+  }
+.profile-img {
+  display:inline;
+  }
+.profile-img img {
+  float:left;
+  padding:4px;
+  border:1px solid #222;
+  margin:0 8px 3px 0;
+  }
+.profile-data {
+  margin:0;
+  font:bold 78%/1.6em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+.profile-data strong {
+  display:none;
+  }
+.profile-textblock {
+  margin:0 0 .5em;
+  }
+.profile-link {
+  margin:0;
+  font:78%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+
+
+/* Footer
+----------------------------------------------- */
+#footer {
+  width:660px;
+  clear:both;
+  margin:0 auto;
+  }
+#footer hr {
+  display:none;
+  }
+#footer p {
+  margin:0;
+  padding-top:15px;
+  font:78%/1.6em "Trebuchet MS",Trebuchet,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+  </style>
+
+<!-- --><style type="text/css">@import url(http://www.blogger.com/static/v1/v-css/navbar/697174003-classic.css);
+div.b-mobile {display:none;}
+</style>
+
+</head>
+
+<body><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=14516167&amp;blogName=algures+por+ferreira&amp;publishMode=PUBLISH_MODE_BLOGSPOT&amp;navbarType=BLACK&amp;layoutType=CLASSIC&amp;homepageUrl=http%3A%2F%2Falguresporferreira.blogspot.com%2F&amp;blogLocale=pt_PT&amp;searchRoot=http%3A%2F%2Falguresporferreira.blogspot.com%2Fsearch" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" title="Blogger Navigation and Search"></iframe>
+<div></div>
+
+<div id="header">
+<img src="http://i13.photobucket.com/albums/a297/alguresporferreira/Barrawoman.jpg" border="0" alt="Algures por Ferreira"></a>  <h1 id="blog-title">
+    <a href="http://alguresporferreira.blogspot.com/">
+	algures por ferreira
+	</a>
+  </h1>
+  <p id="description">O blog onde expresso o que sinto, o que vejo, o que ouço. Enfim..., onde digo tudo aquilo que me apetece dizer! *torno público que não sou responsável por qualquer comentário que seja colocado neste blogue, à excepção dos que tiverem o meu nome*.</p>
+</div>
+
+<!-- Begin #content -->
+<div id="content">
+
+
+<!-- Begin #main -->
+<div id="main"><div id="main2">
+
+
+
+    
+  <h2 class="date-header">Sexta-feira, Fevereiro 06, 2009</h2>
+  
+
+  
+     
+  <!-- Begin .post -->
+  <div class="post"><a name="1514132613447360595"></a>
+         
+    <h3 class="post-title">
+	 
+	 PS com 40,3% nas intenções de voto.
+	 
+    </h3>
+    
+
+	         <div class="post-body">
+	<div>
+      <div style="clear:both;"></div><div style="text-align: justify;">Com o "caso" Freeport a dominar a actualidade, o PS resiste e quem mais desce nas intenções de voto é o PSD.<br /><br />Estas são algumas das principais conclusões do barómetro feito pela Eurosondagem, para a Renascença, SIC e Expresso.<br /><br />Apesar do caso Freeport, é o PSD que mais desce nas intenções de voto. Os social-democratas baixam da fasquia dos 30% e estão agora com 29,1%.<br /><br />O PS também desce, mas menos. Os socialistas perdem 0,8%, para 40,3%, ficando assim mais longe da maioria absoluta.<br /><br />Manuela Ferreira Leite não conseguiu capitalizar o envolvimento do nome do Primeiro-ministro no caso Freeport. A líder do PSD continua a perder popularidade e aumenta o seu saldo de opiniões negativas em 3,9%.<br /><br />José Sócrates, no auge do caso que envolveu o seu nome e a que chamou “campanha negra”, perde também, mas menos que a presidente social-democrata.<br /><br />O chefe do Governo desce 3,2% e mantém um saldo de opiniões positivas de 20,6%, ao contrário de Manuela Ferreira Leite que se afunda cada vez mais abaixo da “linha de água”.<br /><br />Quem mais subiu foi o Bloco de Esquerda, partido que, pela primeira vez, atinge a barreira psicológica dos dois dígitos, com 10,1%.<br /><br />O CDS-PP sobe 0,8 pontos percentuais, para 6,9% de intenções de voto, mais três décimas que a CDU, que está cada vez mais longe do Bloco de Esquerda, com 8,8%, isto apesar do líder do PCP ser o dirigente político que mais perdeu no seu índice de popularidade, com menos 4,3%.<br /><br />O único a melhorar o seu saldo é o Presidente da República. Cavaco Silva sobe 1,5%, para os 39,8% de opiniões positivas, deixando a concorrência cada vez mais longe.<br /><br />A reacção do PS<br /><br />Os resultados deste barómetro mostram que os portugueses não foram atrás da “campanha contra o Primeiro-ministro”. A opinião é de Vitalino Canas, porta-voz do PS.<br /><br />“Este barómetro mostra que os portugueses, nesta altura, estão, sobretudo, preocupados em escolher, definir, quem os ajudará e conduzirá melhor neste momento de crise. Suponho também que o principal partido a oposição continua a ser penalizado pela atitude negativista de total ausência de propostas”, argumenta Vitalino Canas.<br /><br />in RR</div><div style="clear:both; padding-bottom:0.25em"></div>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>colocado por Bruno Gomes Ã s <a href="http://alguresporferreira.blogspot.com/2009/02/ps-com-403-nas-intencoes-de-voto.html" title="permanent link">13:31</a></em>
+      <MainOrArchivePage><BlogItemCommentsEnabled>
+<a href="javascript:HaloScan('1514132613447360595');" target="_self"><script type="text/javascript">postCount('1514132613447360595'); </script></a>
+  </div>
+  <!-- End .post -->
+  
+
+  <!-- End #comments -->
+
+
+</div></div>
+<!-- End #main -->
+
+
+
+
+
+
+
+<!-- Begin #sidebar -->
+<div id="sidebar"><div id="sidebar2">
+  
+   <!-- Begin #profile-container -->
+   
+  <!-- End #profile -->
+ <object width="235" height="215"><param name="movie" value="http://www.youtube.com/v/6Wce1Q_6Bnc"></param><embed src="http://www.youtube.com/v/6Wce1Q_6Bnc" type="application/x-shockwave-flash" width="212" height="175"></embed></object> <embed src="http://www.clocklink.com/clocks/5002-White.swf?TimeZone=GMT0100&DateFormat=DD-mm-YY" width="192" height="16" wmode="transparent" type="application/x-shockwave-flash">     
+</ul>
+<h2 class="sidebar-title">Correio</h2>
+ <ul>
+        <li><a href="mailto:bruno_gomes@sapo.pt"target="new window"><SPAN>bruno_gomes@sapo.pt</a></li>
+</ul>
+<h2 class="sidebar-title">Mailing List</h2>
+ <ul>
+   <script type="text/javascript" src="http://www.zookoda.com/public/forms/41565F4157555F495F5D5D57.js"></script>     
+</ul>
+
+<h2 class="sidebar-title">Visitantes</h2>
+ <ul>
+ <!-- Begin Users Online -->
+<!-- URL: http://www.twospots.com/ -->
+<table width="76" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="39"><a href="http://www.twospots.com/free-users-online-counter/" target="_blank"><img src="http://www.tscounter.com/images/users-online/users-online2.gif" width="39" height="21" border="0"  alt="Algures por Ferrera"></a></td>
+<td width="37"><script type="text/javascript">document.write('<a href="http://www.twospots.com/free-users-online-counter/" target="_blank"><img src="http://www.tscounter.com/uow3c/?id=dimLTrf3/DPsqrJCOz2DBQ==" width="37" height="21" border="0" alt="Algures por Ferreira"></ a>');</script><noscript>
+<a href="http://www.twospots.com/web-services/web-design/" style="style: none;"><img src="http://www.tscounter.com/uow3c/?id=dimLTrf3/DPsqrJCOz2DBQ==" width="37" height="21" border="0" alt="website design"></a></noscript></td>
+</tr>
+</table>
+<!-- End Users Online -->
+</ul>
+
+ <h2 class="sidebar-title">CitaÃ§Ã£o do Dia</h2>
+  <ul><CENTER>
+<SCRIPT language=javascript src=http://www.citador.pt/outs/citdia.txt></SCRIPT> 
+   </CENTER></ul>
+
+<!-- // Begin Pollhost.com Poll Code // -->
+<h2 class="sidebar-title">EstatÃ­stica</h2>
+ <ul>
+</ul>
+<!-- // End Pollhost.com Poll Code // -->
+
+<h2 class="sidebar-title">O sÃ­mbolo</h2>
+<img src="http://i13.photobucket.com/albums/a297/alguresporferreira/blogue3.jpg" alt="PhÃ©nix, o ser que renasce das cinzas, o ser cujas lÃ¡grimas curam.">
+</ul>
+
+
+  
+  <h2 class="sidebar-title">Arquivos</h2>
+
+  <ul class="archive-list">
+   	  
+    <li><a href="http://alguresporferreira.blogspot.com/2005_07_01_archive.html">Julho 2005</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2005_08_01_archive.html">Agosto 2005</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2005_09_01_archive.html">Setembro 2005</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2005_10_01_archive.html">Outubro 2005</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2005_11_01_archive.html">Novembro 2005</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2005_12_01_archive.html">Dezembro 2005</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_01_01_archive.html">Janeiro 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_02_01_archive.html">Fevereiro 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_03_01_archive.html">Março 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_04_01_archive.html">Abril 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_05_01_archive.html">Maio 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_06_01_archive.html">Junho 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_07_01_archive.html">Julho 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_08_01_archive.html">Agosto 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_09_01_archive.html">Setembro 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_10_01_archive.html">Outubro 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_11_01_archive.html">Novembro 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2006_12_01_archive.html">Dezembro 2006</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_01_01_archive.html">Janeiro 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_02_01_archive.html">Fevereiro 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_03_01_archive.html">Março 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_04_01_archive.html">Abril 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_05_01_archive.html">Maio 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_06_01_archive.html">Junho 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_07_01_archive.html">Julho 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_08_01_archive.html">Agosto 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_09_01_archive.html">Setembro 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_10_01_archive.html">Outubro 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_11_01_archive.html">Novembro 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2007_12_01_archive.html">Dezembro 2007</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_01_01_archive.html">Janeiro 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_02_01_archive.html">Fevereiro 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_03_01_archive.html">Março 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_04_01_archive.html">Abril 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_05_01_archive.html">Maio 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_06_01_archive.html">Junho 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_07_01_archive.html">Julho 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_08_01_archive.html">Agosto 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_09_01_archive.html">Setembro 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_10_01_archive.html">Outubro 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_11_01_archive.html">Novembro 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2008_12_01_archive.html">Dezembro 2008</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2009_01_01_archive.html">Janeiro 2009</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2009_02_01_archive.html">Fevereiro 2009</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2009_03_01_archive.html">Março 2009</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2009_04_01_archive.html">Abril 2009</a></li>
+	  
+    <li><a href="http://alguresporferreira.blogspot.com/2009_05_01_archive.html">Maio 2009</a></li>
+	  
+  </ul>
+  </MainOrArchivePage> 
+
+<h2 class="sidebar-title">O tempo algures aqui</h2>
+    <ul>   
+<script src='http://voap.weather.com/weather/oap/POXX0074?template=GENXV&par=null&unit=1&key=7a5a11263c0719f97c53acb3eda124f4'></script>
+  </ul>
+
+<h2 class="sidebar-title">Procure algures aqui</h2>
+    <ul>   
+<FORM ACTION="http://search.freefind.com/find.html" METHOD="GET"  target="_self">
+<FONT size=1 face="arial,helvetica" >
+<INPUT TYPE="HIDDEN" NAME="id" VALUE="19943486">
+<INPUT TYPE="HIDDEN" NAME="pageid" VALUE="r">
+<INPUT TYPE="HIDDEN" NAME="mode" VALUE="ALL">
+<INPUT type="HIDDEN" name="n" value="0">
+<INPUT TYPE="TEXT" NAME="query" SIZE="15"><small> 
+<INPUT TYPE="SUBMIT" VALUE=" Aqui "><br>
+</small>powered by <A HREF="http://www.freefind.com">
+FreeFind</A></font></FORM>
+  </ul>
+
+
+<!-- Search Google -->
+<h2 class="sidebar-title">Procure algures por aÃ­</h2>
+    <ul>   
+ <CENTER>
+<FORM action=http://www.google.com/search method=get>
+<TABLE bgColor=#000>
+  <TBODY>
+  <TR>
+    <TD align=middle><A href="http://www.google.com/" target="new window"><IMG 
+      alt=Google src="http://www.google.pt/intl/pt-PT/logos/Logo_25blk.gif" 
+      align=center border=0></A> <INPUT maxLength=255 size=25 name=q> <INPUT 
+      type=hidden value=en name=hl> <INPUT type=submit value="Busca no Google" name=btnG></H> 
+</TD></TR></TBODY></TABLE></FORM></CENTER>
+<!-- Search Google -->
+</ul>
+
+<h2 class="sidebar-title">Quantidade de visitas</h2>
+    <ul>   
+
+<!--WEBBOT bot="HTMLMarkup" startspan ALT="Site Meter" -->
+<script type="text/javascript" language="JavaScript">var site="s18alguresporferreira"</script>
+<script type="text/javascript" language="JavaScript1.2" src="http://s18.sitemeter.com/js/counter.js?site=s18alguresporferreira">
+</script>
+<noscript>
+<a href="http://s18.sitemeter.com/stats.asp?site=s18alguresporferreira" target="_top">
+<img src="http://s18.sitemeter.com/meter.asp?site=s18alguresporferreira" alt="Site Meter" border="0"/></a>
+</noscript>
+<!--WEBBOT bot="HTMLMarkup" Endspan -->
+</ul>
+<h2 class="sidebar-title">Traduza esta pÃ¡gina</h2>
+    <ul>  
+<script language="JavaScript1.2" src="http://www.altavista.com/static/scripts/translate_portugese.js"></script>
+</ul>
+
+<a href="http://www.abeltronica.com/velocimetro/pt/?idioma=pt&newlang=pt" target="_blank" title="VelocÃ­metro"><img src="http://www.abeltronica.com/velocimetro/pt/img/small_velocimetro_pt.jpg"></a>
+
+  <p id="powered-by"><a href="http://www.blogger.com"><img src="http://buttons.blogger.com/bloggerbutton1.gif" alt="Powered by Blogger" /></a></p>
+  <a href="http://blog.com.pt?trackid=3953" target="_blank">
+<img src="http://img.blog.com.pt/blogcompt.gif" alt="Estou no Blog.com.pt" border="0">
+</a>
+  <!--
+  <p>This is a paragraph of text that could go in the sidebar.</p>
+  -->
+  
+
+
+</div></div>
+<!-- End #sidebar -->
+
+
+</div>
+<!-- End #content -->
+
+
+<!-- Begin #footer -->
+<div id="footer"><hr />
+  <p><!--This is an optional footer. If you want text here, place it inside these tags, and remove this comment. -->&nbsp;</p>
+
+</div>
+<!-- End #footer -->
+
+
+</body>
+<script type="text/javascript" src="http://www.makepovertyhistory.org/whiteband_small_right.js"> </script><noscript><a href="http://www.makepovertyhistory.org/"> http://www.makepovertyhistory.org</a></noscript>
+</html>

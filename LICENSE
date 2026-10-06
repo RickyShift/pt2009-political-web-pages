@@ -1,0 +1,30 @@
+LICENSE NOTE -- READ CAREFULLY, THIS REPOSITORY HAS TWO DIFFERENT LICENSES
+===========================================================================
+
+1. metadata.csv
+   ----------------------------------------------------------------------
+   Copyright (c) 2026 Ricardo Albuquerque.
+
+   This work (the URLs, dates, and party/ideological-category labels in
+   metadata.csv) is licensed under the Creative Commons Attribution 4.0
+   International License (CC BY 4.0).
+
+   To view a copy of this license, visit
+   http://creativecommons.org/licenses/by/4.0/
+   or send a letter to Creative Commons, PO Box 1866, Mountain View,
+   CA 94042, USA.
+
+   Summary (not a substitute for the license itself): you are free to share
+   and adapt this material for any purpose, even commercially, as long as
+   you give appropriate credit, provide a link to the license, and indicate
+   if changes were made.
+
+2. html/*.html
+   ----------------------------------------------------------------------
+   The archived HTML files in html/ are NOT covered by the license above.
+   They are third-party content -- the original text, markup, and assets of
+   pages crawled by arquivo.pt (Portugal's public web archive) in 2009 -- and
+   remain the property of their original authors/publishers. No license is
+   granted over this content by this repository. Consult arquivo.pt's own
+   terms of use (https://arquivo.pt) before any further redistribution of
+   the HTML itself.

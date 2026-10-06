@@ -1,0 +1,484 @@
+<html>
+<head>
+<title>Grupo Parlamentar PSD </title>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=ISO-8859-1">
+<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+<META NAME="RESOURCE-TYPE" CONTENT="DOCUMENT">
+<META NAME="DISTRIBUTION" CONTENT="GLOBAL">
+<META NAME="AUTHOR" CONTENT="Grupo Parlamentar PSD">
+<META NAME="COPYRIGHT" CONTENT="Copyright (c) 2002 by Grupo Parlamentar PSD">
+<META NAME="KEYWORDS" CONTENT="Grupo parlamentar, PSD, GPPSD, Partido, Social-Democrata, Parlamento, Governo">
+<META NAME="DESCRIPTION" CONTENT="">
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+<META NAME="REVISIT-AFTER" CONTENT="1 DAYS">
+<META NAME="RATING" CONTENT="GENERAL">
+<META NAME="GENERATOR" CONTENT="NetSpot by Advantis">
+<SCRIPT type="text/javascript">
+  var sREQ = new String('Campo obrigatório: ');
+  var sFOR = new String('Formato incorrecto: ');
+</SCRIPT>
+
+ <script src='includes/validation.js' language='Jscript'></script>
+
+
+
+<script type="text/javascript">
+
+
+function checkDateFormat( val, a_msg ) {
+
+
+
+
+var valor = new String(val.value);
+
+var dateRE = /^(\d{4})\-(\d{1,2})\-(\d{1,2})/i;
+
+
+
+if (valor.match(dateRE)) {
+
+
+
+        var teste_data = new Date(RegExp.$1,RegExp.$2-1,RegExp.$3);
+
+
+
+        var yr;
+
+        Today = new Date();
+
+        yr = Number(Today.getFullYear());
+
+
+
+        if ( Number(teste_data.getDate()) != RegExp.$3 || Number(teste_data.getMonth())+1 != RegExp.$2 || Number(teste_data.getFullYear()) != RegExp.$1 || RegExp.$1 < yr) {
+
+                if (!a_msg)
+
+                alert ('Erro: Data com formato incorrecto! (aaaa-mm-dd)');
+
+                return false;
+
+        }
+
+}
+
+else {
+
+        if (!a_msg)
+
+        alert ('Erro: Data com formato incorrecto! (aaaa-mm-dd)');
+
+        return false;
+
+}
+
+return true;
+
+} 
+
+
+
+
+function checkHourFormat( a_campo, a_msg ) {
+
+
+var formato_hora = /\d{2}:\d{2}/;
+
+
+
+DataHora = a_campo.value.split(":");
+
+Hora_H = DataHora[0];
+
+Hora_M = DataHora[1];
+
+
+
+
+
+if ( (!a_campo.value.match(formato_hora) || (Hora_H >= 24) || (Hora_M >= 60) ) && (a_campo.value!='') ) {
+
+        if (!a_msg)
+
+        alert ('Erro: Hora com formato incorrecto! (hh:mm)');
+
+        return false;
+
+}
+
+return true;
+
+} 
+
+
+
+function checkEmail(field)
+{
+
+    var okay = true;
+
+        val=field;
+
+    var valstr = '' + val;
+
+    if ( valstr.length < 5 )
+    {
+        okay = false;
+        alert ('Erro: E-mail com formato incorrecto! ');
+    }
+        else
+        {
+                     dotix = val.indexOf('.');
+                     atix  = val.indexOf('@');
+
+            if ( dotix < 1 || atix < 1)// || dotix < atix )
+        {
+            okay = false;
+            alert ('Erro: E-mail com formato incorrecto! ');
+        }
+    }
+    if ( ! okay )
+    {
+           
+                return true;
+    }
+
+}
+
+
+function checkEmailFormat( a_campo, a_msg ) {
+
+
+//var formato_email = /\w+\@\w+\.\w{2,3}/;
+var formato_email = /\w+\@(\w|\W)+\.\w+/;
+
+
+if ( !a_campo.value.match(formato_email) && (a_campo.value!='') ) {
+
+        if (!a_msg)
+         alert ('Erro: E-mail com formato incorrecto! ');
+
+        return false;
+
+}
+
+else
+
+return true;
+
+} 
+
+
+
+
+function checkContactoFormat( a_campo, n_tipo, a_msg ) {
+
+
+var formato_email = /\w+\@\w+\.\w{2,3}/;
+
+var formato_tel = /^\d{9,12}$/;
+
+
+
+
+
+if (n_tipo ==1) { //1-email
+
+
+     field=a_campo.value;
+    checkEmail(field)
+
+
+}
+
+else { //2,3 tel e fax
+
+        if ( !a_campo.value.match(formato_tel) && (a_campo.value!='') ) {
+
+                if (!a_msg)
+
+                alert ('Erro: Telefone/fax com formato incorrecto! ');
+
+                return false;
+
+        }
+
+        else
+
+        return true;
+
+}
+
+} 
+
+
+
+
+function checkNumdigit( ) {
+
+
+
+        refcode = (window.event.keyCode);
+
+
+
+        if (refcode == 48 || refcode == 49 || refcode == 50 || refcode == 51 || refcode == 52 || refcode == 53 || refcode == 54 || refcode == 55 || refcode == 56 || refcode == 57) 
+
+
+        return true;
+
+        else
+
+        return false;
+
+}
+
+
+
+
+function teste() {
+
+        refcode = (window.event.keyCode);
+
+        alert(refcode);
+
+        return true;
+
+}
+
+
+function dosubmit(form, action){
+	
+	alert("Entrei dosubmit " );
+	//if (op) form.op.value = op;
+	
+	form.submit();
+}
+</script> 
+<LINK REL="StyleSheet" HREF="css/style.css" TYPE="text/css">
+
+
+
+
+
+</head>
+
+
+
+
+<!--##Cabeçalho##>-->
+
+<body topmargin="0" leftmargin="0" bgcolor="#FFFFFF" text="#000000" link="#363636" vlink="#363636" alink="#d5ae83">
+<A name=Topo></a>
+
+
+ <script>
+        document.write("<div align=center>");
+        document.write("  <table width=759 border=0 cellspacing=0 cellpadding=0 height=109>");
+        document.write("    <tr>");
+        document.write('      <td width=634 height=109><img src=images/topo.jpg width=634 height=109 usemap=#Map border=0><map name=Map><area shape=rect coords=82,57,300,106 href=default.asp target=_self></map></td>');
+        document.write("      <td width=125 height=109 background=images/topo3.jpg><object classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000  codebase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0 width=125 height=109 id=ShockwaveFlash1>");
+
+        BrName = navigator.appName;
+        if(BrName == "Microsoft Internet Explorer" )
+        {
+                document.write("          <param name=movie value=images/seta.swf>");
+                document.write("          <param name=quality value=high>");
+                document.write("          <param name=wmode value=transparent>");
+                document.write("          <embed src=images/seta.swf quality=high pluginspage=http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash type=application/x-shockwave-flash width=125 height=109>");
+        }
+        else
+        {
+                document.write("          <param name=movie value=images/seta_nav.swf>");
+                document.write("          <param name=quality value=high>");
+                document.write("          <param name=wmode value=transparent>");
+                document.write("          <embed src=images/seta_nav.swf quality=high pluginspage=http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash type=application/x-shockwave-flash width=125 height=109>");
+
+
+        }
+        document.write("          </embed>");
+        document.write("        </object></td>");
+        document.write("    </tr>");
+        document.write("  </table>");
+        document.write(" </div>");
+</script>
+
+<div align="center">
+  <table width="759" border="0" cellspacing="0" cellpadding="0" height="18" background="images/topo2.jpg">
+    <tr>
+      <td>
+      </td>
+    </tr>
+  </table>
+  <table width="759" border="0" cellspacing="0" cellpadding="0" height="27">
+    <tr><td valign=top>
+        <map name="network"> 
+          <area alt="Portal Social Democrata" coords="121,3,204,24" href="http://www.psd.pt"  target="_parent">
+                <area alt="Grupo Parlamentar PSD" coords="205,26,325,3" href="#" target="_parent">
+                <area shape="RECT" coords="416,22,416,25">
+                
+          <area alt="Distritais PSD" coords="326,2,416,23" href="http://www.psd.pt/default.asp?s=11670" target="_parent">
+                
+          <area alt="Juventude Social Democrata" coords="417,1,495,24" href="http://www.psd.pt/estaticas/jsd/index.asp"  target="_parent">
+                
+          <area alt="Trabalhadores Sociais Democratas" coords="499,3,575,25"  href="http://www.psd.pt/estaticas/tsd/index.asp" target="_parent">
+                
+          <area alt="Autarcas Sociais Democratas" coords="575,3,655,24" target="_parent" href="http://www.psd.pt/estaticas/asd/index.asp"  >
+                
+          <area alt="Website do Governo" coords="659,0,768,29"  href="http://www.psd.pt/estaticas/frameset/governo.html" target="_parent">
+</map>
+        <img src="images/psd_barra_parlamento.jpg" width=759 height=27 border=0 usemap="#network"></td>
+    </tr></table>
+</div>
+  
+
+
+<table width="759px" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr valign="top" nowrap>
+	<td width="160" valign="top" background="images/barra1_esq.gif" style="background-repeat:repeat-y">
+	
+<table border="0" cellpadding="0" cellspacing="0" height="100%" background="images/barra1_esq.gif" style="background-repeat:repeat-y" width="100%">
+  <tr>
+      <td width="100%" background="images/pesquisa.jpg" height="29">&nbsp;</td>
+    </tr>
+    <tr>
+      <td width="100%" height="21">
+      <form method="get" name="pesquisa" onsubmit="if (str.value.length<1) return false;" action="pesquisa.asp">  
+          <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="text" name="str" size="15" maxlength="30" value="">
+		  <img src="images/seta4.jpg" style="cursor:hand;" Alt="Pesquisar" onclick="if (str.value.length>0) document.pesquisa.submit();" width="23" height="16">
+      		<br>
+      </td></form>
+    </tr>
+		
+					<tr>
+      			<td width="100%" height="29"><a href="default.asp?s=11585"><img border="0" src="cmgestao/include/imagedisp.asp?id=318" style="cursor:hand"></a></td>
+			    </tr>
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11588" class="mainoption">Por Ordem Alfab&#233;tica</a>&nbsp;</td>
+						</tr>	
+
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11589" class="mainoption">Por C&#237;rculo Eleitoral</a>&nbsp;</td>
+						</tr>	
+
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11590" class="mainoption">Por Comiss&#227;o</a>&nbsp;</td>
+						</tr>	
+
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11591" class="mainoption">Marcar Audi&#234;ncia</a>&nbsp;</td>
+						</tr>	
+
+				<tr><td><font style='font-size:5'><br></font></td></tr>
+					<tr>
+      			<td width="100%" height="29"><a href="default.asp?s=11586"><img border="0" src="cmgestao/include/imagedisp.asp?id=319" style="cursor:hand"></a></td>
+			    </tr>
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11616" class="mainoption">Not&#237;cias</a>&nbsp;</td>
+						</tr>	
+
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11593" class="mainoption">Interven&#231;&#245;es</a>&nbsp;</td>
+						</tr>	
+
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11611" class="mainoption">Requerimentos</a>&nbsp;</td>
+						</tr>				
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11594" class="mainoption">Projectos Resolu&#231;&#227;o</a>&nbsp;</td>
+						</tr>	
+
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11595" class="mainoption">Projectos de Lei</a>&nbsp;</td>
+						</tr>	
+
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11618" class="mainoption">Documentos</a>&nbsp;</td>
+						</tr>	
+
+				<tr><td><font style='font-size:5'><br></font></td></tr>
+					<tr>
+      			<td width="100%" height="29"><a href="default.asp?s=11587"><img border="0" src="cmgestao/include/imagedisp.asp?id=320" style="cursor:hand"></a></td>
+			    </tr>
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11598" class="mainoption">Organigrama</a>&nbsp;</td>
+						</tr>	
+
+				
+					    <tr>
+							<td width="100%" height="21">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="default.asp?s=11599" class="mainoption">Presidente</a>&nbsp;</td>
+						</tr>	
+
+				<tr><td><font style='font-size:5'><br></font></td></tr>
+					<tr>
+      			<td width="100%" height="29"><a href="default.asp?s=11582"><img border="0" src="cmgestao/include/imagedisp.asp?id=321" style="cursor:hand"></a></td>
+			    </tr>
+				<tr><td><font style='font-size:5'><br></font></td></tr>
+					<tr>
+      			<td width="100%" height="29"><a href="default.asp?s=11583"><img border="0" src="cmgestao/include/imagedisp.asp?id=322" style="cursor:hand"></a></td>
+			    </tr>
+				<tr><td><font style='font-size:5'><br></font></td></tr>
+		
+		
+    <tr>
+      <td width="100%" >&nbsp;</td>
+    </tr>
+  </table>
+	</td>
+	<td nowrap width="10" background="images/barra1_esq.gif" style="background-repeat:repeat-y"><img 
+
+src="themes/EETheme2/images/pixel.gif" width="8" height="1" border="0" alt></td><td nowrap align="left" 
+
+width="586" background="images/barra4.gif" style="background-repeat:repeat-y"><br>
+      
+      
+	    
+	  
+	  
+      <!-- fim dos conteudos  -->
+    </td>
+</tr>
+</table>
+<table border="0" align="center" cellpadding="0" cellspacing="0" width="759">
+	<tr>
+		<td width="161" background="images/barra1_esq.gif" style="background-repeat:repeat-y"></td>
+		<td nowrap width="10" background="images/barra1_esq.gif" style="background-repeat:repeat-y">
+			<img src="images/pixel.gif" width="8" height="1" border="0">
+		</td>
+		<td background="images/barra4.gif" style="background-repeat:repeat-y">
+			<center><font class=tiny><B>© 2004 Grupo Parlamentar do PSD</b><br>
+			Todos os direitos reservados.<br> <a href="avisosleg.html" target="_blank"><span class=tiny1>Avisos Legais</span></a> | <a href="privacidade.html" target="_blank"><span class=tiny1>Privacidade e Protecção de dados</span></a><br>
+        
+        Powered by: <a href="http://www.mind.pt" target="_blank"><span class=tiny1>Mind</span></a><br>
+			</font></center>
+			<br>
+		</td>
+	</tr>
+	</table>
+
+<table width="759px" cellpadding="0" cellspacing="0" border="0" align="center">
+<tr align="center">
+<td width="100%" colspan="3" background="images/fundiu.gif" style="background-repeat:repeat-x"><br>
+</td>
+</tr>
+</table>
+
+
+	</body>
+
+
+	</html>

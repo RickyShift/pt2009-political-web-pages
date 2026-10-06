@@ -1,0 +1,10 @@
+# Archived third-party HTML, not this project's own source -- keep it out of
+# GitHub's language-detection stats and treat it as opaque data, not code to
+# diff line-by-line. -text disables ALL line-ending conversion (CRLF<->LF) on
+# checkout/commit regardless of any user's core.autocrlf setting -- these are
+# byte-exact archival copies of what arquivo.pt served, and must stay that
+# way for anyone who clones this on any platform.
+html/*.html linguist-vendored
+html/*.html linguist-generated
+html/*.html -diff
+html/*.html -text

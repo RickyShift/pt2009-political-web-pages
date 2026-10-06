@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" media="screen, projection" type="text/css" href="http://dragaosenior.blogs.iol.pt/css/" />
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="http://dragaosenior.blogs.iol.pt/atom/" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="http://dragaosenior.blogs.iol.pt/rss/" />
+  <link rel="alternate" type="application/atom+xml" title="Comment feed in Atom format" href="http://dragaosenior.blogs.iol.pt/atom/23675/" />
+  <link rel="alternate" type="application/rss+xml" title="Comment feed in RSS format" href="http://dragaosenior.blogs.iol.pt/rss/23675/" />
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://dragaosenior.blogs.iol.pt/rsd/" />
+  <script language="javascript" type="text/javascript" src="/javascript/prototype.js"></script>
+  <title>Futebol destaques: 26/02/2009 (Arbitragem: João Ferreira)
+ « dragão sénior</title>
+  <script type="text/javascript">
+
+function slideshow(blockid, albumid, numphotos, offset) {
+    offset = offset + 1;
+	if(offset == slideshows[blockid].srcs.length * 10) {
+		offset = 0;
+	}
+	
+	var div = document.getElementById('slideshow-' + blockid);
+	var i = 0;
+	if (div) {
+	  var elm = div.firstChild;
+	  while (elm) {
+		if(elm.nodeType==1){
+			elm.setAttribute('href', slideshows[blockid].hrefs[(offset + i) % slideshows[blockid].hrefs.length ]);
+			elm.firstChild.setAttribute('src', slideshows[blockid].srcs[(offset + i) % slideshows[blockid].srcs.length ]);
+			i++;
+			if ( i == 10) {
+			    timer = function() {
+				    window.slideshow(blockid, albumid, numphotos, offset);
+				}
+				setTimeout(timer,6000);
+				return;
+			}
+		}
+        elm = elm.nextSibling;
+	  }
+	}
+}
+
+function getDelayedContent()
+{
+	var src;
+	$A(document.getElementsByTagName('div')).each(function(node){
+		src = node.getAttribute('src');
+		if (src) {
+			var mySrc = src;
+			node.removeAttribute('src');
+			var myAjax = new Ajax.Updater(
+			node,
+			mySrc, 
+			{
+				evalScripts: true,
+				method: 'get', 
+				onComplete: getDelayedContent
+			});
+		}
+	});	
+	
+}
+
+function setIframeHeight(iframeName) {
+    var height = 0;
+    var frame = window.frames[iframeName];
+    try {
+        height = frame.document.documentElement.clientHeight;
+    } catch (e) {
+        height = 0;
+    }        
+    if (height == 0) {
+        var node = frame.document.documentElement.firstChild.nextSibling.firstChild;
+        for (node = frame.document.documentElement.firstChild.nextSibling.firstChild; node; node = node.nextSibling) {
+            try {
+                height += Element.getHeight(node);
+            }
+            catch (e) {
+                return;
+            }
+        }
+        
+    }
+    document.getElementById(iframeName).style.height = height + 'px';
+}
+
+
+  </script>
+  
+ </head>
+ <body onload="fixColumnHeight(); setTimeout('fixColumnHeight()', 3000); setTimeout('fixColumnHeight()', 10000);">
+  <div id="body">
+   <a name="top" ></a>
+   <div id="header">
+    <div id="headerimg" onclick="document.location='http://dragaosenior.blogs.iol.pt/'"></div>
+    <h1 onclick="document.location='http://dragaosenior.blogs.iol.pt/'" id="blogtitle"><a href="http://dragaosenior.blogs.iol.pt/">dragão sénior</a></h1>
+    <h2 id="blogsubtitle">&nbsp;</h2>
+   </div>
+   <script type="text/javascript">
+// <![CDATA[
+ 	var exdate=new Date();
+	exdate.setDate(exdate.getDate()+365);
+	document.cookie="hasjavascript=yes;expires="+exdate.toGMTString();
+// ]]>  
+   </script>   <div id="content">
+   <div id="posts-slidingdoor-top">
+    <div id="posts-slidingdoor-topleft"> </div>
+    <div id="posts-slidingdoor-topright"> </div>
+    <div id="posts-slidingdoor-bottom">
+     <div id="posts-slidingdoor-bottomleft"> </div>
+     <div id="posts-slidingdoor-bottomright"> </div>
+     <div id="posts-slidingdoor-left">
+      <div id="posts-slidingdoor-right">
+        <div id="posts" class="posts">
+        <div class="day">
+        <h3 class="date">2009/02/26</h3>
+        <div class="post-slidingdoor-top">
+         <div class="post-slidingdoor-topleft"> </div>
+         <div class="post-slidingdoor-topright"> </div>
+         <div class="post-slidingdoor-bottom">
+          <div class="post-slidingdoor-bottomleft"> </div>
+          <div class="post-slidingdoor-bottomright"> </div>
+          <div class="post-slidingdoor-left">
+           <div class="post-slidingdoor-right">
+			<div class="post">
+             <h4 class="posttitle">Futebol destaques: 26/02/2009 (Arbitragem: João Ferreira)
+</h4>
+             <div class="posttext"><p class="MsoNormal"><span class="apple-style-span"><span><span style="font-size: small" class="Apple-style-span">Ribéry,Zé Roberto, Luca Toni e companhia mostraram aos leões que a exigência da Champions é muito grande, como aliás o Barcelona de Messi já o havia feito na fase de grupos.</span></span></span></p>
+<p class="MsoNormal"><span class="apple-style-span"><span><span style="font-size: small" class="Apple-style-span">Ribéry era a seta apontada à baliza de Tiago e bastou um passe disparatado de Derlei para o francês ligar o turbo e abrir o marcador, passando disparado entre os dois centrais leoninos.&#160;</span></span></span></p>
+<p class="MsoNormal"><span class="apple-style-span"><span><span style="font-size: small" class="Apple-style-span">A seguir, Rochemback derrubou Lahm na área e Ribéry voltou a marcar. O Sporting ficou reduzido a cinzas e daí até final só existiu uma equipa</span> <span style="font-size: small" class="Apple-style-span">em campo.&#160;</span></span></span></p>
+<p class="MsoNormal"><span class="apple-style-span"><span><span style="font-size: small" class="Apple-style-span">Depois, o</span><span style="font-size: small" class="Apple-style-span">&#160;inevitável LucaToni entrou então em acção e colocou os números da goleada num nível impensável para um jogo dos oitavos-de-final da Champions.</span> </span></span></p>
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-family: Arial"><span style="font-size: small" class="Apple-style-span">Foi aos 42 minutos que o Bayern de Munique se adiantou no marcador, após o tal péssimo passe de Derlei, a entregar a bola a Ribéry, que a recebeu um pouco depois do meio-campo, passou pelos dois centrais “leoninos” e, isolado, bateu Tiago, naquele que foi o primeiro remate enquadrado dos bávaros.</span></span></span></p>
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-family: Arial; color: black"><span style="font-size: small" class="Apple-style-span">O francês acabou mesmo por ser a grande figura do jogo, e, aos 84 minutos, fintou Pereirinha e cruzou para a cabeça de</span> <span style="font-weight: bold" class="Apple-style-span"><span style="font-size: small" class="Apple-style-span">LucaToni, que, mesmo agarrado por Polga<span class="Apple-style-span" style="font-weight: normal">&#160;(bom exemplo para os profissionais que jogam em Portugal)</span>,</span></span> <span style="font-size: small" class="Apple-style-span">rematou para o fundo da baliza.</span></span></span></p>
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-family: '-webkit-sans-serif'"><span style="font-size: small" class="Apple-style-span"><span style="color: #0000ff" class="Apple-style-span">Ora bem, chegados a este ponto, vou abordar um aspecto muito importante, e, na minha opinião, deveras pertinente.&#160;</span></span></span></span></p>
+<p class="MsoNormal"><span class="apple-style-span"><span style="font-family: '-webkit-sans-serif'"><span style="font-size: small" class="Apple-style-span"><span style="color: #0000ff" class="Apple-style-span">A equipa do Sporting encaixou ontem 5 golos a 0 pelas seguintes razões:</span></span></span></span><span class="apple-converted-space"><span style="font-family: '-webkit-sans-serif'"><span style="font-size: small" class="Apple-style-span"><span style="color: #0000ff" class="Apple-style-span">&#160;</span></span></span></span></p>
+<p class="MsoNormal"><span class="apple-converted-space"><span style="font-family: '-webkit-sans-serif'"><span class="apple-style-span"><span style="font-size: small" class="Apple-style-span"><span style="color: #0000ff" class="Apple-style-span">A equipa do Bayern de Munique é muito forte fisicamente, todos os seus jogadores têm grande experiência internacional (matreirice, profissionalismo, serenidade, personalidade, determinação, valentia...etc.Facto este que lhes permite jogar &#160;descontraídos) e, para agravar ainda mais a situação percebeu-se que o árbitro francês não estava nada predisposto a facilitar a vida aos jogadores do Sporting como acontece em Portugal com os árbitros portugueses. Parecendo que não, este último aspecto é preponderante.</span></span></span><span class="apple-converted-space"><span style="font-size: small" class="Apple-style-span"><span style="color: #0000ff" class="Apple-style-span">&#160;</span></span></span></span></span></p>
+<p class="MsoNormal"><span style="font-family: '-webkit-sans-serif'"><span class="apple-style-span"><span style="font-size: small" class="Apple-style-span"><span style="color: #0000ff" class="Apple-style-span">Vamos lá a ver se o</span></span> <span style="font-weight: bold" class="Apple-style-span"><span style="font-size: small" class="Apple-style-span"><span style="color: #0000ff" class="Apple-style-span">João Ferreira tem"estaleca"</span></span></span> <span style="font-weight: bold" class="Apple-style-span"><span style="font-size: small" class="Apple-style-span"><span style="color: #0000ff" class="Apple-style-span">para seguir os lances de perto e ajuizar com justiça no próximo sábado.</span></span></span> <span style="font-size: small" class="Apple-style-span"><span style="color: #0000ff" class="Apple-style-span">Porque de certeza que os jogadores do Sporting vão querer entrar a intimidar (apagar os efeitos da derrota de 4ªfeira), e, se o João Ferreira for permissivo disciplinarmente para eles, então a equipa do FC Porto terá uma tarefa muito mais complicada.</span></span></span></span></p>
+<p class="MsoNormal"><span class="Apple-style-span" style="color: #0000ff; font-family: '-webkit-sans-serif'; font-size: 13px"><span class="Apple-style-span" style="font-weight: bold">PS -&#160;<span class="Apple-style-span" style="font-family: '-webkit-monospace'; font-weight: normal; white-space: pre-wrap; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px">Normalmente o Sporting é um adversário difícil quando defronta o FC Porto. Nestas ocasiões, até parece pretenderem provar alguma coisa. Portanto, já sabemos que eles vão</span> <span class="Apple-style-span" style="font-family: '-webkit-monospace'; white-space: pre-wrap; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px">entrar a matar</span><span class="Apple-style-span" style="font-family: '-webkit-monospace'; font-weight: normal; white-space: pre-wrap; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px">, e, se o árbitro conceder facilidades à equipa do Sporting como é costume, então será muito complicado para a equipa do FC Porto.</span></span></span></p>
+<span class="Apple-style-span" style="font-family: '-webkit-monospace'; font-size: 13px; white-space: pre-wrap; -webkit-border-horizontal-spacing: 2px; -webkit-border-vertical-spacing: 2px"><span class="Apple-style-span" style="color: #0000ff">O João Ferreira é um bom árbitro no capítulo técnico, já no aspecto disciplinar, por vezes, deixa muito a desejar. Nunca mais me vou esquecer de dois lances violentos contra o Costinha e o Areias (na altura jogavam no FC Porto) em Guimarães que o João Ferreira permitiu...!</span></span>
+
+              </div>
+              <div class="postmore"></div>
+              <div class="postedby">Escrito por <span class="author">Monteiro39</span> at <span class="time">18:10</span> | <span class="permalink"><a href="http://dragaosenior.blogs.iol.pt/23675/">Link permanente</a></span> | <span class="comments"><a href="http://dragaosenior.blogs.iol.pt/23675/#cmts" onclick="if (typeof(window['changeform']) == 'function') changeform(0,0);">Comentário (0)</a></span> | <a href="/_/sendpostbymail/?postid=23675"><span class="mail"></span></a>
+			 </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+
+	  <div id="browse" style="margin:10px 5px 10px 5px;">
+       <table width="100%">
+        <tr>
+         <td align = "left" width="33%">
+	      <a href="/_/actions/browse/?postid=23635">&lt;&lt; previous post</a>
+         </td>
+         <td align = "center" width="33%">
+	      <a href="/">home</a>
+         </td>
+         <td align = "right" width="33%">
+	      <a href="/_/actions/browse/?postid=23721">next post&gt;&gt;</a>
+         </td>
+        </tr>
+       </table>
+      </div>
+  		 <iframe src="/_/ad/?cobrandid=1&commentsad=1"
+	      width="468" height="60" frameborder="0" style="border: 0px" marginwidth="0" marginheight="0" scrolling="no">
+	     </iframe>
+  <div class="comments" id="cmts">
+ <div class="commentshead">
+ Comentário </div>
+ 
+ <div id="commentform" style="display:none;">
+<div class="commentsform">
+ <a name="form"></a>
+ <form method="post" action="/_/comment/" accept-charset="utf-8"><div>
+  <input type="hidden" name="postid" value="23675"/>
+  <h5 id="normal" class="commentsformtitle">Escreva um comentário</h5>
+  <div class="commentsformbody">   
+   <label for="text">Comentário:</label><br />
+   <textarea id="text" name="text" rows="10" cols="45"></textarea><br /><br />
+   <input class="button" type="submit" name="post" value="Enviar" />
+  </div>
+ </div></form>
+</div>
+
+</div>
+<script type="text/javascript">
+// <![CDATA[
+ document.getElementById("commentform").style.visibility = 'visible';
+ document.getElementById("commentform").style.display = 'block';
+// ]]>  
+</script>
+<noscript>
+ <br/><br/>
+JavaScript is turned off in your web browser. Turn it on to comment on this post, then refresh the page.
+</noscript>
+</div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   <div id="sidebar-slidingdoor-top">
+    <div id="sidebar-slidingdoor-topleft"> </div>
+    <div id="sidebar-slidingdoor-topright"> </div>
+    <div id="sidebar-slidingdoor-bottom">
+     <div id="sidebar-slidingdoor-bottomleft"> </div>
+     <div id="sidebar-slidingdoor-bottomright"> </div>
+     <div id="sidebar-slidingdoor-left">
+      <div id="sidebar-slidingdoor-right">
+       <div id="sidebar">
+     <div class="block search">
+     <h3>Pesquisa</h3>
+     <ul>
+      <li>
+       <form method="post" action="http://dragaosenior.blogs.iol.pt/search/" accept-charset="utf-8">
+        <div>
+         <input class="text" id="searchtext" name="q" size="20" value="" />
+         <input class="button" id="searchbutton" type="submit" value="ok" />
+        </div>
+       </form>
+      </li>
+     </ul>
+    </div>      <div class="block pub">
+     <h3>publicidade</h3>
+      <iframe src="/_/ad/?cobrandid=1"
+	   width="180" height="150" frameborder="0" style="border: 0px" marginwidth="0" marginheight="0" scrolling="no">
+	  </iframe>
+    </div>
+      <div class="block profile">
+     <h3>Monteiro39</h3>
+<a href="http://blogs.iol.pt/profile/?userid=44696"><img src="http://amadeo.blogs.iol.pt/repository/44696/1577207.105.p.tn.jpg" width="105" height="105" alt="Monteiro39" /></a>     <ul>
+ <li><strong>Age:</strong> 70</li> <li><strong>Location:</strong> Porto, Portugal</li> <li><strong>Interests:</strong> Desporto,Futebol,Música</li>      </ul>
+     <ul>
+      <li class="profile-more"><a href="http://blogs.iol.pt/profile/?userid=44696">(mais sobre mim!!)</a></li>
+     </ul>
+    </div>      <div class="block">
+     <h3>Lista de Tags</h3>
+      <ul>
+          <li><a href="http://dragaosenior.blogs.iol.pt//FC+Porto/">FC Porto</a> <a href="http://dragaosenior.blogs.iol.pt//FC Porto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//FC Porto/">2</a><a href="http://dragaosenior.blogs.iol.pt//FC Porto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Credibilidade%3F%21/">Credibilidade?!</a> <a href="http://dragaosenior.blogs.iol.pt//Credibilidade?!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Credibilidade?!/">2</a><a href="http://dragaosenior.blogs.iol.pt//Credibilidade?!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Coment%C3%A1rios/">Comentários</a> <a href="http://dragaosenior.blogs.iol.pt//Comentários/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Comentários/">2</a><a href="http://dragaosenior.blogs.iol.pt//Comentários/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Atalho+FC+Porto/">Atalho FC Porto</a> <a href="http://dragaosenior.blogs.iol.pt//Atalho FC Porto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Atalho FC Porto/">2</a><a href="http://dragaosenior.blogs.iol.pt//Atalho FC Porto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Agradecimento/">Agradecimento</a> <a href="http://dragaosenior.blogs.iol.pt//Agradecimento/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Agradecimento/">2</a><a href="http://dragaosenior.blogs.iol.pt//Agradecimento/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//quando+joga+fora%21/">quando joga fora!</a> <a href="http://dragaosenior.blogs.iol.pt//quando joga fora!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//quando joga fora!/">1</a><a href="http://dragaosenior.blogs.iol.pt//quando joga fora!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+equipa+n%C3%A3o+merecia+a+in%C3%A9pcia+t%C3%A1ctica%21/">A equipa não merecia a inépcia táctica!</a> <a href="http://dragaosenior.blogs.iol.pt//A equipa não merecia a inépcia táctica!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A equipa não merecia a inépcia táctica!/">1</a><a href="http://dragaosenior.blogs.iol.pt//A equipa não merecia a inépcia táctica!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Mais+tr%C3%AAs+envelopes/">Mais três envelopes</a> <a href="http://dragaosenior.blogs.iol.pt//Mais três envelopes/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Mais três envelopes/">1</a><a href="http://dragaosenior.blogs.iol.pt//Mais três envelopes/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+esperteza+saloia+do+sr.+platini/">A esperteza saloia do sr. platini</a> <a href="http://dragaosenior.blogs.iol.pt//A esperteza saloia do sr. platini/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A esperteza saloia do sr. platini/">1</a><a href="http://dragaosenior.blogs.iol.pt//A esperteza saloia do sr. platini/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Viver+o+FC+Porto/">Viver o FC Porto</a> <a href="http://dragaosenior.blogs.iol.pt//Viver o FC Porto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Viver o FC Porto/">1</a><a href="http://dragaosenior.blogs.iol.pt//Viver o FC Porto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+falta+de+exig%C3%AAncia+de+Jesualdo+Ferreira%21/">A falta de exigência de Jesualdo Ferreira!</a> <a href="http://dragaosenior.blogs.iol.pt//A falta de exigência de Jesualdo Ferreira!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A falta de exigência de Jesualdo Ferreira!/">1</a><a href="http://dragaosenior.blogs.iol.pt//A falta de exigência de Jesualdo Ferreira!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+equipa+de+futebol/">A equipa de futebol</a> <a href="http://dragaosenior.blogs.iol.pt//A equipa de futebol/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A equipa de futebol/">1</a><a href="http://dragaosenior.blogs.iol.pt//A equipa de futebol/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+forma+actual+da+equipa/">A forma actual da equipa</a> <a href="http://dragaosenior.blogs.iol.pt//A forma actual da equipa/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A forma actual da equipa/">1</a><a href="http://dragaosenior.blogs.iol.pt//A forma actual da equipa/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Tachos+para+os+dirigentes/">Tachos para os dirigentes</a> <a href="http://dragaosenior.blogs.iol.pt//Tachos para os dirigentes/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Tachos para os dirigentes/">1</a><a href="http://dragaosenior.blogs.iol.pt//Tachos para os dirigentes/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//O+1%2F2+%22bluff%22+do+Jaime+Pacheco/">O 1/2 "bluff" do Jaime Pacheco</a> <a href="http://dragaosenior.blogs.iol.pt//O 1/2 "bluff" do Jaime Pacheco/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//O 1/2 "bluff" do Jaime Pacheco/">1</a><a href="http://dragaosenior.blogs.iol.pt//O 1/2 "bluff" do Jaime Pacheco/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+atitude+do+Boavista+perante+o+FC+Porto/">A atitude do Boavista perante o FC Porto</a> <a href="http://dragaosenior.blogs.iol.pt//A atitude do Boavista perante o FC Porto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A atitude do Boavista perante o FC Porto/">1</a><a href="http://dragaosenior.blogs.iol.pt//A atitude do Boavista perante o FC Porto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Parafraseando+Dias+da+Cunha/">Parafraseando Dias da Cunha</a> <a href="http://dragaosenior.blogs.iol.pt//Parafraseando Dias da Cunha/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Parafraseando Dias da Cunha/">1</a><a href="http://dragaosenior.blogs.iol.pt//Parafraseando Dias da Cunha/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Meio+desaire/">Meio desaire</a> <a href="http://dragaosenior.blogs.iol.pt//Meio desaire/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Meio desaire/">1</a><a href="http://dragaosenior.blogs.iol.pt//Meio desaire/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+influ%C3%AAncia+da+Comunica%C3%A7%C3%A3o+Social+no+futebol+%21/">A influência da Comunicação Social no futebol !</a> <a href="http://dragaosenior.blogs.iol.pt//A influência da Comunicação Social no futebol !/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A influência da Comunicação Social no futebol !/">1</a><a href="http://dragaosenior.blogs.iol.pt//A influência da Comunicação Social no futebol !/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//O+momento+actual+do+nosso+futebol/">O momento actual do nosso futebol</a> <a href="http://dragaosenior.blogs.iol.pt//O momento actual do nosso futebol/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//O momento actual do nosso futebol/">1</a><a href="http://dragaosenior.blogs.iol.pt//O momento actual do nosso futebol/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Alta+Competi%C3%A7%C3%A3o+%C3%A9+para+qu%C3%A9m+t%C3%A9m+pedalada/">Alta Competição é para quém tém pedalada</a> <a href="http://dragaosenior.blogs.iol.pt//Alta Competição é para quém tém pedalada/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Alta Competição é para quém tém pedalada/">1</a><a href="http://dragaosenior.blogs.iol.pt//Alta Competição é para quém tém pedalada/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Pol%C3%ADticos+eleitoralistas/">Políticos eleitoralistas</a> <a href="http://dragaosenior.blogs.iol.pt//Políticos eleitoralistas/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Políticos eleitoralistas/">1</a><a href="http://dragaosenior.blogs.iol.pt//Políticos eleitoralistas/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//An%C3%A1lise+do+jogo/">Análise do jogo</a> <a href="http://dragaosenior.blogs.iol.pt//Análise do jogo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Análise do jogo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Análise do jogo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Resposta+a+um+Amigo+Dragao/">Resposta a um Amigo Dragao</a> <a href="http://dragaosenior.blogs.iol.pt//Resposta a um Amigo Dragao/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Resposta a um Amigo Dragao/">1</a><a href="http://dragaosenior.blogs.iol.pt//Resposta a um Amigo Dragao/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Anderson/">Anderson</a> <a href="http://dragaosenior.blogs.iol.pt//Anderson/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Anderson/">1</a><a href="http://dragaosenior.blogs.iol.pt//Anderson/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Um+%C3%A1rbitro+condicionado+pelo+%22Apito%22/">Um árbitro condicionado pelo "Apito"</a> <a href="http://dragaosenior.blogs.iol.pt//Um árbitro condicionado pelo "Apito"/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Um árbitro condicionado pelo "Apito"/">1</a><a href="http://dragaosenior.blogs.iol.pt//Um árbitro condicionado pelo "Apito"/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Anivers%C3%A1rio+do+Jorge+Nuno+%2870+anos%29/">Aniversário do Jorge Nuno (70 anos)</a> <a href="http://dragaosenior.blogs.iol.pt//Aniversário do Jorge Nuno (70 anos)/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Aniversário do Jorge Nuno (70 anos)/">1</a><a href="http://dragaosenior.blogs.iol.pt//Aniversário do Jorge Nuno (70 anos)/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Inconceb%C3%ADvel/">Inconcebível</a> <a href="http://dragaosenior.blogs.iol.pt//Inconcebível/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Inconcebível/">1</a><a href="http://dragaosenior.blogs.iol.pt//Inconcebível/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Antevis%C3%A3o+do+jogo+com+o+Estrela+para+a+Ta%C3%A7a+de+Portugal/">Antevisão do jogo com o Estrela para a Taça de Portugal</a> <a href="http://dragaosenior.blogs.iol.pt//Antevisão do jogo com o Estrela para a Taça de Portugal/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Antevisão do jogo com o Estrela para a Taça de Portugal/">1</a><a href="http://dragaosenior.blogs.iol.pt//Antevisão do jogo com o Estrela para a Taça de Portugal/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Mafioso/">Mafioso</a> <a href="http://dragaosenior.blogs.iol.pt//Mafioso/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Mafioso/">1</a><a href="http://dragaosenior.blogs.iol.pt//Mafioso/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//a+paix%C3%A3o+cega-vos./">a paixão cega-vos.</a> <a href="http://dragaosenior.blogs.iol.pt//a paixão cega-vos./" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//a paixão cega-vos./">1</a><a href="http://dragaosenior.blogs.iol.pt//a paixão cega-vos./" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Manobra+benfiquista+arquivada/">Manobra benfiquista arquivada</a> <a href="http://dragaosenior.blogs.iol.pt//Manobra benfiquista arquivada/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Manobra benfiquista arquivada/">1</a><a href="http://dragaosenior.blogs.iol.pt//Manobra benfiquista arquivada/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Apito+final+conveniente/">Apito final conveniente</a> <a href="http://dragaosenior.blogs.iol.pt//Apito final conveniente/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Apito final conveniente/">1</a><a href="http://dragaosenior.blogs.iol.pt//Apito final conveniente/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+desorganiza%C3%A7%C3%A3o+da+TAP/">A desorganização da TAP</a> <a href="http://dragaosenior.blogs.iol.pt//A desorganização da TAP/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A desorganização da TAP/">1</a><a href="http://dragaosenior.blogs.iol.pt//A desorganização da TAP/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+predominancia+da+Capital+no+CA+de+Arbitragem+da+Liga+do+Futebol+Profissional/">A predominancia da Capital no CA de Arbitragem da Liga do Futebol Profissional</a> <a href="http://dragaosenior.blogs.iol.pt//A predominancia da Capital no CA de Arbitragem da Liga do Futebol Profissional/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A predominancia da Capital no CA de Arbitragem da Liga do Futebol Profissional/">1</a><a href="http://dragaosenior.blogs.iol.pt//A predominancia da Capital no CA de Arbitragem da Liga do Futebol Profissional/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//o+fen%C3%B3meno/">o fenómeno</a> <a href="http://dragaosenior.blogs.iol.pt//o fenómeno/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//o fenómeno/">1</a><a href="http://dragaosenior.blogs.iol.pt//o fenómeno/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Aproveitamento+do+Plantel+%28refor%C3%A7os%29/">Aproveitamento do Plantel (reforços)</a> <a href="http://dragaosenior.blogs.iol.pt//Aproveitamento do Plantel (reforços)/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Aproveitamento do Plantel (reforços)/">1</a><a href="http://dragaosenior.blogs.iol.pt//Aproveitamento do Plantel (reforços)/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Os+m%C3%A9ritos+do+Jesualdo/">Os méritos do Jesualdo</a> <a href="http://dragaosenior.blogs.iol.pt//Os méritos do Jesualdo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Os méritos do Jesualdo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Os méritos do Jesualdo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Aproveitamento+dos+lances+de+bola+parada/">Aproveitamento dos lances de bola parada</a> <a href="http://dragaosenior.blogs.iol.pt//Aproveitamento dos lances de bola parada/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Aproveitamento dos lances de bola parada/">1</a><a href="http://dragaosenior.blogs.iol.pt//Aproveitamento dos lances de bola parada/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Paulinho+chico+esperto/">Paulinho chico esperto</a> <a href="http://dragaosenior.blogs.iol.pt//Paulinho chico esperto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Paulinho chico esperto/">1</a><a href="http://dragaosenior.blogs.iol.pt//Paulinho chico esperto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Aqui+n%C3%A3o+h%C3%A1+saldos%21/">Aqui não há saldos!</a> <a href="http://dragaosenior.blogs.iol.pt//Aqui não há saldos!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Aqui não há saldos!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Aqui não há saldos!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Primeira+derrota+da+%C3%A9poca/">Primeira derrota da época</a> <a href="http://dragaosenior.blogs.iol.pt//Primeira derrota da época/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Primeira derrota da época/">1</a><a href="http://dragaosenior.blogs.iol.pt//Primeira derrota da época/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+raz%C3%A3o+do+meu+descontentamento/">A razão do meu descontentamento</a> <a href="http://dragaosenior.blogs.iol.pt//A razão do meu descontentamento/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A razão do meu descontentamento/">1</a><a href="http://dragaosenior.blogs.iol.pt//A razão do meu descontentamento/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Refor%C3%A7ar+a+equipa+do+FC+Porto/">Reforçar a equipa do FC Porto</a> <a href="http://dragaosenior.blogs.iol.pt//Reforçar a equipa do FC Porto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Reforçar a equipa do FC Porto/">1</a><a href="http://dragaosenior.blogs.iol.pt//Reforçar a equipa do FC Porto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Arbitragem/">Arbitragem</a> <a href="http://dragaosenior.blogs.iol.pt//Arbitragem/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Arbitragem/">1</a><a href="http://dragaosenior.blogs.iol.pt//Arbitragem/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Sobre+os+Xistras+e+os+Luc%C3%ADlios/">Sobre os Xistras e os Lucílios</a> <a href="http://dragaosenior.blogs.iol.pt//Sobre os Xistras e os Lucílios/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Sobre os Xistras e os Lucílios/">1</a><a href="http://dragaosenior.blogs.iol.pt//Sobre os Xistras e os Lucílios/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//%C3%81rbitro+anti-FCP+e+a+precisar+de+mudar+de+lentes/">Árbitro anti-FCP e a precisar de mudar de lentes</a> <a href="http://dragaosenior.blogs.iol.pt//Árbitro anti-FCP e a precisar de mudar de lentes/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Árbitro anti-FCP e a precisar de mudar de lentes/">1</a><a href="http://dragaosenior.blogs.iol.pt//Árbitro anti-FCP e a precisar de mudar de lentes/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//%C3%80+aten%C3%A7%C3%A3o+de+Jesualdo+Ferreira/">À atenção de Jesualdo Ferreira</a> <a href="http://dragaosenior.blogs.iol.pt//À atenção de Jesualdo Ferreira/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//À atenção de Jesualdo Ferreira/">1</a><a href="http://dragaosenior.blogs.iol.pt//À atenção de Jesualdo Ferreira/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//%C3%81rbitros+deliberadamente+anti-FCPorto/">Árbitros deliberadamente anti-FCPorto</a> <a href="http://dragaosenior.blogs.iol.pt//Árbitros deliberadamente anti-FCPorto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Árbitros deliberadamente anti-FCPorto/">1</a><a href="http://dragaosenior.blogs.iol.pt//Árbitros deliberadamente anti-FCPorto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Venda+a+pre%C3%A7o+de+SALDO/">Venda a preço de SALDO</a> <a href="http://dragaosenior.blogs.iol.pt//Venda a preço de SALDO/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Venda a preço de SALDO/">1</a><a href="http://dragaosenior.blogs.iol.pt//Venda a preço de SALDO/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//%C3%A1rbitro+tendencioso/">árbitro tendencioso</a> <a href="http://dragaosenior.blogs.iol.pt//árbitro tendencioso/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//árbitro tendencioso/">1</a><a href="http://dragaosenior.blogs.iol.pt//árbitro tendencioso/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Guardiola+chorinhas/">Guardiola chorinhas</a> <a href="http://dragaosenior.blogs.iol.pt//Guardiola chorinhas/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Guardiola chorinhas/">1</a><a href="http://dragaosenior.blogs.iol.pt//Guardiola chorinhas/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+realidade+nua+e+crua+dos+acontecimentos/">A realidade nua e crua dos acontecimentos</a> <a href="http://dragaosenior.blogs.iol.pt//A realidade nua e crua dos acontecimentos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A realidade nua e crua dos acontecimentos/">1</a><a href="http://dragaosenior.blogs.iol.pt//A realidade nua e crua dos acontecimentos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Individualismo+em+excesso/">Individualismo em excesso</a> <a href="http://dragaosenior.blogs.iol.pt//Individualismo em excesso/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Individualismo em excesso/">1</a><a href="http://dragaosenior.blogs.iol.pt//Individualismo em excesso/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//As+aptid%C3%B5es+t%C3%A9cnicas+de+JMourinho/">As aptidões técnicas de JMourinho</a> <a href="http://dragaosenior.blogs.iol.pt//As aptidões técnicas de JMourinho/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//As aptidões técnicas de JMourinho/">1</a><a href="http://dragaosenior.blogs.iol.pt//As aptidões técnicas de JMourinho/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//jogo+colectivo/">jogo colectivo</a> <a href="http://dragaosenior.blogs.iol.pt//jogo colectivo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//jogo colectivo/">1</a><a href="http://dragaosenior.blogs.iol.pt//jogo colectivo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//As+habilidades+do+sr.Bata/">As habilidades do sr.Bata</a> <a href="http://dragaosenior.blogs.iol.pt//As habilidades do sr.Bata/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//As habilidades do sr.Bata/">1</a><a href="http://dragaosenior.blogs.iol.pt//As habilidades do sr.Bata/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Mais+instrumentaliza%C3%A7%C3%A3o/">Mais instrumentalização</a> <a href="http://dragaosenior.blogs.iol.pt//Mais instrumentalização/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Mais instrumentalização/">1</a><a href="http://dragaosenior.blogs.iol.pt//Mais instrumentalização/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//As+manhas+do+JPacheco/">As manhas do JPacheco</a> <a href="http://dragaosenior.blogs.iol.pt//As manhas do JPacheco/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//As manhas do JPacheco/">1</a><a href="http://dragaosenior.blogs.iol.pt//As manhas do JPacheco/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Manietar+o+advers%C3%A1rio+no+meio-campo/">Manietar o adversário no meio-campo</a> <a href="http://dragaosenior.blogs.iol.pt//Manietar o adversário no meio-campo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Manietar o adversário no meio-campo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Manietar o adversário no meio-campo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//As+queixas+do+Jaime/">As queixas do Jaime</a> <a href="http://dragaosenior.blogs.iol.pt//As queixas do Jaime/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//As queixas do Jaime/">1</a><a href="http://dragaosenior.blogs.iol.pt//As queixas do Jaime/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//mas+com+vantagem+para+o+FC+Porto/">mas com vantagem para o FC Porto</a> <a href="http://dragaosenior.blogs.iol.pt//mas com vantagem para o FC Porto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//mas com vantagem para o FC Porto/">1</a><a href="http://dragaosenior.blogs.iol.pt//mas com vantagem para o FC Porto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//No+fundo+uma+r%C3%A9stea+de+cren%C3%A7a./">No fundo uma réstea de crença.</a> <a href="http://dragaosenior.blogs.iol.pt//No fundo uma réstea de crença./" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//No fundo uma réstea de crença./">1</a><a href="http://dragaosenior.blogs.iol.pt//No fundo uma réstea de crença./" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//%C3%80+aten%C3%A7%C3%A3o+de+quem+de+direito/">À atenção de quem de direito</a> <a href="http://dragaosenior.blogs.iol.pt//À atenção de quem de direito/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//À atenção de quem de direito/">1</a><a href="http://dragaosenior.blogs.iol.pt//À atenção de quem de direito/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//A+tendencia+nas+arbitragens/">A tendencia nas arbitragens</a> <a href="http://dragaosenior.blogs.iol.pt//A tendencia nas arbitragens/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//A tendencia nas arbitragens/">1</a><a href="http://dragaosenior.blogs.iol.pt//A tendencia nas arbitragens/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//No+jogo+da+segunda+m%C3%A3o+precisamos+de+ser+mais+assertivos/">No jogo da segunda mão precisamos de ser mais assertivos</a> <a href="http://dragaosenior.blogs.iol.pt//No jogo da segunda mão precisamos de ser mais assertivos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//No jogo da segunda mão precisamos de ser mais assertivos/">1</a><a href="http://dragaosenior.blogs.iol.pt//No jogo da segunda mão precisamos de ser mais assertivos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Atitude+injustific%C3%A1vel/">Atitude injustificável</a> <a href="http://dragaosenior.blogs.iol.pt//Atitude injustificável/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Atitude injustificável/">1</a><a href="http://dragaosenior.blogs.iol.pt//Atitude injustificável/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Obras+que+merecem+aplausos/">Obras que merecem aplausos</a> <a href="http://dragaosenior.blogs.iol.pt//Obras que merecem aplausos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Obras que merecem aplausos/">1</a><a href="http://dragaosenior.blogs.iol.pt//Obras que merecem aplausos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Aus%C3%AAncia+de+bom+senso+dos+respons%C3%A1veis/">Ausência de bom senso dos responsáveis</a> <a href="http://dragaosenior.blogs.iol.pt//Ausência de bom senso dos responsáveis/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Ausência de bom senso dos responsáveis/">1</a><a href="http://dragaosenior.blogs.iol.pt//Ausência de bom senso dos responsáveis/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Olha+o+desastre%21/">Olha o desastre!</a> <a href="http://dragaosenior.blogs.iol.pt//Olha o desastre!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Olha o desastre!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Olha o desastre!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Aus%C3%AAncia+de+objectividade/">Ausência de objectividade</a> <a href="http://dragaosenior.blogs.iol.pt//Ausência de objectividade/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Ausência de objectividade/">1</a><a href="http://dragaosenior.blogs.iol.pt//Ausência de objectividade/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Op%C3%B4r+ao+contra-ataque/">Opôr ao contra-ataque</a> <a href="http://dragaosenior.blogs.iol.pt//Opôr ao contra-ataque/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Opôr ao contra-ataque/">1</a><a href="http://dragaosenior.blogs.iol.pt//Opôr ao contra-ataque/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Avalia%C3%A7%C3%A3o+de+%C3%A1rbitros+e+observadores/">Avaliação de árbitros e observadores</a> <a href="http://dragaosenior.blogs.iol.pt//Avaliação de árbitros e observadores/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Avaliação de árbitros e observadores/">1</a><a href="http://dragaosenior.blogs.iol.pt//Avaliação de árbitros e observadores/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//O+t%C3%ADtulo+da+verdade/">O título da verdade</a> <a href="http://dragaosenior.blogs.iol.pt//O título da verdade/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//O título da verdade/">1</a><a href="http://dragaosenior.blogs.iol.pt//O título da verdade/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Aviso+%C3%A0+navega%C3%A7%C3%A3o/">Aviso à navegação</a> <a href="http://dragaosenior.blogs.iol.pt//Aviso à navegação/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Aviso à navegação/">1</a><a href="http://dragaosenior.blogs.iol.pt//Aviso à navegação/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Para+se+ser+bom+de+bola/">Para se ser bom de bola</a> <a href="http://dragaosenior.blogs.iol.pt//Para se ser bom de bola/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Para se ser bom de bola/">1</a><a href="http://dragaosenior.blogs.iol.pt//Para se ser bom de bola/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Baixar+o+pau+com+o+consentimento+dos+%C3%A1rbitros%21/">Baixar o pau com o consentimento dos árbitros!</a> <a href="http://dragaosenior.blogs.iol.pt//Baixar o pau com o consentimento dos árbitros!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Baixar o pau com o consentimento dos árbitros!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Baixar o pau com o consentimento dos árbitros!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//P%C3%A9ssimo+neg%C3%B3cio%2FDesilus%C3%A3o/">Péssimo negócio/Desilusão</a> <a href="http://dragaosenior.blogs.iol.pt//Péssimo negócio/Desilusão/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Péssimo negócio/Desilusão/">1</a><a href="http://dragaosenior.blogs.iol.pt//Péssimo negócio/Desilusão/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Bom+esfor%C3%A7o+da+Naval/">Bom esforço da Naval</a> <a href="http://dragaosenior.blogs.iol.pt//Bom esforço da Naval/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Bom esforço da Naval/">1</a><a href="http://dragaosenior.blogs.iol.pt//Bom esforço da Naval/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//precisa-se/">precisa-se</a> <a href="http://dragaosenior.blogs.iol.pt//precisa-se/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//precisa-se/">1</a><a href="http://dragaosenior.blogs.iol.pt//precisa-se/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Bons+jogadores+e+um+bom+ponta+de+lan%C3%A7a%21/">Bons jogadores e um bom ponta de lança!</a> <a href="http://dragaosenior.blogs.iol.pt//Bons jogadores e um bom ponta de lança!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Bons jogadores e um bom ponta de lança!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Bons jogadores e um bom ponta de lança!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Profissionais+de+meia-tigela%21/">Profissionais de meia-tigela!</a> <a href="http://dragaosenior.blogs.iol.pt//Profissionais de meia-tigela!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Profissionais de meia-tigela!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Profissionais de meia-tigela!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Bruno+Vale+que+jeito+nos+daria+hoje%21/">Bruno Vale que jeito nos daria hoje!</a> <a href="http://dragaosenior.blogs.iol.pt//Bruno Vale que jeito nos daria hoje!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Bruno Vale que jeito nos daria hoje!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Bruno Vale que jeito nos daria hoje!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Rafa+Benitez+diz+que+vem+jogar+para+ganhar%21/">Rafa Benitez diz que vem jogar para ganhar!</a> <a href="http://dragaosenior.blogs.iol.pt//Rafa Benitez diz que vem jogar para ganhar!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Rafa Benitez diz que vem jogar para ganhar!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Rafa Benitez diz que vem jogar para ganhar!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Canal+de+televis%C3%A3o+do+clube/">Canal de televisão do clube</a> <a href="http://dragaosenior.blogs.iol.pt//Canal de televisão do clube/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Canal de televisão do clube/">1</a><a href="http://dragaosenior.blogs.iol.pt//Canal de televisão do clube/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Refor%C3%A7os+contractados+ainda+sem+utiliza%C3%A7%C3%A3o%21/">Reforços contractados ainda sem utilização!</a> <a href="http://dragaosenior.blogs.iol.pt//Reforços contractados ainda sem utilização!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Reforços contractados ainda sem utilização!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Reforços contractados ainda sem utilização!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Candidatos+ao+controle+dos+%C3%A1rbitros%21/">Candidatos ao controle dos árbitros!</a> <a href="http://dragaosenior.blogs.iol.pt//Candidatos ao controle dos árbitros!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Candidatos ao controle dos árbitros!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Candidatos ao controle dos árbitros!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Segundas+op%C3%A7%C3%B5es+treinam+pouco+e+mal+%21/">Segundas opções treinam pouco e mal !</a> <a href="http://dragaosenior.blogs.iol.pt//Segundas opções treinam pouco e mal !/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Segundas opções treinam pouco e mal !/">1</a><a href="http://dragaosenior.blogs.iol.pt//Segundas opções treinam pouco e mal !/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Carlos+Azenha+um+nome+dum+t%C3%A9cnico+a+reter/">Carlos Azenha um nome dum técnico a reter</a> <a href="http://dragaosenior.blogs.iol.pt//Carlos Azenha um nome dum técnico a reter/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Carlos Azenha um nome dum técnico a reter/">1</a><a href="http://dragaosenior.blogs.iol.pt//Carlos Azenha um nome dum técnico a reter/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Surpreendente+%284%C2%BA+classificado+pode+ascender+%C3%A0+Champions%29/">Surpreendente (4º classificado pode ascender à Champions)</a> <a href="http://dragaosenior.blogs.iol.pt//Surpreendente (4º classificado pode ascender à Champions)/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Surpreendente (4º classificado pode ascender à Champions)/">1</a><a href="http://dragaosenior.blogs.iol.pt//Surpreendente (4º classificado pode ascender à Champions)/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Cegos+dum+olho%21/">Cegos dum olho!</a> <a href="http://dragaosenior.blogs.iol.pt//Cegos dum olho!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Cegos dum olho!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Cegos dum olho!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Tend%C3%AAncia+caseira+do+%C3%A1rbitro+belga+Van+der+Velde/">Tendência caseira do árbitro belga Van der Velde</a> <a href="http://dragaosenior.blogs.iol.pt//Tendência caseira do árbitro belga Van der Velde/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Tendência caseira do árbitro belga Van der Velde/">1</a><a href="http://dragaosenior.blogs.iol.pt//Tendência caseira do árbitro belga Van der Velde/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Cineastas+de+meia+tigela/">Cineastas de meia tigela</a> <a href="http://dragaosenior.blogs.iol.pt//Cineastas de meia tigela/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Cineastas de meia tigela/">1</a><a href="http://dragaosenior.blogs.iol.pt//Cineastas de meia tigela/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Trofeus+ganhos+pelo+FC+Porto/">Trofeus ganhos pelo FC Porto</a> <a href="http://dragaosenior.blogs.iol.pt//Trofeus ganhos pelo FC Porto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Trofeus ganhos pelo FC Porto/">1</a><a href="http://dragaosenior.blogs.iol.pt//Trofeus ganhos pelo FC Porto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Cinismo+vermelho/">Cinismo vermelho</a> <a href="http://dragaosenior.blogs.iol.pt//Cinismo vermelho/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Cinismo vermelho/">1</a><a href="http://dragaosenior.blogs.iol.pt//Cinismo vermelho/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//V%C3%A2ndalos/">Vândalos</a> <a href="http://dragaosenior.blogs.iol.pt//Vândalos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Vândalos/">1</a><a href="http://dragaosenior.blogs.iol.pt//Vândalos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Colabora%C3%A7%C3%A3o+de+Jos%C3%A9+M.Peixoto/">Colaboração de José M.Peixoto</a> <a href="http://dragaosenior.blogs.iol.pt//Colaboração de José M.Peixoto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Colaboração de José M.Peixoto/">1</a><a href="http://dragaosenior.blogs.iol.pt//Colaboração de José M.Peixoto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Vieira+protege+criminosos/">Vieira protege criminosos</a> <a href="http://dragaosenior.blogs.iol.pt//Vieira protege criminosos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Vieira protege criminosos/">1</a><a href="http://dragaosenior.blogs.iol.pt//Vieira protege criminosos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Com%C3%A9dia+com+estilo+mourisco/">Comédia com estilo mourisco</a> <a href="http://dragaosenior.blogs.iol.pt//Comédia com estilo mourisco/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Comédia com estilo mourisco/">1</a><a href="http://dragaosenior.blogs.iol.pt//Comédia com estilo mourisco/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//18%C2%AA+Jornada+da+Liga/">18ª Jornada da Liga</a> <a href="http://dragaosenior.blogs.iol.pt//18ª Jornada da Liga/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//18ª Jornada da Liga/">1</a><a href="http://dragaosenior.blogs.iol.pt//18ª Jornada da Liga/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Comentadores+de+futebol/">Comentadores de futebol</a> <a href="http://dragaosenior.blogs.iol.pt//Comentadores de futebol/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Comentadores de futebol/">1</a><a href="http://dragaosenior.blogs.iol.pt//Comentadores de futebol/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Habilidosos+estes+srs%21+Depois+os+outros+%C3%A9+que+s%C3%A3o+corruptos%21/">Habilidosos estes srs! Depois os outros é que são corruptos!</a> <a href="http://dragaosenior.blogs.iol.pt//Habilidosos estes srs! Depois os outros é que são corruptos!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Habilidosos estes srs! Depois os outros é que são corruptos!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Habilidosos estes srs! Depois os outros é que são corruptos!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Jesualdo+Ferreira+descura+prepara%C3%A7%C3%A3o+dos+reservistas/">Jesualdo Ferreira descura preparação dos reservistas</a> <a href="http://dragaosenior.blogs.iol.pt//Jesualdo Ferreira descura preparação dos reservistas/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Jesualdo Ferreira descura preparação dos reservistas/">1</a><a href="http://dragaosenior.blogs.iol.pt//Jesualdo Ferreira descura preparação dos reservistas/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Inconsci%C3%AAncia/">Inconsciência</a> <a href="http://dragaosenior.blogs.iol.pt//Inconsciência/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Inconsciência/">1</a><a href="http://dragaosenior.blogs.iol.pt//Inconsciência/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Jogadores+possantes+e+t%C3%A8cnicamente+evoluidos/">Jogadores possantes e tècnicamente evoluidos</a> <a href="http://dragaosenior.blogs.iol.pt//Jogadores possantes e tècnicamente evoluidos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Jogadores possantes e tècnicamente evoluidos/">1</a><a href="http://dragaosenior.blogs.iol.pt//Jogadores possantes e tècnicamente evoluidos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Informa%C3%A7%C3%A3o/">Informação</a> <a href="http://dragaosenior.blogs.iol.pt//Informação/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Informação/">1</a><a href="http://dragaosenior.blogs.iol.pt//Informação/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Coment%C3%A1rios+tendenciosos/">Comentários tendenciosos</a> <a href="http://dragaosenior.blogs.iol.pt//Comentários tendenciosos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Comentários tendenciosos/">1</a><a href="http://dragaosenior.blogs.iol.pt//Comentários tendenciosos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Jesualdo+Ferreira+engana-se+na+t%C3%A1ctica+./">Jesualdo Ferreira engana-se na táctica .</a> <a href="http://dragaosenior.blogs.iol.pt//Jesualdo Ferreira engana-se na táctica ./" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Jesualdo Ferreira engana-se na táctica ./">1</a><a href="http://dragaosenior.blogs.iol.pt//Jesualdo Ferreira engana-se na táctica ./" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Comunica%C3%A7%C3%A3o+Social+adepta+do+Benfica+e+do+Sporting/">Comunicação Social adepta do Benfica e do Sporting</a> <a href="http://dragaosenior.blogs.iol.pt//Comunicação Social adepta do Benfica e do Sporting/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Comunicação Social adepta do Benfica e do Sporting/">1</a><a href="http://dragaosenior.blogs.iol.pt//Comunicação Social adepta do Benfica e do Sporting/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Jogar+futebol+com+a+bola+pelo+ar/">Jogar futebol com a bola pelo ar</a> <a href="http://dragaosenior.blogs.iol.pt//Jogar futebol com a bola pelo ar/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Jogar futebol com a bola pelo ar/">1</a><a href="http://dragaosenior.blogs.iol.pt//Jogar futebol com a bola pelo ar/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Comunica%C3%A7%C3%A3o+Social+afecta+aos+2+grandes+de+Lisboa/">Comunicação Social afecta aos 2 grandes de Lisboa</a> <a href="http://dragaosenior.blogs.iol.pt//Comunicação Social afecta aos 2 grandes de Lisboa/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Comunicação Social afecta aos 2 grandes de Lisboa/">1</a><a href="http://dragaosenior.blogs.iol.pt//Comunicação Social afecta aos 2 grandes de Lisboa/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Lu%C3%ADs+Paez/">Luís Paez</a> <a href="http://dragaosenior.blogs.iol.pt//Luís Paez/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Luís Paez/">1</a><a href="http://dragaosenior.blogs.iol.pt//Luís Paez/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Condi%C3%A7%C3%A3o+f%C3%ADsica+no+Futebol/">Condição física no Futebol</a> <a href="http://dragaosenior.blogs.iol.pt//Condição física no Futebol/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Condição física no Futebol/">1</a><a href="http://dragaosenior.blogs.iol.pt//Condição física no Futebol/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Mais+dinheiro/">Mais dinheiro</a> <a href="http://dragaosenior.blogs.iol.pt//Mais dinheiro/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Mais dinheiro/">1</a><a href="http://dragaosenior.blogs.iol.pt//Mais dinheiro/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Conselho+de+Justi%C3%A7a+da+FPF+parecer+contr%C3%A1rio+ao+de+F.do+A./">Conselho de Justiça da FPF parecer contrário ao de F.do A.</a> <a href="http://dragaosenior.blogs.iol.pt//Conselho de Justiça da FPF parecer contrário ao de F.do A./" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Conselho de Justiça da FPF parecer contrário ao de F.do A./">1</a><a href="http://dragaosenior.blogs.iol.pt//Conselho de Justiça da FPF parecer contrário ao de F.do A./" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//mais+responsabilidades./">mais responsabilidades.</a> <a href="http://dragaosenior.blogs.iol.pt//mais responsabilidades./" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//mais responsabilidades./">1</a><a href="http://dragaosenior.blogs.iol.pt//mais responsabilidades./" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Conten%C3%A7%C3%A3o+de+despesas+na+gest%C3%A3o+do+clube/">Contenção de despesas na gestão do clube</a> <a href="http://dragaosenior.blogs.iol.pt//Contenção de despesas na gestão do clube/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Contenção de despesas na gestão do clube/">1</a><a href="http://dragaosenior.blogs.iol.pt//Contenção de despesas na gestão do clube/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Mais+uma+patacoada+do+.../">Mais uma patacoada do ...</a> <a href="http://dragaosenior.blogs.iol.pt//Mais uma patacoada do .../" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Mais uma patacoada do .../">1</a><a href="http://dragaosenior.blogs.iol.pt//Mais uma patacoada do .../" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Contentar+certa+gente/">Contentar certa gente</a> <a href="http://dragaosenior.blogs.iol.pt//Contentar certa gente/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Contentar certa gente/">1</a><a href="http://dragaosenior.blogs.iol.pt//Contentar certa gente/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Manipula%C3%A7%C3%B5es+clubistas/">Manipulações clubistas</a> <a href="http://dragaosenior.blogs.iol.pt//Manipulações clubistas/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Manipulações clubistas/">1</a><a href="http://dragaosenior.blogs.iol.pt//Manipulações clubistas/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Convocados+para+o+jogo+com+o+Rio+Ave/">Convocados para o jogo com o Rio Ave</a> <a href="http://dragaosenior.blogs.iol.pt//Convocados para o jogo com o Rio Ave/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Convocados para o jogo com o Rio Ave/">1</a><a href="http://dragaosenior.blogs.iol.pt//Convocados para o jogo com o Rio Ave/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Manobras+indecentes/">Manobras indecentes</a> <a href="http://dragaosenior.blogs.iol.pt//Manobras indecentes/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Manobras indecentes/">1</a><a href="http://dragaosenior.blogs.iol.pt//Manobras indecentes/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Convocat%C3%B3ria+para+o+jogo+com+o+Estrela/">Convocatória para o jogo com o Estrela</a> <a href="http://dragaosenior.blogs.iol.pt//Convocatória para o jogo com o Estrela/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Convocatória para o jogo com o Estrela/">1</a><a href="http://dragaosenior.blogs.iol.pt//Convocatória para o jogo com o Estrela/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Meias-Finais+da+Ta%C3%A7a+da+Liga/">Meias-Finais da Taça da Liga</a> <a href="http://dragaosenior.blogs.iol.pt//Meias-Finais da Taça da Liga/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Meias-Finais da Taça da Liga/">1</a><a href="http://dragaosenior.blogs.iol.pt//Meias-Finais da Taça da Liga/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//n%C3%A3o+obstante+os+refor%C3%A7os+contratados/">não obstante os reforços contratados</a> <a href="http://dragaosenior.blogs.iol.pt//não obstante os reforços contratados/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//não obstante os reforços contratados/">1</a><a href="http://dragaosenior.blogs.iol.pt//não obstante os reforços contratados/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//M%C3%A9rito+do+Clube+azul+e+branco/">Mérito do Clube azul e branco</a> <a href="http://dragaosenior.blogs.iol.pt//Mérito do Clube azul e branco/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Mérito do Clube azul e branco/">1</a><a href="http://dragaosenior.blogs.iol.pt//Mérito do Clube azul e branco/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Crescer+em+termos+de+profissionalismo/">Crescer em termos de profissionalismo</a> <a href="http://dragaosenior.blogs.iol.pt//Crescer em termos de profissionalismo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Crescer em termos de profissionalismo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Crescer em termos de profissionalismo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Neggociar+sim/">Neggociar sim</a> <a href="http://dragaosenior.blogs.iol.pt//Neggociar sim/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Neggociar sim/">1</a><a href="http://dragaosenior.blogs.iol.pt//Neggociar sim/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Cr%C3%ADtica+constructiva/">Crítica constructiva</a> <a href="http://dragaosenior.blogs.iol.pt//Crítica constructiva/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Crítica constructiva/">1</a><a href="http://dragaosenior.blogs.iol.pt//Crítica constructiva/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//No+futebol+n%C3%A3o+h%C3%A1+segredos.Os+T%C3%A9cnicos+%C3%A9+que+fazem+render+o+peixe./">No futebol não há segredos.Os Técnicos é que fazem render o peixe.</a> <a href="http://dragaosenior.blogs.iol.pt//No futebol não há segredos.Os Técnicos é que fazem render o peixe./" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//No futebol não há segredos.Os Técnicos é que fazem render o peixe./">1</a><a href="http://dragaosenior.blogs.iol.pt//No futebol não há segredos.Os Técnicos é que fazem render o peixe./" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Criticar+arbitragens+impunemente/">Criticar arbitragens impunemente</a> <a href="http://dragaosenior.blogs.iol.pt//Criticar arbitragens impunemente/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Criticar arbitragens impunemente/">1</a><a href="http://dragaosenior.blogs.iol.pt//Criticar arbitragens impunemente/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Notas+sobre+o+Futebol/">Notas sobre o Futebol</a> <a href="http://dragaosenior.blogs.iol.pt//Notas sobre o Futebol/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Notas sobre o Futebol/">1</a><a href="http://dragaosenior.blogs.iol.pt//Notas sobre o Futebol/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Criticar+os+jogadores+em+p%C3%BAblico%21/">Criticar os jogadores em público!</a> <a href="http://dragaosenior.blogs.iol.pt//Criticar os jogadores em público!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Criticar os jogadores em público!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Criticar os jogadores em público!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//O+Benfica+levado+ao+colo/">O Benfica levado ao colo</a> <a href="http://dragaosenior.blogs.iol.pt//O Benfica levado ao colo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//O Benfica levado ao colo/">1</a><a href="http://dragaosenior.blogs.iol.pt//O Benfica levado ao colo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Curiosidades/">Curiosidades</a> <a href="http://dragaosenior.blogs.iol.pt//Curiosidades/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Curiosidades/">1</a><a href="http://dragaosenior.blogs.iol.pt//Curiosidades/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//O+FCP+%C3%A9+a+melhor+equipa+em+Portugal/">O FCP é a melhor equipa em Portugal</a> <a href="http://dragaosenior.blogs.iol.pt//O FCP é a melhor equipa em Portugal/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//O FCP é a melhor equipa em Portugal/">1</a><a href="http://dragaosenior.blogs.iol.pt//O FCP é a melhor equipa em Portugal/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Declara%C3%A7%C3%B5es+de+Jesualdo/">Declarações de Jesualdo</a> <a href="http://dragaosenior.blogs.iol.pt//Declarações de Jesualdo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Declarações de Jesualdo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Declarações de Jesualdo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//O+jogo+que+garantiu+o+Tetra/">O jogo que garantiu o Tetra</a> <a href="http://dragaosenior.blogs.iol.pt//O jogo que garantiu o Tetra/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//O jogo que garantiu o Tetra/">1</a><a href="http://dragaosenior.blogs.iol.pt//O jogo que garantiu o Tetra/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Despudor+na+nomea%C3%A7%C3%A3o+dos+%C3%A1rbitros+para+certos+jogos/">Despudor na nomeação dos árbitros para certos jogos</a> <a href="http://dragaosenior.blogs.iol.pt//Despudor na nomeação dos árbitros para certos jogos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Despudor na nomeação dos árbitros para certos jogos/">1</a><a href="http://dragaosenior.blogs.iol.pt//Despudor na nomeação dos árbitros para certos jogos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//O+mal+da+inveja/">O mal da inveja</a> <a href="http://dragaosenior.blogs.iol.pt//O mal da inveja/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//O mal da inveja/">1</a><a href="http://dragaosenior.blogs.iol.pt//O mal da inveja/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Dias+de+folga+a+mais/">Dias de folga a mais</a> <a href="http://dragaosenior.blogs.iol.pt//Dias de folga a mais/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Dias de folga a mais/">1</a><a href="http://dragaosenior.blogs.iol.pt//Dias de folga a mais/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//O+poder+n%C3%A3o+pode+sair+de+Lisboa/">O poder não pode sair de Lisboa</a> <a href="http://dragaosenior.blogs.iol.pt//O poder não pode sair de Lisboa/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//O poder não pode sair de Lisboa/">1</a><a href="http://dragaosenior.blogs.iol.pt//O poder não pode sair de Lisboa/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Disparate+e+n%C3%A3o+s%C3%B3/">Disparate e não só</a> <a href="http://dragaosenior.blogs.iol.pt//Disparate e não só/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Disparate e não só/">1</a><a href="http://dragaosenior.blogs.iol.pt//Disparate e não só/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Os+abutres+a+posicionar-se%21/">Os abutres a posicionar-se!</a> <a href="http://dragaosenior.blogs.iol.pt//Os abutres a posicionar-se!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Os abutres a posicionar-se!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Os abutres a posicionar-se!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//D%C3%BAvida+quanto+%C3%A0+qualidade%2Fpre%C3%A7o/">Dúvida quanto à qualidade/preço</a> <a href="http://dragaosenior.blogs.iol.pt//Dúvida quanto à qualidade/preço/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Dúvida quanto à qualidade/preço/">1</a><a href="http://dragaosenior.blogs.iol.pt//Dúvida quanto à qualidade/preço/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Os+tubar%C3%B5es+atacam%21/">Os tubarões atacam!</a> <a href="http://dragaosenior.blogs.iol.pt//Os tubarões atacam!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Os tubarões atacam!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Os tubarões atacam!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//E+assim+com+umas+ajudas+o+SCP+vai+progredindo/">E assim com umas ajudas o SCP vai progredindo</a> <a href="http://dragaosenior.blogs.iol.pt//E assim com umas ajudas o SCP vai progredindo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//E assim com umas ajudas o SCP vai progredindo/">1</a><a href="http://dragaosenior.blogs.iol.pt//E assim com umas ajudas o SCP vai progredindo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Para+equilibrar+as+contas/">Para equilibrar as contas</a> <a href="http://dragaosenior.blogs.iol.pt//Para equilibrar as contas/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Para equilibrar as contas/">1</a><a href="http://dragaosenior.blogs.iol.pt//Para equilibrar as contas/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Elucidativo/">Elucidativo</a> <a href="http://dragaosenior.blogs.iol.pt//Elucidativo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Elucidativo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Elucidativo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Para+os+analfabetos/">Para os analfabetos</a> <a href="http://dragaosenior.blogs.iol.pt//Para os analfabetos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Para os analfabetos/">1</a><a href="http://dragaosenior.blogs.iol.pt//Para os analfabetos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Entrega+da+ta%C3%A7a/">Entrega da taça</a> <a href="http://dragaosenior.blogs.iol.pt//Entrega da taça/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Entrega da taça/">1</a><a href="http://dragaosenior.blogs.iol.pt//Entrega da taça/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Patr%C3%A3o+dos+%C3%A1rbitros/">Patrão dos árbitros</a> <a href="http://dragaosenior.blogs.iol.pt//Patrão dos árbitros/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Patrão dos árbitros/">1</a><a href="http://dragaosenior.blogs.iol.pt//Patrão dos árbitros/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Equipas+a+praticar+bom+futebol+precisa-se.../">Equipas a praticar bom futebol precisa-se...</a> <a href="http://dragaosenior.blogs.iol.pt//Equipas a praticar bom futebol precisa-se.../" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Equipas a praticar bom futebol precisa-se.../">1</a><a href="http://dragaosenior.blogs.iol.pt//Equipas a praticar bom futebol precisa-se.../" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Penalti+perdoado+ao+Sporting/">Penalti perdoado ao Sporting</a> <a href="http://dragaosenior.blogs.iol.pt//Penalti perdoado ao Sporting/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Penalti perdoado ao Sporting/">1</a><a href="http://dragaosenior.blogs.iol.pt//Penalti perdoado ao Sporting/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Equipa+t%C3%A9cnica+do+Braga/">Equipa técnica do Braga</a> <a href="http://dragaosenior.blogs.iol.pt//Equipa técnica do Braga/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Equipa técnica do Braga/">1</a><a href="http://dragaosenior.blogs.iol.pt//Equipa técnica do Braga/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Pol%C3%ADcia+adepto+dos+encarnados/">Polícia adepto dos encarnados</a> <a href="http://dragaosenior.blogs.iol.pt//Polícia adepto dos encarnados/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Polícia adepto dos encarnados/">1</a><a href="http://dragaosenior.blogs.iol.pt//Polícia adepto dos encarnados/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Equivocos+do+Mister+Jesualdo/">Equivocos do Mister Jesualdo</a> <a href="http://dragaosenior.blogs.iol.pt//Equivocos do Mister Jesualdo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Equivocos do Mister Jesualdo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Equivocos do Mister Jesualdo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Por+uma+direc%C3%A7%C3%A3o+democr%C3%A1tica/">Por uma direcção democrática</a> <a href="http://dragaosenior.blogs.iol.pt//Por uma direcção democrática/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Por uma direcção democrática/">1</a><a href="http://dragaosenior.blogs.iol.pt//Por uma direcção democrática/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Espectadores/">Espectadores</a> <a href="http://dragaosenior.blogs.iol.pt//Espectadores/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Espectadores/">1</a><a href="http://dragaosenior.blogs.iol.pt//Espectadores/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Pretensa+corrup%C3%A7%C3%A3o/">Pretensa corrupção</a> <a href="http://dragaosenior.blogs.iol.pt//Pretensa corrupção/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Pretensa corrupção/">1</a><a href="http://dragaosenior.blogs.iol.pt//Pretensa corrupção/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Espectativa/">Espectativa</a> <a href="http://dragaosenior.blogs.iol.pt//Espectativa/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Espectativa/">1</a><a href="http://dragaosenior.blogs.iol.pt//Espectativa/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Proeza+dos+sub-19+do+FC+Porto/">Proeza dos sub-19 do FC Porto</a> <a href="http://dragaosenior.blogs.iol.pt//Proeza dos sub-19 do FC Porto/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Proeza dos sub-19 do FC Porto/">1</a><a href="http://dragaosenior.blogs.iol.pt//Proeza dos sub-19 do FC Porto/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Esquizofrenia+de+certos+sectores+da+vida+da+Capital/">Esquizofrenia de certos sectores da vida da Capital</a> <a href="http://dragaosenior.blogs.iol.pt//Esquizofrenia de certos sectores da vida da Capital/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Esquizofrenia de certos sectores da vida da Capital/">1</a><a href="http://dragaosenior.blogs.iol.pt//Esquizofrenia de certos sectores da vida da Capital/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Publicado+em+a+Bola/">Publicado em a Bola</a> <a href="http://dragaosenior.blogs.iol.pt//Publicado em a Bola/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Publicado em a Bola/">1</a><a href="http://dragaosenior.blogs.iol.pt//Publicado em a Bola/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Este+%C3%A9+para+os+lampe%C3%B5es...de+inveja/">Este é para os lampeões...de inveja</a> <a href="http://dragaosenior.blogs.iol.pt//Este é para os lampeões...de inveja/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Este é para os lampeões...de inveja/">1</a><a href="http://dragaosenior.blogs.iol.pt//Este é para os lampeões...de inveja/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Racional/">Racional</a> <a href="http://dragaosenior.blogs.iol.pt//Racional/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Racional/">1</a><a href="http://dragaosenior.blogs.iol.pt//Racional/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//%C3%89tica+desportiva+%C3%A9+uma+fal%C3%A1cia.../">Ética desportiva é uma falácia...</a> <a href="http://dragaosenior.blogs.iol.pt//Ética desportiva é uma falácia.../" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Ética desportiva é uma falácia.../">1</a><a href="http://dragaosenior.blogs.iol.pt//Ética desportiva é uma falácia.../" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Referir+s%C3%B3+o+que+%C3%A9+conveniente./">Referir só o que é conveniente.</a> <a href="http://dragaosenior.blogs.iol.pt//Referir só o que é conveniente./" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Referir só o que é conveniente./">1</a><a href="http://dragaosenior.blogs.iol.pt//Referir só o que é conveniente./" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Evolu%C3%A7%C3%A3o+do+Plantel/">Evolução do Plantel</a> <a href="http://dragaosenior.blogs.iol.pt//Evolução do Plantel/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Evolução do Plantel/">1</a><a href="http://dragaosenior.blogs.iol.pt//Evolução do Plantel/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Refor%C3%A7os/">Reforços</a> <a href="http://dragaosenior.blogs.iol.pt//Reforços/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Reforços/">1</a><a href="http://dragaosenior.blogs.iol.pt//Reforços/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Faciosismo/">Faciosismo</a> <a href="http://dragaosenior.blogs.iol.pt//Faciosismo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Faciosismo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Faciosismo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Repetir+at%C3%A9+%C3%A0+perfei%C3%A7%C3%A3o/">Repetir até à perfeição</a> <a href="http://dragaosenior.blogs.iol.pt//Repetir até à perfeição/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Repetir até à perfeição/">1</a><a href="http://dragaosenior.blogs.iol.pt//Repetir até à perfeição/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Falso+moralismo+das+gentes+afectas+aos+dois+grandes+da+capital/">Falso moralismo das gentes afectas aos dois grandes da capital</a> <a href="http://dragaosenior.blogs.iol.pt//Falso moralismo das gentes afectas aos dois grandes da capital/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Falso moralismo das gentes afectas aos dois grandes da capital/">1</a><a href="http://dragaosenior.blogs.iol.pt//Falso moralismo das gentes afectas aos dois grandes da capital/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//RTP1+vestiu+a+camisola+do+SLB/">RTP1 vestiu a camisola do SLB</a> <a href="http://dragaosenior.blogs.iol.pt//RTP1 vestiu a camisola do SLB/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//RTP1 vestiu a camisola do SLB/">1</a><a href="http://dragaosenior.blogs.iol.pt//RTP1 vestiu a camisola do SLB/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Falta+de+estofo/">Falta de estofo</a> <a href="http://dragaosenior.blogs.iol.pt//Falta de estofo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Falta de estofo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Falta de estofo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Selvajaria/">Selvajaria</a> <a href="http://dragaosenior.blogs.iol.pt//Selvajaria/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Selvajaria/">1</a><a href="http://dragaosenior.blogs.iol.pt//Selvajaria/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Faltam+cent%C3%ADmetros%C3%A0+equipa/">Faltam centímetrosà equipa</a> <a href="http://dragaosenior.blogs.iol.pt//Faltam centímetrosà equipa/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Faltam centímetrosà equipa/">1</a><a href="http://dragaosenior.blogs.iol.pt//Faltam centímetrosà equipa/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Sofrer+golos+por+in%C3%A9pcia+dos+centrais/">Sofrer golos por inépcia dos centrais</a> <a href="http://dragaosenior.blogs.iol.pt//Sofrer golos por inépcia dos centrais/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Sofrer golos por inépcia dos centrais/">1</a><a href="http://dragaosenior.blogs.iol.pt//Sofrer golos por inépcia dos centrais/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Fanatismo/">Fanatismo</a> <a href="http://dragaosenior.blogs.iol.pt//Fanatismo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Fanatismo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Fanatismo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Surpreendente+escolha+deste+%C3%A1rbitro%21/">Surpreendente escolha deste árbitro!</a> <a href="http://dragaosenior.blogs.iol.pt//Surpreendente escolha deste árbitro!/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Surpreendente escolha deste árbitro!/">1</a><a href="http://dragaosenior.blogs.iol.pt//Surpreendente escolha deste árbitro!/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Tr%C3%A1fico+de+influ%C3%AAncias/">Tráfico de influências</a> <a href="http://dragaosenior.blogs.iol.pt//Tráfico de influências/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Tráfico de influências/">1</a><a href="http://dragaosenior.blogs.iol.pt//Tráfico de influências/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//tem+de+se+aprender+a+defender/">tem de se aprender a defender</a> <a href="http://dragaosenior.blogs.iol.pt//tem de se aprender a defender/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//tem de se aprender a defender/">1</a><a href="http://dragaosenior.blogs.iol.pt//tem de se aprender a defender/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Treinamento+insufici%C3%AAnte.../">Treinamento insuficiênte...</a> <a href="http://dragaosenior.blogs.iol.pt//Treinamento insuficiênte.../" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Treinamento insuficiênte.../">1</a><a href="http://dragaosenior.blogs.iol.pt//Treinamento insuficiênte.../" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//T%C3%ADtulos/">Títulos</a> <a href="http://dragaosenior.blogs.iol.pt//Títulos/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Títulos/">1</a><a href="http://dragaosenior.blogs.iol.pt//Títulos/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Fiasco+nas+contrata%C3%A7%C3%B5es+de+certos+jogadores/">Fiasco nas contratações de certos jogadores</a> <a href="http://dragaosenior.blogs.iol.pt//Fiasco nas contratações de certos jogadores/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Fiasco nas contratações de certos jogadores/">1</a><a href="http://dragaosenior.blogs.iol.pt//Fiasco nas contratações de certos jogadores/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Treinador+sacrificado/">Treinador sacrificado</a> <a href="http://dragaosenior.blogs.iol.pt//Treinador sacrificado/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Treinador sacrificado/">1</a><a href="http://dragaosenior.blogs.iol.pt//Treinador sacrificado/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Fic%C3%A7%C3%A3o+perigosa/">Ficção perigosa</a> <a href="http://dragaosenior.blogs.iol.pt//Ficção perigosa/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Ficção perigosa/">1</a><a href="http://dragaosenior.blogs.iol.pt//Ficção perigosa/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Tremenda+injusti%C3%A7a/">Tremenda injustiça</a> <a href="http://dragaosenior.blogs.iol.pt//Tremenda injustiça/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Tremenda injustiça/">1</a><a href="http://dragaosenior.blogs.iol.pt//Tremenda injustiça/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Fiscal+de+linha+arroga-se+o+direito+de+ser+protagonista+do+jogo/">Fiscal de linha arroga-se o direito de ser protagonista do jogo</a> <a href="http://dragaosenior.blogs.iol.pt//Fiscal de linha arroga-se o direito de ser protagonista do jogo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Fiscal de linha arroga-se o direito de ser protagonista do jogo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Fiscal de linha arroga-se o direito de ser protagonista do jogo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//uma+equipa+sem+personalidade/">uma equipa sem personalidade</a> <a href="http://dragaosenior.blogs.iol.pt//uma equipa sem personalidade/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//uma equipa sem personalidade/">1</a><a href="http://dragaosenior.blogs.iol.pt//uma equipa sem personalidade/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Frustra%C3%A7%C3%B5es/">Frustrações</a> <a href="http://dragaosenior.blogs.iol.pt//Frustrações/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Frustrações/">1</a><a href="http://dragaosenior.blogs.iol.pt//Frustrações/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Valoriza%C3%A7%C3%A3o+dos+acessos+ao+Est%C3%A1dio+do+Drag%C3%A3o/">Valorização dos acessos ao Estádio do Dragão</a> <a href="http://dragaosenior.blogs.iol.pt//Valorização dos acessos ao Estádio do Dragão/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Valorização dos acessos ao Estádio do Dragão/">1</a><a href="http://dragaosenior.blogs.iol.pt//Valorização dos acessos ao Estádio do Dragão/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Futebol/">Futebol</a> <a href="http://dragaosenior.blogs.iol.pt//Futebol/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Futebol/">1</a><a href="http://dragaosenior.blogs.iol.pt//Futebol/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Vejam+os+jogos+do+Milan+na+Liga+dos+Campe%C3%B5es.../">Vejam os jogos do Milan na Liga dos Campeões...</a> <a href="http://dragaosenior.blogs.iol.pt//Vejam os jogos do Milan na Liga dos Campeões.../" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Vejam os jogos do Milan na Liga dos Campeões.../">1</a><a href="http://dragaosenior.blogs.iol.pt//Vejam os jogos do Milan na Liga dos Campeões.../" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Futebol+espect%C3%A1culo/">Futebol espectáculo</a> <a href="http://dragaosenior.blogs.iol.pt//Futebol espectáculo/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Futebol espectáculo/">1</a><a href="http://dragaosenior.blogs.iol.pt//Futebol espectáculo/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Venda+dos+jogadores+mais+importantes+do+plantel+%21/">Venda dos jogadores mais importantes do plantel !</a> <a href="http://dragaosenior.blogs.iol.pt//Venda dos jogadores mais importantes do plantel !/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Venda dos jogadores mais importantes do plantel !/">1</a><a href="http://dragaosenior.blogs.iol.pt//Venda dos jogadores mais importantes do plantel !/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Grande+exibi%C3%A7%C3%A3o+do+FCP/">Grande exibição do FCP</a> <a href="http://dragaosenior.blogs.iol.pt//Grande exibição do FCP/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Grande exibição do FCP/">1</a><a href="http://dragaosenior.blogs.iol.pt//Grande exibição do FCP/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Viver+do+passado/">Viver do passado</a> <a href="http://dragaosenior.blogs.iol.pt//Viver do passado/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Viver do passado/">1</a><a href="http://dragaosenior.blogs.iol.pt//Viver do passado/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Grande+jogo+da+equipa+do+FCP/">Grande jogo da equipa do FCP</a> <a href="http://dragaosenior.blogs.iol.pt//Grande jogo da equipa do FCP/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Grande jogo da equipa do FCP/">1</a><a href="http://dragaosenior.blogs.iol.pt//Grande jogo da equipa do FCP/" style="text-decoration: none;">)</a></li>
+            <li><a href="http://dragaosenior.blogs.iol.pt//Xistra/">Xistra</a> <a href="http://dragaosenior.blogs.iol.pt//Xistra/" style="text-decoration: none;">(</a><a href="http://dragaosenior.blogs.iol.pt//Xistra/">1</a><a href="http://dragaosenior.blogs.iol.pt//Xistra/" style="text-decoration: none;">)</a></li>
+         </ul>
+    </div>      <div class="block">
+     <h3>Arquivos</h3>
+     <ul>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2009/5/">Maio - 2009</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2009/4/">Abril - 2009</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2009/3/">Março - 2009</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2009/2/">Fevereiro - 2009</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2009/1/">Janeiro - 2009</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/12/">Dezembro - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/11/">Novembro - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/10/">Outubro - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/9/">Setembro - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/8/">Agosto - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/6/">Junho - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/5/">Maio - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/4/">Abril - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/3/">Março - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/2/">Fevereiro - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2008/1/">Janeiro - 2008</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2007/12/">Dezembro - 2007</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2007/11/">Novembro - 2007</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2007/10/">Outubro - 2007</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2007/9/">Setembro - 2007</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2007/8/">Agosto - 2007</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2007/7/">Julho - 2007</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2007/6/">Junho - 2007</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2007/5/">Maio - 2007</a>
+      </li>
+      <li>
+	   <a href="http://dragaosenior.blogs.iol.pt/2007/4/">Abril - 2007</a>
+      </li>
+     </ul>
+    </div>      <div class="block menu">
+     <h3>Syndication</h3>
+     <a href="http://dragaosenior.blogs.iol.pt/atom/"><img style="border: 0px; vertical-align: middle; margin: 0px 10px 0px 5px;" src="http://oraculo.blog.com/images/feed-icon-32x32.gif" align="left" alt="Ícone de feed" /></a>
+     <ul>
+      <li><a href="http://dragaosenior.blogs.iol.pt/rss/">RSS</a></li>
+      <li><a href="http://dragaosenior.blogs.iol.pt/atom/">Atom</a></li>
+     </ul>
+    </div>      <div class="block albumlist">
+     <h3>Álbuns</h3>
+     <ul>
+     </ul>
+    </div>      <div class="block powered">
+         <a href="http://blogs.iol.pt/?affiliate=poweredby"><img src="http://blogs.iol.pt/images/powered.gif" style="border:none" /></a>
+        </div>      <div class="block random">
+     <ul>
+      <li><a href="/random/">Random Blog</a></li>
+     </ul>
+    </div>        </div>
+      </div>
+     </div>
+    </div>
+   </div>   </div>
+
+<script type="text/javascript">
+// <![CDATA[
+function getSidebar(baseurl)
+{
+	var url = baseurl+'_/sidebar/';
+	var myAjax = new Ajax.Updater( 'side', url, { method: 'get', evalScripts: true });
+}
+// ]]>	
+</script>
+
+  </div>
+  <script type="text/javascript">
+
+function fixColumnHeight() {
+ var content = document.getElementById('content');
+ var posts = document.getElementById('posts-slidingdoor-top');
+ var sidebar = document.getElementById('sidebar-slidingdoor-top');
+ var postsOffset = Position.positionedOffset(posts)[1];
+ var sidebarOffset = Position.positionedOffset(sidebar)[1];
+
+ if (Element.getHeight(posts) == 0) posts = document.getElementById('posts');
+ if (Element.getHeight(sidebar) == 0) posts = document.getElementById('sidebar');
+ var contentHeight = Math.max(postsOffset + Element.getHeight(posts), sidebarOffset + Element.getHeight(sidebar)) + 20;
+ 
+ if (Element.getHeight(posts) != 0 && Element.getHeight(sidebar) != 0) {
+  content.style.height = contentHeight + 'px';
+  document.getElementById('posts').style.height = contentHeight - postsOffset + 'px';
+  document.getElementById('sidebar').style.height = contentHeight - sidebarOffset + 'px';
+ }
+}
+
+fixColumnHeight();
+
+  </script>
+    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+if (typeof(window['_uacct']) == "undefined") _uacct = "UA-235880-1";
+_uacct = "UA-235880-1";
+urchinTracker();
+  </script>
+    <!-- Start Quantcast tag -->
+<script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+<script type="text/javascript">
+_qacct="p-b3DDIGtNmjMZA";quantserve();</script>
+<noscript>
+<img src="http://pixel.quantserve.com/pixel/p-b3DDIGtNmjMZA.gif" style="display: none" height="1" width="1" alt="Quantcast"/></noscript>
+<!-- End Quantcast tag -->
+   </body>
+</html>

@@ -1,0 +1,681 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>Jornal da Nova Democracia </title>
+</head>
+<META name="description" content="Notícias em tempo real. Jornalismo em português para a Lusofonia.">
+<META name="keywords" content="portugal economia palop comunidades brasil Língua Portuguesa Ciência Tecnologia Especiais Internacional Comunidades Notícias Angola Moçambique Mozambique Timor Brasil Brazil Guiné Bissau Cabo-Verde Portugal Açores Azores Madeira">
+<META HTTP-EQUIV="no-cache">
+
+<link rel="stylesheet" href="css/estilo_novo.css" type="text/css">
+
+<script language=javascript>
+function favoritos() {
+		bookmarkurl="http://www.jornalistas.com/";
+		bookmarktitle="Portal dos Jornalistas";
+		if (document.all)
+		window.external.AddFavorite(bookmarkurl,bookmarktitle);
+}
+
+function loadwindow(URL,X,Y) {
+	window.open(URL,"my_new_window","toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=no,copyhistory=no,width="+X+",height="+Y);
+}
+
+function LTrim(String)
+{
+	var i = 0;
+	var j = String.length - 1;
+
+	if (String == null)
+		return (false);
+
+	for (i = 0; i < String.length; i++)
+	{
+		if (String.substr(i, 1) != ' ' &&
+		    String.substr(i, 1) != '\t')
+			break;
+	}
+
+	if (i <= j)
+		return (String.substr(i, (j+1)-i));
+	else
+		return ('');
+}
+
+function RTrim(String)
+{
+	var i = 0;
+	var j = String.length - 1;
+
+	if (String == null)
+		return (false);
+
+	for(j = String.length - 1; j >= 0; j--)
+	{
+		if (String.substr(j, 1) != ' ' &&
+			String.substr(j, 1) != '\t')
+		break;
+	}
+
+	if (i <= j)
+		return (String.substr(i, (j+1)-i));
+	else
+		return ('');
+}
+
+function Trim(String)
+{
+	if (String == null)
+		return (false);
+
+	return RTrim(LTrim(String));
+}
+
+function validar_pesquisa() {
+	document.form1.busca.value=Trim(document.form1.busca.value);
+    return (document.form1.busca.value != '');
+}
+
+function validar_pesquisa_noticias() {
+	//vamos trimar a expressao
+	expressao = Trim(document.formbuscanoticia.buscanoticia.value);
+	//se a expressao é vazia retornamos false
+	if (expressao.length==0) return false;	
+	
+	//vamos retirar expressões não usadas na busca
+	if (expressao.length ==3){
+		expressao = Replace(expressao,"das", " ");
+		expressao = Replace(expressao,"des", " ");
+	} else if(expressao.length==2){
+		expressao = Replace(expressao,"da", " ");
+		expressao = Replace(expressao,"de", " ");
+		expressao = Replace(expressao,"do", " ");
+	} else if(expressao.length==1) { 
+		expressao = Replace(expressao,"a", " ");
+		expressao = Replace(expressao,"e", " ");
+		expressao = Replace(expressao,"i", " ");
+		expressao = Replace(expressao,"o", " ");
+		expressao = Replace(expressao,"u", " ");
+	} else {
+		expressao = Replace(expressao," das ", " ");
+		expressao = Replace(expressao," da ", " ");
+		expressao = Replace(expressao," des ", " ");
+		expressao = Replace(expressao," de ", " ");
+		expressao = Replace(expressao," do ", " ");
+		expressao = Replace(expressao," a ", " ");
+		expressao = Replace(expressao," e ", " ");
+		expressao = Replace(expressao," i ", " ");
+		expressao = Replace(expressao," o ", " ");
+		expressao = Replace(expressao," u ", " ");
+	}
+	//retiramos espacos a mais
+	expressao = Replace(expressao,"  ", "");
+	
+	//vamos trimar a expressao novamente
+	expressao = Trim(expressao);
+	
+	if (expressao.length==0){
+		alert("Por favor seja mais específico na sua busca!");
+		document.formbuscanoticia.buscanoticia.focus();
+	    return false;
+    }
+    
+    document.formbuscanoticia.buscanoticia.value=expressao;
+    return true;
+}
+
+function Replace(Expression, Find, Replace)
+{
+	var temp = Expression;
+	var a = 0;
+
+	for (var i = 0; i < Expression.length; i++) 
+	{
+		a = temp.indexOf(Find);
+		if (a == -1)
+			break
+		else
+			temp = temp.substring(0, a) + Replace + temp.substring((a + Find.length));
+	}
+
+	return temp;
+}
+
+</script>
+<script LANGUAGE="JavaScript">
+<!-- Begin
+function popUp(URL) {
+day = new Date();
+id = day.getTime();
+eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=0,width=550,height=500');");
+}
+// End -->
+</script>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class="body" >
+<div align="center">
+  <table width="770" height="19" border="0" align="center" cellpadding="0" cellspacing="0">
+
+
+</table>
+<table width="770" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="212" rowspan="3" ><a href="/index.php" ><img src="images/logo1.jpg" width="202" height="77" border="0"></a></td>
+    <td colspan="2" align="right" valign="top" > <table width="100%" border="0" cellpadding="3" cellspacing="0" bgcolor="#D8E1E9">
+        <tr align="center"> 
+         <!-- <td style="border-right: 1px solid #16497e; border-left: 1px solid #16497e"><a href="colunistas.php" class="top_hor">ESPAÇO DO LEITOR</a></td>
+         
+          <td style="border-right: 1px solid #16497e"><a href="forum.php" class="top_hor">F&Oacute;RUNS</a></td>-->
+          <td style="border-right: 1px solid #16497e; border-left: 1px solid #16497e"><a href="opin.php?oselect=1" class="top_hor">OPINI&Otilde;ES E ANÁLISE</a></td>
+          <td style="border-right: 1px solid #16497e"><a href="cartoon.php" class="top_hor">CARTOON</a></td>
+		  <form name="formbuscanoticia" action="noticias.php" method="post" onsubmit="return validar_pesquisa_noticias()">
+            <td style="border-right: 1px solid #16497e"><font color="#336699" size="1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Pesquisa: 
+              </strong> </font> 
+              <input name="buscanoticia" type="text" size="15" class='pesca'  >
+              <input type="submit" name="Submit" value="» »" class='button'></td></form>
+        </tr>
+      </table></td>
+  </tr>
+  <tr> 
+    <td width="276" align="left" valign="bottom" ><img src="images/logo2.gif" ></td>
+    <td width="280" align="right" valign="bottom" ><img src="images/logo3.gif" ></td>
+  </tr>
+  <tr> 
+    <td colspan="2" align="right" ><img src="images/pixel.gif" width="1" height="4"> 
+    </td>
+  </tr>
+</table>
+<table width="770" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>
+            <table width=100% bgcolor="#006699">
+        <tr><td align="center"><font color="#99CCFF"> ::: </font> 
+          	<a href="seccoes.php?seccao=9" class="top_menu">DOSSIERS ESPECIAIS</a><font color="#99CCFF"> ::: </font>
+        	<a href="seccoes.php?seccao=20" class="top_menu"><i>NovaDemocracia</i></a><font color="#99CCFF"> ::: </font>
+        	<a href="seccoes.php?seccao=4" class="top_menu">Outros</a><font color="#99CCFF"> ::: </font>
+                </td></tr>
+      </table>
+          </td>
+  </tr>
+</table>
+  <table width="770" height="22" border="0" cellspacing="0" cellpadding="0" background="images/barra.jpg">
+   
+  </table>
+  <table width="770" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+	<td align="right"><font color="#336699">&nbsp;<font size="1" face="Verdana, Arial, Helvetica, sans-serif">Director:
+        <strong>João Carvalho Fernandes</strong> &nbsp; &nbsp;Director adjunto: <strong>António Torres</strong>&nbsp; &nbsp;Redactores Principais: <strong>Ana Cristina Faria e Diogo Tomás Pereira</strong></font></font></td>
+ 
+    </tr>
+  </table>
+  <table border="0" align ="center" cellspacing="0" cellpadding="0"   width="770">
+    <tr> 
+      <td  align="left" valign="middle" bgcolor="#E6EEF7" class="posicao" >&nbsp;<a href="index.php" class="posicao"><b>por um País novo, por MAIS PORTUGAL!</b></a><span class="posicao"> / <b>noticias</b></span></td>
+      <td height="18"  align="right" bgcolor="#E6EEF7" class="posicao" > 
+        Terça Feira, 11.03.2008      </td>
+    </tr>
+    <tr> 
+      <td  align="left" valign="middle" class="posicao" >&nbsp;</td>
+      <td  align="right" class="posicao" >&nbsp;</td>
+      
+      					
+	
+	</tr>
+	
+  </table>
+  <table width="770" height="400" border="0" align="center" cellpadding="0" cellspacing="0">
+  
+    <tr> 
+    <marquee scrolldelay=2 SCROLLAMOUNT=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font face=verdana size=1 color=#336699><b>Edição nrº204- SEMANÁRIO&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></font> <font face=verdana size=1 color=#ae1100><b>&quot;É necessário ser-se mais virtuoso para conviver com a boa sorte do que com a má.&quot; - La Rochefoucauld</b></font></marquee>
+      <td width="191" align="left" valign="top" class="left_cinza"> 
+      
+        <table width="188" border="0" cellpadding="3" cellspacing="0" bgcolor="#EAEEF2">
+
+  <FORM name="form1" method="post" action='registo.php'>
+  <input type="hidden" name="leitor" id="leitor" value="2">
+						
+    <tr> 
+      <td colspan="2" bgcolor="#336699" class="top_menu">Login</td>
+    </tr>
+    <tr> 
+      <td width="96" align="right" valign="middle"><strong><font color="#666666" size="1" face="Verdana, Arial, Helvetica, sans-serif">Utilizador:</font></strong></td>
+      <td width="80" align="right">
+<input name="utilizador" type="text" class='field' size="12"></td>
+    </tr>
+    <tr> 
+      <td width="96" align="right" valign="middle"><font color="#666666" size="1" face="Verdana, Arial, Helvetica, sans-serif"><strong>Palavra-passe:</strong></font></td>
+      <td align="right">
+<input name="palavra" type="text" class='field' size="12"></td>
+    </tr>
+    <tr>
+      <td align="right" valign="middle">&nbsp;</td>
+      <td align="right">
+<input type="submit" name="Submit" value="Entrar" class='button'></td>
+    </tr>
+  </FORM>
+</table>
+
+
+
+<br>
+<table width="188" border="0" cellpadding="3" cellspacing="0" bgcolor="#EAEEF2">
+  <tr> 
+    <td colspan="2" bgcolor="#336699" class="top_menu">EDITORIAL</td>
+  </tr>
+  <tr> 
+  <td width="44" rowspan="2"><img src="opi_imagens/jcf12.jpg" width="44"  border="1"></td><td width="132" class="linha_bottom_c"><font class="top_hor">João Carvalho Fernandes</font></td>  </tr>
+  <tr>
+    <td>
+	
+<a href='editorial.php' class="texto_left"><font size=2><b><b>AS VIRGENS OFENDIDAS</b></font></a></b>	
+	</td>
+  </tr>
+</table><br>
+
+<table width="188" border="0" cellpadding="3" cellspacing="0" bgcolor="#EAEEF2">
+  <tr> 
+    <td colspan="2" bgcolor="#ae1100" class="top_menu">HOJE CONVIDAMOS...</td>
+  </tr>
+  <tr> 
+  <td width="44" rowspan="2"><img src="opi_imagens/eugenioalmeida.jpg" width="44"  border="1"></td><td width="132" class="linha_bottom_c"><font class="top_hor">Eugénio Costa Almeida</font></td>  </tr>
+  <tr>
+    <td>
+	
+<a href='convidado.php' class="texto_left"><font size=2><b><b>Mugbe tem medo do resultado eleitoral? </b></font></a></b>	
+	</td>
+  </tr>
+</table>
+
+
+<br><table width="188" cellspacing="0" cellpadding="3" >
+<tr> 
+<td bgcolor="#ae1100" class="border_branco"><font size="1" class="top_menu">CARTOON</font></td>
+</tr>
+<tr> 
+<td align="center" bgcolor="#ededed">
+<a href="cartoon.php?num=0"><img src="cartoon_images/alto30_peq.jpg" width="182"  class="border_laranja"></a>
+</td></tr></table><br> 
+<table width="188" border="0" cellpadding="3" cellspacing="0" bgcolor="#EAEEF2">
+  <tr> 
+    <td colspan="2" bgcolor="#336699" class="top_menu">BLOGUES - TOP +</td>
+  </tr>
+  <tr> 
+  <td width="44" rowspan="2"><img src="opi_imagens/jose_maria_martins.jpg" width="44"  border="1"></td><td width="132" class="linha_bottom_c"><font class="top_hor"><b>José Maria Martins</b></font></td>  </tr>
+  <tr>
+    <td>
+	
+<a href='blog.php' class="texto_left"><font size=2><b><b>A Fuga de José Sócrates </b></font></a></b>	
+	</td>
+  </tr>
+</table><br>
+
+<table width="188" border="0" cellpadding="3" cellspacing="0" bgcolor="#EAEEF2">
+  <tr> 
+    <td colspan="2" bgcolor="#336699" class="top_menu">SUGESTÃO DE LEITURA LIBERAL</td>
+  </tr>
+  <tr> 
+  <td width="44" rowspan="2"><img src="opi_imagens/histoireliberalismeeurope.jpg" width="44"  border="1"></td><td width="132" class="linha_bottom_c"><font class="top_hor">Philippe Nemo e Jean Petitot e outros</font></td>  </tr>
+  <tr>
+    <td>
+	
+<a href='livro.php' class="texto_left"><font size=2><b><b>Histoire du libéralisme en Europe </b></font></a></b>	
+	</td>
+  </tr>
+</table><br>
+   
+<table width="188" height="16" cellpadding="3" cellspacing="0" background="images/fonleft.gif"><tr>
+ <td height="14" bgcolor=#ae1100><font CLASS="top_menu">LINKS ÚTEIS</font></td></tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.e-financas.gov.pt/de/jsp-dgci/main.jsp" target="_BLANK" class="texto_left">Declarações Electrónicas</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://eudemocrats.org/" target="_BLANK" class="texto_left"><b>EUDemocrats</b></A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://indemgroup.org/1/" target="_BLANK" class="texto_left"><b>Grupo ID - o nosso grupo no Parlamento Europeu</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://novasgeracoespnd.blogspot.com/" target="_BLANK" class="texto_left"><b>Novas Gerações</b></A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://noticias.sapo.pt/banca2/jornal/?jornal=DN+Madeira" target="_BLANK" class="texto_left">BANCA DE JORNAIS</A><br></td>
+  </tr>
+  <tr> 
+<td><img src="images/pixel.gif" border="0" height="10"></td>  </tr>
+</table>
+<table width="188" height="16" cellpadding="3" cellspacing="0" background="images/fonleft.gif"><tr>
+ <td height="14" bgcolor=#336699><font CLASS="top_menu">SITES POLÍTICOS</font></td></tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.liberais.org" target="_BLANK" class="texto_left">Liberais.org - Forum dos Liberais de Galiza</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.partido-galeguista.org/" target="_BLANK" class="texto_left">PARTIDO GALEGUISTA</A><br></td>
+  </tr>
+  <tr> 
+<td><img src="images/pixel.gif" border="0" height="10"></td>  </tr>
+</table>
+<table width="188" height="16" cellpadding="3" cellspacing="0" background="images/fonleft.gif"><tr>
+ <td height="14" bgcolor=#ae1100><font CLASS="top_menu">ORG. COMUNICAÇÃO LUSÓFONOS</font></td></tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://ibinda.com/" target="_BLANK" class="texto_left">Ibinda.com - Cabinda</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.noticiaslusofonas.com/" target="_BLANK" class="texto_left">Notícias Lusófonas</A><br></td>
+  </tr>
+  <tr> 
+<td><img src="images/pixel.gif" border="0" height="10"></td>  </tr>
+</table>
+<table width="188" height="16" cellpadding="3" cellspacing="0" background="images/fonleft.gif"><tr>
+ <td height="14" bgcolor=#336699><font CLASS="top_menu">ORG. COMUNICAÇÃO NACIONAIS</font></td></tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://expresso.clix.pt/" target="_BLANK" class="texto_left">Expresso</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.portugaldiario.iol.pt/" target="_BLANK" class="texto_left">Portugal Diário</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.publico.clix.pt/" target="_BLANK" class="texto_left">Público</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.sol.pt/" target="_BLANK" class="texto_left">Sol</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://diariodigital.sapo.pt/" target="_BLANK" class="texto_left">Diário Digital</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.correiomanha.pt/" target="_BLANK" class="texto_left">Correio da Manhã</A><br></td>
+  </tr>
+  <tr> 
+<td><img src="images/pixel.gif" border="0" height="10"></td>  </tr>
+</table>
+<table width="188" height="16" cellpadding="3" cellspacing="0" background="images/fonleft.gif"><tr>
+ <td height="14" bgcolor=#ae1100><font CLASS="top_menu">BLOGS</font></td></tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://pululu.blogspot.com/" target="_BLANK" class="texto_left">Pululu</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.altohama.blogspot.com/" target="_BLANK" class="texto_left">Alto Hama</A><br></td>
+  </tr>
+  <tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://tomarpartido2.blogspot.com/" target="_BLANK" class="texto_left">TOMARPARTIDO2</A><br></td>
+  </tr>
+  <tr> 
+<td><img src="images/pixel.gif" border="0" height="10"></td>  </tr>
+</table>
+<table width="188" height="16" cellpadding="3" cellspacing="0" background="images/fonleft.gif">
+<tr>
+<td height="16"  class='top_menu' bgcolor=#336699>
+&nbsp;O PORTAL</td></tr></table>
+<table width="188" border="0" cellspacing="0" cellpadding="3" align="center" bgcolor="#ededed">
+  <tr>    <td class="texto_left"><A href="contactos.php" target="_self" class="texto_left">Contactos</A>        </td>  </tr>  <tr>    <td class="texto_left"><A href="fichatecnica.php" target="_self" class="texto_left">Ficha técnica</A>        </td>  </tr>  <tr>    <td class="texto_left"><A href="direitos.php" target="_self" class="texto_left">Direitos autorais</A>        </td>  </tr>  <tr>    <td class="texto_left"><A href="estatuto.php" target="_self" class="texto_left">Estatuto Editorial</A>        </td>  </tr></table><br>
+
+ 
+      </td>
+      <td width="579" align="center" valign="top" bgcolor="#ffffff" class="main"> 
+        <table width="100%" cellpadding=0 cellspacing=0><tr><td valign="top" align="center" width=405> 
+<table width="98%" class="border_escuro" cellpadding="4" cellspacing="0" bgcolor="#eeeeee">
+<tr> 
+<td height="18" colspan="2" bgcolor=#336699 > 
+<p><font CLASS="top_menu">DESTAQUE</font></p>
+</td>
+</tr>
+<tr> 
+<td align="center" height="0" valign="top" width="150">
+		  <img src="noticias_imagens/barga_avliberdade.jpg" class="image_border2" width="150" border="1"></td>
+		  <td width=100% valign="top"><font class="antetitulo">
+<b>BRAGA</b></font><br>
+<font class="titulo_dtq"><b>PND DIZ QUE POSIÇÃO DO PRESIDENTE DA CÂMARA DE BRAGA É SURREAL</b></font><br><font class="data">
+2008-03-11 14:25:39</font></td>
+</tr>
+<tr> 
+ <td height="55" colspan=2 valign="top" class="texto_destaque"><div align="justify"><a href="noticias.php?noticia=6729" class="texto_destaque">
+<b>O Partido da Nova Democracia reagia assim à notícia da Lusa, sobre a suspensão, pela terceira vez, da abertura de candidaturas para a requalificação da Av. da Liberdade. </b><font class="nome"> » »</font></a></div></td>
+</tr>
+<tr> 
+<td align="center" height="0" valign="top" width="150">
+		  <img src="noticias_imagens/maia01.jpg" class="image_border2" width="150" border="1"></td>
+		  <td width=100% valign="top"><font class="antetitulo">
+<b>Recolha de assinaturas contra a corrupção</b></font><br>
+<font class="titulo_dtq"><b>ACÇÃO DO PND NA MAIA</b></font><br><font class="data">
+2008-03-10 22:07:35</font></td>
+</tr>
+<tr> 
+ <td height="55" colspan=2 valign="top" class="texto_destaque"><div align="justify"><a href="noticias.php?noticia=6727" class="texto_destaque">
+<b>Realizou-se  na cidade da Maia no passado sábado dia 08/03/2008 uma acção de recolha de assinaturas contra a corrupção, bem como angariação de novos militantes, </b><font class="nome"> » »</font></a></div></td>
+</tr>
+<tr> 
+<td align="center" height="0" valign="top" width="150">
+		  <img src="noticias_imagens/carlosborges6_peq.jpg" class="image_border2" width="150" border="1"></td>
+		  <td width=100% valign="top"><font class="antetitulo">
+<b>BRAGA</b></font><br>
+<font class="titulo_dtq"><b>PND questiona relações entre Câmara de Braga e Agere</b></font><br><font class="data">
+2008-03-10 22:05:00</font></td>
+</tr>
+<tr> 
+ <td height="55" colspan=2 valign="top" class="texto_destaque"><div align="justify"><a href="noticias.php?noticia=6726" class="texto_destaque">
+<b>O Partido da Nova Democracia afirma ter enviado uma carta ao Tribunal de Contas a solicitar Informações sobre as relações entre a Câmara de Braga e a Agere. </b><font class="nome"> » »</font></a></div></td>
+</tr>
+<tr> 
+<td align="center" height="0" valign="top" width="150">
+		  <img src="noticias_imagens/novo logo 01_p.jpg" class="image_border2" width="150" border="1"></td>
+		  <td width=100% valign="top"><font class="antetitulo">
+<b>(NOVA DEMOCRACIA, PPM e PDA chegam a acordo)</b></font><br>
+<font class="titulo_dtq"><b>ALIANÇA NOS AÇORES</b></font><br><font class="data">
+2008-03-09 16:48:21</font></td>
+</tr>
+<tr> 
+ <td height="55" colspan=2 valign="top" class="texto_destaque"><div align="justify"><a href="noticias.php?noticia=6724" class="texto_destaque">
+<b>A Nova Democracia chegou a acordo com o PPM  e o PDA , para a eleboração de listas conjuntas a apresentar nas eleições regionais deste ano.<br />
+<br />
+Edgardo Madeira (foto), Coordenador da Nova Democracia naquela Região Autónoma, transmitiu à Direcção nacional do partido que o acordo tinha sido firmado na passada semana. </b><font class="nome"> » »</font></a></div></td>
+</tr>
+</table>
+<br><table width="98%" cellspacing="0" cellpadding="2" class="todos_lados">
+<tr> 
+<td  bgcolor="#e4e4e4"><a href="seccoes.php?seccao=20" class="laranja_sec"><i>NovaDemocracia</i></a></td>
+ </tr>
+ <tr><td valign="top" align="center">
+<table width="100%"  border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td valign="top">
+<font class="antetitulo">
+<b>BRAGA</b></font><br>
+<font class="titulo">
+<b>ESCOLHA DO GRUPO MELLO SAÚDE É UMA DERROTA POLÍTICA PESSOAL DE MESQUITA MACHADO</b></font><br>
+ <font class="data">
+2008-03-11 14:20:42</font><br></td><td width="80" valign="top" align="right"><img src="noticias_imagens/carlosborges6.jpg" class="image_border2" border="1" width="80"></td>
+</tr>
+<tr><td colspan="2" align="left"  class="texto_main">
+<a href="noticias.php?noticia=6728" class="texto_main">
+<b>Carlos Borges (PND) congratulou - se com a tão esperada decisão da escolha do consórcio vencedor para o novo hospital de Braga e lamenta que este processo se tenha arrastado por tanto tempo, já que, quer a cidade, quer o Distrito estavam a precisar de um novo Hospital há vários anos. </b><font class="nome"> » »</font></a>
+</td></tr>
+</table>
+</tD></tr></table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6723" class="outras"><b>PND/BRAGA ESCREVE DE NOVO AO TRIBUNAL DE CONTAS</b></a><br>
+</td>
+  </tr>
+</table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6722" class="outras"><b>PND considera «lamentável» falta de TAC no São Marcos</b></a><br>
+</td>
+  </tr>
+</table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6720" class="outras"><b>CARLOS BORGES (PND) CRITICA LAXISMO DO PRESIDENTE DA JUNTA DE ANTAS</b></a><br>
+</td>
+  </tr>
+</table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6718" class="outras"><b>PND/BRAGA CONSIDERA LAMENTÁVEL FALTA DE TAC NO HOSPTIAL DE S.MARCOS EM BRAGA</b></a><br>
+</td>
+  </tr>
+</table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6716" class="outras"><b>Nova lei é «pacote furado»</b></a><br>
+</td>
+  </tr>
+</table>
+<table width="98%" cellspacing="0" cellpadding="2" class="todos_lados">
+<tr> 
+<td  bgcolor="#e4e4e4"><a href="seccoes.php?seccao=4" class="laranja_sec">Outros</a></td>
+ </tr>
+ <tr><td valign="top" align="center">
+<table width="100%"  border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td valign="top">
+<font class="antetitulo">
+<b>Maior protesto de sempre dos professores</b></font><br>
+<font class="titulo">
+<b>Professores: 100 mil em Lisboa</b></font><br>
+ <font class="data">
+2008-03-08 19:12:16</font><br></td><td width="80" valign="top" align="right"><img src="noticias_imagens/professores.jpg" class="image_border2" border="1" width="80"></td>
+</tr>
+<tr><td colspan="2" align="left"  class="texto_main">
+<a href="noticias.php?noticia=6721" class="texto_main">
+<b>Milhares de professores encheram as ruas da cidade de Lisboa. Estão vestidos de preto e levam bandeiras brancas na mão. Gritam «indignação», pedem «respeito» e «estão de luto pela educação». «Equipa ministerial não tem condições para continuar», diz Fenprof </b><font class="nome"> » »</font></a>
+</td></tr>
+</table>
+</tD></tr></table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6713" class="outras"><b>Declarações de Manuel Monteiro sobre o novo partido de Rui Marques</b></a><br>
+</td>
+  </tr>
+</table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6685" class="outras"><b>Deputado pede desculpa a colegas do PSD</b></a><br>
+</td>
+  </tr>
+</table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6670" class="outras"><b>Quatro partidos e personalidades independentes projectam coligação eleitoral na região</b></a><br>
+</td>
+  </tr>
+</table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6660" class="outras"><b>Pequenos partidos querem alteração da Lei de financiamento </b></a><br>
+</td>
+  </tr>
+</table>
+<table width="98%" bgcolor="#fafafa" border="0" cellspacing="0" cellpadding="0" class="linha_lados">
+  <tr><td width="3"></td><td> 
+<img src="images/qua.gif" width="6" height="6" border="0">
+<a href="noticias.php?noticia=6646" class="outras"><b>Sócrates acumulou subsídio de exclusividade como deputado com funções privadas </b></a><br>
+</td>
+  </tr>
+</table>
+</td><td valign="top" > 
+<table cellspacing=2 cellpadding=2 width=230><tr><td bgcolor=#336699 class='top_menu' colspan=2>DOSSIERS ESPECIAIS</tD></TR><tr>
+<tD width=50% bgcolor=#dddddd valign='top'><font class='especiais'>TRIBUNA PÚBLICA</font><br>
+<img src='noticias_imagens/joaomotaferreira_evora.jpg' width=105><br><a href='noticias.php?noticia=6725' class='texto_left'><b><i><b>Pensar as eleições Autárquicas</b></i></b></a></tD>
+<tD width=50% bgcolor=#dddddd valign='top'><font class='especiais'>FICHA ADESÃO ND</font><br>
+<img src='noticias_imagens/novo logo 01_p.jpg' width=105><br><a href='noticias.php?noticia=6574' class='texto_left'><b><b>FICHA ADESÃO, ESTATUTOS E SEDES</b></b></a></tD>
+<tr>
+<tD width=50% bgcolor=#dddddd valign='top'><font class='especiais'> CML, FOTOS, CIRCULOS, CONGRESSOS, INTERNACIONAL</font><br>
+<img src='noticias_imagens/ricardo04.jpg' width=105><br><a href='noticias.php?noticia=6342' class='texto_left'><b><b>O ESTADO EUROPA</b></b></a></tD>
+<tD width=50% bgcolor=#dddddd valign='top'><font class='especiais'>DOCUMENTOS, ESTUDOS E DEBATES</font><br>
+<img src='noticias_imagens/capamanifesto_2.jpg' width=105><br><a href='noticias.php?noticia=6475' class='texto_left'><b><b>A NOVA DIREITA - A DIREITA QUE SOMOS</b></b></a></tD>
+</table><br>
+<table cellspacing=0 cellpadding=2 width=226 class='texto_left' align='center'><tr><td bgcolor=#ae1100 class='top_menu'>OPINIÕES E ANÁLISES</tD></TR></table><table cellspacing=0 cellpadding=2 class='texto_left' bgcolor=#dfdfdf width=226 align='center'><tr>
+<td width=40 valign='top'>
+	<table cellpadding=1 cellspacing=0 width=100%  class='texto_left'><tr>
+	<td valign='top'><img src='opi_imagens/namoradomalacriz.jpg' width=40 border=1></tD><td><b>
+	<font color=#ae1100>José António Namorado Malacriz</font></b></td>
+	</tr></table>
+	<table cellpadding=0 cellspacing=0 width=105>
+	<tr><td><a href='opin.php?oselect=2&idopi=1029' class='texto_left'><b>Partidos... Políticas...</b></tD></tr>
+	</table>
+	</td>
+<td width=40 valign='top'>
+	<table cellpadding=1 cellspacing=0 width=100%  class='texto_left'><tr>
+	<td valign='top'><img src='opi_imagens/cristinaanahory.bmp' width=40 border=1></tD><td><b>
+	<font color=#ae1100>Cristina Anahory Garin</font></b></td>
+	</tr></table>
+	<table cellpadding=0 cellspacing=0 width=105>
+	<tr><td><a href='opin.php?oselect=2&idopi=1028' class='texto_left'><b>Manifestação contra Sócrates</b></tD></tr>
+	</table>
+	</td>
+<tr>
+<td width=40 valign='top'>
+	<table cellpadding=1 cellspacing=0 width=100%  class='texto_left'><tr>
+	<td valign='top'><img src='opi_imagens/eugenioalmeida.jpg' width=40 border=1></tD><td><b>
+	<font color=#ae1100>Eugénio Costa Almeida</font></b></td>
+	</tr></table>
+	<table cellpadding=0 cellspacing=0 width=105>
+	<tr><td><a href='opin.php?oselect=2&idopi=1027' class='texto_left'><b>Parabéns, Dr. Monteiro</b></tD></tr>
+	</table>
+	</td>
+<td width=40 valign='top'>
+	<table cellpadding=1 cellspacing=0 width=100%  class='texto_left'><tr>
+	<td valign='top'><img src='opi_imagens/miguelcostamarques.jpg' width=40 border=1></tD><td><b>
+	<font color=#ae1100>Miguel Costa Marques</font></b></td>
+	</tr></table>
+	<table cellpadding=0 cellspacing=0 width=105>
+	<tr><td><a href='opin.php?oselect=2&idopi=1026' class='texto_left'><b>O Vazio de Poder</b></tD></tr>
+	</table>
+	</td>
+</table><br>
+<table bgcolor=#ae1100 cellspacing=0 cellpadding=2 width=226 align='center' class='border_laranja'><tr><td  class='top_menu'>ESPECIAL ÁFRICA</tD></TR></table><table cellspacing=0 cellpadding=0 class='border_laranja' bgcolor=#dfdfdf width=226 align='center'><tr><td><img src='images/africa1crt.gif' width=224></td></tR><tR><td><table cellpadding=2 width=220 ><tr><td width="44" rowspan="2" valign='top'>
+	<img src="opi_imagens/cabinda.jpg" width="40"  border="1"></td><td style='border-bottom: dotted 1px #aaaaaa'><a href='africa.php' class="top_hor"><font color=#be1100><b>Raul Danda</b></font></a></td>
+	        </tr><tr><td ><a href='africa.php' class="top_hor"><font color=#be1100 size=2><b>DESMENTIDO </b></font></a></td></tr></table></td></tr></table><br><SCRIPT LANGUAGE='JavaScript' SRC='http://www.jornaldigital.com/gratis.php?op=ticker'></SCRIPT><br><table width="220" height="16" cellpadding="3" cellspacing="0" background="images/fonleft.gif"><tr>
+<td height="14" bgcolor=#ae1100><font CLASS="top_menu">ORG. COMUNICAÇÃO REGIONAIS</font></td></tr>
+<tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.dnoticias.pt/" target="_BLANK" class="texto_left">Diário de Notícias da Madeira - Funchal</A><br></td>
+</tr>
+<tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.diarioaveiro.pt/" target="_BLANK" class="texto_left">Diário de Aveiro - Aveiro</A><br></td>
+</tr>
+<tr> 
+<td><img src="images/pixel.gif" border="0" height="10"></td></tr>
+</table>
+<table width="220" height="16" cellpadding="3" cellspacing="0" background="images/fonleft.gif"><tr>
+<td height="14" bgcolor=#336699><font CLASS="top_menu">ORG. COMUNICAÇÃO ESTRANGEIROS</font></td></tr>
+<tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.lemonde.fr/" target="_BLANK" class="texto_left">Le Monde - França</A><br></td>
+</tr>
+<tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.elpais.es/" target="_BLANK" class="texto_left">El Pais - Espanha</A><br></td>
+</tr>
+<tr> 
+<td class="texto_left" bgcolor=#ededed><A href="http://www.libertaddigital.com/" target="_BLANK" class="texto_left">Libertad Digital - Espanha</A><br></td>
+</tr>
+<tr> 
+<td><img src="images/pixel.gif" border="0" height="10"></td></tr>
+</table>
+</td></tr></table>
+<table width="98%" align="center" border="0" cellspacing="0" cellpadding="0" >
+  <tr> 
+        <td valign="top"><img src="images/pixel.gif" height="50"></td>
+  </tr> 
+</table>
+</td>
+    </tr>
+  </table>
+  <table border="0" align ="center" width="770" cellspacing="0" cellpadding="0" class="footer">
+  <tr> 
+    <td height="19" align="center" class='texto_main'><font size=1 face='verdana'>© 
+      2004 <strong>Partido da Nova Democracia</strong>. Todos os direitos reservados. 
+      Software: <a href="http://cgest.pt"  target="_blank" class='texto_main'>Cgest.pt</a>. 
+      </font></td>
+  </tr>
+</table>
+</div>
+</body>
+</html>

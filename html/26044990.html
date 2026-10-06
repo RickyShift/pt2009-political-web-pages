@@ -1,0 +1,1378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+ 
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <f5metal define-slot="header"><!--F5:Slot:include:header-->
+        <title>Divirta-se Notícia - Sony lança CDs de ex-participantes do 'American Idol'</title>
+<meta content="" name="keywords" keywords="" />
+
+    </f5metal>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta name="language" content="pt-br" />
+  <link rel="stylesheet" media="screen" href="http://www.new.divirta-se.uai.com.br/arquivos/css/geral.css" />
+  
+
+  <script type="text/javascript" src="http://uaibanners1.uai.com.br/adx.js"><!-- --></script>
+ 
+
+  <script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/banners.js"><!-- --></script>
+
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/googleanalytics.js"><!-- --></script>
+
+
+
+
+
+
+
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/banners.js"></script>
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/divirtase.js"></script>
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/googleanalytics.js"></script>
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/adx.js"></script>
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/js.ajax.xmlhttp.js"></script>
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/googleanalyticsx.js"></script>
+</head>
+<body id="thema">
+
+<iframe allowtransparency="true" frameborder="0" height="25px" marginheight="0" marginwidth="0" name="barra" scrolling="no" src="http://barra.uai.com.br" width="100%"><!-- --></iframe>
+<div id="corpogeral">
+
+
+
+<!--F5:Slot:include:modulos_popup-->
+        
+<style type="text/css">
+#overlay { position: absolute; top: 0; left: 0; z-index: 90; width: 100%; height: 500px; background-color: #000; }
+#overlay_login { position: absolute; top: 0; left: 0; z-index: 91; }
+#login {padding:10px;}
+#login p {padding:10px 0;}
+#login span {font-weight:bold;color:#f93;}
+#login label {width:98%;margin-right:5px;display:block;float:left;}
+#login label b {padding:0 5px;background:#e8e7ef;}
+#login label input {width:100%;margin:2px 0 10px;display:block;float:left;}
+#notregistered {background:#e6e6f0;}
+#notregistered p {padding:10px 0;}
+#notregistered span {color:#f93;}
+#notregistered .highlight {font-size:26px;text-align:center;display:block;margin:10px 0;}
+#notregistered div {margin:10px 5px 60px;}
+</style>
+      
+
+<script type="text/javascript">/*<![CDATA[*/ var IDEVENTO=0;var URLCOMENTARIO='http://www.new.divirta-se.uai.com.br/html/webs/modulos/uai_noticia/portlets/addComentario';var IDNOTICIA=12687;var URLLOGIN3='http://www.new.divirta-se.uai.com.br/html/webs/modulos/uai_noticia/portlets/login_comentario';var URLLOGIN2='http://www.new.divirta-se.uai.com.br/html/webs/modulos/emuser/autentica_login_comentario';var URLLOGOUT='http://www.new.divirta-se.uai.com.br/html/webs/modulos/uai_noticia/portlets/usuarioLogout';var URLSESSAO='http://www.new.divirta-se.uai.com.br/html/webs/modulos/uai_noticia/portlets/VerificaLogon';var DIAGRAMADOR=''; /*]]>*/</script>                                                                                               
+<script type="text/javascript" type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/prototype.js"></script>
+<script type="text/javascript" type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/js.ajax.xmlhttp.js"></script>
+<script type="text/javascript" type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/effects.js"></script>
+<script type="text/javascript" type="text/javascript">
+function gravaComentarioNoticia()
+{
+    var comentario = document.getElementById('comentario');
+    if(comentario.value == ''){
+       alert('Digite um comentario');
+       comentario.focus();
+       return;
+    }
+    var handler = new XMLHandler();
+    var id_not = document.getElementById('id_not').value;
+    var xmlreq = new XMLClient(URLCOMENTARIO);
+    xmlreq.addParam('id_noticia',id_not);
+    xmlreq.addParam('comentario',comentario.value );
+    handler.onError = function(e) {alert('Error: '+e)};
+    handler.onProgress = function() {};
+    handler.onInit = function() {};
+    handler.onLoad = function (xml)
+    {    
+        var values = eval(xml);
+        if(values == 1 ){
+           alert('Você precisa se logar para comentar esta notícia.');
+        }else if(values == 2){
+           alert('Dados inválidos '); 
+        }else if(values == 3){
+           document.getElementById('comentarmateria').style.display = 'none'; 
+           document.getElementById('box_msg').style.display = 'none'; 
+           document.getElementById('liComentaM').className = '';
+           document.getElementById('liLerComentario').className = 'selected';    
+           document.getElementById('lercomentario').style.display = 'block';  
+           alert('Seu comentário foi gravado com sucesso. Ele será analisado pelos administradores do site antes de entrar no ar.'); 
+           comentario.value = '';
+        }
+    }
+   xmlreq.query(handler); 
+}
+var overlayDuration = 0.2;
+var overlayOpacity = 0.8;
+function verificarUsuario()
+{   
+    var handler = new XMLHandler();
+    var xmlreq = new XMLClient(URLSESSAO);
+    handler.onError = function(e) {alert('Error: '+e)};
+    handler.onProgress = function() {};
+    handler.onInit = function() {};
+    handler.onLoad = function (xml)
+    {
+        var box_help = document.getElementById('box_help');
+        var box_msg = document.getElementById('box_msg');
+        var values = eval(xml);
+        
+        if (values.length > 0)
+        {
+            NOMEUSER = '';
+            NOMEUSER  = 'Olá, '+ values[0];  
+            box_help.style.display = 'none';
+            box_msg.style.display = 'block';
+            
+            var span = document.getElementById('spanNome');
+            span.innerHTML = NOMEUSER;
+            habilitarForm();
+        } else {
+            showLoginForm();
+        }
+    }
+    xmlreq.query(handler);
+}
+function habilitarForm()
+{  
+   document.getElementById('aguarde').style.display = 'none';
+}
+function showLoginForm(msg)
+{
+    hideSelectBoxes();
+    hideFlash();
+    Element.addMethods();
+    Object.extend(Element, {
+        getWidth: function(element) { element = $(element); return element.offsetWidth; },
+        setWidth: function(element,w) { element = $(element); element.style.width = w +"px"; },
+        setHeight: function(element,h) { element = $(element); element.style.height = h +"px";},
+        setTop: function(element,t) { element = $(element); element.style.top = t +"px"; },
+        setLeft: function(element,l) { element = $(element); element.style.left = l +"px"; } } );
+
+    var arrayPageSize = getPageSize();
+    Element.setHeight('overlay', arrayPageSize[1]);
+    new Effect.Appear('overlay', { duration: overlayDuration, from: 0.0, to: overlayOpacity });
+    if (msg)
+    {
+        var obj = document.getElementById('overlay_msg');
+        obj.innerHTML = msg;
+    }
+    document.getElementById('overlay_login').style.display = 'block';
+    window.scrollTo(0, 0);
+}
+function getPageSize()
+{
+  var xScroll, yScroll;
+  if (window.innerHeight && window.scrollMaxY)
+  {
+      xScroll = window.innerWidth + window.scrollMaxX;
+      yScroll = window.innerHeight + window.scrollMaxY;
+  } else if (document.body.scrollHeight > document.body.offsetHeight){
+      xScroll = document.body.scrollWidth;
+      yScroll = document.body.scrollHeight;
+  } else {
+      xScroll = document.body.offsetWidth;
+      yScroll = document.body.offsetHeight;
+  }
+  var windowWidth, windowHeight;
+  if (self.innerHeight)
+  {
+      if(document.documentElement.clientWidth) windowWidth = document.documentElement.clientWidth;
+      else  windowWidth = self.innerWidth;
+      windowHeight = self.innerHeight;
+  } else if (document.documentElement && document.documentElement.clientHeight) {
+      windowWidth = document.documentElement.clientWidth;
+      windowHeight = document.documentElement.clientHeight;
+  } else if (document.body) {
+      windowWidth = document.body.clientWidth;
+      windowHeight = document.body.clientHeight;
+  }
+  if (yScroll < windowHeight) pageHeight = windowHeight;
+  else pageHeight = yScroll;
+  if (xScroll < windowWidth) pageWidth = xScroll;
+  else pageWidth = windowWidth;
+  arrayPageSize = new Array(pageWidth,pageHeight,windowWidth,windowHeight)
+  return arrayPageSize;
+}
+NOMEUSER = 'Olá, ';
+function logar()
+{
+    
+    var form = document.forms['form_logon'];
+    if (form.usuario.value == '')
+    {
+        alert('Digite o email.');
+        return;
+    }
+    if (form.senha.value == '')
+    {
+        alert('Digite a senha.');
+        return;
+    }
+    var handler = new XMLHandler();
+    var xmlreq = new XMLClient(URLLOGIN2);
+    xmlreq.addParam('login', form.usuario.value);
+    xmlreq.addParam('senha', form.senha.value);
+    handler.onError = function(e) {alert('Error: '+e)};
+    handler.onProgress = function() {};
+    handler.onInit = function() {};
+    handler.onLoad = function (xml)
+    {
+        var box_help = document.getElementById('box_help');
+        var box_msg = document.getElementById('box_msg');
+        var values = eval(xml);
+        if(values[0] != 'error')
+        { 
+            NOMEUSER += values[0]; 
+            offLoginForm();
+            document.getElementById('overlay_login').style.display = 'none';
+            document.getElementById('box_help').style.display = 'none';
+            var box = document.getElementById('box_msg');
+            box.style.display = 'block';
+            var span = document.getElementById('spanNome');
+            span.innerHTML = NOMEUSER;
+            
+            habilitarForm();
+          } else {
+            alert('Login ou senha incorreta, por favor tente novamente!');
+        }  
+    }
+    xmlreq.query(handler);  
+}
+function offLoginForm()
+{
+    showSelectBoxes();
+    showFlash();
+    new Effect.Fade('overlay', { duration: overlayDuration});
+}
+function logoutNoticiaInterna()
+{
+    var handler = new XMLHandler();
+    var xmlreq = new XMLClient(URLLOGOUT);
+    handler.onError = function(e) {};
+    handler.onProgress = function() {};
+    handler.onInit = function() {};
+    handler.onLoad = function (xml)
+    {     
+     // window.location.href='ficha_noticia?id_noticia='+IDNOTICIA;
+     location.reload();
+   }
+   xmlreq.query(handler);
+}
+function showSelectBoxes()
+{
+    var selects = document.getElementsByTagName("select");
+    for (i=0; i != selects.length; i++) { selects[i].style.visibility = "visible"; }
+}
+function hideSelectBoxes()
+{
+    var selects = document.getElementsByTagName("select");
+    for (i = 0; i != selects.length; i++)
+    {
+        if (!selects[i].getAttribute('view')) selects[i].style.visibility = "hidden";
+    }
+}
+function showFlash()
+{
+    var flashObjects = document.getElementsByTagName("object");
+    for (i = 0; i < flashObjects.length; i++)
+    {    flashObjects[i].style.visibility = "visible"; }
+    var flashEmbeds = document.getElementsByTagName("embed");
+    for (i = 0; i < flashEmbeds.length; i++) { flashEmbeds[i].style.visibility = "visible"; }
+}
+function hideFlash()
+{
+    var flashObjects = document.getElementsByTagName("object");
+    for (i = 0; i < flashObjects.length; i++)
+    { flashObjects[i].style.visibility = "hidden"; }
+    var flashEmbeds = document.getElementsByTagName("embed");
+    for (i = 0; i < flashEmbeds.length; i++) { flashEmbeds[i].style.visibility = "hidden"; }
+}
+
+var msg = ['Acesso exclusivo para assinantes do uai e usuários cadastrados. <'+'span>Entre e Divirta-se:<'+'/span>', 'Digite seu e-mail para enviar sua nova senha:'];
+function esqueciSenha()
+{
+    document.getElementById('form_logon').style.display = 'none';
+    document.getElementById('form_esqueci').style.display = 'block';
+    document.getElementById('overlay_msg').innerHTML = msg[1];
+}
+function verCaracteres(obj, max)
+{
+    var comm = document.getElementById('comentario');
+    if (obj.value.length > max)
+        obj.value = obj.value.substring(0, max);
+    document.getElementById('qtde_caracteres').innerHTML = max - comm.value.length + ' caracteres restantes.';
+}
+function enviarSenha()
+{
+    var form = document.forms['form_esqueci'];
+    if (form.email.value == '')
+    {
+        alert('Digite seu email para que possamos enviar a nova senha.');
+        return;
+    }
+
+    var handler = new XMLHandler();
+    var xmlreq = new XMLClient(URLESQUECI);
+    xmlreq.addParam('email', form.email.value);
+    handler.onError = function(e) {};
+    handler.onProgress = function() {};
+    handler.onInit = function() {};
+    handler.onLoad = function (xml)
+    {
+        alert('Sua nova senha foi enviada com sucesso! Confira seu e-mail.');
+        cancelarSenha();
+    }
+    xmlreq.query(handler);  
+}
+function cancelarSenha()
+{
+    document.getElementById('form_logon').style.display = 'block';
+    document.getElementById('form_esqueci').style.display = 'none';
+    document.getElementById('overlay_msg').innerHTML = msg[0];
+}
+
+</script>
+
+                                             
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/prototype.js"></script>
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/js.ajax.xmlhttp.js"></script>
+<script type="text/javascript" src="http://www.new.divirta-se.uai.com.br/arquivos/js/effects.js"></script>
+<script type="text/javascript">
+function gravaComentario()
+{
+    var comentario = document.getElementById('comentario');
+    if(comentario.value == ''){
+       alert('digite um comentario');
+       comentario.focus();
+       return;
+    }
+    var handler = new XMLHandler();
+
+    var xmlreq = new XMLClient(URLCOMENTARIO);
+    xmlreq.addParam('id_evento', IDEVENTO);
+    xmlreq.addParam('comentario',comentario.value );
+    handler.onError = function(e) {alert('Error: '+e)};
+    handler.onProgress = function() {};
+    handler.onInit = function() {};
+    handler.onLoad = function (xml)
+    {    
+        var values = eval(xml);
+        if(values == 1 ){
+           alert('o usuário não esta logado');
+        }else if(values == 2){
+           alert('dados inválidos '); 
+        }else if(values == 3){
+           document.getElementById('comentarmateria').style.display = 'none'; 
+           document.getElementById('box_msg').style.display = 'none'; 
+           document.getElementById('liComentaM').className = '';
+           document.getElementById('liLerComentario').className = 'selected';    
+           document.getElementById('lercomentario').style.display = 'block';  
+           alert('seu comentário foi armazenado com sucesso, ele será analizado e publicado pelos administradores do site'); 
+           comentario.value = '';
+        }
+    }
+   xmlreq.query(handler); 
+   
+}
+/**
+var overlayDuration = 0.2;
+var overlayOpacity = 0.8;
+
+function verificarUsuario()
+{   
+    var handler = new XMLHandler();
+    var xmlreq = new XMLClient(URLSESSAO);
+    handler.onError = function(e) {alert('Error: '+e)};
+    handler.onProgress = function() {};
+    handler.onInit = function() {};
+    handler.onLoad = function (xml)
+    {
+         
+        var box_help = document.getElementById('box_help');
+        var box_msg = document.getElementById('box_msg');
+        var values = eval(xml);
+        if (values.length > 0)
+        {
+            box_help.style.display = 'none';
+            box_msg.style.display = 'block';
+            habilitarForm();
+        } else {
+            showLoginForm();
+        }
+    }
+    xmlreq.query(handler);
+}
+**/
+function habilitarForm()
+{  
+   document.getElementById('aguarde').style.display = 'none';
+}
+function showLoginForm(msg)
+{
+    hideSelectBoxes();
+    hideFlash();
+    Element.addMethods();
+    Object.extend(Element, {
+        getWidth: function(element) { element = $(element); return element.offsetWidth; },
+        setWidth: function(element,w) { element = $(element); element.style.width = w +"px"; },
+        setHeight: function(element,h) { element = $(element); element.style.height = h +"px";},
+        setTop: function(element,t) { element = $(element); element.style.top = t +"px"; },
+        setLeft: function(element,l) { element = $(element); element.style.left = l +"px"; } } );
+
+    var arrayPageSize = getPageSize();
+    Element.setHeight('overlay', arrayPageSize[1]);
+    new Effect.Appear('overlay', { duration: overlayDuration, from: 0.0, to: overlayOpacity });
+    if (msg)
+    {
+        var obj = document.getElementById('overlay_msg');
+        obj.innerHTML = msg;
+    }
+    document.getElementById('overlay_login').style.display = 'block';
+    window.scrollTo(0, 0);
+}
+function getPageSize()
+{
+  var xScroll, yScroll;
+  if (window.innerHeight && window.scrollMaxY)
+  {
+      xScroll = window.innerWidth + window.scrollMaxX;
+      yScroll = window.innerHeight + window.scrollMaxY;
+  } else if (document.body.scrollHeight > document.body.offsetHeight){
+      xScroll = document.body.scrollWidth;
+      yScroll = document.body.scrollHeight;
+  } else {
+      xScroll = document.body.offsetWidth;
+      yScroll = document.body.offsetHeight;
+  }
+  var windowWidth, windowHeight;
+  if (self.innerHeight)
+  {
+      if(document.documentElement.clientWidth) windowWidth = document.documentElement.clientWidth;
+      else  windowWidth = self.innerWidth;
+      windowHeight = self.innerHeight;
+  } else if (document.documentElement && document.documentElement.clientHeight) {
+      windowWidth = document.documentElement.clientWidth;
+      windowHeight = document.documentElement.clientHeight;
+  } else if (document.body) {
+      windowWidth = document.body.clientWidth;
+      windowHeight = document.body.clientHeight;
+  }
+  if (yScroll < windowHeight) pageHeight = windowHeight;
+  else pageHeight = yScroll;
+  if (xScroll < windowWidth) pageWidth = xScroll;
+  else pageWidth = windowWidth;
+  arrayPageSize = new Array(pageWidth,pageHeight,windowWidth,windowHeight)
+  return arrayPageSize;
+}
+NOMEUSER = 'Olá, ';
+function logar()
+{
+    var form = document.forms['form_logon'];
+    if (form.usuario.value == '')
+    {
+        alert('Digite o email.');
+        return;
+    }
+    if (form.senha.value == '')
+    {
+        alert('Digite a senha.');
+        return;
+    }
+    var handler = new XMLHandler();
+    var xmlreq = new XMLClient(URLLOGIN2);
+    xmlreq.addParam('login', form.usuario.value);
+    xmlreq.addParam('senha', form.senha.value);
+    handler.onError = function(e) {alert('Error: '+e)};
+    handler.onProgress = function() {};
+    handler.onInit = function() {};
+    handler.onLoad = function (xml)
+    {
+        var box_help = document.getElementById('box_help');
+        var box_msg = document.getElementById('box_msg');
+        var values = eval(xml);
+	if(values[0] != 'error')
+        {
+             NOMEUSER += values[0];
+            offLoginForm();
+            document.getElementById('overlay_login').style.display = 'none';
+            document.getElementById('box_help').style.display = 'none';
+            var box = document.getElementById('box_msg');
+            box.style.display = 'block';
+            var span = document.getElementById('spanNome');
+            span.innerHTML = NOMEUSER;
+            
+            habilitarForm();
+        } else {
+            alert('Login ou senha incorreta, por favor tente novamente!');
+        }
+    }
+    xmlreq.query(handler);  
+}
+
+function offLoginForm()
+{
+    showSelectBoxes();
+    showFlash();
+    new Effect.Fade('overlay', { duration: overlayDuration});
+}
+function verCaracteres(obj, max)
+{
+    if (obj.value.length > max)
+        obj.value = obj.value.substring(0, max);
+    document.getElementById('qtde_caracteres').innerHTML = max - obj.value.length + ' caracteres restantes.';
+}
+
+function showSelectBoxes()
+{
+    var selects = document.getElementsByTagName("select");
+    for (i=0; i != selects.length; i++) { selects[i].style.visibility = "visible"; }
+}
+function hideSelectBoxes()
+{
+    var selects = document.getElementsByTagName("select");
+    for (i = 0; i != selects.length; i++)
+    {
+        if (!selects[i].getAttribute('view')) selects[i].style.visibility = "hidden";
+    }
+}
+function showFlash()
+{
+    var flashObjects = document.getElementsByTagName("object");
+    for (i = 0; i < flashObjects.length; i++)
+    {    flashObjects[i].style.visibility = "visible"; }
+    var flashEmbeds = document.getElementsByTagName("embed");
+    for (i = 0; i < flashEmbeds.length; i++) { flashEmbeds[i].style.visibility = "visible"; }
+}
+function hideFlash()
+{
+    var flashObjects = document.getElementsByTagName("object");
+    for (i = 0; i < flashObjects.length; i++)
+    { flashObjects[i].style.visibility = "hidden"; }
+    var flashEmbeds = document.getElementsByTagName("embed");
+    for (i = 0; i < flashEmbeds.length; i++) { flashEmbeds[i].style.visibility = "hidden"; }
+}
+</script>
+
+<script type="text/javascript">/*<![CDATA[*/ var URLESQUECI='http://adminf5.new.divirta-se.uai.com.br/divirtase/modulos/emuser/portlets/alterarSenha'; /*]]>*/</script>
+<script type="text/javascript">
+var msg = ['Acesso exclusivo para assinantes do uai e usuários cadastrados. <'+'span>Entre e Divirta-se:<'+'/span>', 'Digite seu e-mail para enviar sua nova senha:'];
+/*function esqueciSenha()
+{
+    document.getElementById('form_logon').style.display = 'none';
+    document.getElementById('form_esqueci').style.display = 'block';
+    document.getElementById('overlay_msg').innerHTML = msg[1];
+}*/
+function enviarSenha()
+{
+    var form = document.forms['form_esqueci'];
+    if (form.email.value == '')
+    {
+        alert('Digite seu email para que possamos enviar a nova senha.');
+        return;
+    }
+
+    var handler = new XMLHandler();
+    var xmlreq = new XMLClient(URLESQUECI);
+    xmlreq.addParam('email', form.email.value);
+    handler.onError = function(e) {};
+    handler.onProgress = function() {};
+    handler.onInit = function() {};
+    handler.onLoad = function (xml)
+    {
+        alert('Sua nova senha foi enviada com sucesso! Confira seu e-mail.');
+        cancelarSenha();
+    }
+    xmlreq.query(handler);  
+}
+function cancelarSenha()
+{
+    document.getElementById('form_logon').style.display = 'block';
+    document.getElementById('form_esqueci').style.display = 'none';
+    document.getElementById('overlay_msg').innerHTML = msg[0];
+}
+
+function fechar()
+{
+  
+  document.getElementById('overlay').style.display='none';
+  document.getElementById('overlay_login').style.display='none';
+  document.getElementById('aguarde').style.display = 'none';
+}
+
+</script>
+
+<div id="overlay" style="display:none"></div>
+<div id="overlay_login" style="display:none;width:100%; text-align:center; z-index:101;"> <!-- style="display:none;width:100%; text-align:center;" -->
+
+  <table style="text-align:left;width:535px;border:2px solid #f93;background:#fff;margin:20px auto 0;">
+  <tr>
+    <td id="login">
+      <img src="http://www.new.divirta-se.uai.com.br/arquivos/imgs/divirta-se.png" alt="Divirta-se" class="logo" />
+      <p id="overlay_msg">Acesso exclusivo para assinantes do uai e usuários cadastrados. <span>Entre e Divirta-se:</span></p>
+      <form name="form_logon" action="logon" method="post" id="form_logon">
+        <label for="user"><b>Email:</b> &nbsp; <input type="text" name="usuario" size="14" value="" /></label>
+        <label for="password"><b>Senha:</b> <input type="password" name="senha" size="14" value="" /></label>
+        <div style="float:left; margin-top:0px; *margin-top:10px;">
+            <a href="javascript:void(0)" onclick="esqueciSenha()"><span>&raquo;</span> Esqueci minha senha</a>
+           <a href="javascript:void(0)" onclick="logar()" class="button" style="position:relative; z-index:1000;">ok</a><br><br>
+           <a href="javascript:void(0)" onclick="fechar()"><span>&raquo;</span> Desistir</a>
+         </div>
+      </form>
+      <form name="form_esqueci" action="logon" method="post" style="display:none" id="form_esqueci">
+        <label for="user"><b>E-mail:</b> &nbsp; <input type="text" name="email" size="14" value="" /></label><br />
+        <a href="javascript:void(0)" onclick="enviarSenha()" class="button">ok</a>
+        <a href="javascript:void(0)" onclick="cancelarSenha()" class="button">Cancelar</a>
+      </form>
+    </td>
+    <td id="notregistered">
+      <a href="http://www.uai.com.br/assine/index.html" target="_blank"><img src="http://www.new.divirta-se.uai.com.br/arquivos/imgs/banner_assineuai.jpg" alt="" /></a>
+      <span class="highlight">não é cadastrado?</span>
+      <div style="padding:0 0 0 10px;margin-bottom:10px;">
+        <p>Faça parte deste clube é muito fácil, <a href="http://www.uai.com.br/assine/index.html" target="_blank"><span>assine Uai</span></a> ou <a target="_blank" href="http://www.new.divirta-se.uai.com.br/html/formulario_cadastrese_wad/formulario_cadastrese_wad.shtml"><span>cadastre-se</span></a></p>
+        <span>&raquo;</span> Promoções exclusivas<br />
+        <span>&raquo;</span> Forum<br />
+        <span>&raquo;</span> Newsletter<br />
+        <span>&raquo;</span> Quiz<br />
+      </div>
+    </td>
+  </tr>
+  </table>
+
+</div>
+
+    
+<div class="bgwaves"> <!-- style="*width:1150px;" -->
+  <!--F5:Slot:include:super_banner-->
+        <div id="div_banner_topo" style="display:block">
+
+
+<div style="margin-left:20px; height: 90px; margin-bottom:8px;">
+ <span style="position:absolute; width: 728px; z-index:100; visibility: show;"><script type="text/javascript">mostrarBanner1(57)</script></span>
+</div>
+
+
+</div>
+
+        
+<div style="position: absolute; top: 30px; left: 757px; z-index: 11; width:219px; height:100px;">
+ <div style="padding-top: 5px;"><!--F5:Slot:include:banner_topo_mini-->
+        
+ <span>   <script type="text/javascript">mostrarBanner1(130)</script></span>
+
+    </div>
+</div>
+
+    
+  <div class="page" style="margin-right:10px;;_margin-right:5px;">
+    <div class="head">
+
+      <h1><a href="http://www.new.divirta-se.uai.com.br/html/capa_abertura/capa_abertura.shtml" title="Voltar para a p&aacute;gina inicial"><img alt="Divirta-se" src="http://www.new.divirta-se.uai.com.br/arquivos/imgs/divirta-se.png"/></a></h1>
+      
+      <form action="http://www.google.com/cse" id="searchbox_002197379307377804940:9ggbsca16sc" method="GET" name="busca" onsubmit="return consistenciaForm()" target="_blank">
+      <div>
+        <label for="searchtxt">buscar <input name="q" size="25" type="text"/></label>
+        <select id="opcoes" style="margin-top:17px;*margin-top:18px;">
+          <option selected="" value="0">divirta-se</option>
+          <option value="1">Portal uai</option>
+          <option value="2">Na internet</option>
+          <option value="3">Arquivos EM</option>
+        </select>
+        <input name="cx" type="hidden" value="002197379307377804940:9ggbsca16sc"/>
+        <input name="cof" type="hidden" value="FORID:9"/>
+	<!--<input name="cx" type="hidden" value=""/> -->
+        <input name="query" type="hidden" value=""/>
+        <input name="ie" type="hidden" value="ISO-8859-1"/>
+        <input class="ok" name="sa" style="margin-top:17px;*margin-top:18px;" type="submit" value=""/> 
+       </div>
+      </form>
+
+    </div>
+
+    <div class="main">
+      <!--F5:Slot:include:coluna0-->
+        
+<script type="text/javascript">/*<![CDATA[*/ var URLFiles='http://apps.new.divirta-se.uai.com.br/divirtase/divirtase/arquivos/css/';var URLEpop='http://apps.new.divirta-se.uai.com.br/divirtase/divirtase/modulos/uai_noticia/portlets/busca_noticia_interna?id_sessao=19&id_noticia=9418';var pPu=0; /*]]>*/</script> 
+<script type="text/javascript">
+
+////////////    aumentar e diminuir fontes  //////////////////////
+        var _font_min = 12;  
+        var _font_max = 20;
+        var _tags = ['div', 'p', 'h1', 'h2', 'span', 'a', 'i', 'b', 'li', 'td', 'strong', 'f5'];
+        function aumentar(quant) {
+            // validacoes      
+            var e_corpo_noticia = document.getElementById('divTexto');
+            if (typeof(e_corpo_noticia) != 'object') return; 
+            var atual_size = e_corpo_noticia.style.fontSize;             
+            // apanhando o tamanho atual
+            if(!atual_size) atual_size = 12;
+            else atual_size = parseInt(atual_size.replace('px'));
+            if(atual_size >= _font_max) return;            
+            modificar_geral(e_corpo_noticia, atual_size + quant);            
+        }
+        
+        function diminuir(quant) {
+            // validacoes      
+            var e_corpo_noticia = document.getElementById('divTexto');
+            if (typeof(e_corpo_noticia) != 'object') return; 
+            var atual_size = e_corpo_noticia.style.fontSize;             
+            // apanhando o tamanho atual
+            if(!atual_size) atual_size = 12;
+            else atual_size = parseInt(atual_size.replace('px'));
+            if(atual_size <= _font_min) return;             
+            modificar_geral(e_corpo_noticia, atual_size - quant);            
+        }
+        
+        function modificar_geral(el, size) { 
+            el.style.fontSize = size + 'px';
+            //document.getElementById('bigode').style.fontSize = size + 'px';
+            var tags = _tags;
+            for(var i in tags) {
+                // variando nos elmentos e modificando as fontes
+                // corrige um eventual "bug" devido a tag dentro de tag
+                var l_els = el.getElementsByTagName(tags[i]);
+                for(var i=0; i< l_els.length; i++) {
+                    l_els[i].style.fontSize = size + 'px';
+                }
+            }
+        }
+///////////////////// fim aumentar e diminuir ////////////////////////////////
+
+
+function doTag(obj, tag)
+{
+    var bwidth = document.body.offsetWidth;
+    var width = obj.offsetWidth;
+
+    var curleft = 0;
+    var curtop = 0;
+    if(obj.offsetParent)
+    {
+        while(1) 
+        {
+            curleft += obj.offsetLeft;
+            curtop += obj.offsetTop;
+            if(!obj.offsetParent)
+                break;
+            obj = obj.offsetParent;
+        }
+    } else if(obj.x) {
+        curleft += obj.x;
+        curtop += obj.y;
+    }
+    var o = document.getElementById('tag_f5');
+    o.innerHTML = TAGS[tag];
+    var nleft = curleft + width;
+    if (nleft > bwidth)
+       o.style.left = (curleft - o.offsetWidth) + 'px';
+    else
+       o.style.left = nleft + 'px';
+
+    if (document.all) o.style.top = curtop + 'px'; 
+    else o.style.top = (curtop + obj.offsetHeight) + 'px';
+
+    o.style.visibility = 'visible';
+}
+function offTag()
+{
+    var o = document.getElementById('tag_f5');
+    o.style.visibility = 'hidden';
+}
+function envieParaAmigo(){ window.open(URLENVIE+'?url='+escape(URLNOTICIA)+'&titulo='+TITULO,'popup','width=450,height=350'); }
+
+
+function email_para(email, subject, message) {
+  var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + message;
+  win = window.open(mailto_link,'emailWindow');
+  if (win && win.open &&!win.closed) win.close();    
+}
+function imprimirF() {
+  window.open(URLEpop + '&pu=1','popup','width=0,height=0')
+}
+
+window.onload = init;
+function init() {
+ if(pPu != 0) {
+  var link = document.createElement('link');
+  link.setAttribute('rel', 'stylesheet');
+  link.setAttribute('mdeia', 'screen');
+  link.setAttribute('href', URLFiles + 'geral.css');
+
+  var dH = document.getElementsByTagName('head')[0];
+
+  dH.appendChild(link);
+  document.getElementsByTagName('body')[0].style.background = '#FFFFFF';
+  window.print();
+  window.close();
+ }
+}
+</script>
+
+<div id="tag_f5" style="visibility:hidden; position:absolute; width:200px; border: 1px solid #000; background:#fff; padding:5px">teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste teste </div>
+<div class="box3 white">
+  <div>
+  <input type="hidden" id="id_not" value="9418">
+    
+     
+     
+
+ 
+    <script type="text/javascript">/*<![CDATA[*/ var TITULO="Sony lan\xe7a CDs de ex-participantes do 'American Idol'";var URLNOTICIA='http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9418/ficha_musica.shtml';var URLENVIE='http://www.new.divirta-se.uai.com.br/html/webs/modulos/envie_amigo/portlet_envieamigo';var TAGS={}; /*]]>*/</script>
+    <p class="date" style="margin-top:3px;margin-bottom:5px;"> Seção : Música  - 31/03/2009 15:10</p> <p /> 
+    <h3>Sony lança CDs de ex-participantes do 'American Idol'</h3> 
+    <h5></h5> 
+    <br />
+  
+  
+      
+        
+        <a style="*float:none!important; cursor:default;"> Agência Estado  </a>
+     
+    
+
+
+
+    <table style="margin-top:20px; width:100%;">
+    <tr>
+      <td>
+        <img alt="" border="0" usemap="#ControlsMap" src="http://www.new.divirta-se.uai.com.br/arquivos/imgs/news_controls.png" /> 
+        <map name="ControlsMap" id="ControlsMap">
+        <area shape="rect" coords="3,3,23,15" href="javascript:aumentar(2);" alt="aumentar fonte" />
+        <area shape="rect" coords="3,34,22,45" href="javascript:diminuir(2);" alt="diminuir fonte" />
+        <area shape="rect" coords="3,60,26,75" href="javascript:envieParaAmigo()" />
+        <area shape="rect" coords="3,83,26,103" href="javascript:imprimirF();" alt="imprimir" />
+        </map>
+      </td> 
+      <td id="newscontent">
+        <div id="divTexto">
+        <span style="font-weight: bold"><table style="" class="photo center"><tr><td><img src="http://www.new.divirta-se.uai.com.br/arquivos/uai_noticia/20090331151431320.jpg" alt="REUTERS/Fred Prouser" title="REUTERS/Fred Prouser"  /></td></tr>
+                        <tr><td><span>David Cook, vencedor da temporada passada de American Idol, já vendeu 1 milhão de cópias</span></td></tr></table></span><br />S&atilde;o mais de 50 milh&otilde;es de c&oacute;pias vendidas, 7 pr&ecirc;mios Grammy, 1 Oscar, 38 Billboard Music Awards e dezenas de outras estatuetas acumuladas. Para algu&eacute;m que come&ccedil;ou sua carreira tardiamente em 2002, os n&uacute;meros impressionam. N&atilde;o se trata de um Paul McCartney ou de uma Madonna, mas, sim, do fen&ocirc;meno chamado American Idol. <br /><br />Desde 2002, o programa criado na Inglaterra no ano anterior por Simon Fuller vem criando &iacute;dolos, amealhando f&atilde;s e ganhando pr&ecirc;mios e mais pr&ecirc;mios pelo mundo. Enquanto a oitava temporada corre solta (com transmiss&atilde;o todo s&aacute;bado e domingo pelo canal a cabo Sony), a Sony Music coloca nas lojas brasileiras quatro CDs de ex-participantes do reality show.<br /><br />O de David Cook &eacute; o primeiro a saltar aos olhos. Cook, de 25 anos, foi o vencedor da temporada passada e, ap&oacute;s excursionar com os outros finalistas, finalmente lan&ccedil;ou seu primeiro trabalho por uma grande gravadora. Produzido por Rob Cavallo (Green Day, My Chemical Romance) e lan&ccedil;ado no final do ano passado nos Estados Unidos, o disco j&aacute; vendeu mais de 1 milh&atilde;o de c&oacute;pias.<br /><br />Outra aposta &eacute; a estreia da &quot;oscarizada&quot; Jennifer Hudson em CD. Entre os 10 finalistas da 3&ordf; temporada, em 2004, Hudson levou o Oscar de melhor atriz coadjuvante por sua interpreta&ccedil;&atilde;o em Dreamgirls, em 2007. Adepta do R&amp;B praticado por cantoras como Beyonce e Mariah Carey, a jovem de 26 anos j&aacute; vendeu mais de 800 mil c&oacute;pias de seu debute, tamb&eacute;m lan&ccedil;ado no final do ano passado. Junto ao lan&ccedil;amento, Hudson teve de encarar o assassinato de sua m&atilde;e e do irm&atilde;o mais velho.<br /><br />Segundo colocado da edi&ccedil;&atilde;o passada, David Archuleta veio atrelado a todo tipo de problema. O cantor de 17 anos teve uma paralisia vocal aos 11 anos e quase viu seu sonho ir garganta abaixo. Foram necess&aacute;rios anos de terapia vocal para que Archuleta voltasse a encarar um microfone. N&atilde;o bastasse o problema de sa&uacute;de, seu pai e empres&aacute;rio, Jeff Archuleta, foi acusado de agredi-lo moralmente antes de uma das finais.<br /><br />J&aacute; Kelly Clarkson pode se apresentar pelos n&uacute;meros que j&aacute; conseguiu at&eacute; o momento. Vencedora do primeiro American Idol, a texana de 26 anos j&aacute; vendeu mais de 20 milh&otilde;es de CDs pelo mundo ganhou 2 Grammy e mais de 100 vezes seu nome foi lembrado para algum pr&ecirc;mio.
+        </div>
+      </td>
+    </tr>
+    </table> 
+    
+  </div> 
+</div>
+
+        
+<div style="text-align:center; margin-top:25px; margin-bottom:25px;">
+<span><script language="JavaScript" type="text/javascript">
+if (document.location.href.search('diagramador') == -1){
+  if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+  document.write('<script language="JavaScript" src="http://ad.doubleclick.net/adj/EZ_BR_1000/M31G44TA57TB53TI10R25C106;tile=2;sz=468x60;ord=' + ord + '?" type="text/javascript"><\/script>');
+}
+</script></span>
+</div>
+
+        <script type="text/javascript">
+function changetabs(acao){
+   var conteudo = document.getElementById('conteudorelacionado');
+   var noticia = document.getElementById('outrasnoticias'); 
+   var comenta = document.getElementById('comentarmateria'); 
+   var ler = document.getElementById('lercomentario'); 
+    var formComentario = document.getElementById('box_msg'); 
+   if(acao == 'lercomentario'){
+      conteudo.style.display = 'none'; 
+      noticia.style.display = 'none';
+      comenta.style.display = 'none'; 
+      formComentario.style.display = 'none'; 
+      document.getElementById('liConteudoRelacional').className = '';  
+      document.getElementById('liOutrasN').className = '';
+      document.getElementById('liComentaM').className = '';
+      document.getElementById('liLerComentario').className = 'selected';    
+      ler.style.display = 'block';   
+   }else if(acao == 'conteudorelacionado'){
+      ler.style.display = 'none'; 
+      noticia.style.display = 'none';
+      comenta.style.display = 'none'; 
+      conteudo.style.display = 'block'; 
+      formComentario.style.display = 'none';       
+      document.getElementById('liLerComentario').className = '';
+      document.getElementById('liOutrasN').className = '';
+      document.getElementById('liComentaM').className = ''; 
+      document.getElementById('liConteudoRelacional').className = 'selected';     
+        
+   }else if(acao == 'comentarmateria'){
+      document.getElementById('aguarde').style.display = "block";
+      verificarUsuario();
+      conteudo.style.display = 'none'; 
+      noticia.style.display = 'none';
+      ler.style.display = 'none';  
+      document.getElementById('liConteudoRelacional').className = '';  
+      document.getElementById('liOutrasN').className = '';
+      document.getElementById('liLerComentario').className = '';     
+      
+      document.getElementById('liComentaM').className = 'selected';  
+      //comenta.style.display = 'block'; 
+   
+   }else if (acao == 'outrasnoticias'){
+     
+      ler.style.display = 'none'; 
+      conteudo.style.display = 'none'; 
+      comenta.style.display = 'none'; 
+      formComentario.style.display = 'none'; 
+      document.getElementById('liConteudoRelacional').className = '';  
+      document.getElementById('liLerComentario').className = '';
+      document.getElementById('liComentaM').className = '';
+   
+      document.getElementById('liOutrasN').className = 'selected';    
+      noticia.style.display = 'block'; 
+   }
+}
+function chamaQuizz(id_quizz){
+   var url = URLQUIZZ + '?id_quizz='+id_quizz;
+   abrirQuizz(url);
+}
+function abrirEnquete(id_enquete)
+{
+    var url = URLENQUETE +'?id_enquete='+id_enquete;
+    var w = 720;
+    var h = 550;
+    window.open(url, '_blank', 'width=740, height=430,toolbar=no, menubar=no, personalbar=no, scrollbars=yes, resizable=no, dependent=yes, z-lock=yes, modal=yes');
+}
+
+
+function abrir_galeria_hit(id_galeria)
+{
+    var url = URLGALERIAHIT+'?id_galeria='+id_galeria;
+    var w = 720;
+    var h = 550;
+    window.open(url, '_blank', 'width=720, height=598,toolbar=no, menubar=no, personalbar=no, scrollbars=yes, resizable=no, dependent=yes, z-lock=yes, modal=yes')
+   
+}
+
+
+function abrir_galeria(id_galeria)
+{
+    var url = URLGALERIA+'?id_galeria='+id_galeria;
+    var w = 720;
+    var h = 550;
+    window.open(url, '_blank', 'width=720, height=598,toolbar=no, menubar=no, personalbar=no, scrollbars=yes, resizable=no, dependent=yes, z-lock=yes, modal=yes')
+   
+}
+
+
+</script>
+<script type="text/javascript">/*<![CDATA[*/ var URLQUIZZ='http://apps.new.divirta-se.uai.com.br/divirtase/divirtase/modulos/quizz/portlets/quizz_chamada';var URLGALERIAHIT='http://apps.new.divirta-se.uai.com.br/divirtase/divirtase/modulos/galeria_foto_hit/portlets/galeria_mostrar';var URLENQUETE='http://apps.new.divirta-se.uai.com.br/divirtase/divirtase/modulos/enquete/portlets/showEnquete'; /*]]>*/</script>
+
+<div id="tabs" class="tabs">
+  <ul>
+    <li id="liConteudoRelacional" class="selected"><a href="javascript:changetabs('conteudorelacionado');">Conteúdo relacionado</a></li>
+    <li id="liOutrasN"><a href="javascript:changetabs('outrasnoticias');">Outras notícias</a></li>
+    <li id="liComentaM"><a href="javascript:changetabs('comentarmateria');">Comentar matéria</a></li>
+    <li id="liLerComentario"><a href="javascript:changetabs('lercomentario');">Ler comentário</a></li>
+  </ul>
+  <div id="conteudorelacionado">
+    <dl>
+      <dd></dd>
+      <dd>
+      </dd> 
+      <dd>
+      </dd> 
+      <dd>
+      </dd>
+            
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+     
+
+     
+
+
+    </dl>   
+  </div>
+
+
+<div id="outrasnoticias" style="display:none">
+  <dl> 
+  
+   
+      
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9418/ficha_musica.shtml" style="cursor:pointer">Sony lança CDs de ex-participantes do 'American Idol'</a>
+       </dd>
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9404/ficha_musica.shtml" style="cursor:pointer">Independência ou morte</a>
+       </dd>
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9402/ficha_musica.shtml" style="cursor:pointer">Andre 3000, do Outkast, preso por dirigir em alta velocidade</a>
+       </dd>
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9401/ficha_musica.shtml" style="cursor:pointer">Despedida marca último disco de Edson & Hudson <img border="0" src="http://banners.estaminas.com.br/zope/superesportes/ico_video.gif"></a>
+       </dd>
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9398/ficha_musica.shtml" style="cursor:pointer">Na prateleira</a>
+       </dd>
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9394/ficha_musica.shtml" style="cursor:pointer">Toquinho e MPB 4 lançam DVD</a>
+       </dd>
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9393/ficha_musica.shtml" style="cursor:pointer">Revelação mineira se apresenta em BH</a>
+       </dd>
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9392/ficha_musica.shtml" style="cursor:pointer">Prodigy está de volta com formação original <img border="0" src="http://banners.estaminas.com.br/zope/superesportes/ico_video.gif"></a>
+       </dd>
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9389/ficha_musica.shtml" style="cursor:pointer">Mart'nália está de volta a Belo Horizonte <img border="0" src="http://banners.estaminas.com.br/zope/superesportes/ico_video.gif"></a>
+       </dd>
+        <dd> 
+             
+          
+          <a href="http://www.new.divirta-se.uai.com.br/html/sessao_19/2009/03/31/ficha_musica/id_sessao=19&id_noticia=9377/ficha_musica.shtml" style="cursor:pointer">Nenhum de Nós comemora 20 anos de carreira <img border="0" src="http://banners.estaminas.com.br/zope/superesportes/ico_video.gif"></a>
+       </dd> 
+     
+   
+  </dl>  
+</div>
+
+  <div id="aguarde" style="display:none" align="left"><img src="http://www.new.divirta-se.uai.com.br/arquivos/carregando.gif" /> Aguarde.....</div>  
+  <div id="comentarmateria" style="display:none;">
+  <dl>
+   <dt>Comentar Matéria</dt>
+    <dd>
+     <a href="#">Noticia 01 relacionada com o filme acima descrito.</a>
+     <a href="#">Noticia 02 relacionada com o filme acima descrito.</a>
+    </dd>
+   <dt>Ficha do filme</dt>
+    <dd>
+     <a href="#">De volta para o futuro estreia amanhã</a>
+     <a href="#">Salas</a>
+     <a href="#">BH Shopping - Sala1</a>
+     <a href="#">Ponteio lar Shopping - Sala3</a>
+     <a href="#">Diamond - Sala2</a>
+    </dd>
+   <dt>Promoções</dt>
+    <dd>
+     <a href="#">Participe da promoção e concorra a ingressos do filme</a>
+    </dd>
+  </dl>
+ </div>
+ <div id="lercomentario" style="display:none;">
+   <dl>
+    
+  <dd>Não ha comentários publicado para essa notícia</dd>   
+  <dl>
+ </dl></dl></div>
+</div>
+
+        <div style="padding-left:38px; padding-top:20px;">
+<script type="text/javascript">
+/*<![CDATA[*/
+if (document.location.href.search('f5diagramador') == -1) {
+google_ad_client = "pub-8965259536670465"; 
+google_ad_slot = "0387251454";
+google_ad_width = 300;
+google_ad_height = 250;
+google_color_border = "000000"; 
+google_color_bg = "ffffff"; 
+google_color_link = "ff9933"; 
+google_color_url = "ff9933"; 
+google_color_text = "000000"; 
+
+
+document.write("<");
+document.write("script language='JavaScript1.1' src='http://pagead2.googlesyndication.com/pagead/show_ads.js'>");
+document.write("<");
+document.write("/script>");
+}
+/*]]>*/
+</script>
+</div>
+<div style="padding-top:50px;"></div>
+
+        <div class="box" id="box_help" style="display:none;">
+  <img src="http://www.new.divirta-se.uai.com.br/arquivos/carregando.gif" />
+  <div class="box white">Aguarde um momento até que o sistema verifique seu usuário.</div>
+</div>
+<script>document.getElementById('box_help').style.display = 'none';</script>
+<div class="box white" id="box_msg" style="display:none">
+<!-- <b style="color:#f93" tal:define="NOMEUSER string:USUARIOUAI" tal:content="python:'Ola, ' + here.REQUEST.SESSION.get('USUARIOUAI', {}).get('nome', '')">Ola,</b> -->
+<span id="spanNome" style="color:#f93"></span> 
+  <div class="box white" id="div_msg">Faça seus comentários sobre essa notícia ...</div>
+ <form name="formulario" id="formulario" action="" style="margin-bottom:14px;"> 
+
+   <label for="descricao" style="width:auto!important; *display:block;text-align:center;"><b style="*text-aling:center;">Descri&ccedil;&atilde;o: (máx. <span style="display:inline" id="qtde_caracteres">750 caracteres restantes.</span>)</b> &nbsp;
+     <textarea name="descricao" id="comentario" rows="9" cols="90" maxlength="750" class="text_comentar" onkeyup="verCaracteres(this, 750)"></textarea>
+   </label>
+    <a href="javascript:gravaComentarioNoticia()" class="button5" style="display: block ! important; clear: none; text-align: center; float: left; margin-left: 250px;_margin-left:120px;">gravar</a>  
+    <a href="javascript:logoutNoticiaInterna()" class="button6" style="display: block ! important; clear: none; width: 30px ! important; float: left;">sair</a>
+ <br class="clear">
+</form> <br class="clear">
+</div>                                                            
+
+    
+      <table style="clear:both;">
+        <tr>
+          <td id="main_col01" width="1%"><!-- Coluna 01 do conteúdo -->
+            <!--F5:Slot:include:coluna1-->
+        
+     
+          </td>
+          <td id="main_col02"><!-- Coluna 02 do conteúdo -->
+            <!--F5:Slot:include:coluna2-->
+        
+    
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="nav">
+
+      <!--F5:Slot:include:menu-->
+          <ul><li><h1 id="menu_esquerda_titulo_0">Cultura</h1></li>
+  
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_cinema/id_sessao=8/capa_cinema.shtml" id="menu_esquerda_titulo_1">cinema</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_gastronomia/id_sessao=10/capa_gastronomia.shtml" id="menu_esquerda_titulo_2">gastronomia</a></li>
+  <li><a href="http://apps.new.divirta-se.uai.com.br/divirtase/templates/pagina_gastronomia_busca" id="menu_esquerda_titulo_3">guia de bares e restaurantes</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_musica/id_sessao=19/capa_musica.shtml" id="menu_esquerda_titulo_4">música</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_teatro/id_sessao=11/capa_teatro.shtml" id="menu_esquerda_titulo_5">teatro</a></li><li><h1 id="menu_esquerda_titulo_6">Diversão</h1></li>
+  
+  <li><a href="javascript:var discard=window.open('http://www.ehgata.com.br', '_blank', '')" id="menu_esquerda_titulo_7">ehgata</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_hit/id_sessao=23/capa_hit.shtml" id="menu_esquerda_titulo_8">hit</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_mexerico/id_sessao=9/capa_mexerico.shtml" id="menu_esquerda_titulo_9">mexerico</a></li><li><h1 id="menu_esquerda_titulo_10">Vc Comanda</h1></li>
+  
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_chat/capa_chat.shtml" id="menu_esquerda_titulo_11">chat</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_eventos/capa_eventos.shtml" id="menu_esquerda_titulo_12">eventos</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_promocao/capa_promocao.shtml" id="menu_esquerda_titulo_13">promoções</a></li><li><h1 id="menu_esquerda_titulo_14">Destaque</h1></li>
+  
+  <li><a href="javascript:var discard=window.open('http://uai.parperfeito.com.br/', '_blank', '')" id="menu_esquerda_titulo_15">cara metade</a></li>
+  <li><a href="javascript:var discard=window.open('http://www.chacras.com.br', '_blank', '')" id="menu_esquerda_titulo_16">chacras</a></li>
+  <li><a href="http://www.uai.com.br/UAI/html/capa_especiais,id_sessao=21/capa_especiais.shtml" id="menu_esquerda_titulo_17">especiais</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_namorados/id_sessao=29/capa_namorados.shtml" id="menu_esquerda_titulo_18">namorados</a></li>
+  <li><a href="javascript:var discard=window.open('http://jogos.uai.com.br', '_blank', '')" id="menu_esquerda_titulo_19">passatempos</a></li>
+  <li><a href="javascript:var discard=window.open('http://www.webcomix.com.br', '_blank', '')" id="menu_esquerda_titulo_20">quadrinhos</a></li>
+  <li><a href="javascript:var discard=window.open('http://www.guarani.com.br', '_blank', '')" id="menu_esquerda_titulo_21">rádio guarani</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_raggadrops/id_sessao=16/capa_raggadrops.shtml" id="menu_esquerda_titulo_22">ragga drops</a></li>
+  <li><a href="http://www.new.divirta-se.uai.com.br/html/capa_ragga/id_sessao=13/capa_ragga.shtml" id="menu_esquerda_titulo_23">revista ragga</a></li>
+  <li><a href="javascript:var discard=window.open('http://www.alterosa.com.br/html/caderno_teatroalterosa/caderno_teatroalterosa.shtml', '_blank', '')" id="menu_esquerda_titulo_24">teatro alterosa</a></li>
+  <li><a href="javascript:var discard=window.open('http://www.alterosa.com.br/html/caderno_viacaocipo/caderno_viacaocipo.shtml', '_blank', '')" id="menu_esquerda_titulo_25">viação cipó</a></li></ul>
+
+
+
+        <div style="padding-right:14px; padding-top:8px;">
+<script type="text/javascript">
+/*<![CDATA[*/
+if (document.location.href.search('f5diagramador') == -1) {
+google_ad_client = "pub-8965259536670465";
+google_ad_slot = "9424951555";
+google_ad_width = 125;
+google_ad_height = 125;
+
+urlpub = window.location.href; 
+if ((urlpub.search("id_sessao=8")!=-1) || (urlpub.search("id_sessao=3")!=-1) || (urlpub.search("cinema_salas")!=-1) || (urlpub.search("cinema_melhor10")!=-1) || (urlpub.search("cinema_estreias")!=-1) || (urlpub.search("cinema_especiais")!=-1) || (urlpub.search("capa_sessao_critica")!=-1) || (urlpub.search("cinema_ficha")!=-1) || /*(urlpub.search("cinema_songs")!=-1) ||*/ (urlpub.search("ficha_cinema")!=-1) || (urlpub.search("ficha_critica")!=-1) || (urlpub.search("ficha_estabelecimentos")!=-1)) {
+google_color_border = "666666";  //cinema
+google_color_bg = "666666"; 
+} else {
+	if (urlpub.search("id_sessao=11")!=-1) { 
+		google_color_border = "FF9933"; //teatro
+		google_color_bg = "FF9933"; 
+	} else {
+		if (urlpub.search("id_sessao=23")!=-1) { 
+			google_color_border = "F5F5F5"; // hit
+			google_color_bg = "F5F5F5"; 
+		} else {
+			if (urlpub.search("id_sessao=9")!=-1) { 
+				google_color_border = "CC3300"; //mexerico
+				google_color_bg = "CC3300"; 
+			} else {
+				if (urlpub.search("id_sessao=20")!=-1) { 
+					google_color_border = "070715"; //miss mg
+					google_color_bg = "070715"; 
+				} else {
+					if ((urlpub.search("capa_chat")!=-1) || (urlpub.search("capa_sessao_chat")!=-1) || (urlpub.search("ficha_chat")!=-1) || (urlpub.search("ficha_programas")!=-1)) {
+						google_color_border = "653002"; //chat
+						google_color_bg = "653002"; 
+					} else {
+						if (urlpub.search("capa_promocao")!=-1){ 
+							google_color_border = "031634";  //promoção
+							google_color_bg = "031634";
+						} else {
+							if (urlpub.search("id_sessao=21")!=-1){ 
+								google_color_border = "180000"; //ver pra crer
+								google_color_bg = "180000";
+							} else {
+								if ((urlpub.search("id_sessao=16")!=-1) || (urlpub.search("capa_raggadrops_quem")!=-1) || (urlpub.search("capa_raggadrops_videos")!=-1)) {
+									google_color_border = "645A46"; //raggadrops
+									google_color_bg = "645A46";
+								} else {
+									if ((urlpub.search("id_sessao=13")!=-1) || (urlpub.search("capa_ragga_girls")!=-1) || (urlpub.search("capa_ragga_quem")!=-1) || (urlpub.search("capa_ragga_videos")!=-1)) { 
+										google_color_border = "A1B4B8"; //ragga
+										google_color_bg = "A1B4B8";
+									} else {
+										if ((urlpub.search("cadastro_evento")!=-1) || (urlpub.search("listagem_eventos")!=-1) || (urlpub.search("ficha_evento")!=-1) || (urlpub.search("capa_eventos")!=-1)){ 
+											google_color_border = "CC3300"; //eventos
+											google_color_bg = "CC3300";
+										} else {
+											if ((urlpub.search("id_sessao=25")!=-1) || (urlpub.search("cinema_songs_guarani")!=-1)){
+												google_color_border = "865959"; //radio gurani
+												google_color_bg = "865959";
+											} else {
+												if (urlpub.search("id_sessao=24")!=-1){
+													google_color_border = "086277"; //final de ano
+													google_color_bg = "086277";
+												} else {
+													if (urlpub.search("id_sessao=27")!=-1){
+														google_color_border = "FF9900"; //carnaval
+														google_color_bg = "FF9900";
+													} else {
+														if ((urlpub.search("id_sessao=10")!=-1) || (urlpub.search("id_sessao=29")!=-1) || (urlpub.search("pagina_gastronomia")!=-1)){
+														google_color_border = "4C0000"; //gastronomia e namorados
+														google_color_bg = "4C0000";
+														} else {
+															if (urlpub.search("capa_estacao_verao")!=-1){
+																google_color_border = "00A6D6"; //estação verao
+																google_color_bg = "00A6D6";
+															} else {
+															google_color_border = "1E2839"; //default
+															google_color_bg = "1E2839";
+															}
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+google_color_link = "ffffff"; 
+google_color_url = "ffffff"; 
+google_color_text = "3d5172"; 
+
+document.write("<");
+document.write("script language='JavaScript1.1' src='http://pagead2.googlesyndication.com/pagead/show_ads.js'>");
+document.write("<");
+document.write("/script>");
+
+document.write("<");
+document.write("div style=padding-top:10px;>");
+document.write("<");
+document.write("/div>");
+
+}
+/*]]>*/
+</script>
+</div>
+
+    
+    </div>
+
+    <div class="footer">
+
+        <!--F5:Slot:include:rodape-->
+        <table border="0" cellpadding="0" cellspacing="0" width="775">
+<tr>
+  <td>
+    <a href="http://www.2xt.com.br/" target="_blank">
+      <img id="img_logo" height="24" style="float:left;border:0;margin-right:2px;margin-top:1px;" width="130" src="http://www.new.divirta-se.uai.com.br/arquivos/logo_2xt2.png" />
+    </a>
+    <table border="0" width="575" cellspacing="0" cellpadding="0" align="right" style="margin-top:5px;">
+      <tr>
+        <td class="rodape" style="color:#fff;">
+           
+            
+            <a style="color:#fff;" style="cursor:pointer;" href="javascript:var discard=window.open('http://www.uai.com.br/uaimail.htm', '_blank', '')" id="menu_rodape_descricao_0">Fale conosco</a> |
+          
+           
+            
+            <a style="color:#fff;" style="cursor:pointer;" href="javascript:var discard=window.open('http://www.uai.com.br/em.html', '_blank', '')" id="menu_rodape_descricao_1">Estado de Minas</a> |
+          
+           
+            
+            <a style="color:#fff;" style="cursor:pointer;" href="javascript:var discard=window.open('http://www.uai.com.br/dt/', '_blank', '')" id="menu_rodape_descricao_2">Aqui</a> |
+          
+           
+            
+            <a style="color:#fff;" style="cursor:pointer;" href="http://www.uai.com.br/dtjavascript:var discard=window.open('http://www.uai.com.br/guaranifm', '_blank', '')" id="menu_rodape_descricao_3">Guarani FM</a> |
+          
+           
+            
+            <a style="color:#fff;" style="cursor:pointer;" href="javascript:var discard=window.open('http://www.alterosa.com.br', '_blank', '')" id="menu_rodape_descricao_4">TV Alterosa</a> |
+          
+           
+            
+            <a style="color:#fff;" style="cursor:pointer;" href="http://www.uai.com.br/dtjavascript:var discard=window.open('http://clubeem.estaminas.com.br', '_blank', '')" id="menu_rodape_descricao_5">Clube de Assinantes</a> |
+          
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>	
+
+        
+    
+
+    </div>
+      <script src="http://www.new.divirta-se.uai.com.br/arquivos/js/vitrine.js" type="text/javascript"><!-- --></script>
+  </div>
+  <!--F5:Slot:include:skybanner-->
+          <div id="div_sky_banner_lateral" style="display:block">
+
+  
+  <div style="margin-left:10px; width:160px!important;overflow:hidden; float:left;"><script type="text/javascript">mostrarBanner1(53)</script>
+<div style=padding-top:10px;>
+</div>
+<script language="JavaScript" type="text/javascript">
+if (document.location.href.search('diagramador') == -1){
+  if (typeof ord=='undefined') {ord=Math.random()*10000000000000000;}
+  document.write('<script language="JavaScript" src="http://ad.doubleclick.net/adj/EZ_BR_1000/M31G44TA57TB53TI10R25C106;tile=2;sz=120x240;ord=' + ord + '?" type="text/javascript"><\/script>');
+}
+</script></div> <!-- MV 20-06-08 -->
+<br style="clear:both;" />
+
+
+</div>
+
+    
+</div>
+</div>
+
+
+<!-- google analytics Begin  --> 
+
+   
+
+  
+
+
+  
+  <!-- google analytics End --> 
+</body>
+</html>

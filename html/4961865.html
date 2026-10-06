@@ -1,0 +1,548 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Gauss Gun</title>
+
+  <script type="text/javascript">(function() { var a=window;function f(e){this.t={};this.tick=function(d,b,c){var i=c?c:(new Date).getTime();this.t[d]=[i,b]};this.tick("start",null,e)}var g=new f;a.jstiming={Timer:f,load:g};try{a.jstiming.pt=a.external.pageT}catch(h){};a.tickAboveFold=function(e){var d,b=e,c=0;if(b.offsetParent){do c+=b.offsetTop;while(b=b.offsetParent)}d=c;d<=750&&a.jstiming.load.tick("aft")};var j=false;function k(){if(!j){j=true;a.jstiming.load.tick("firstScrollTime")}}a.addEventListener?a.addEventListener("scroll",k,false):a.attachEvent("onscroll",k); })();</script><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="MSSmartTagsPreventParsing" content="true" />
+<meta name="generator" content="Blogger" />
+<link rel="icon" type="image/vnd.microsoft.icon" href="http://www.blogger.com/favicon.ico"/>
+<link rel="alternate" type="application/atom+xml" title="Gauss Gun - Atom" href="http://gaussgun.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="Gauss Gun - RSS" href="http://gaussgun.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="Gauss Gun - Atom" href="http://www.blogger.com/feeds/27426058/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=27426058" />
+<link rel="alternate" type="application/atom+xml" title="Gauss Gun - Atom" href="http://gaussgun.blogspot.com/feeds/5864998178431280028/comments/default" />
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/static/v1/v-css/3727950723-blog_controls.css"/> <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=27426058&zx=3178aea2-a675-4c15-b604-1c4ceec08969"/>
+
+  <style type="text/css">
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Minima Black
+Designer: Douglas Bowman
+URL:      www.stopdesign.com
+Date:     26 Feb 2004
+----------------------------------------------- */
+
+
+body {
+  background:#000;
+  margin:0;
+  padding:40px 20px;
+  font:x-small "Trebuchet MS",Trebuchet,Verdana,Sans-Serif;
+  text-align:center;
+  color:#ccc;
+  font-size/* */:/**/small;
+  font-size: /**/small;
+  }
+a:link {
+  color:#9ad;
+  text-decoration:none;
+  }
+a:visited {
+  color:#a7a;
+  text-decoration:none;
+  }
+a:hover {
+  color:#ad9;
+  text-decoration:underline;
+  }
+a img {
+  border-width:0;
+  }
+
+
+/* Header
+----------------------------------------------- */
+@media all {
+  #header {
+    width:660px;
+    margin:0 auto 10px;
+    border:1px solid #333;
+    }
+  }
+@media handheld {
+  #header {
+    width:90%;
+    }
+  }
+#blog-title {
+  margin:5px 5px 0;
+  padding:20px 20px .25em;
+  border:1px solid #222;
+  border-width:1px 1px 0;
+  font-size:220%;
+  line-height:1.2em;
+  color:#ccc;
+    letter-spacing:.2em;
+  }
+#blog-title a {
+  color:#ccc;
+  text-decoration:none;
+  }
+#blog-title a:hover {
+  color:#ad9;
+  }
+#description {
+  margin:0 5px 5px;
+  padding:0 20px 20px;
+  border:1px solid #222;
+  border-width:0 1px 1px;
+  font:95%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+    letter-spacing:.2em;
+  color:#777;
+  }
+
+
+/* Content
+----------------------------------------------- */
+@media all {
+  #content {
+    width:660px;
+    margin:0 auto;
+    padding:0;
+    text-align:left;
+    }
+  #main {
+    width:410px;
+    float:left;
+    }
+  #sidebar {
+    width:220px;
+    float:right;
+    }
+  }
+@media handheld {
+  #content {
+    width:90%;
+    }
+  #main {
+    width:100%;
+    float:none;
+    }
+  #sidebar {
+    width:100%;
+    float:none;
+    }
+  }
+
+
+/* Headings
+----------------------------------------------- */
+h2 {
+  margin:1.5em 0 .75em;
+  font:bold 78%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:#777;
+  }
+
+
+/* Posts
+----------------------------------------------- */
+@media all {
+  .date-header {
+    margin:1.5em 0 .5em;
+    }
+  .post {
+    margin:.5em 0 1.5em;
+    border-bottom:1px dotted #444;
+    padding-bottom:1.5em;
+    }
+  }
+@media handheld {
+  .date-header {
+    padding:0 1.5em 0 1.5em;
+    }
+  .post {
+    padding:0 1.5em 0 1.5em;
+    }
+  }
+.post-title {
+  margin:.25em 0 0;
+  padding:0 0 4px;
+  font-size:140%;
+  line-height:1.4em;
+  color:#ad9;
+  }
+.post-title a {
+  text-decoration:none;
+  color:#ad9;
+  }
+.post-title a:hover {
+  color:#fff;
+  }
+.post div {
+  margin:0 0 .75em;
+  line-height:1.6em;
+  }
+p.post-footer {
+  margin:-.25em 0 0;
+  color:#333;
+  }
+.post-footer em, .comment-link {
+  font:78%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+.post-footer em {
+  font-style:normal;
+  color:#777;
+  margin-right:.6em;
+  }
+.comment-link {
+  margin-left:.6em;
+  }
+.post img {
+  padding:4px;
+  border:1px solid #222;
+  }
+.post blockquote {
+  margin:1em 20px;
+  }
+.post blockquote p {
+  margin:.75em 0;
+  }
+
+
+/* Comments
+----------------------------------------------- */
+#comments h4 {
+  margin:1em 0;
+  font:bold 78%/1.6em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.2em;
+  color:#999;
+  }
+#comments h4 strong {
+  font-size:130%;
+  }
+#comments-block {
+  margin:1em 0 1.5em;
+  line-height:1.6em;
+  }
+#comments-block dt {
+  margin:.5em 0;
+  }
+#comments-block dd {
+  margin:.25em 0 0;
+  }
+#comments-block dd.comment-timestamp {
+  margin:-.25em 0 2em;
+  font:78%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+#comments-block dd p {
+  margin:0 0 .75em;
+  }
+.deleted-comment {
+  font-style:italic;
+  color:gray;
+  }
+
+
+/* Sidebar Content
+----------------------------------------------- */
+#sidebar ul {
+  margin:0 0 1.5em;
+  padding:0 0 1.5em;
+  border-bottom:1px dotted #444;
+  list-style:none;
+  }
+#sidebar li {
+  margin:0;
+  padding:0 0 .25em 15px;
+  text-indent:-15px;
+  line-height:1.5em;
+  }
+#sidebar p {
+  color:#999;
+  line-height:1.5em;
+  }
+
+
+/* Profile
+----------------------------------------------- */
+#profile-container {
+  margin:0 0 1.5em;
+  border-bottom:1px dotted #444;
+  padding-bottom:1.5em;
+  }
+.profile-datablock {
+  margin:.5em 0 .5em;
+  }
+.profile-img {
+  display:inline;
+  }
+.profile-img img {
+  float:left;
+  padding:4px;
+  border:1px solid #222;
+  margin:0 8px 3px 0;
+  }
+.profile-data {
+  margin:0;
+  font:bold 78%/1.6em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+.profile-data strong {
+  display:none;
+  }
+.profile-textblock {
+  margin:0 0 .5em;
+  }
+.profile-link {
+  margin:0;
+  font:78%/1.4em "Trebuchet MS",Trebuchet,Arial,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+
+
+/* Footer
+----------------------------------------------- */
+#footer {
+  width:660px;
+  clear:both;
+  margin:0 auto;
+  }
+#footer hr {
+  display:none;
+  }
+#footer p {
+  margin:0;
+  padding-top:15px;
+  font:78%/1.6em "Trebuchet MS",Trebuchet,Verdana,Sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  }
+  </style>
+
+<script id="snap_preview_anywhere" type="text/javascript" src="http://spa.snap.com/snap_preview_anywhere.js?ap=1&amp;key=6d408650679387553dd67e1adcac1e3c&amp;sb=1&amp;th=asphalt&amp;cl=0&amp;si=1&amp;oi=0&amp;link_icon=on&amp;preview_trigger=both&amp;domain=gaussgun.blogspot.com&amp;platform=blogger"></script>
+
+<!-- --><style type="text/css">@import url(http://www.blogger.com/static/v1/v-css/navbar/697174003-classic.css);
+div.b-mobile {display:none;}
+</style>
+
+</head>
+
+<body><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=27426058&amp;blogName=Gauss+Gun&amp;publishMode=PUBLISH_MODE_BLOGSPOT&amp;navbarType=BLUE&amp;layoutType=CLASSIC&amp;homepageUrl=http%3A%2F%2Fgaussgun.blogspot.com%2F&amp;blogLocale=pt_PT&amp;searchRoot=http%3A%2F%2Fgaussgun.blogspot.com%2Fsearch" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" title="Blogger Navigation and Search"></iframe>
+<div></div>
+
+<div id="header">
+
+  <h1 id="blog-title">
+    <a href="http://gaussgun.blogspot.com/">
+	Gauss Gun
+	</a>
+  </h1>
+  <p id="description">"There will never be a really free and enlightened State until the State comes to recognize the individual as a higher and independent power, from which all its own power and authority are derived, and treats him accordingly." - On the Duty of Civil Disobedience
+by Henry David Thoreau</p>
+
+</div>
+
+<!-- Begin #content -->
+<div id="content">
+
+
+<!-- Begin #main -->
+<div id="main"><div id="main2">
+
+<div class='adsense' style='text-align:center; padding: 0px 3px 0.5em 3px;'>
+<script type="text/javascript"><!--
+google_ad_client="pub-6968663092547380";
+google_ad_host="pub-1556223355139109";
+google_ad_width=234;
+google_ad_height=60;
+google_ad_format="234x60_as";
+google_ad_type="text";
+google_color_border="000000";
+google_color_bg="000000";
+google_color_link="AADD99";
+google_color_url="AADD99";
+google_color_text="777777";
+//--></script>
+<script type="text/javascript"
+  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+
+</div>
+
+
+    
+  <h2 class="date-header">1/21/2009</h2>
+  
+
+  
+     
+  <!-- Begin .post -->
+  <div class="post"><a name="5864998178431280028"></a>
+         
+
+	         <div class="post-body">
+	<div>
+      <div style="clear:both;"></div><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://i274.photobucket.com/albums/jj269/bladimed/CS/10Felon2008.jpg"><img style="cursor:pointer; cursor:hand;width: 341px; height: 574px;" src="http://i274.photobucket.com/albums/jj269/bladimed/CS/10Felon2008.jpg" border="0" alt="" /></a><br /><br />Eis algo com pés e cabeça, intenso, capaz de agarrar ao ecrã. 4/5<br /><br /><a href="http://www.imdb.com/title/tt1117385/">http://www.imdb.com/title/tt1117385/</a><div style="clear:both; padding-bottom:0.25em"></div>
+    </div>
+    </div>
+    
+    <p class="post-footer">
+      <em>posted by ouroboro13 at <a href="http://gaussgun.blogspot.com/2009/01/eis-algo-com-ps-e-cabea-intenso-capaz.html" title="permanent link">1/21/2009</a></em>
+        <span class="item-control blog-admin pid-53184209"><a style="border:none;" href="http://www.blogger.com/post-edit.g?blogID=27426058&postID=5864998178431280028" title="Editar mensagem"><img class="icon-action" alt="" src="http://www.blogger.com:80/img/icon18_edit_allbkg.gif" height="18" width="18"></a></span>
+    </p>
+  
+  </div>
+  <!-- End .post -->
+  
+  
+  
+  <!-- Begin #comments -->
+ 
+  <div id="comments">
+
+	<a name="comments"></a>
+        <h4>0 Comments:</h4>
+        <dl id="comments-block">
+      
+    </dl>
+		<p class="comment-timestamp">
+
+    <a class="comment-link" href="https://www.blogger.com/comment.g?blogID=27426058&postID=5864998178431280028&isPopup=true" onclick="window.open(this.href, 'bloggerPopup', 'toolbar=0,scrollbars=1,location=0,statusbar=1,menubar=0,resizable=1,width=400,height=450');return false;">Enviar um comentário</a>
+    </p>
+    	    
+    
+
+
+		<p class="comment-timestamp">
+	<a href="http://gaussgun.blogspot.com/">&lt;&lt; Home</a>
+    </p>
+    </div>
+
+
+
+  <!-- End #comments -->
+
+
+</div></div>
+<!-- End #main -->
+
+
+
+
+
+
+
+<!-- Begin #sidebar -->
+<div id="sidebar"><div id="sidebar2">
+  
+  
+  <!-- Begin #profile-container -->
+   
+   <div align="center"><p></p><p></p><a href="http://www.amazingcounters.com"><img border="0" src="http://c7.amazingcounters.com/counter.php?i=1490889&c=4472980" alt="Free HTML Web Counter"></a><br><small><a href="http://www.4travelcoupons.com"><font color="#999999">Hotwire</font></a></small></div>
+   <div id="profile-container"><h2 class="sidebar-title">Acerca de mim</h2>
+<dl class="profile-datablock">
+<dd class="profile-data"><strong>Nome:</strong>  ouroboro13 </dd>
+<dd class="profile-data"><strong>Localização:</strong>  Lisbon, Portugal </dd></dl>
+
+<p class="profile-link"><a href="http://www.blogger.com/profile/08750692739697572649">Ver o meu perfil completo</a></p></div>
+   
+  <!-- End #profile -->
+    
+        
+
+
+  
+  <h2 class="sidebar-title">Previous Posts</h2>
+    <ul id="recently">
+    
+        <li><a href="http://gaussgun.blogspot.com/2009/01/autoridade-nacional-de-proteco-civil.html">A Autoridade Nacional de Protec&ccedil;&atilde;o Civil rejeitou ...</a></li>
+     
+        <li><a href="http://gaussgun.blogspot.com/2009/01/o-que-poderia-ser-o-caso-freeport.html">O que poderia ser o Caso Freeport</a></li>
+     
+        <li><a href="http://gaussgun.blogspot.com/2009/01/blog-post_16.html"></a></li>
+     
+        <li><a href="http://gaussgun.blogspot.com/2009/01/pois.html">Pois</a></li>
+     
+        <li><a href="http://gaussgun.blogspot.com/2009/01/realmente-preciso-ter-lata.html">Realmente &eacute; preciso ter lata</a></li>
+     
+        <li><a href="http://gaussgun.blogspot.com/2009/01/isto-sim.html">Isto sim</a></li>
+     
+        <li><a href="http://gaussgun.blogspot.com/2009/01/httpwww.html">
+
+http://www.amazon.com/SafetyBook-TacONE-Bullet-R...</a></li>
+     
+        <li><a href="http://gaussgun.blogspot.com/2009/01/blog-post.html"></a></li>
+     
+        <li><a href="http://gaussgun.blogspot.com/2009/01/cheira-me-que-vai-nevar.html">Cheira-me que vai nevar.</a></li>
+     
+        <li><a href="http://gaussgun.blogspot.com/2009/01/no-sei-se-repararam-o-mec-comeou.html">N&atilde;o sei se repararam, o MEC come&ccedil;ou a escrever (di...</a></li>
+     
+  </ul>
+    
+
+      <p id="powered-by"><a href="http://www.blogger.com"><img src="http://buttons.blogger.com/bloggerbutton1.gif" alt="Powered by Blogger" /></a></p>
+  
+  <!--
+  <p>This is a paragraph of text that could go in the sidebar.</p>
+  -->
+ 
+<script type="text/javascript"><!--
+referer_v = "1";
+referer_limit_rows = "10";
+referer_block = "www.example.com";
+/* Read about JavaScript settings at Referer.org */
+//--></script>
+<style type="text/css">
+ul.referer_list { padding: 0; margin: 0; list-style-position: inside; }
+li.referer_item { margin: 0.4em 0; }
+/* Read about CSS settings at Referer.org */
+</style>
+<div style="font-weight: bold;">Web Pages referring to this page</div>
+<script type="text/javascript"
+  src="http://referer.org/list.js">
+</script>
+<div>Link to this page and get a link back!</div><a href="http://referer.org"><img border="0" src="http://referer.org/referer.gif" title="referer referrer referers referrers http_referer"></a>
+
+</div></div>
+<!-- End #sidebar -->
+
+
+</div>
+<!-- End #content -->
+
+
+
+<!-- Begin #footer -->
+<div id="footer"><hr />
+  <p><!--This is an optional footer. If you want text here, place it inside these tags, and remove this comment. -->&nbsp;</p>
+<!-- Start of StatCounter Code -->
+<script type="text/javascript" language="javascript">
+var sc_project=2271355; 
+var sc_invisible=0; 
+var sc_partition=20; 
+var sc_security="50c7e363"; 
+</script>
+
+<script type="text/javascript" language="javascript" src="http://www.statcounter.com/counter/frames.js"></script><noscript><a href="http://www.statcounter.com/" target="_blank"><img  src="http://c21.statcounter.com/counter.php?sc_project=2271355&java=0&security=50c7e363&invisible=0" alt="invisible hit counter" border="0"></a> </noscript>
+<!-- End of StatCounter Code --><br><a href="http://my.statcounter.com/project/standard/stats.php?project_id=2271355&guest=1">View My Stats</a>
+</div>
+<!-- End #footer -->
+
+
+
+</body>
+</html>

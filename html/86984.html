@@ -1,0 +1,1164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//PT" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt" xml:lang="pt">
+<head>
+<title>Canal UP - Universidades e Politécnicos</title>
+<meta http-equiv="Content-Type" content="text/html;charset= iso-8859-1;"/>
+<script type="text/javascript" src="files/js/canalup.js">
+var intervalo;
+</script>
+<style type="text/css">@import url("./files/css/header.css");</style>
+<!--[if IE]>
+<style type="text/css" media="screen">
+#ddmenu{float:none;}
+body{behavior:url(./files/css/csshover.htc);
+font-size:100%;
+}
+#ddmenu ul li{float:left;width:100%;}
+</style>
+<![endif]-->
+<style type="text/css">
+body{margin:0 auto;width:100%;font:70% Tahoma;background: #242424;color: black;}
+td{color:black;}
+a{text-decoration:none;color:#888888;border: 0px;}
+a img{text-decoration:none;color:#888888;border: 0px;}
+#wrapper{width: 950px;margin: 0pt auto;}
+#header{position:relative;background: #cccccc;margin-top: 10px;display:block;}
+#logoup{float:left;position:absolute;top: 0px;left:0px;}
+#menu{float:right;background: url(./files/images/back_header_main.gif);width: 803px;height: 161px;}
+#menu_top_right2{float:right;margin-top: 10px;margin-right: 20px;vertical-align: middle;position:static;top:0px;}
+#menu_top_right{width: 763px;height:38px;margin-top:7px;position:absolute;right:20px;top: 0px;text-align:right;}
+#menu_date{font-family:Tahoma;font-size: 10px;color: #aaaaaa;font-weight: Normal;height: 100%;vertical-align: 
+middle;}
+#menu_hora{font-family:Tahoma;font-size: 10px;color: #ffffff;font-weight: Normal;height: 100%;vertical-align: 
+middle;}
+#sinline{display:inline;vertical-align:middle;}
+#menu_1block{width: 773px;background: 
+url(./files/images/header_barra_sup_1.gif);height:38px;margin-top:7px;position:absolute;right:20px;top: 
+30px;z-index: 3;}
+#menu_2block{width: 773px;background: 
+url(./files/images/header_barra_sup_2.gif);height:31px;margin-top:7px;position:absolute;right:20px;top: 
+68px;z-index: 2;}
+#menu_3block{width: 773px;background: 
+url(./files/images/header_barra_sup_2.gif);height:30px;margin-top:7px;position:absolute;right:20px;top: 
+99px;z-index: 1;}
+#logout span{
+	display: inline;
+}
+#logout{
+	margin-top: 7px;
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: Bold;
+	color:#888888;
+	float:left;
+	text-align:left;	
+}
+#logout a:hover{
+	color: white;
+}
+.corbranco{
+        font-family: Tahoma;
+        font-size: 11px;
+        font-weight: Bold;
+        color:#888888;
+}
+.corbranco:hover{
+	color: white;
+}
+.backwhite{
+	height: 30px;
+}
+.backwhite:hover{
+	background: url(./files/images/bot_logout_dw.jpg);
+        height: 30px;
+        color: white;
+}
+#logout:hover{
+	background: url(./files/images/bot_logout_dw.jpg);
+	height: 30px;
+	color: white;
+}
+#agenda{
+float: right;
+margin-top: 4px;
+height: 238px;
+width: 209px;
+background-image: url(./files/images/pixel_agenda.png);
+background-repeat: repeat-x;
+}
+.boca{
+float: left;
+margin-top: 4px;
+width: 387px;
+height: 238px;
+display: block;
+background-image: url(./files/images/logo_boca.gif);
+background-repeat: no-repeat;
+}
+#subcontent{
+margin-left: 27px;
+margin-right: 20px;
+}
+#content{
+float: left;
+width: 100%;
+color: white;
+padding-bottom: 5px;
+background: #2a2829;
+background-image: url(./files/images/fundo_pixel.jpg);
+background-repeat: repeat-x;
+z-index: -5;
+}
+#mininews1px{
+height: 1px;
+line-height: 1px;
+overflow: none;
+width: 599px;
+background: #989898;
+}
+#modulo1{
+width: 300px;
+float: right;
+height: 121px;
+background-image: url(./files/images/barra_1x247.jpg);
+background-repeat: repeat-x;
+}
+#modulo2{
+width: 300px;
+float: right;
+height: 300px;
+background-image: url(./files/images/barra_1x247.jpg);
+background-repeat: repeat-x;
+}
+.autortextomodulo{
+	font-family: Tahoma;
+	font-weight: Bold;
+	font-size: 10px;
+	margin-right: 15px;
+	color: #767676;
+	float:right;
+}
+.textomodulo span{
+	margin: 10px;
+	float: left;
+	margin-right: 15px;
+}
+.textomodulo{
+	float: left;
+	color: black;
+}
+.textomodulobold span{
+	margin: 10px;
+	float: left;
+	font-weight: bold;
+	margin-right: 15px;
+}
+.textomodulobold{
+	float: left;
+	color: black;
+}
+.autortextomodulo span{
+	color: black;
+}
+.barrapreta span{
+	margin-left: 10px;
+	vertical-align: middle;
+	height: 15px;
+	float: left;
+	margin-top: 5px;
+}
+.barrapreta{
+	height:23px;
+	text-align: middle;
+	width: 100%;
+	background-image: url(./files/images/header_barra_sup_1.gif);
+	background-repeat: repeat-x;
+	float:left;
+	color: white;
+	font-weight: Bold;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+.barrapreta_agenda span{
+	margin-left: 10px;
+	vertical-align: middle;
+	height: 15px;
+	float: left;
+	margin-top: 5px;
+}
+
+.barrapreta_agenda{
+	height:35px;
+	text-align: middle;
+	width: 100%;
+	background-image: url(./files/images/agenda/barra_agenda.gif);
+	background-repeat: repeat-x;
+	float:left;
+	color: white;
+	font-weight: Bold;
+	font-family: Tahoma;
+	font-size: 12px;
+}
+#vox{
+width: 599px;
+height: 253px;
+float: left;
+background-image: url(./files/images/logo_vox.jpg);
+background-repeat: no-repeat;
+}
+#dossiers{
+margin-top: 4px;
+float: left;
+width: 599px;
+height: 262px;
+background-image: url(./files/images/barra_dossier.jpg);
+background-repeat; repeat-x;
+}
+#escolhas{
+margin-top: 4px;
+float: left;
+width: 599px;
+height: 207px;
+background-image: url(./files/images/barra_escolhas.jpg);
+background-repeat; repeat-x;
+}
+#flashes{
+margin-top: 4px;
+float: left;
+width: 599px;
+height: 145px;
+background-image: url(./files/images/flashes/pixell_flashes.png);
+background-repeat: repeat-x;
+}
+#ftc{
+float: left;
+width: 599px;
+}
+#logoftc{
+float: left;
+}
+.bgftc1{
+width: 210px;
+height: 228px;
+float:left;
+background-image: url(./files/images/faz/logo_faz.png);
+}
+#areaftc{
+float: right;
+width: 389px;
+height: 228px;
+background-repeat: repeat-x;
+background-image: url(./files/images/faz/faz_px.png);
+}
+#margemftc{
+width: 70px;
+height: 222px;
+float: left;
+}
+#textovox{
+float: left;
+display: block;
+}
+#textoftc{
+float: left;
+margin-top: 26px;
+margin-left: 3px;
+width: 160px;
+height: 20px;
+display: block;
+}
+.textovox{
+float: left;
+display: block;
+}
+.textovox h2{
+font-family: Tahoma;
+font-weight: bold;
+display: inline;
+font-size: 11px;
+color: white;
+}
+.textovox h1{
+font-family: Tahoma;
+font-weight:normal;
+float:left;
+display: inline;
+width: 320px;
+font-size: 11px;
+color: white;
+}
+#textovox h2{
+font-family: Tahoma;
+font-weight: bold;
+float:left;
+font-size: 11px;
+color: white;
+}
+#textovox h1{
+font-family: Tahoma;
+font-weight:normal;
+display: inline;
+width: 415px;
+font-size: 11px;
+color: white;
+}
+#textoagenda h2{
+font-family: Tahoma;
+font-weight: bold;
+display: block;
+float:left;
+width: 180px;
+font-size: 11px;
+color: black;
+}
+#textoagenda h1{
+font-family: Tahoma;
+font-weight:normal;
+display: block;
+width: 180px;
+font-size: 11px;
+color: black;
+}
+#textoflashes{
+margin-top: 27px;
+margin-left: 25px;
+}
+#textoflashes h2{
+font-family: Tahoma;
+font-weight: bold;
+display: inline;
+font-size: 11px;
+color: white;
+}
+#textoflashes h1{
+font-family: Tahoma;
+font-weight:normal;
+display: inline;
+font-size: 11px;
+color: white;
+}
+#textoftc h1{
+font-family: Tahoma;
+display: inline;
+font-size: 16px;
+font-weight: bold;
+color: #efefef;
+}
+
+#textoftc h2{
+margin-top: 2px;
+font-family: Tahoma;
+font-weight: bold;
+display: inline;
+font-size: 11px;
+color: white;
+}
+#textoftc h3{
+font-family: Tahoma;
+display: inline;
+font-size: 11px;
+font-weight: normal;
+color: white;
+}
+#imagemftc{
+margin-top: 3px;
+float: left;
+height: 133px;
+}
+#barramininews{
+background-image: url(./files/images/barra_1x14.jpg);
+background-repeat: repeat-x;
+height: 14px;
+font-family:Tahoma;
+font-size: 10px;
+font-weight: Bold;
+color: #8b8b8b;
+width: 599px;
+text-align: right;
+float :left;
+}
+#minimininews{
+background-image: url(./files/images/barra_1x31.jpg);
+background-repeat: repeat-x;
+height: 31px;
+width: 599px;
+color: black;
+float: left;
+}
+#mininews{
+background-image: url(./files/images/barra_1x77.jpg);
+background-repeat: repeat-x;
+height: 77px;
+float: left;
+width: 599px;
+color: black;
+}
+#mininewsblack{
+background-image: url(./files/images/barrap_1x77.gif);
+background-repeat: repeat-x;
+height: 77px;
+float: left;
+width: 599px;
+color: white;
+}
+.data{
+float: left;
+width: 893px;
+}
+#area1{
+width: 599px;
+float: left;
+}
+#area2{
+vertical-align: top;
+width: 300px;
+float: right;
+}
+#pixeis5{
+float: left;
+height: 5px;
+width: 100%;
+}
+#destaque2,.destaque2{
+height: 250px;
+width: 300px;
+float: right;
+}
+.gradient_preto{
+background-image: url(./files/images/pixel_noticia2.gif);
+background-repeat: repeat-x;
+}
+.gradient_agenda{
+background-image: url(./files/images/agenda/fundo_agenda.gif);
+background-repeat: no-repeat;
+}
+.pesquisa1{
+width: 599px;
+float: left;
+color: black;
+}
+.fundo{
+height: 250px;
+width: 903px;
+float: left;
+color: white;
+background: black;
+}
+.fundoesquerda{
+width: 599px;
+float: left;
+color:white;
+background: black;
+}
+#destaque1{
+height: 250px;
+width: 599px;
+float: left;
+color: black;
+background-image: url(./files/images/barra_1x247.jpg);
+background-repeat: repeat-x;
+}
+#subfooter{
+float: left;
+margin-top: 2px;
+color: #626262;
+}
+#footerwrapper{
+	padding-left: 20px;
+}
+#footer span{
+	margin-left: 7px;
+	margin-top: 6px;
+	font-family: Tahoma;
+	color: #626262;
+	font-weight: Bold;
+}
+#footer{
+width: 100%;
+float: left;
+color: white;
+top: 0px;
+padding-left: 0px;
+padding-top: 8px;
+height: 23px;
+background: black;
+background-image: url(./files/images/barra_base.jpg);
+background-repeat: repeat-x;
+z-index: -5;
+}
+</style>
+</head>
+<body onload="UpdateHoras();">
+<div id="wrapper">
+		<div id="header">
+		<div id="logoup">
+		<a href="./?">
+		<img src="./files/images/logoup.gif" alt="CANAL UP"/>
+		</a>
+		</div>
+		<div id="menu">
+			<div id="menu_top_right">
+				<span id="menu_date">
+					20-MAIO-2009&nbsp;&nbsp;
+				</span>
+				<span id="menu_hora">
+					<div id="hora" style="display: inline;">
+					</div>
+					&nbsp;
+				</span>
+				<span>
+					<a href="./?menu=rss">
+					<img src="./files/images/rss.jpg" width="20" height="20" id="sinline" alt="RSS"/>
+					</a>
+				</span>
+			</div>
+			<div id="menu_1block">
+				<div id="ddmenu">
+					<ul id="sitenav">
+<li style="height: 31px;width: 70px;">
+<a href="#" class="button">
+<b>EMISSÃO</b>
+</a>
+<ul>
+<li><a href="?menu=flashes"><span>PROGRAMAS</span></a>
+<ul>
+<li><a href='#'><span>ALTA FINANÇA</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li><li><a href='#'><span>DIREITO DE ANTENA</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li><li><a href='#'><span>FITAS</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li><li><a href='#'><span>MUITO À FRENTE</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li><li><a href='#'><span>OUTRO NÍVEL</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li><li><a href='#'><span>REMÉDIO SANTO</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li><li><a href='#'><span>SHOW DE BOLA</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li><li><a href='#'><span>SHOW UP</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li><li><a href='#'><span>UP LOADING</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li><li><a href='#'><span>WANTED</span></a><ul><li id="brevemente"><a href='#'><span>BREVEMENTE</span></a></li></ul></li></ul>
+</li>
+<li><a href="?menu=vp&amp;id_video=1716">
+<span>
+VIDEO PLAYER
+</span>
+</a></li>
+<li><a href="?menu=flashes&amp;id_album=124"><span>FLASHES</span></a></li>
+<li><a href="?menu=grelha"><span>GRELHA</span></a></li>
+</ul>
+</li>
+<li style="height: 31px;width:68px;">
+<a href="?menu=agenda" class="button">
+<b>AGENDA</b></a>
+</li>
+<li style="height: 31px;width:72px;">
+<a href="#" class="button">
+<b>OFERTAS</b></a>
+<ul>
+<!--<li><a href="?menu=xklusivos"><span>XKLUSIVOS</span></a></li>-->
+<li><a href="?menu=bilhetes"><span>BILHETES</span></a></li> 
+
+<li><a href="?menu=jademos_outrasofertas"><span>OUTRAS OFERTAS</span></a></li>
+</ul>
+</li>
+<!--
+<li style="height: 31px;width:75px;">
+<a href="#" class="button">
+<b>ARQUIVO</b></a>
+<ul>
+<li><a href="?menu=arquivo_noticias"><span>NOTÍCIAS</span></a></li>
+<li><a href="?menu=arquivo_videos"><span>VÍDEOS</span></a></li>
+<li><a href="?menu=arquivo_fotos"><span>FOTOS</span></a></li>
+</ul>
+</li>
+-->
+<li style="height: 31px;width:52px;">
+<a href="?menu=links" class="button">
+<b>LINKS</b></a>
+</li>
+<li style="height: 31px;;width:104px;">
+<a href="#" class="button">
+<b>UTILIZADORES</b></a>
+<ul>
+
+<li><a href="?menu=regista_user"><span>REGISTO</span></a></li><li><a href="?menu=bisup"><span>BI's UP</span></a></li>
+<li><a href="?menu=topup"><span>TOP UP</span></a></li>
+</ul>
+</li>
+<!--
+	<li style="height: 31px;width:124px;white-space: nowrap;">
+	<a href="?menu=vox" class="button">
+	<b>VOX ACADEMICUS</b></a>
+	</li>
+-->
+<li style="height: 31px;width:70px;white-space:nowrap;">
+<a href="?menu=canalup" class="button">
+<b>CANALUP</b></a>
+</li>
+<li style="height: 31px;width:120px;white-space:nowrap;">
+<a href="#" class="button">
+<b>ÁREA RESERVADA</b></a>
+<ul>
+<li><a href="?menu=associacoes"><span>ASSOCIAÇÃO ESTUDANTES</span></a></li>
+<li><a href="?menu=correspondentes"><span>CORRESPONDENTES UP</span></a></li>
+<li><a href="?menu=anunciantes"><span>ANUNCIANTES</span></a></li>
+</ul>
+</li>
+</ul>
+
+				</div>
+			</div>
+			<div id="menu_2block">
+					<div style="margin-top: 0px;font-family: Tahoma;font-size: 11px;font-weight: Bold;color: #888888;margin-left: 10px;">
+<div class="backwhite" style="float:left;position: absolute;left: 10px;top: 0px;margin-left: 5px;margin-right: 5px;">
+<a href="./?menu=fazoteucanal">
+<div style="margin-top: 7px;height: 20px;padding-left: 2px;width: 100px;margin-left: 0px;" 
+class="corbranco" onmouseover="style.cursor='hand';">
+FAZ O TEU CANAL
+</div>
+</a>
+</div>
+<span style="margin-left: 120px;">
+<img src="./files/images/play_home.gif" alt=""  />
+</span>
+<span style="position: absolute;left: 159px;top: 7px;">
+EMISSÃO ONLINE
+</span>
+<form method="get" style="margin: 0px; padding: 0px;display: inline;" action="">
+<input type="hidden" name="menu" value="pesquisa"/>
+<span style="position: absolute;left: 265px;top: 5px;">
+<input type="text" value="" name="texto" 
+style="font-family: Tahoma;font-size: 10px;color:#d8d8d8;width: 324px;background-color: #cccccc;border: 
+0px;height: 15px;background-image: url(./files/images/barra_pesq.jpg);font-weight:Bold;margin: 0 0 0 0px; padding: 
+3px 0px 0 10px;" 
+onfocus="clearForm(this);"/>
+</span>
+<span style="position: absolute;left: 625px;">
+<input type="image" src="./files/images/lupa_busca.gif"/>
+</span>
+</form>
+<span style="position: absolute;left: 655px;">
+<a href="?menu=pesquisa">
+<img src="./files/images/pesq_avancada.gif" alt="" />
+</a>
+</span>
+</div>
+
+			</div>
+			<div id="menu_3block">
+					<div style="margin-top: 0px;font-family: Tahoma;font-size: 11px;font-weight: Bold;color: #888888;margin-left: 10px;">
+<div style="float:left;margin-top: 7px;">
+<form method="post" style="margin: 0px; padding: 0px;display: inline;" action="">
+<input type="hidden" name="login" value="1"/>
+<span>
+USER
+</span>
+<span style="margin-left: 5px;">
+<input type="text" name="user" 
+style="font-family: Tahoma;font-size: 10px;width: 65px;height: 14px;color: #d8d8d8;font-weight: 
+Bold;background-color: #cccccc;border: 0px;background-image: url(./files/images/fundo_user.jpg);padding-left: 5px;"/>
+</span>
+<span style="margin-left: 5px;">
+PASS
+</span>
+<span style="margin-left: 5px;">
+<input type="password" name="pass" style="font-family: Tahoma;font-size: 10px;color: #d8d8d8;font-weight: Bold;
+background-color: #cccccc;border: 0px;background-image: url(./files/images/fundo_user.jpg);padding-left: 5px;width: 65px;height: 14px;"/>
+</span>
+<span style="margin-left: 15px;">
+<input type="submit" value="LOGIN" style="background: none;border: 0px; margin: 0px;padding: 
+0px;color:#888888;font-weight: Bold;font-size: 11px; font-family: Tahoma;"/>
+</span>
+</form>
+</div>
+<div class="backwhite" style="float:left;">
+<a href="?menu=regista_user">
+<div style="margin-left: 5px;margin-top: 9px;margin-right: 5px;" class="corbranco">
+REGISTA-TE
+</div>
+</a>
+</div>
+<div class="backwhite" style="float:left;">
+<a href="?menu=recuperar_pass">
+<div style="margin-left: 5px;margin-top: 9px;margin-right: 5px;" class="corbranco">
+RECUPERAR PASS
+</div>
+</a>
+</div>
+</div>
+
+			</div>
+		</div>
+	</div>
+	<div id="content">
+		<div id="subcontent">
+		<div id="destaque1">
+<div id="destaque1noticia" style="visibility:hidden;position: absolute;" >
+<div style="margin-left: 8px; margin-top: 8px;float: left;width:300px;display: inline;">
+<a href="?menu=vp&id_video=1718#default">
+<img width="300" height="231"
+src="./get_homepage_frame.php?id=1718&amp;width=300&amp;height=231" 
+style="margin-left: 0px;" 
+alt=""/>
+</a>
+</div>
+<div style="float: right;width: 276px;margin-top: 13px;height:223px;margin-right: 8px;">
+<div style="height: 208px;float: right;width: 267px;margin-left: 5px;">
+<div style="color: #b8b8b8;font-family: Tahoma;font-size: 12px;float:left;vertical-align:top;display: block;">
+QUEIMA DAS FITAS 2008/09</div>
+<div style="margin-top: 5px;width: 260px;">
+<a href="?menu=vp&id_video=1718#default" style="color: 
+white;font-family: Tahoma;font-size: 13px;font-weight: Bold;">
+QUEIMA DAS FITAS DO PORTO: BLIND ZERO TOCAM NOVO SINGLE EM CASA</a>
+</div>
+<div style="margin-top: 5px;width: 260px;">
+<a href="?menu=vp&id_video=1718#default"
+style="color: white;font-family: Tahoma;font-size: 11px;">
+O álbum “Luna Park” ainda está a ser preparado, mas o novo single já foi apresentado. Os Blind Zero tocaram, mais uma vez, para uma plateia cheia de fãs numa noite onde se ouviram também alguns covers.</a>
+</div>
+</div>
+<div 
+style="text-align: left;margin-left:6px;font-family: Tahoma;font-size: 12px;font-weight: Bold;
+height:15px;display: block;float: left;">
+<img src="./files/images/logo_video.jpg">
+</div>
+<div 
+style="text-align: right;margin-right:5px;font-family: Tahoma;font-size: 12px;font-weight: Bold;
+height:10px;display: block;float: right;">
+<span><a href="javascript:EscondeDestaque();MostraDestaque(1);" style="color: #e30120">1</a></span>
+<span><a href="javascript:EscondeDestaque();MostraDestaque(2);">2</a></span>
+</div>
+</div>
+</div>
+	<div id="destaque1video" style="visibility:hidden;position: absolute;" >
+<div style="margin-left: 8px; margin-top: 8px;float: left;width:300px;display: inline;">
+<a href="?menu=vp&id_video=1716#default">
+<img width="300" height="231"
+src="./get_homepage_frame.php?id=1716&amp;width=300&amp;height=231" 
+style="margin-left: 0px;" 
+alt=""/>
+</a>
+</div>
+<div style="float: right;width: 276px;margin-top: 13px;height:223px;margin-right: 8px;">
+<div style="height: 208px;float: right;width: 267px;margin-left: 5px;">
+<div style="color: #b8b8b8;font-family: Tahoma;font-size: 12px;float:left;vertical-align:top;display:block;">
+ MUITO À FRENTE                          </div>
+<div style="margin-top: 5px;width: 260px;">
+<a href="?menu=vp&id_video=1716#default" style="color: 
+white;font-family: Tahoma;font-size: 13px;font-weight: Bold;">
+FESTIVAL NACIONAL DE ROBÓTICA - CRIAR E APRENDER SÃO AS PALAVRAS DE ORDEM </a>
+</div>
+<div style="margin-top: 5px;width: 260px;">
+<a href="?menu=vp&id_video=1716#default"
+style="color: white;font-family: Tahoma;font-size: 11px;">
+Na sua 9ª edição, o Festival Nacional de Robótica rumou a Castelo Branco e contou com cerca de 600 participantes divididos por seniores e juniores. Antes de competirem, foram lá, essencialmente, para aprenderem.</a>
+</div>
+</div>
+<div 
+style="text-align: left;margin-left:6px;font-family: Tahoma;font-size: 12px;font-weight: Bold;
+height:15px;display: block;float: left;">
+<img src="./files/images/logo_video.jpg">
+</div>
+<div 
+style="text-align: right;margin-right:5px;font-family: Tahoma;font-size: 12px;font-weight: Bold;
+height:10px;display: block;float: right;">
+<span><a href="javascript:EscondeDestaque();MostraDestaque(1);">1</a></span>
+<span><a href="javascript:EscondeDestaque();MostraDestaque(2);" style="color: #e30120">2</a></span>
+</div>
+</div>
+</div>
+	<div id="destaque">
+</div>
+<script language="JavaScript" type="text/javascript">
+function EscondeDestaque(){
+document.getElementById("destaque").innerHTML="";
+}
+function MostraDestaque(a){
+var destaque=document.getElementById("destaque");
+var destaque1noticia=document.getElementById("destaque1noticia");
+var destaque1=document.getElementById("destaque1");
+var destaque1video=document.getElementById("destaque1video");
+if(a==1){
+	destaque.innerHTML=destaque1noticia.innerHTML;
+		destaque1.style.background="url(./files/images/pixel_noticia2.gif)";
+}
+else
+{
+	destaque.innerHTML=destaque1video.innerHTML;	
+	destaque1.style.background="url(./files/images/pixel_noticia2.gif)";
+}
+}
+document.getElementById("destaque").innerHTML=document.getElementById("destaque1noticia").innerHTML;
+MostraDestaque(1);
+</script>
+</div>
+<div id="destaque2">
+
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="300" height='250'>
+<param name="movie" value="./files/swf/mrec_envia.swf"/>
+<param name="quality" value="high"/>
+<param name="wmode" value="opaque"/>
+<embed src="./files/swf/mrec_envia.swf" wmode="opaque" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"
+type="application/x-shockwave-flash" width="300" height="250"
+></embed>
+</object>
+
+</div>
+<div id="pixeis5"></div>
+<div id="area1">
+	<div id="mininews">
+				<div style="margin-left: 4px; margin-top: 4px;float: left;width:95px;display: inline;">
+<a href="./?menu=noticia&amp;id_noticia=3654">
+<img width="95" height="68"
+src="./get_homepage_foto.php?id=3654&amp;width=95&amp;height=68" style="margin-left: 0px;" alt="FOTO"/>
+</a>
+</div>
+<div style="float: left;width: 456px;margin-top: 4px;position: relative;margin-left: 14px;">
+<div style="color: #989898;font-family: Tahoma;font-size: 10px;font-weight: Bold;">
+ MUITO À FRENTE                          </div>
+<div style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 2px;font-weight: Bold;width: 460px;">
+<a href="./?menu=noticia&amp;id_noticia=3654" style="color: black;font-family: Tahoma;font-size: 
+11px;font-weight: Bold;">
+PEDRA LUNAR EM EXPOSIÇÃO NA UNIVERSIDADE DE COIMBRA </a>
+</div>
+<div style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 1px;">
+<a href="./?menu=noticia&amp;id_noticia=3654" style="color: black;font-family: Tahoma;font-size: 11px;">
+A última pedra retirada da Lua viajou dos Estados Unidos até Coimbra para ser exposta no Museu da Ciência da universidade coimbrã. É uma viagem pequena se[...]
+</a>
+</div>
+<div style="color: #8e8e8e;font-family: Tahoma;font-size: 9px;margin-top: 3px;">
+2009-05-20 11:05:24<!--2007-09-13 16:09:57-->
+</div>
+</div>
+
+	</div>
+	<div id="mininews1px"><!--Dummy--></div>
+	<div id="mininews">
+				<div style="margin-left: 4px; margin-top: 4px;float: left;width:95px;display: inline;">
+<a href="./?menu=noticia&amp;id_noticia=3656">
+<img width="95" height="68"
+src="./get_homepage_foto.php?id=3656&amp;width=95&amp;height=68" style="margin-left: 0px;" alt="FOTO"/>
+</a>
+</div>
+<div style="float: left;width: 456px;margin-top: 4px;position: relative;margin-left: 14px;">
+<div style="color: #989898;font-family: Tahoma;font-size: 10px;font-weight: Bold;">
+ SHOW DE BOLA                            </div>
+<div style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 2px;font-weight: Bold;width: 460px;">
+<a href="./?menu=noticia&amp;id_noticia=3656" style="color: black;font-family: Tahoma;font-size: 
+11px;font-weight: Bold;">
+FADEUP CONQUISTA VITÓRIA EM JOGO DE ESTREIA NO EUROPEU DE VOLEIBOL </a>
+</div>
+<div style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 1px;">
+<a href="./?menu=noticia&amp;id_noticia=3656" style="color: black;font-family: Tahoma;font-size: 11px;">
+Vitória suada no primeiro jogo da turma de Frederico Saraiva. A Faculdade de Desporto da Universidade do Porto venceu por 3-2 a Gazi University e ficou mais[...]
+</a>
+</div>
+<div style="color: #8e8e8e;font-family: Tahoma;font-size: 9px;margin-top: 3px;">
+2009-05-19 20:25:24<!--2007-09-13 16:09:57-->
+</div>
+</div>
+
+	</div>
+	<div id="mininews1px"><!--Dummy--></div>
+	<div id="mininews">
+				<div style="margin-left: 4px; margin-top: 4px;float: left;width:95px;display: inline;">
+<a href="./?menu=noticia&amp;id_noticia=3655">
+<img width="95" height="68"
+src="./get_homepage_foto.php?id=3655&amp;width=95&amp;height=68" style="margin-left: 0px;" alt="FOTO"/>
+</a>
+</div>
+<div style="float: left;width: 456px;margin-top: 4px;position: relative;margin-left: 14px;">
+<div style="color: #989898;font-family: Tahoma;font-size: 10px;font-weight: Bold;">
+ DIREITO DE ANTENA                       </div>
+<div style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 2px;font-weight: Bold;width: 460px;">
+<a href="./?menu=noticia&amp;id_noticia=3655" style="color: black;font-family: Tahoma;font-size: 
+11px;font-weight: Bold;">
+MCTES DETERMINA ENCERRAMENTO COMPULSIVO DA UNIVERSIDADE INTERNACIONAL</a>
+</div>
+<div style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 1px;">
+<a href="./?menu=noticia&amp;id_noticia=3655" style="color: black;font-family: Tahoma;font-size: 11px;">
+É a confirmação da decisão provisória do Ministério do Ensino Superior,[...]
+</a>
+</div>
+<div style="color: #8e8e8e;font-family: Tahoma;font-size: 9px;margin-top: 3px;">
+2009-05-19 19:50:24<!--2007-09-13 16:09:57-->
+</div>
+</div>
+
+	</div>
+	<div id="mininews1px"><!--Dummy--></div>
+	<div id="minimininews">
+				<div style="float: left;margin-top: 4px;margin-left: 4px;">
+<div style="color: #989898;font-family: Tahoma;font-size: 10px;font-weight: Bold;">
+ UP LOADING                              </div>
+<div style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 0px;font-weight: Bold;">
+<a href="?menu=noticia&amp;id_noticia=3605"  style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 
+0px;font-weight: Bold;">
+LAPPIZ: REDE SOCIAL MADE IN&nbsp; PORTUGAL PARA ESTUDANTES DO SUPERIOR </a>
+</div>
+</div>
+
+	</div>
+	<div id="mininews1px"><!--Dummy--></div>
+	<div id="minimininews">
+				<div style="float: left;margin-top: 4px;margin-left: 4px;">
+<div style="color: #989898;font-family: Tahoma;font-size: 10px;font-weight: Bold;">
+ DIREITO DE ANTENA                       </div>
+<div style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 0px;font-weight: Bold;">
+<a href="?menu=noticia&amp;id_noticia=3426"  style="color: black;font-family: Tahoma;font-size: 11px;margin-top: 
+0px;font-weight: Bold;">
+NEM A CRISE, NEM BOLONHA TRAVAM A PROCURA AO PROGRAMA ERASMUS</a>
+</div>
+</div>
+
+	</div>
+	<div id="mininews1px"><!--Dummy--></div>
+	<div id="barramininews">
+		<a href="?menu=ver_todas">
+		VER TODAS&nbsp;
+		</a>
+	</div>
+	<div id="ftc">
+		<div id="logoftc">
+			<div class="bgftc1"></div>
+		</div>
+		<div id="areaftc">
+			<div id="margemftc">
+			<!-- Dummy -->
+			</div>
+			<div id="textoftc">
+			<font style="font-size: 14px;font-weight: Bold;">
+			OS TEUS VÍDEOS			</font>
+			<br/>
+			<h2>
+						</h2>
+			</div>
+			<div id="imagemftc">
+			<a href='?menu=vp&id_video=1570'><img src="./get_homepage_frame.php?id=1570&width=247&height=150" width=212 height=130></a>			</div>
+			<div style="float:left;height: 20px;width: 212px;margin-left: 3px;margin-top: 4px;">
+			<b>
+			<font style="font-size: 10px;">
+			<a href='?menu=vp&id_video=1570' style="color:white;">			PLASTICOMANIA - O USO EXCESSIVO DO PLÁSTICO			</a>
+			</font> 
+			</b>
+			<br/>
+			<font style="font-size: 9px;"><b>
+			por: <a href='?menu=bisup&p=1&user=atcmonteir'>atcmonteir</a>			</b>
+			</font>
+			</div>
+		</div>
+	</div>
+<!--	<div id="vox" onmouseover="style.cursor='hand';" onclick="location.href='?menu=vox';"><div style="margin-top: 150px;margin-left:20px;float:left;" >
+<div class="textovox" style="float:left;height: 90px;" >
+<div style="width: 400px;position: relative;top: 70px;">
+<div style="float:right;">
+<h2>por: Nuno</h2>
+</div>
+</div>
+<h2>ficou bem? </h2>
+<div style="width: 415px;margin-top: 5px;float:left;">
+<h1>
+a ver vamos</h1>
+</div>
+<br>
+</div>
+</div>
+</div>-->
+	<div class="boca"><div style="margin-top: 110px;margin-left:25px;float:left;width: 320px;height: 115px;">
+<div class="textovox" style="width: 320px;float:left;height:70px;">
+<h2 style=""><font style="font-weight:normal;">"Quem não oferecer produtos de qualidade internacional não atrai bons estudantes estrangeiros e também não reterá os melhores estudantes nacionais."</font></h2>
+</div>
+<div style="width: 320px;margin-top: 5px;float:left;height:25px;">
+<b>José Ferreira Machado, Director da F.Economia da U.Nova de Lisboa</b>
+</div>
+<div style="float:left;height: 35px;width: 320px;">
+<i>in</i> Diário Económico 19-05-2009</div>
+</div>
+</div>
+	<div id="agenda"><div style="margin-top: 7px;margin-left:7px;position:relative;float:right;">
+	<div style="position: absolute;top: 165px;left:0px;">
+		<font style="font-size: 9px;color:#5d5d5d;">local | data | hora</font><br/>
+		<font style="font-size: 11px;color:black;">
+			<font style="font-weight: normal;">
+			Teatro Municipal de Bragança<br>20 de Maio de 2009<br><font color='black'>21h30</FONT></FONT></FONT></FONT></font>			</font>
+		</font>
+	</div>
+	<div style="position: absolute;top:216px;left:0px;"><!-- 102 -->
+		</div>
+
+	<div style="float:left;width: 170px; height: 120px;">
+		<a href="?menu=agenda">
+			<img src="open_agenda_mini_pic.php?id=211" width="170" height="120" alt=""/>
+		</a>
+	</div>
+	<div style="float:right;width: 30px; height: 120px;">
+		<img src="./files/images/logo_agenda.png">
+	</div>
+	<div id="textoagenda" style="float:left;margin-top: 6px;color:black;font-size: 11px;font-weight: Bold; width: 180px;">
+			<a href="?menu=agenda">
+				<font color="black">
+					"AS LONGAS FÉRIAS DE OLIVEIRA SALAZAR"				</font>
+			</a>
+			<br/>
+	</div>
+</div>
+</div>
+	<div id="flashes">
+	<div style="margin-top: 0px;margin-left:0px;position: relative;float:left;">
+<div style="float: left;margin-top: 5px;margin-left: 5px;">
+<a href='?menu=flashes&id_album=124'>
+<img src="./get_frame_album.php?id=124&amp;width=240&amp;height=145" width="240" height="140"/></a>
+</div>
+<div style="position: absolute; top: 0px;left:240px;width: 320px;">
+<div id="textoflashes">
+<a href='?menu=flashes&id_album=124'>
+<h2>
+<div style="color: red;font-family: Tahoma;font-size: 11px;height: 15px;font-weight:Bold;">
+QUEIMA DAS FITAS 2008/09</div>
+</h2>
+</a>
+<h2><!--2007 | PORTO | CORTEJO--></h2>
+<div style="width: 300px;margin-top: 0px;">
+<a href='?menu=flashes&id_album=124'>
+<h1><b>
+CORTEJO DA QUEIMA DAS FITAS DO PORTO</b>
+</h1>
+</a>
+</div>
+</div>
+</div>
+<div style="position: absolute;top: 95px;left: 264px;">
+<img src="./files/images/flashes/log_flashes.png" style="display: block;" alt=""/>
+</div>
+</div>
+
+	</div>
+<!--	<div id="dossiers">
+		</div>-->
+	<div id="escolhas">
+	<div style="margin-left:11px;margin-top: 11px;">
+<font style="font-family: Tahoma;font-size: 12px;font-weight: Bold;" color="white">
+AS TUAS ESCOLHAS
+</font>
+</div>
+<div style="margin-top: 10px;margin-left:10px;">
+<div style="height:24px;background: url(./files/images/barra_nf.gif);width: 580px;">
+	<div style="margin-top: 5px;color:#5d5d5d;font-weight: Bold;margin-left: 5px;">
+	NOTÍCIAS
+	</div>
+</div>
+<div style="font-family: Tahoma;font-size: 11px;height: 17px;background: url(./files/images/barra_nf2.gif);width: 
+580px;color: black;font-weight: Bold;"><div style="margin-left: 6px;margin-top: 0px;"><a href="./?menu=noticia&id_noticia=186" style="color: black;">ALUNOS DA FEUP DÃO MÚSICA COM MATERIAIS ALTERNATIVOS </a></div></div><div style="font-family: Tahoma;font-size: 11px;height: 17px;background: url(./files/images/barra_nf2.gif);width: 
+580px;color: black;font-weight: Bold;"><div style="margin-left: 6px;margin-top: 0px;"><a href="./?menu=noticia&id_noticia=1227" style="color: black;">ESTUDAR MEDICINA NA REPÚBLICA DOMINICANA </a></div></div><div style="font-family: Tahoma;font-size: 11px;height: 17px;background: url(./files/images/barra_nf2.gif);width: 
+580px;color: black;font-weight: Bold;"><div style="margin-left: 6px;margin-top: 0px;"><a href="./?menu=noticia&id_noticia=2556" style="color: black;">DAR TEMPO ÀS CRIANÇAS PARA SEREM CRIANÇAS </a></div></div><div style="height:20px;background: url(./files/images/barra_vf.gif);width: 580px;">
+	        <div style="margin-top: 5px;color:#5d5d5d;font-weight: Bold;margin-left: 5px;">
+		VÍDEOS
+		</div>
+</div>
+<div style="font-family: Tahoma;font-size: 11px;height: 16px;background: url(./files/images/barra_vf2.gif);width:
+580px;color: white;"><div style="margin-left: 6px;font-weight: Bold;margin-top: 0px;"><a href="./?menu=vp&id_video=551" style="color: black;"><font color='white'>NOVO MODELO, NOVAS CAMPEÃS</font></a></div></div><div style="font-family: Tahoma;font-size: 11px;height: 16px;background: url(./files/images/barra_vf2.gif);width:
+580px;color: white;"><div style="margin-left: 6px;font-weight: Bold;margin-top: 0px;"><a href="./?menu=vp&id_video=1425" style="color: black;"><font color='white'>RECEPÇÃO AO CALOIRO DO ALGARVE - ASSOCIAÇÃO ACADÉMICA FESTEJA 11º ANIVERSÁRIO</font></a></div></div><div style="font-family: Tahoma;font-size: 11px;height: 16px;background: url(./files/images/barra_vf2.gif);width:
+580px;color: white;"><div style="margin-left: 6px;font-weight: Bold;margin-top: 0px;"><a href="./?menu=vp&id_video=1659" style="color: black;"><font color='white'>SALTA! 09: UMA MOSTRA DE TEATRO COM SABOR ESPECIAL</font></a></div></div><div style="width: 580px;margin-top: 10px;">
+<div style="float:right;color: #5d5d5d;font-weight: Bold;">
+... NOS ÚLTIMOS 30 DIAS
+</div>
+</div>
+</div>
+	</div>
+</div>
+<div id="area2">
+		<div id="modulo1">
+				<div class="barrapreta"><span>ÚLTIMO COMENTÁRIO</span></div>
+		<div class="textomodulo">
+		<span >
+		"Pedro Gaspar és o maior!!
+
+
+Farinha"
+		</span>
+		</div>
+		<br/>
+		<br/>
+		<div class="autortextomodulo">
+por: Anónimo		</div>
+		<br/>
+		<div style="color: #666666;margin-left: 10px;">
+                sobre
+		</div>
+		<div style="font-family: Tahoma;font-size: 10px;color:black;margin-left: 10px;margin-right: 10px;">
+                <span>
+		<a
+href="?menu=vp&id_video=1702">
+<font color="black">		<b>
+		SEMANA DO ENTERRO DE AVEIRO - CORTEJO FÚNEBRE NA “VENEZA DE PORTUGAL”</b></font></a>
+                </span>
+                </div>
+	</div>
+	<div id="zoomup" style="margin-top:4px;margin-bottom:4px;float:left;">
+		<!--
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="300" height='100'>
+<param name="movie" value="./files/swf/GATA09.swf"/>
+<param name="quality" value="high"/>
+<param name="wmode" value="opaque"/>
+<embed src="./files/swf/GATA09.swf" wmode="opaque" quality="high" 
+pluginspage="http://www.macromedia.com/go/getflashplayer"
+type="application/x-shockwave-flash" width="300" height="100"
+></embed>
+</object>-->
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" 
+width="300" height='200'>
+<param name="movie" value="./files/swf/FATAL.swf"/>
+<param name="quality" value="high"/>
+<param name="wmode" value="opaque"/>
+<embed src="./files/swf/FATAL.swf" wmode="opaque" quality="high" 
+pluginspage="http://www.macromedia.com/go/getflashplayer"
+type="application/x-shockwave-flash" width="300" height="200"
+></embed>
+</object>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" 
+width="300" height='180'>
+<param name="movie" value="./files/swf/FESTlx09.swf"/>
+<param name="quality" value="high"/>
+<param name="wmode" value="opaque"/>
+<embed src="./files/swf/FESTlx09.swf" wmode="opaque" quality="high" 
+pluginspage="http://www.macromedia.com/go/getflashplayer"
+type="application/x-shockwave-flash" width="300" height="180"
+></embed>
+</object>
+<!--
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="300" height='300'>
+<param name="movie" value="./files/swf/tuist09.swf"/>
+<param name="quality" value="high"/>
+<param name="wmode" value="opaque"/>
+<embed src="./files/swf/tuist09.swf" wmode="opaque" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer"
+type="application/x-shockwave-flash" width="300" height="300"
+></embed>
+</object>
+-->
+	</div>
+	</div>
+<script language="JavaScript">
+intervalo=window.setInterval("TrocaDestaque()",10000);
+var status=1;
+</script>
+		<div style="height: 100px;float:left;width: 100%;">
+		</div>
+		</div>
+	</div>
+	<div id="footer">
+		<div id="footerwrapper">
+			
+				<span>
+                                <a href="./">
+                                HOME
+                                </a>
+	                        </span>
+						</div>
+	</div>
+	<div id="subfooter">
+		<span>
+		Copyright &copy 2009 Canal UP All rights reserved. <a href='?menu=ficha-tecnica'>Ficha Técnica</a> | <a 
+href='?menu=politica-privacidade'>Política 
+de Privacidade</a>
+		</span>
+	</div>
+</div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1609961-1";
+urchinTracker();
+</script>
+</body>
+</html>

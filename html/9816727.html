@@ -1,0 +1,989 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
+<html lang='pt'>
+<head>
+<META http-equiv="Content-Language" content="pt">
+<META name=author content="ALPERCE,Serviços Web">
+<META name=description content="Jornal da Mealhada, semanário da Mealhada. Actualidade em notícias.">
+<META name="keywords" content="jornal, mealhada,noticias,semanário,informação,regional,luso, antes,casal comba, buçaco, politica, desporto">
+<META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
+<META http-equiv="Content-Language" content="pt">
+<META content="general" name="rating">
+<META content="global" name="distribution">
+<META content="Copyright © 2005 Alperce,Serviços Web" name="copyright">
+<META content="never" name="expires">
+<META content="1 days" name="revisit-after">
+<META content="index,follow" name="ROBOTS">
+
+
+<script>
+
+function formcoment() {
+
+//id da noticia
+id_noticia=document.sendcoment.id_noticia.value;
+				
+//verificar nome
+nome=document.sendcoment.nome.value;
+if (nome=='') {
+	alert('Erro: O seu Nome não preenchido.');
+	return(false);
+}
+				
+//email validação
+email_valor=document.sendcoment.email.value;
+if (document.sendcoment.email.value!=''){
+				
+	email=/^.+@.+\..{2,3}$/;
+	if (!(email.test(document.sendcoment.email.value))) { 
+       alert('Erro: E-mail incorrecto.');
+       return(false);
+	
+}
+}else{
+	      alert('Erro: O seu E-mail não preenchido.');
+	      return(false);
+}
+				
+//verificar mensagem
+msg=document.sendcoment.mensagem.value;
+if (msg=='') {
+	alert('Erro: Mensagem não preenchida.');
+	return(false);
+}
+document.sendcoment.nome.value='';
+document.sendcoment.email.value='';
+document.sendcoment.mensagem.value='';
+
+getcomentario(id_noticia,nome,email_valor,msg);
+	
+}
+
+
+function procurahistorico() {
+
+//Validar procura
+valid_historico=document.historiconot.valid_historico.value;
+				
+//verificar data_inicio
+data_inicio=document.historiconot.data_inicio.value;
+if (data_inicio=='') {
+	alert('Erro: Data Inicio não preenchido.');
+	return(false);
+}
+				
+//verificar data_fim
+data_fim=document.historiconot.data_fim.value;
+if (data_fim=='') {
+	alert('Erro: Data Fim não preenchido.');
+	return(false);
+}
+				
+seccao=document.historiconot.seccao.options[document.historiconot.seccao.selectedIndex].value;
+echo('conteudo_central',zjax(1,'javascript/historico_noticias.php','valid_historico='+valid_historico+'&data_inicio='+data_inicio+'&data_fim='+data_fim+'&seccao='+document.historiconot.seccao.options[document.historiconot.seccao.selectedIndex].value));
+
+}
+
+
+function sendmailcontactos() {
+//verificar nome
+nome=sendmail.nome.value;
+if (nome=='') {
+	alert('Erro: O seu Nome não preenchido.');
+	return(false);
+}
+
+//email1 validação
+if (sendmail.email.value!=''){
+
+	email=/^.+@.+\..{2,3}$/;
+	if (!(email.test(sendmail.email.value))) { 
+	       alert('Erro: E-mail incorrecto.');
+	       return(false);
+	}
+}else{
+      alert('Erro: O seu E-mail não preenchido.');
+      return(false);
+}
+
+//verificar mensagem
+msg=sendmail.mensagem.value;
+if (msg=='') {
+	alert('Erro: Mensagem não preenchida.');
+	return(false);
+}
+
+sendmail.submit();
+
+}
+
+
+function validate() {
+
+//verificar nome
+nome=sendlink.nome1.value;
+if (nome=='') {
+	alert('Erro: O seu Nome não preenchido.');
+	return(false);
+}
+
+//email1 validação
+if (sendlink.email1.value!=''){
+
+	email=/^.+@.+\..{2,3}$/;
+	if (!(email.test(sendlink.email1.value))) { 
+	       alert('Erro: E-mail incorrecto.');
+	       return(false);
+	}
+}else{
+      alert('Erro: O seu E-mail não preenchido.');
+      return(false);
+}
+
+//verificar nome2
+nome=sendlink.nome2.value;
+if (nome=='') {
+	alert('Erro: Nome do Destinatário não preenchido.');
+	return(false);
+}
+
+//email2 validação
+if (sendlink.email2.value!=''){
+
+	email=/^.+@.+\..{2,3}$/;
+	if (!(email.test(sendlink.email2.value))) { 
+	       alert('Erro: E-mail incorrecto.');
+	       return(false);
+	}
+}else{
+      alert('Erro: E-mail do Destinatário não preenchido.');
+      return(false);
+}
+
+
+sendlink.submit();
+
+}
+
+
+//Formulário publicidade
+function publicidade() {
+
+//verificar nome
+nome=sendinfor.nome.value;
+if (nome=='') {
+	alert('Erro: O seu Nome não preenchido.');
+	return(false);
+}
+
+//verificar telefone
+telefone=sendinfor.email.value;
+if (telefone=='') {
+	alert('Erro: Telefone não preenchido.');
+	return(false);
+}
+
+//verificar mensagem
+mensagem=sendinfor.mensagem.value;
+if (mensagem=='') {
+	alert('Erro: Mensagem não preenchido.');
+	return(false);
+}
+
+
+sendinfor.submit();
+
+}
+
+
+//verificar se foi o enter primido e verificar validação
+function teclaPresslink(){ 
+var tecla=event.keyCode; 
+	if(tecla==13){ 
+		if(validate()) 
+			return true; 
+		else 
+			return false 
+	}else 
+		return tecla; 
+} 
+
+
+
+function validatejor() {
+//verificar nome
+nome=sendinforjorci.nome.value;
+if (nome=='') {
+	alert('Erro: O seu Nome não preenchido.');
+	return(false);
+}
+
+//email1 validação
+if (sendinforjorci.email.value!=''){
+
+	email=/^.+@.+\..{2,3}$/;
+	if (!(email.test(sendinforjorci.email.value))) { 
+	       alert('Erro: E-mail incorrecto.');
+	       return(false);
+	}
+	email=sendinforjorci.email.value;
+}else{
+      alert('Erro: O seu E-mail não preenchido.');
+      return(false);
+}
+
+//contacto
+telf=sendinforjorci.contacto.value;
+if(telf==''){
+	alert('Erro: O seu TELM/TELF não preenchido.');
+	return(false);
+}else {
+	telefone=/\d[0-9]{8,11}$/;
+	if (!(telefone.test(sendinforjorci.contacto.value))){
+		alert('Erro: TELM/TELF Inválido.');
+		return(false);
+	}
+}
+
+//verificar titulo
+titulo=sendinforjorci.titulo.value;
+if (titulo=='') {
+	alert('Erro: Titulo não preenchida.');
+	return(false);
+}
+
+//verificar noticia
+msg=sendinforjorci.noticia.value;
+if (msg=='') {
+	alert('Erro: Mensagem não preenchida.');
+	return(false);
+}
+
+getcomentario1(nome,email,telf,titulo,msg);
+
+}
+
+//validar procura com pelo menos 3 caracteres
+function valisearch() {
+
+if (document.formprocura.search.value.length<3){
+     		alert('Erro: Tem que fazer uma procura válida com pelo menos 3 caracteres!');
+      return false ;
+}
+	document.formprocura.submit();
+}
+
+
+function daily(pageURL,fotow,fotoh) {
+	fotow=Math.min(fotow+40,.95*screen.availWidth)
+	fotoh=Math.min(fotoh+40,.95*screen.availHeight)
+	window.open(pageURL,'','top='+100+',left='+300+',toolbar=0,location=0,directories=0,status=0,scrollbars=0,resizable=1,copyhistory=0,menuBar=0,width='+fotow+',height='+fotoh+'>'); 
+}
+
+
+//verificar se foi o enter primido e verificar validação
+function teclaPress(){ 
+var tecla=event.keyCode; 
+	if(tecla==13){ 
+		if(valisearch()) 
+			return true; 
+		else 
+			return false 
+	}else 
+		return tecla; 
+} 
+
+function toggleDiv(element){
+
+switch(document.getElementById(element).style.display){
+case 'none': 
+	document.getElementById(element).style.display = 'block';
+	break;
+
+case 'block': 
+	document.getElementById(element).style.display = 'none';
+	break;
+
+};
+}
+
+
+</script><script type="text/javascript">
+      
+/***********************************************
+* Ultimate Fade-In Slideshow (v1.51): © Dynamic Drive (http://www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit http://www.dynamicdrive.com/ for this script and 100s more.
+***********************************************/
+ 
+var fadeimages=new Array()
+//SET IMAGE PATHS. Extend or contract array as needed
+fadeimages[0]=["imgs/publi/rotativa/hmmealhada2.jpg", "http://www.hmmealhada.com", "_new"] //plain image syntax
+fadeimages[1]=["imgs/publi/rotativa/hmmealhada3.jpg", "http://www.hmmealhada.com", "_new"] //image with link syntax
+fadeimages[2]=["imgs/publi/rotativa/hmmealhada1.jpg", "http://www.hmmealhada.com", "_new"] //image with link and target syntax
+ 
+ 
+var fadebgcolor="white"
+
+////NO need to edit beyond here/////////////
+ 
+var fadearray=new Array() //array to cache fadeshow instances
+var fadeclear=new Array() //array to cache corresponding clearinterval pointers
+ 
+var dom=(document.getElementById) //modern dom browsers
+var iebrowser=document.all
+ 
+function fadeshow(theimages, fadewidth, fadeheight, borderwidth, delay, pause, displayorder){
+this.pausecheck=pause
+this.mouseovercheck=0
+this.delay=delay
+this.degree=10 //initial opacity degree (10%)
+this.curimageindex=0
+this.nextimageindex=1
+fadearray[fadearray.length]=this
+this.slideshowid=fadearray.length-1
+this.canvasbase="canvas"+this.slideshowid
+this.curcanvas=this.canvasbase+"_0"
+if (typeof displayorder!="undefined")
+theimages.sort(function() {return 0.5 - Math.random();}) //thanks to Mike (aka Mwinter) :)
+this.theimages=theimages
+this.imageborder=parseInt(borderwidth)
+this.postimages=new Array() //preload images
+for (p=0;p<theimages.length;p++){
+this.postimages[p]=new Image()
+this.postimages[p].src=theimages[p][0]
+}
+ 
+var fadewidth=fadewidth+this.imageborder*2
+var fadeheight=fadeheight+this.imageborder*2
+ 
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers (ie: Firefox)
+document.write('<div id="master'+this.slideshowid+'" style="position:relative;width:'+fadewidth+'px;height:'+fadeheight+'px;overflow:hidden;"><div id="'+this.canvasbase+'_0" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></div><div id="'+this.canvasbase+'_1" style="position:absolute;width:'+fadewidth+'px;height:'+fadeheight+'px;top:0;left:0;filter:progid:DXImageTransform.Microsoft.alpha(opacity=10);opacity:0.1;-moz-opacity:0.1;-khtml-opacity:0.1;background-color:'+fadebgcolor+'"></div></div>')
+else
+document.write('<div><img name="defaultslide'+this.slideshowid+'" src="'+this.postimages[0].src+'"></div>')
+ 
+if (iebrowser&&dom||dom) //if IE5+ or modern browsers such as Firefox
+this.startit()
+else{
+this.curimageindex++
+setInterval("fadearray["+this.slideshowid+"].rotateimage()", this.delay)
+}
+}
+
+function fadepic(obj){
+if (obj.degree<100){
+obj.degree+=10
+if (obj.tempobj.filters&&obj.tempobj.filters[0]){
+if (typeof obj.tempobj.filters[0].opacity=="number") //if IE6+
+obj.tempobj.filters[0].opacity=obj.degree
+else //else if IE5.5-
+obj.tempobj.style.filter="alpha(opacity="+obj.degree+")"
+}
+else if (obj.tempobj.style.MozOpacity)
+obj.tempobj.style.MozOpacity=obj.degree/101
+else if (obj.tempobj.style.KhtmlOpacity)
+obj.tempobj.style.KhtmlOpacity=obj.degree/100
+else if (obj.tempobj.style.opacity&&!obj.tempobj.filters)
+obj.tempobj.style.opacity=obj.degree/101
+}
+else{
+clearInterval(fadeclear[obj.slideshowid])
+obj.nextcanvas=(obj.curcanvas==obj.canvasbase+"_0")? obj.canvasbase+"_0" : obj.canvasbase+"_1"
+obj.tempobj=iebrowser? iebrowser[obj.nextcanvas] : document.getElementById(obj.nextcanvas)
+obj.populateslide(obj.tempobj, obj.nextimageindex)
+obj.nextimageindex=(obj.nextimageindex<obj.postimages.length-1)? obj.nextimageindex+1 : 0
+setTimeout("fadearray["+obj.slideshowid+"].rotateimage()", obj.delay)
+}
+}
+ 
+fadeshow.prototype.populateslide=function(picobj, picindex){
+var slideHTML=""
+if (this.theimages[picindex][1]!="") //if associated link exists for image
+slideHTML='<a href="'+this.theimages[picindex][1]+'" target="'+this.theimages[picindex][2]+'">'
+slideHTML+='<img src="'+this.postimages[picindex].src+'" border="'+this.imageborder+'px">'
+if (this.theimages[picindex][1]!="") //if associated link exists for image
+slideHTML+='</a>'
+picobj.innerHTML=slideHTML
+}
+ 
+ 
+fadeshow.prototype.rotateimage=function(){
+if (this.pausecheck==1) //if pause onMouseover enabled, cache object
+var cacheobj=this
+if (this.mouseovercheck==1)
+setTimeout(function(){cacheobj.rotateimage()}, 100)
+else if (iebrowser&&dom||dom){
+this.resetit()
+var crossobj=this.tempobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+crossobj.style.zIndex++
+fadeclear[this.slideshowid]=setInterval("fadepic(fadearray["+this.slideshowid+"])",50)
+this.curcanvas=(this.curcanvas==this.canvasbase+"_0")? this.canvasbase+"_1" : this.canvasbase+"_0"
+}
+else{
+var ns4imgobj=document.images['defaultslide'+this.slideshowid]
+ns4imgobj.src=this.postimages[this.curimageindex].src
+}
+this.curimageindex=(this.curimageindex<this.postimages.length-1)? this.curimageindex+1 : 0
+}
+ 
+fadeshow.prototype.resetit=function(){
+this.degree=10
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+if (crossobj.filters&&crossobj.filters[0]){
+if (typeof crossobj.filters[0].opacity=="number") //if IE6+
+crossobj.filters(0).opacity=this.degree
+else //else if IE5.5-
+crossobj.style.filter="alpha(opacity="+this.degree+")"
+}
+else if (crossobj.style.MozOpacity)
+crossobj.style.MozOpacity=this.degree/101
+else if (crossobj.style.KhtmlOpacity)
+crossobj.style.KhtmlOpacity=this.degree/100
+else if (crossobj.style.opacity&&!crossobj.filters)
+crossobj.style.opacity=this.degree/101
+}
+ 
+ 
+fadeshow.prototype.startit=function(){
+var crossobj=iebrowser? iebrowser[this.curcanvas] : document.getElementById(this.curcanvas)
+this.populateslide(crossobj, this.curimageindex)
+if (this.pausecheck==1){ //IF SLIDESHOW SHOULD PAUSE ONMOUSEOVER
+var cacheobj=this
+var crossobjcontainer=iebrowser? iebrowser["master"+this.slideshowid] : document.getElementById("master"+this.slideshowid)
+crossobjcontainer.onmouseover=function(){cacheobj.mouseovercheck=1}
+crossobjcontainer.onmouseout=function(){cacheobj.mouseovercheck=0}
+}
+this.rotateimage()
+}
+
+</script>
+<title> Jornal da Mealhada - Edição On-line</title>
+<script language="javascript" type="text/javascript" src="javascript/ajax.js"></script>
+<script language="javascript" type="text/javascript" src="javascript/zajax.js"></script>
+<script language="javascript" type="text/javascript" src="javascript/calendario.js"></script>
+<link href="includes/jornal.css" type="text/css" rel=stylesheet>
+
+
+</head>
+<body topmargin=0>
+<div id="pagina_geral">
+<div id=informacao class=informacao style="display:none;"></div>
+<a name="topo"></a>
+        <table summary="Conteudo Banner" width=900 cellSpacing=0 cellPadding=0 border=0>
+        <tr>
+		<td width=315 valign=top class=texto_conteudo align=left><a href=index.php><img border=0 alt='Logotipo do Jornal da Mealhada' title='Logotipo do Jornal da Mealhada' src=imgs/logojornal.jpg></a></td>
+		<td width=585 align=right>
+		<!-- <a target='_blanck' title='visitar Site' alt='visitar Site' href='http://www.hmmealhada.com'><img border=0 src=imgs/publi/hcmealhada.jpg></a>!-->
+		<!-- Banner Superior!-->
+			<script type="text/javascript">
+			//new fadeshow(IMAGES_ARRAY_NAME, slideshow_width, slideshow_height, borderwidth, delay, pause (0=no, 1=yes), optionalRandomOrder)
+			new fadeshow(fadeimages, 585, 83, 0, 3000, 1, "R")
+			 
+			</script>
+
+		</td>
+	</tr>
+	<tr>
+		<td class=corcinza2 colspan=2 height=1></td>
+	</tr>
+	<tr>
+		<td class=corbranco colspan=2 height=1></td>
+	</tr>
+	</table>
+        <table summary="Conteudo Banner" width=900 cellSpacing=0 cellPadding=0 border=0>
+	<form class="form1" name=formprocura method=POST action='index.php?pagina=search.php' OnSubmit="valisearch();" >
+	<tr>
+		<td class=corcastanho1><font class=texto_menusup>
+
+<b>Terça-Feira</b>, 23 de Junho de 2009</font></td> 
+		<td align=right class=corcastanho1 valign=center height=17><input onKeyPress="return teclaPress()" title='Campo de Procura' type=text name=search size=12><input class=but1 title='Iniciar Procura' onClick="valisearch();" type=button value='Procurar'></td>
+	</tr>
+	</form>
+	</table>
+        <table summary="Conteudo Banner" width=800 cellSpacing=0 cellPadding=0 border=0>
+	<tr>
+		<td width=158></td>
+		<td class=corbranco height=22><div class=conteudo_texto><img title='Voltar à página inicial' src=imgs/quadro.gif> <a href=index.php title='Voltar à página inicial'>Página Inicial</a> &nbsp; &nbsp;<img title='Mapa do Site' src=imgs/quadro.gif> <a href='javascript:getpagina(0,9);' title='Mapa do Site'>Mapa do Site</a> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img title='Assinar Jornal da Mealhada' src=imgs/quadro.gif> <a href='javascript:getpagina(0,6);' title='Assinar Jornal da Mealhada'>Assinar o Jornal</a> &nbsp; &nbsp;<img title='Publicitar no Jornal da Mealhada' src=imgs/quadro.gif> <a href='javascript:getpagina(0,8);' title='Publicitar no Jornal da Mealhada'>Publicitar no JM</a> </div></td>
+	</tr>
+
+	</table><script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-416710-3";
+urchinTracker();
+</script>        <table summary="Conteudo Central" width=900 cellSpacing=0 cellPadding=0 border=0>
+        <tr>
+		<td width=150 valign=top class=texto_menu>
+		<table summary='Menu Lateral' width=150 cellSpacing=0 cellPadding=0 border=0><tr><th class=tabela_menu_th width=150 valign=top background=imgs/menubarra1.jpg height=16><font class=texto_menu_titulo><b>Notícias</b></font></th></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=128&tipo=1")); target='_parent' title='Região' alt='Região'> Região</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=127&tipo=1")); target='_parent' title='Anadia' alt='Anadia'> Anadia</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=124&tipo=1")); target='_parent' title='Última Hora' alt='Última Hora'> Última Hora</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=2&tipo=1")); target='_parent' title='Antes' alt='Antes'> Antes</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=114&tipo=1")); target='_parent' title='Barcouço' alt='Barcouço'> Barcouço</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=115&tipo=1")); target='_parent' title='Casal Comba' alt='Casal Comba'> Casal Comba</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=116&tipo=1")); target='_parent' title='Luso' alt='Luso'> Luso</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=117&tipo=1")); target='_parent' title='Mealhada' alt='Mealhada'> Mealhada</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=118&tipo=1")); target='_parent' title='Pampilhosa' alt='Pampilhosa'> Pampilhosa</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=119&tipo=1")); target='_parent' title='Vacariça' alt='Vacariça'> Vacariça</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=120&tipo=1")); target='_parent' title='Ventosa' alt='Ventosa'> Ventosa</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=3&tipo=1")); target='_parent' title='Concelho' alt='Concelho'> Concelho</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=121&tipo=1")); target='_parent' title='Associativismo' alt='Associativismo'> Associativismo</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=4&tipo=1")); target='_parent' title='Politica' alt='Politica'> Politica</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=5&tipo=1")); target='_parent' title='Desporto' alt='Desporto'> Desporto</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td height=20></td></tr><tr><th class=tabela_menu_th width=150 valign=top background=imgs/menubarra2.jpg height=16><font class=texto_menu_titulo><b>Jornal da Mealhada</b></font></th></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=126&tipo=2")); target='_parent' title='O Concelho da Mealhada, pela lente' alt='O Concelho da Mealhada, pela lente'> O Concelho da Mealhada, pela lente</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=125&tipo=2")); target='_parent' title='Avaliação Carnaval'09' alt='Avaliação Carnaval'09'> Avaliação Carnaval'09</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=102&tipo=2")); target='_parent' title='Ficha Técnica' alt='Ficha Técnica'> Ficha Técnica</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=103&tipo=2")); target='_parent' title='Historial' alt='Historial'> Historial</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=104&tipo=2")); target='_parent' title='Instalações' alt='Instalações'> Instalações</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=105&tipo=2")); target='_parent' title='Locais de Venda' alt='Locais de Venda'> Locais de Venda</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=106&tipo=2")); target='_parent' title='Locais de Assinatura' alt='Locais de Assinatura'> Locais de Assinatura</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=112&tipo=2")); target='_parent' title='Parcerias' alt='Parcerias'> Parcerias</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=113&tipo=2")); target='_parent' title='Links Úteis' alt='Links Úteis'> Links Úteis</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr><tr><td class=tabela_menu_td width=150 valign=top><font class=texto_menu onMouseOver="this.className = 'texto_menu_over';"  onMouseOut="this.className = 'texto_menu';"><a href=javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=107&tipo=5")); target='_parent' title='Contactos' alt='Contactos'> Contactos</a> <img src=imgs/seta_menu.gif></font></td>	
+				</tr><tr><td height=1 class=pontos_menu></td></tr></table><br>
+<img src=imgs/parcerias.gif><br>
+<center>
+<br><a href=http://www.cm-mealhada.pt/4marmealhada target=_blanck><img border=0 title='Visitar Página das 4 Maravilhas da Mesa da Mealhada' src=imgs/4maravilhas.jpg></a><br>
+<br><a href=http://www.sapo.pt/ target=_blanck><img border=0 title='Visitar Página do SAPO.PT' src=imgs/sapo.gif></a><br>
+<br><a href=http://hcmealhada.blog.pt/ target=_blanck><img border=0 title='Visitar Página de HC Mealhada' src=imgs/hcm.jpg></a><br>
+<br><a href=http://www.ltc.pt/ target=_blanck><img border=0 title='Visitar Página de Luso Ténis CLube' src=imgs/ltc.gif></a><br>
+<br><a href=http://www.lusoclassicos.com/ target=_blanck><img border=0 title='Visitar Página de Luso Clássicos' src=imgs/lusoclassicos.jpg></a><br>
+<br><a href=http://www.escoliadas.com/ target=_blanck><img border=0 title='Visitar Página de Escolíadas' src=imgs/escoliadas.gif></a><br>
+<br><a href=http://www.mundook.net/ target=_blanck><img border=0 title='Visitar Página de Mundo Hóquei' src=imgs/mundook.gif></a><br>
+<br><a href=http://bussaco.com.sapo.pt/ target=_blanck><img border=0 title='Visitar Página de Tiago Ângelo' src=imgs/tiangelo.jpg></a><br>
+<br><a href=http://www.toyota73lisboadakar.com/ target=_blanck><img border=0 title='Visitar Página de Toyota 73' src=imgs/toyota73.jpg></a><br>
+</center>
+
+<br><br>
+<img src=imgs/institucional.gif><br>
+<center>
+<br><a href='http://www.jtluso-bucaco.pt' target=_blanck><img border=0 title='Visitar Página da Junta de Turismo Luso-Buçaco' src=imgs/juntalb.gif></a><br>
+<br><a href=http://www.cm-mealhada.pt target=_blanck><img border=0 title='Visitar Página da Câmara Municipal da Mealhada' src=imgs/cmm.gif></a><br>
+<br><a href=http://www.epm.edu.pt target=_blanck><img border=0 title='Visitar Página da EPVL' src=imgs/epvl.jpg></a><br>
+</center>
+
+<br><br><br><br><br><br>
+<div class=conteudo_texto><center><a target=blank_ href=http://www.acessibilidade.net/><img alt='Símbolo de Acessibilidade na Web' title='Símbolo de Acessibilidade na Web' border=0 src=imgs/acess.gif></a><br>
+
+<a title='Um globo inclinado, com uma grelha sobreposta. Na sua superfície está recortado um buraco de fechadura' alt='Um globo inclinado, com uma grelha sobreposta. Na sua superfície está recortado um buraco de fechadura' target=blank_ href=http://www.acessibilidade.net/>D</a></div>
+        		
+        		</center>
+
+		</td>
+       		<td width=5></td>
+       		<td width=100% valign=top align=center>
+       		       		<div id=conteudo_central>
+        	<table summary='Ultima Hora' width=500 cellSpacing=1 cellPadding=0 border=0>
+
+	<tr><td colspan=2 align=left>
+		<table summary='Ultima Hora' valign=top width=500 cellSpacing=0 cellPadding=0 border=0>
+				<tr>
+				<td width=90 valign=bottom><img src=imgs/but/ultimos_dest.gif></td>
+				<td width=395 class=linha_titulo valign=center><marquee class=marquee SCROLLDELAY=150><b>></b> <a href='index.php?tipo=3&link=124&id_conteudo=1162'>Selecção Nacional prepara-se para o Mundial no Luso</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>></b> <a href='index.php?tipo=3&link=124&id_conteudo=1161'>“Royal Ascot” realiza-se, amanhã, no Lograssol</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>></b> <a href='index.php?tipo=3&link=124&id_conteudo=1160'>Selecção Nacional de Rugby Feminino em estágio no Luso</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>></b> <a href='index.php?tipo=3&link=124&id_conteudo=1154'>Ventosa do Bairro e Barcouço receberam iniciativa “Domingos Desportivos”</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>></b> <a href='index.php?tipo=3&link=3&id_conteudo=1155'>“Tasquinha” da freguesia do Luso foi a vencedora</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<b>></b> <a href='index.php?tipo=3&link=118&id_conteudo=1156'>Geração de Ouro - Diana Gaspar, da Pampilhosa, dinamiza Espaço VER no Social</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</marquee></td>
+					</tr>
+					</table>
+				</td>
+			</tr>
+			<tr><td height=12 colspan=2></td></tr></table><table summary='utima hora' width=500 cellSpacing=1 cellPadding=0 border=0><tr><td align=left>
+	<table summary='Ultima Hora' valign=top width=100% cellSpacing=0 cellPadding=0 border=0>
+	</tr><td height=0></td></tr>
+	<tr>
+		<td width=30 class=linha_titulo><img src=imgs/but/ultimahora.gif></td>
+	</tr>
+	</table>
+	<table summary='Ultima Hora' valign=top width=100% cellSpacing=0 cellPadding=0 border=0>
+	<tr>
+		<td height=100 colspan=2 class=entrada_celula2>
+				<div id=ultima_noticia>
+				<table summary="Tabela Noticia Ultima" border=0 cellSpacing=0 cellPadding=0 width=100% align=center>
+				<tr>
+				        <td width=100% colspan=2>
+			
+					<table summary="Tabela Noticia Ultima"  id=entrada_destaque border=0 cellSpacing=0 cellPadding=0 width=100% align=center><tr><th colspan=2>2009-06-21 <b>| Autor - </b>JM<b></th></tr>
+					<tr><td colspan=2><b>Selecção Nacional prepara-se para o Mundial no Luso</b><br></td></tr><tr><td>
+					Os atletas da Selecção Nacional Sénior Masculina de Hóquei em Patins iniciaram no passado dia 15 de Junho, no Pavilhão Municipal do Luso, o seu estágio de preparação para o 39º ...<br><br>
+					</th></tr>
+					</table>
+
+					<table summary="Tabela Noticia Ultima" id=entrada_destaque  border=0 cellSpacing=0 cellPadding=0 width=100% align=center>
+					<tr><th colspan=2>
+					<a href=index.php?tipo=3&link=124&id_conteudo=1162><img title='Mais Informações' border=0 src=imgs/mais.gif> ver</a>&nbsp; <a href='javascript:echo("ultima_noticia",zjax(1,"javascript/verultima.php","pos=1"));'> próximo <img title='Próxima Notícia' border=0 src=imgs/proximo.gif></a></table></td></tr></table></div>					
+	</td>
+</tr>
+</tr><td height=12></td></tr>
+</table>
+</td></tr></table>	<table summary="Destaque Jornal" width=500 cellSpacing=1 cellPadding=0 border=0>
+					
+		<tr>
+			<td align=left>
+
+				<table summary='Ultima Hora' valign=top width=290 cellSpacing=0 cellPadding=0 border=0>
+				<tr>
+					<td width=100 class=linha_titulo><img src=imgs/but/destaques_edicao.gif></td>
+					<td width=3></td>
+				</tr>
+				</table>
+			<table summary='Destaques' valign=top width=98% cellSpacing=0 cellPadding=0 border=0><tr><td class=fundonot>
+			<table summary='Destaques' id=entrada_destaque valign=top width=100% cellSpacing=0 cellPadding=0 border=0><tr><th>2009-06-16 <b>| Autor - </b>JM</th></tr><tr><td><a title='Ver Noticia Completa' href='index.php?tipo=3&link=3&id_conteudo=1155'> <b>“Tasquinha” da freguesia do Luso foi a vencedora</b><br>A Associação Recreativa, Desportiva e Cultural da Lameira de São Pedro, que ...</a></i>
+			<table valign=bottom align=right cellSpacing=0 cellPadding=0 border=0>
+			<tr><td align=left colspan=2><a href='index.php?tipo=3&link=3&id_conteudo=1155'><img title='Mais Informações' border=0 src=imgs/mais.gif> ver</a> &nbsp;<a href='index.php?tipo=3&link=3&id_conteudo=1155&com=1'><img title='Mais Informações' border=0 src=imgs/comentar.gif> comentar (0)</a> &nbsp;</td>
+			</table>
+					
+							</tr>
+			</td></tr>
+			<tr><th height=5></th></tr><tr><th class=linha></th></tr><tr><th height=8></th></tr></table></td></tr><tr><td class=fundonot>
+			<table summary='Destaques' id=entrada_destaque valign=top width=100% cellSpacing=0 cellPadding=0 border=0><tr><th>2009-06-16 <b>| Autor - </b>JM</th></tr><tr><td><a title='Ver Noticia Completa' href='index.php?tipo=3&link=118&id_conteudo=1156'> <b>Geração de Ouro - Diana Gaspar, da Pampilhosa, dinamiza Espaço VER no Social</b><br>OEspaço Valorização e Espírito de Responsabilidade (VER) no Social é um ...</a></i>
+			<table valign=bottom align=right cellSpacing=0 cellPadding=0 border=0>
+			<tr><td align=left colspan=2><a href='index.php?tipo=3&link=118&id_conteudo=1156'><img title='Mais Informações' border=0 src=imgs/mais.gif> ver</a> &nbsp;<a href='index.php?tipo=3&link=118&id_conteudo=1156&com=1'><img title='Mais Informações' border=0 src=imgs/comentar.gif> comentar (0)</a> &nbsp;</td>
+			</table>
+					
+							</tr>
+			</td></tr>
+			<tr><th height=5></th></tr><tr><th class=linha></th></tr><tr><th height=8></th></tr></table></td></tr><tr><td class=fundonot>
+			<table summary='Destaques' id=entrada_destaque valign=top width=100% cellSpacing=0 cellPadding=0 border=0><tr><th>2009-06-16 <b>| Autor - </b>JM</th></tr><tr><td><a title='Ver Noticia Completa' href='index.php?tipo=3&link=117&id_conteudo=1157'> <b>Hospital da Misericórdia da Mealhada - Fisioterapia já tem acordo com o Serviço Nacional de Saúde</b><br>Oprotocolo para a valência de Medicina Física e Reabilitação – fisioterapia - ...</a></i>
+			<table valign=bottom align=right cellSpacing=0 cellPadding=0 border=0>
+			<tr><td align=left colspan=2><a href='index.php?tipo=3&link=117&id_conteudo=1157'><img title='Mais Informações' border=0 src=imgs/mais.gif> ver</a> &nbsp;<a href='index.php?tipo=3&link=117&id_conteudo=1157&com=1'><img title='Mais Informações' border=0 src=imgs/comentar.gif> comentar (0)</a> &nbsp;</td>
+			</table>
+					
+							</tr>
+			</td></tr>
+			<tr><th height=5></th></tr><tr><th class=linha></th></tr><tr><th height=8></th></tr></table></td></tr><tr><td class=fundonot>
+			<table summary='Destaques' id=entrada_destaque valign=top width=100% cellSpacing=0 cellPadding=0 border=0><tr><th>2009-06-16 <b>| Autor - </b>JM</th></tr><tr><td><a title='Ver Noticia Completa' href='index.php?tipo=3&link=114&id_conteudo=1158'> <b>Início da construção da Extensão de Saúde de Barcouço estará para breve?</b><br>“Vamos procurar, no próximo Quadro Comunitário de Apoio, captar verbas para a ...</a></i>
+			<table valign=bottom align=right cellSpacing=0 cellPadding=0 border=0>
+			<tr><td align=left colspan=2><a href='index.php?tipo=3&link=114&id_conteudo=1158'><img title='Mais Informações' border=0 src=imgs/mais.gif> ver</a> &nbsp;<a href='index.php?tipo=3&link=114&id_conteudo=1158&com=1'><img title='Mais Informações' border=0 src=imgs/comentar.gif> comentar (0)</a> &nbsp;</td>
+			</table>
+					
+							</tr>
+			</td></tr>
+			<tr><th height=5></th></tr><tr><th class=linha></th></tr><tr><th height=8></th></tr></table></td></tr><tr><td class=fundonot>
+			<table summary='Destaques' id=entrada_destaque valign=top width=100% cellSpacing=0 cellPadding=0 border=0><tr><th>2009-06-16 <b>| Autor - </b>JM</th></tr><tr><td><a title='Ver Noticia Completa' href='index.php?tipo=3&link=4&id_conteudo=1159'> <b>Irregularidades no Parque Urbano da Cidade da Mealhada - César Carvalheira exige demissão de António Jorge Franco</b><br>Após na semana passada, Carlos Marques, vereador eleito pelo PSD para a Câmara ...</a></i>
+			<table valign=bottom align=right cellSpacing=0 cellPadding=0 border=0>
+			<tr><td align=left colspan=2><a href='index.php?tipo=3&link=4&id_conteudo=1159'><img title='Mais Informações' border=0 src=imgs/mais.gif> ver</a> &nbsp;<a href='index.php?tipo=3&link=4&id_conteudo=1159&com=1'><img title='Mais Informações' border=0 src=imgs/comentar.gif> comentar (0)</a> &nbsp;</td>
+			</table>
+					
+							</tr>
+			</td></tr>
+			<tr><th height=5></th></tr><tr><th class=linha></th></tr><tr><th height=8></th></tr></table></td></tr></table>
+			</td>
+			<td rowspan=2 width=420 valign=top align=right>
+			<table summary='Espaco' valign=top cellSpacing=0 cellPadding=0 border=0>
+			<tr>
+				<td height=16></td>
+			</tr>
+			<tr>
+				<td width=240>
+					
+			<form name=formedicao>
+				<div id=numedicao>
+				<a href='imgs/destaques/746.jpg' rel='lightbox'><img width=200 id=imgmand border=0 src=imgs/destaques/746.jpg></a>
+	<div class=texto_edicoes_v><a title='Edição n.º 746 em .PDF' target=_blanck href=edicoes/ficheiros/746.pdf><img border=0 src=imgs/pdf.gif></a> &nbsp;<b>Ver Edição N.º 746</b></div></div>
+	<select id=idedicao name=nameedicao class=radio><option title='Edição n.º746 de 2009-06-17' value=746>746 -2009-06-17</option><option title='Edição n.º745 de 2009-06-10' value=745>745 -2009-06-10</option><option title='Edição n.º744 de 2009-06-03' value=744>744 -2009-06-03</option><option title='Edição n.º743 de 2009-05-27' value=743>743 -2009-05-27</option><option title='Edição n.º742 de 2009-05-20' value=742>742 -2009-05-20</option><option title='Edição n.º741 de 2009-05-13' value=741>741 -2009-05-13</option><option title='Edição n.º740 de 2009-05-06' value=740>740 -2009-05-06</option><option title='Edição n.º739 de 2009-04-28' value=739>739 -2009-04-28</option><option title='Edição n.º738 de 2009-04-22' value=738>738 -2009-04-22</option><option title='Edição n.º737 de 2009-04-08' value=737>737 -2009-04-08</option><option title='Edição n.º736 de 2009-04-01' value=736>736 -2009-04-01</option><option title='Edição n.º735 de 2009-03-25' value=735>735 -2009-03-25</option><option title='Edição n.º734 de 2009-03-18' value=734>734 -2009-03-18</option><option title='Edição n.º733 de 2009-03-11' value=733>733 -2009-03-11</option><option title='Edição n.º732 de 2009-03-04' value=732>732 -2009-03-04</option><option title='Edição n.º731 de 2009-02-25' value=731>731 -2009-02-25</option><option title='Edição n.º730 de 2009-02-18' value=730>730 -2009-02-18</option><option title='Edição n.º729 de 2009-02-12' value=729>729 -2009-02-12</option><option title='Edição n.º728 de 2009-02-04' value=728>728 -2009-02-04</option><option title='Edição n.º727 de 2009-01-28' value=727>727 -2009-01-28</option><option title='Edição n.º726 de 2009-01-21' value=726>726 -2009-01-21</option><option title='Edição n.º725 de 2009-01-14' value=725>725 -2009-01-14</option><option title='Edição n.º724 de 2009-01-07' value=724>724 -2009-01-07</option><option title='Edição n.º723 de 2008-12-23' value=723>723 -2008-12-23</option><option title='Edição n.º722 de 2008-12-17' value=722>722 -2008-12-17</option><option title='Edição n.º721 de 2008-12-10' value=721>721 -2008-12-10</option><option title='Edição n.º720 de 2008-12-03' value=720>720 -2008-12-03</option><option title='Edição n.º719 de 2008-11-26' value=719>719 -2008-11-26</option><option title='Edição n.º718 de 2008-11-19' value=718>718 -2008-11-19</option><option title='Edição n.º717 de 2008-11-11' value=717>717 -2008-11-11</option><option title='Edição n.º716 de 2008-11-05' value=716>716 -2008-11-05</option><option title='Edição n.º715 de 2008-10-29' value=715>715 -2008-10-29</option><option title='Edição n.º714 de 2008-10-22' value=714>714 -2008-10-22</option><option title='Edição n.º713 de 2008-10-15' value=713>713 -2008-10-15</option><option title='Edição n.º712 de 2008-10-08' value=712>712 -2008-10-08</option><option title='Edição n.º711 de 2008-10-01' value=711>711 -2008-10-01</option><option title='Edição n.º710 de 2008-09-24' value=710>710 -2008-09-24</option><option title='Edição n.º709 de 2008-09-17' value=709>709 -2008-09-17</option><option title='Edição n.º708 de 2008-09-10' value=708>708 -2008-09-10</option><option title='Edição n.º707 de 2008-09-03' value=707>707 -2008-09-03</option><option title='Edição n.º706 de 2008-08-27' value=706>706 -2008-08-27</option><option title='Edição n.º705 de 2008-08-20' value=705>705 -2008-08-20</option><option title='Edição n.º704 de 2008-08-13' value=704>704 -2008-08-13</option><option title='Edição n.º703 de 2008-08-06' value=703>703 -2008-08-06</option><option title='Edição n.º702 de 2008-07-30' value=702>702 -2008-07-30</option><option title='Edição n.º701 de 2008-07-23' value=701>701 -2008-07-23</option><option title='Edição n.º700 de 2008-07-16' value=700>700 -2008-07-16</option><option title='Edição n.º699 de 2008-07-09' value=699>699 -2008-07-09</option><option title='Edição n.º698 de 2008-07-02' value=698>698 -2008-07-02</option><option title='Edição n.º697 de 2008-06-25' value=697>697 -2008-06-25</option><option title='Edição n.º696 de 2008-06-18' value=696>696 -2008-06-18</option><option title='Edição n.º695 de 2008-06-11' value=695>695 -2008-06-11</option><option title='Edição n.º694 de 2008-06-04' value=694>694 -2008-06-04</option><option title='Edição n.º693 de 2008-05-28' value=693>693 -2008-05-28</option><option title='Edição n.º692 de 2008-05-21' value=692>692 -2008-05-21</option><option title='Edição n.º691 de 2008-05-14' value=691>691 -2008-05-14</option><option title='Edição n.º690 de 2008-05-07' value=690>690 -2008-05-07</option><option title='Edição n.º689 de 2008-04-30' value=689>689 -2008-04-30</option><option title='Edição n.º688 de 2008-04-23' value=688>688 -2008-04-23</option><option title='Edição n.º687 de 2008-04-16' value=687>687 -2008-04-16</option><option title='Edição n.º686 de 2008-04-09' value=686>686 -2008-04-09</option><option title='Edição n.º685 de 2008-04-02' value=685>685 -2008-04-02</option><option title='Edição n.º684 de 2008-03-26' value=684>684 -2008-03-26</option><option title='Edição n.º683 de 2008-03-19' value=683>683 -2008-03-19</option><option title='Edição n.º682 de 2008-03-12' value=682>682 -2008-03-12</option><option title='Edição n.º681 de 2008-03-05' value=681>681 -2008-03-05</option><option title='Edição n.º680 de 2008-02-27' value=680>680 -2008-02-27</option><option title='Edição n.º679 de 2008-02-20' value=679>679 -2008-02-20</option><option title='Edição n.º678 de 2008-02-13' value=678>678 -2008-02-13</option><option title='Edição n.º677 de 2008-02-06' value=677>677 -2008-02-06</option><option title='Edição n.º675 de 2008-01-23' value=675>675 -2008-01-23</option><option title='Edição n.º674 de 2008-01-16' value=674>674 -2008-01-16</option><option title='Edição n.º672 de 2008-01-02' value=672>672 -2008-01-02</option><option title='Edição n.º670 de 2007-12-19' value=670>670 -2007-12-19</option><option title='Edição n.º669 de 2007-12-12' value=669>669 -2007-12-12</option><option title='Edição n.º668 de 2007-11-28' value=668>668 -2007-11-28</option><option title='Edição n.º667 de 2007-11-21' value=667>667 -2007-11-21</option><option title='Edição n.º666 de 2007-11-14' value=666>666 -2007-11-14</option><option title='Edição n.º665 de 2007-11-07' value=665>665 -2007-11-07</option><option title='Edição n.º664 de 2007-10-31' value=664>664 -2007-10-31</option><option title='Edição n.º663 de 2007-10-24' value=663>663 -2007-10-24</option><option title='Edição n.º662 de 2007-10-17' value=662>662 -2007-10-17</option></select> <input title='Ver Edição' class=but1 width=100 OnClick='javascript:echo("numedicao",zjax(1,"javascript/veredicao.php","edicao="+document.formedicao.nameedicao.options[document.formedicao.nameedicao.selectedIndex].value))'; type=button value='Edição'></form>
+
+					<a href=mms://stream.radio.com.pt/ROLI-ENC-064 title='Emissão On-line da RCP FM' alt='Emissão On-line da RCP FM'><img border=0 src=imgs/rcp.jpg></a>
+				</td>
+			</tr>
+			</table>
+
+			</td>			
+		</tr>
+		<tr><td height=18 colspan=2></td></tr>
+
+		<tr><td colspan=2 align=left>
+
+						</td></tr>
+
+						        	
+			</table>
+			<a target='blank_' href='mailto:halcong12@halcon-viajes.es'><img border=0 src=imgs/publi/halcon.jpg></a><br><br>
+			
+			
+
+ 
+<table summary='Ultimas noticias' width=460 cellSpacing=0 cellPadding=0 border=0>
+<tr><td height=5 colspan=2></td></tr>
+<tr>
+	<td align=center class=entrada_texto valign=top>
+	<table width=458 summary='Agenda'cellPadding=0 border=0><tr><td rowspan=2 width=170 valign=top>
+
+	<div id=tabela_calendario> 
+	
+	    <input type=hidden id=mes_actual value='6'>	
+	    <input type=hidden id=ano_actual value='2009'>	
+	    <table align=left border=0 id=tabela_data class=tabela_data_tab cellpadding=0 cellspacing=0 title='Calendário'>
+	    <tr>
+	    <th width=20>Dom</th>
+	    <th width=20>Seg</th>
+	    <th width=20>Ter</th>
+	    <th width=20>Qua</th>
+	    <th width=20>Qui</th>
+	    <th width=20>Sex</th>
+	    <th width=20>Sab</th>
+	    </tr><tr>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=1&mes=6&ano=2009&opcao=ver"));' title='- ACIM promove uma Acção do Dia da Criança, na cidade da Mealhada.
+- Dia da Criança, na Biblioteca Municipal da Mealhada.
+- Cinema: "Sinais do Futuro", no cineteatro Messias, na Mealhada.
+'>1</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=2&mes=6&ano=2009&opcao=ver"));' title='- 15h-19 horas: Rastreio auditivo na Junta de Freguesia de Barcouço.
+- Design e Multimédia, no Museu da Ciência da Universidade de Coimbra.
+'>2</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=3&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - 14h 30m-18 horas: Inscrições no Gabinete de Apoio ao Jovem, nas Piscinas Municipais da Mealhada.'>3</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=4&mes=6&ano=2009&opcao=ver"));' title='- Festa de Encerramento das Actividades de Enriquecimento Curricular, na Zona Desportiva da Mealhada.
+- DARWIN E A EVOLUÇÃO, no Museu da Ciência, em Coimbra.
+- Cinema: "Anjos e Demónios", no cineteatro Municipal Messias.
+- Primeira eleminitória de um concurso de karaoke, no Deza9café, na Mealhada.
+'>4</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=5&mes=6&ano=2009&opcao=ver"));' title='- Festa em honra de Santa Eulália e Almas, em Sernadelo.
+- 9 horas: "Como poupar enregia", no auditório da Escola Profissional Vasconcellos Lebre.
+- 21h 30m: Assembleia-geral GRES Batuque.
+- Festa de Encerramento das Actividades de Enriquecimento Curricular, na Zona Desportiva da Mealhada.
+- COLECÇÕES E MUSEUS DE GEOCIÊNCIAS: MISSÃO E GESTÃO, no Museu da Ciência, em Coimbra.
+- 17 horas: Apresentação do livro "Uma geração à procura de caminho", na Biblioteca Municipal da Mealhada.
+- 19 horas: "Alimentação e educação para o consumo", na EB1 do Luso.
+- 21 horas: Gala de Entrega de Prémios das Escolíadas de 2009, no Centro Cultural de Ílhavo.
+'>5</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=6&mes=6&ano=2009&opcao=ver"));' title='- Quarto Torneio de Futsal, do Atlético Clube do Luso, no Pavilhão Municipal do Luso.
+- Festa em honra de Santa Eulália e Almas, em Sernadelo.
+- COLECÇÕES E MUSEUS DE GEOCIÊNCIAS: MISSÃO E GESTÃO, no Museu da Ciência, em Coimbra.
+- Associação de Atletismo de Coimbra vai prestar provas no Centro de Estágios do Luso.
+- Exposição "Da Terra ao Universo", na Biblioteca Municipal da Mealhada.
+- 16 horas: Abertura oficial da XI Feira de Artesanato e Gastronomia do município da Mealhada.
+'>6</a></td></tr>
+<tr>
+<td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=7&mes=6&ano=2009&opcao=ver"));' title='- Quarto Torneio de Futsal, do Atlético Clube do Luso, no Pavilhão Municipal do Luso.
+- Festa em honra de Santa Eulália e Almas, em Sernadelo.
+- Exposição "Da Terra ao Universo", na Biblioteca Municipal da Mealhada.
+- Eleições Europeias de 2009.
+- Marcha contra a fome (Walk the world) - Torre de Belém.
+- XI Feira de Artesanato e Gastronomia do município da Mealhada.
+'>7</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=8&mes=6&ano=2009&opcao=ver"));' title='- Festa em honra de Santa Eulália e Almas, em Sernadelo.
+- Exposição "Da Terra ao Universo", na Biblioteca Municipal da Mealhada.
+- XI Feira de Artesanato e Gastronomia do município da Mealhada.
+'>8</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=9&mes=6&ano=2009&opcao=ver"));' title='- Festa em honra de Santa Eulália e Almas, em Sernadelo.
+- Exposição "Da Terra ao Universo", na Biblioteca Municipal da Mealhada.
+- XI Feira de Artesanato e Gastronomia do município da Mealhada.
+'>9</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=10&mes=6&ano=2009&opcao=ver"));' title='- Quinto Torneio de Futsal, organizado pelos Mecos Duros, no Pavilhão da Vacariça.
+- 16h-21 horas: "Luso PediTaskas".
+- Núcleo Sportinguista da Mealhada comemora o Dia da Raça.
+- 15 horas: Primeiro "Grande Prémio de Carrinhos de Rolamentos", em Barcouço.
+- Festa em honra de Santa Eulália e Almas, em Sernadelo.
+- Associação de Atletismo de Coimbra vai prestar provas no Centro de Estágios do Luso.
+- Exposição "Da Terra ao Universo", na Biblioteca Municipal da Mealhada.
+- XI Feira de Artesanato e Gastronomia do município da Mealhada.
+'>10</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=11&mes=6&ano=2009&opcao=ver"));' title='- Quinto Torneio de Futsal, organizado pelos Mecos Duros, no Pavilhão da Vacariça.
+- Associação de Atletismo de Coimbra vai prestar provas no Centro de Estágios do Luso.
+- Exposição "Da Terra ao Universo", na Biblioteca Municipal da Mealhada.
+- Cinema: "X-Men origens: Wolverine", no cineteatro Municipal Messias.
+- XI Feira de Artesanato e Gastronomia do município da Mealhada.
+'>11</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=12&mes=6&ano=2009&opcao=ver"));' title='- Cinema: "X-Men origens: Wolverine", no cineteatro Municipal Messias.
+- Bibliomealhada vai estar presente no 1º Encontro Internacional de Bibliotecas Itinerantes, no município da Batalha.
+- Exposição "Da Terra ao Universo", na Biblioteca Municipal da Mealhada.
+- XI Feira de Artesanato e Gastronomia do município da Mealhada.
+'>12</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=13&mes=6&ano=2009&opcao=ver"));' title='- Cinema: "X-Men origens: Wolverine", no cineteatro Municipal Messias.
+- 20 horas: Jantar de confraternização dos António, no restaurante "Licínio", na Mealhada.
+- 19h 30m: Jantar do Futebol Clube do Porto, no restaurante "O Telheiro", na Mealhada.
+- Bibliomealhada vai estar presente no 1º Encontro Internacional de Bibliotecas Itinerantes, no município da Batalha.
+- Exposição "Da Terra ao Universo", na Biblioteca Municipal da Mealhada.
+- XI Feira de Artesanato e Gastronomia do município da Mealhada.
+'>13</a></td></tr>
+<tr>
+<td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=14&mes=6&ano=2009&opcao=ver"));' title='- Cinema: "X-Men origens: Wolverine", no cineteatro Municipal Messias.
+- 10h-12 horas: Domingos Desportivos, em Ventosa do Bairro e em Barcouço.
+- Bibliomealhada vai estar presente no 1º Encontro Internacional de Bibliotecas Itinerantes, no município da Batalha.
+- Exposição "Da Terra ao Universo", na Biblioteca Municipal da Mealhada.
+- XI Feira de Artesanato e Gastronomia do município da Mealhada.
+'>14</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=15&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - Cinema: "X-Men origens: Wolverine", no cineteatro Municipal Messias.'>15</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=16&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - ASTRONOMIA À TERÇA: UMA BREVE HISTÓRIA DA MEDIÇÃO DO TEMPO, no Museu da Ciência, em Coimbra.'>16</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=17&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - 2ª Jornada do Troféu António Granja - Atletismo -, no Centro de Estágios do Luso.'>17</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=18&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - Cinema: "The Internacional - A Organização", no cineteatro Municipal Messias.'>18</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=19&mes=6&ano=2009&opcao=ver"));' title='- Convívio Motard dos Roda Moinas, no Carqueijo.
+- Caminhada na Serra do Gerês da Escola Profissional da Mealhada.
+- 23 horas: Grupo Koimbak na Filarmónica Pampilhosense.
+- 21 horas: Assembleia-geral do Futebol Clube da Pampilhosa, nas instalações da antiga escola pré-primária.
+- 15h-18 horas: II Feira Social, na Junta de Freguesia de Casal Comba.
+- Cinema: "The Internacional - A Organização", no cineteatro Municipal Messias.
+- Feira de Formação e Emprego da Mealhada, no Jardim Municipal desta cidade.
+- 21 horas: Eleições no Grupo Desportivo da Mealhada, na Junta de Freguesia da Mealhada.
+'>19</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=20&mes=6&ano=2009&opcao=ver"));' title='- Festas do Santíssimo Sacramento, em Barcouço.
+- Estágio da Selecção Nacional de Rugby Feminino, no Centro de Estágios do Luso.
+- Oficina de Inglês: "Royal Ascot", nos Moinhos do Lograssol.
+- 20h 30m: Reunião da assembleia-geral da Associação Humanitária dos Bombeiros Voluntários da Mealhada.
+- Cinema: "The Internacional - A Organização", no cineteatro Municipal Messias.
+- Caminhada na Serra do Gerês da Escola Profissional da Mealhada.
+- Convívio Motard dos Roda Moinas, no Carqueijo.
+- 19 horas: Festa dos Santos Populares, na Casa Quinhentista da Pampilhosa.
+- Torneio de Natação de Promoção, nas Piscinas Municipais da Mealhada.
+- Feira de Formação e Emprego da Mealhada, no Jardim Municipal desta cidade.
+'>20</a></td></tr>
+<tr>
+<td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=21&mes=6&ano=2009&opcao=ver"));' title='- Festas do Santíssimo Sacramento, em Barcouço.
+- 10h-12 horas: Domingo Desportivo - Futsal -, no Pavilhão Municipal de Casal Comba.
+- Torneio de Natação de Promoção, nas Piscinas Municipais da Mealhada.
+- Convívio Motard dos Roda Moinas, no Carqueijo.
+- CIÊNCIA EM FAMÍLIA, no Museu da Ciência da Universidade de Coimbra.
+- Cinema: "The Internacional - A Organização", no cineteatro Municipal Messias.
+- Estágio da Selecção Nacional de Rugby Feminino, no Centro de Estágios do Luso.
+- Feira de Formação e Emprego da Mealhada, no Jardim Municipal desta cidade.
+'>21</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=22&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - Cinema: "The Internacional - A Organização", no cineteatro Municipal Messias.'>22</a></td><td height=20 width=20 class=hoje onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'hoje';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=23&mes=6&ano=2009&opcao=ver"));' title='Sem acontecimentos'>23</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=24&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - CAMÕES, O CÉU E A TERRA, no Museu da Ciência, em Coimbra.'>24</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=25&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - Cinema: "Star Trek", no cineteatro Municipal Messias.'>25</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=26&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - Cinema: "Star Trek", no cineteatro Municipal Messias.'>26</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=27&mes=6&ano=2009&opcao=ver"));' title='- Cinema: "Star Trek", no cineteatro Municipal Messias.
+- 10h-12 horas: Oficina ambiental - Recicla-me - no Parque da Ponte de Casal Comba.
+- Campeonato Nacional de Juvenis - Atletismo -, no Centro de Estágios do Luso.
+'>27</a></td></tr>
+<tr>
+<td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=28&mes=6&ano=2009&opcao=ver"));' title='- Cinema: "Star Trek", no cineteatro Municipal Messias.
+- Campeonato Nacional de Juvenis - Atletismo -, no Centro de Estágios do Luso.
+'>28</a></td><td height=20 width=20 class=Acontecimento onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'Acontecimento';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=29&mes=6&ano=2009&opcao=ver"));' title='Acontecimento - Cinema: "Star Trek", no cineteatro Municipal Messias.'>29</a></td><td height=20 width=20 class=bgtipo_data onMouseOver="this.className = 'bgtipo_data_over';"  onMouseOut="this.className = 'bgtipo_data';"><a href='javascript:echo("tabela_acont",zjax(1,"javascript/veracont.php","dia=30&mes=6&ano=2009&opcao=ver"));' title='Sem acontecimentos'>30</a></td><td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+</tr>
+<tr>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+<td height=20 width=20 class=bgtipo_data valign="top">&nbsp;</td>
+</tr>
+<tr><td class=fundo_cinza><a title='Mês Anterior' href='javascript:echo("tabela_calendario",zjax(1,"javascript/verdata.php","month=5&year=2009"));'><</a></td><td colspan=5><b>Junho 2009</b></td><td class=fundo_cinza><a title='Mês Seguinte' href='javascript:echo("tabela_calendario",zjax(1,"javascript/verdata.php","month=7&year=2009"));'>></a></td></tr></table>
+		</div><br></td>
+	<td valign=top height=145><div id=tabela_acont><div align=center class=tabela_data><b>Sem acontecimentos para Hoje</b></div></div></div></td></tr><tr><td height=20><table align=left border=0 cellpadding=0 cellspacing=0 title='Calendário'>
+		<tr><td>&nbsp; &nbsp; <img src=imgs/aconthoje.gif> Hoje &nbsp; <img src=imgs/acontgeral.gif> Dia com Acontecimentos</td></tr></table></td></tr></table> 
+		</div><br>
+
+	</td></tr></table><br>
+		<table summary='Frase Titulo' valign=top width=499 cellSpacing=0 cellPadding=0 border=0>
+		<tr><td height=5 colspan=2></td></tr>
+		<tr>
+			<td width=70 class=linha_titulo><img src=imgs/but/frase.gif></td>
+		</tr>
+		</table>
+		<table summary='Frase da Semana' width=501 cellSpacing=1 cellPadding=0 border=0>
+		<tr>
+			<td align=center class=entrada_celula colspan=2>
+			<div class=texto_frasei><i>"Enquanto eu for presidente da Câmara, a Feira de Artesanato vai sempre decorrer no Jardim Municipal"</i></div>
+		<div class=texto_frase>Carlos Cabral  (2009-06-16)<br></div></td>
+		</tr>
+		<tr><td height=10 colspan=2></td></tr>
+		</table>
+			
+<table summary='Ultima Hora' valign=top width=499 cellSpacing=0 cellPadding=0 border=0>
+<tr>
+	<td width=70 class=linha_titulo><img src=imgs/but/ultimas_not.gif></td>
+	</tr>
+</table>
+
+<table summary='Agenda' width=501 cellSpacing=1 cellPadding=0 border=0>
+<tr>
+	<td class=entrada_celula>
+	<div class=conteudo_texto>
+	<table summary='Ultimas noticias' id=tabela_entrada_ultimos cellSpacing=1 cellPadding=0 border=0>
+	<tr>
+	<td align=left><tr><td><img title='Ver mais' src=imgs/seta.gif> <a title='Ver Noticia Completa' href='index.php?tipo=3&link=3&id_conteudo=1145'><b>|2009-06-10|</b> Actividades de Enriquecimento Curricular - Concurso premiou alunos que recolheram mais óleos alimentares</a></td></tr><tr><td><img title='Ver mais' src=imgs/seta.gif> <a title='Ver Noticia Completa' href='index.php?tipo=3&link=116&id_conteudo=1146'><b>|2009-06-10|</b> Mata Nacional do Buçaco - António Jorge Franco será o presidente da Fundação</a></td></tr><tr><td><img title='Ver mais' src=imgs/seta.gif> <a title='Ver Noticia Completa' href='index.php?tipo=3&link=3&id_conteudo=1147'><b>|2009-06-10|</b> Eleições Europeias 2009 no concelho da Mealhada - PS venceu e o Bloco de Esquerda consolida-se como a terceira força do concelho</a></td></tr><tr><td><img title='Ver mais' src=imgs/seta.gif> <a title='Ver Noticia Completa' href='index.php?tipo=3&link=117&id_conteudo=1148'><b>|2009-06-10|</b> Parque Urbano da Cidade - Carlos Marques acusa: Câmara pagou material que não foi aplicado</a></td></tr><tr><td><img title='Ver mais' src=imgs/seta.gif> <a title='Ver Noticia Completa' href='index.php?tipo=3&link=118&id_conteudo=1135'><b>|2009-06-02|</b> Bairro Social do Canedo - Cabral já assinou protocolo para continuar reabilitação das casas</a></td></tr><tr><td><img title='Ver mais' src=imgs/seta.gif> <a title='Ver Noticia Completa' href='index.php?tipo=3&link=4&id_conteudo=1136'><b>|2009-06-02|</b> Eleições europeias são no próximo domingo </a></td></tr><tr><td><img title='Ver mais' src=imgs/seta.gif> <a title='Ver Noticia Completa' href='index.php?tipo=3&link=118&id_conteudo=1137'><b>|2009-06-02|</b> Dia Europeu dos Vizinhos</a></td></tr><tr><td><img title='Ver mais' src=imgs/seta.gif> <a title='Ver Noticia Completa' href='index.php?tipo=3&link=3&id_conteudo=1138'><b>|2009-06-02|</b> XI Feira de Artesanato e Gastronomia do Município da Mealhada </a></td></tr></td>
+	</tr>
+	</table>
+	</div>	
+</td>
+</tr>
+<tr><td height=6></td></tr>
+</table>
+<!--
+<table summary="Entrada " width=458 cellSpacing=0 cellPadding=0 border=0>
+<tr valign=top>
+	<td rowspan=2 align=left><img src=imgs/cronicas.gif></td>
+	<td align=right><img src=imgs/bucaco.gif></td></tr>
+	<tr><td valign=bottom align=right><img src=imgs/historia.gif></td>
+
+</tr>
+</table>!-->
+
+		</td>
+        	<td width=235 valign=top align=center>
+			
+        	<a target='_blanck' title='visitar Site' alt='visitar Site' href='http://www.alperce.com'><img border=0 src=imgs/publi/alperce.gif></a>
+			<br><br>
+			<a href='ficheiros/ABVM.pdf'><img border=0 src=imgs/bombeirosmealhada09.jpg></a>
+			<!-- <a href='javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=125&tipo=2"));'><img border=0 src=imgs/avalcarnaval09.gif></a> !-->
+			<a href='http://www.youtube.com/jornaldamealhada' target='_blank'><img border=0 src=imgs/youtube.jpg></a><script>
+function vervotacaovalor() {
+for (i=0;i<document.formvotar.resp.length;i++){
+	if (document.formvotar.resp[i].checked==true){
+		echo('conteudo_central',zjax(1,'javascript/votar.php','resp='+document.formvotar.resp[i].value));
+		break;
+	}
+}
+if (i==document.formvotar.resp.length){	
+	alert('Não seleccionou nenhuma das respostas!');
+}
+}
+</script><table summary='Meteorologia' valign=top width=235 cellSpacing=0 cellPadding=0 border=0>
+<tr><td height=10></td></tr>
+<tr>
+	<td width=70 class=linha_titulo3><img src=imgs/but/meteo.gif></td>
+</tr>
+</table>
+			
+<table summary='Sondagem' width=235 cellSpacing=0 cellPadding=0 border=0>
+<tr>
+	<td align=center class=tempo valign=top><div id=tempo>
+	        <table summary='Sondagem' width=150 cellSpacing=0 cellPadding=0 border=0 align=center>
+		<tr><td colspan=3 height=5></td></tr>
+		<tr>
+			<td align=center valign=top>
+			<table width=160 height=65 cellpadding=0 cellspacing=0 border=0 align=center>
+<tr>
+	<td valign=center><img src=imgs/loading.gif></td>
+	<td valign=center class=loading> &nbsp; A carregar informação...</td>
+</tr>
+</table>			<script>gettempo();</script>
+			
+		</td></tr>
+		<tr><td colspan=3 height=5></td></tr>
+		</table>
+		</div>	
+	</td>
+</tr>
+<tr><td height=1 colspan=2 class=fundo_azul></td></tr>
+</table><br>
+
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width=235>
+    <param name="movie" value="http://feed.euromilhoes.com/_download/tmpl_feed_result_160x120_multilingue.swf">
+    <param name="quality" value="high">
+    <param name="FlashVars" value="idioma=pt&site_host=http://euromilhoes.blogs.sapo.pt/">
+    <param name="wmode" value="transparent">
+    <param name="menu" value="false">
+    <embed src="http://feed.euromilhoes.com/_download/tmpl_feed_result_160x120_multilingue.swf" width="160" height="120" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" flashvars="idioma=pt&site_host=http://euromilhoes.blogs.sapo.pt/" wmode="transparent" menu="false"></embed>
+</object>
+<a title='Página com passatempos On-Line (Soduku,etc)' alt='Página com passatempos On-Line (Soduku,etc)' href=javascript:echo("conteudo_central",zjax(1,"javascript/passatempos.php","tipo=10"));><img border=0 src=imgs/passatempos.gif></a>
+                <!--   
+                <OBJECT>
+		        <embed src="flash/publi4.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width=235 menu="false" wmode="transparent" flashvars="host=www.euromilhoes.com"></embed>            
+		</OBJECT>
+                <OBJECT>
+                                              				                				           
+                       <embed src="http://www.euromilhoes.com/_include/flash/tmpl_flash_resultados.swf" 
+                  quality="high" 
+                  pluginspage="http://www.macromedia.com/go/getflashplayer" 
+                  type="application/x-shockwave-flash" width=180 height=597 
+                  menu="false" wmode="transparent" 
+                  flashvars="host=www.euromilhoes.com"></embed>            
+                  </OBJECT>!-->
+
+
+
+</td>
+
+	</tr>
+
+        </table>
+        <table summary="Conteudo Banner" width=800 cellSpacing=0 cellPadding=0 border=0>
+	<tr>
+		<td height=12></td>
+	</tr>
+		<tr>
+		<td align=center class=contactos_bottom>
+		 <b>|</b> <a href='javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=109&tipo=0"));' alt='Primeira Visita' title='Primeira Visita'>Primeira Visita</a> <b>|</b> <a href='javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=110&tipo=0"));' alt='Termos de Responsabilidade' title='Termos de Responsabilidade'>Termos de Responsabilidade</a> <b>|</b> <a href='javascript:echo("conteudo_central",zjax(1,"javascript/verpagina.php","id=111&tipo=0"));' alt='Politica de Privacidade' title='Politica de Privacidade'>Politica de Privacidade</a> <b>|</b> <br>
+</td>
+	</tr>
+
+	<tr>
+		<td class=corcastanho1 height=2></td>
+	</tr>
+	<tr>
+		<td bgcolor=f9f9f9 align=center><a title='Enviar E-mail para o Jornal da Mealhada' href='mailto:contactos@jornaldamealhada.com'><img alt='Contactos' border=0 title='Contactos' src=imgs/contactos.gif></a>
+		<a title='alperce, Serviços Web' target=_blanck href='http://www.alperce.com'><img alt='Contactos' border=0 title='alperce, Serviços Wbe' src=imgs/alpercebanner.gif></a><br><br></td>
+	</tr>
+	</table>
+<br><br>
+</div>
+</body>
+</html>

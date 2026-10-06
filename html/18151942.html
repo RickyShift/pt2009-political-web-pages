@@ -1,0 +1,825 @@
+<html><head>
+ 
+<script type="text/javascript" src="http://www.haloscan.com/load/nngeral"> </script>
+
+ <center>
+<title>NN-Notícias do Nordeste</title>
+<meta name="description" content="Informativo Digital do Nordeste Transmontano">
+<meta name="keywords" content="Trás-os-Montes, Macedo de Cavaleiros, Bragança, Jornal, Regional">
+
+
+<link rel="shortcut icon" href="http://www.noticiasdonordeste.com/favicon2.ico " >
+
+<script type="text/javascript">
+
+var tam = 15;
+
+function mudaFonte(tipo,elemento){
+	if (tipo=="mais") {
+		if(tam<24) tam+=1;
+		createCookie('fonte',tam,365);
+	} else {
+		if(tam>10) tam-=1;
+		createCookie('fonte',tam,365);
+	}
+	document.getElementById('txt_home').style.fontSize = tam+'px';
+
+}
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	} else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++)
+	{
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+</script>
+
+
+
+
+<style type="text/css"><!--
+a {text-decoration:none; color: #000000; }
+a:hover{text-decoration:underline}
+a.barraitem:hover {text-decoration: underline}
+
+
+h1 a {color: #02367F; }
+
+
+
+
+form { padding: 0; margin: 0; }
+table.mainHighlight { margin: 0 0 10px 0; }
+/* fotos */
+.fo1c { padding: 0; margin: 0; font-size: 10px; font-family: arial }
+.fo1l { font-size: 14px; font-family: georgia }
+.fo2 { margin: 0 0 5px 0; }
+.fo22 { margin: 0 0 0px 0; }
+
+table.header { border-bottom: 2px solid #cccccc; margin-top: 0px; }
+table.header tr td { font: 12px arial; }
+
+/*navbar*/
+.me1 { font-size: 11px; font-family: verdana; text-decoration: none; }
+.me1 select { font-size: 11px; font-family: arial; width: 120px; }
+.me2 { padding-top: 8px; font-size: 11px; font-family: verdana; font-weight: bold; text-decoration: none; }
+
+
+
+.me1i  { font-size: 10,5px; font-family: Tahoma;  margin: 0; padding: 2px 0 2px 0; border-bottom: 1px solid #cccccc; }
+.me1i a  { text-decoration: none; color: #000000; }
+.me1i a:hover { text-decoration: underline;
+ }
+
+
+
+.me1v {margin: 0; padding: 2px  2px 2; font-size: 11px; font-family: Tahoma; font-weight: bold;color: #ffffff; border-bottom: 1px solid #cccccc;background:#cccccc; background:#BE7038;  }
+.me1vv {margin: 0; padding: 2px  2px 2; font-size: 11px; font-family: Tahoma; font-weight: bold;color: #ffffff; border-bottom: 1px solid #cccccc;background:#cccccc; background:#FF7750;  }
+.me1vvv {margin: 0; padding: 2px  2px 2; font-size: 11px; font-family: Tahoma; font-weight: bold;color: #ffffff; border-bottom: 1px solid #cccccc;background:#cccccc; background:#C20560;  }
+
+.me3v { margin: 0; padding: 2px 0 2px 0; font-size: 10px; font-family: verdana; font-weight: bold; background:#cccccc;  }
+.me2v { margin: 10px 0 4px 0; font-size: 10px; font-family: verdana; color: #6699cc; font-weight: bold; }
+.me1e { line-height: 30px; margin: 0; padding: 0; border-bottom: 1px solid #cccccc; }
+.me1e a { text-decoration: none; color: #000000; }
+.me1e a:hover { text-decoration: underline; }
+.me1e a:visited { color: #000000;  }
+
+/* chamadas */
+.ma2h { margin: 4px 0 5px 0; font-size: 16px; font-family:georgia; color: #2D488D;   }
+.ma1h { margin: 4px 0 5px 0; font-size: 30px; font-family:georgia; color: #02367F;   }
+.ma1hhsegundarias { margin: 4px 0 5px 0; font-size: 24px; font-family:Times New roman; color: #02367F; }
+.ma1hsecund { margin: 4px 0 5px 0; font-size: 16px; font-family:arial; color: #02367F; font-weight: bold; }
+.ma1t { margin: 0px 0 0px 0; font-size: 16px; font-family:georgia; color: #2F2F2F; }
+.ma1t2 { margin: 0px 0 0px 0; font-size: 12px; font-family:arial ;color: #4D4C4C;  }
+.ma1t2segm1 { margin: 0px 0 0px 0; font-size: 11px; font-family:arial ; }
+.ma1t2segm2 { margin: 0px 0 0px 0; font-size: 11px; font-family:arial ;font-weight: bold; }
+.ma1t2segm3 { margin: 0px 0 0px 0; font-size: 11px; font-family:Tahoma; color: #880101; }
+.ma1t2segm4 { margin: 0px 0 0px 0; font-size: 11px; font-family:Tahoma; color: #6F6236; }
+.ma1t2segm5 { margin: 0px 0 0px 0; font-size: 14px; font-family:arial ; font-weight: bold; color: #7b8186; font-style: italic }
+
+.ma1t3 { margin: 0px 0 0px 0; font-size: 11px; font-family:arial;color: #010554; }
+.ma1t3video { margin: 0px 0 0px 0; font-size: 11px; font-family:arial;color: #033884;  }
+.ma1t3opiniao { margin: 0px 0 0px 0; font-size: 10px; font-family:arial; color: #328E8D;  }
+.ma1t3opiniao1 { margin: 0px 0 0px 0; font-size: 11px; font-family:arial;color: #1B2E8E; align="left"; }
+.ma1t3opiniao2 { margin: 0px 0 0px 0; font-size: 10px; font-family:arial;color: #4D4E4E; align="left"; }
+
+.ma1t5 { margin: 0px 0 0px 0; font-size: 12px; font-family:arial; }
+.ma1t4 { margin: 0px 0 0px 0; font-size: 10px; font-family:arial; }
+.ma1t22 { margin: 0px 0 0px 0; font-size: 11px; font-family:arial; color:
+#010554; text-decoration: underline; }
+.ma1t4video { margin: 0px 0 0px 0; font-size: 18px; font-family:arial;color: #033884; }
+
+.ch1h { margin: 10px 0; font-size: 10px; font-family: arial; font-weight:; }
+.ch1hbold { margin: 10px 0; font-size: 11px; font-family: arial; font-weight:Bold ; }
+.ch1hhhh { margin: 10px 0; font-size: 10px; font-family: arial; font-weight: Bold ; }
+.ch1k { margin: 0; font-size: 11px; font-family: arial; text-transform: uppercase; color: #cc3300; }
+.li1 { margin: 0 0 5px 10px; padding: 0; font-size: 11px; font-family: arial; }
+
+
+.ch2h { margin: 5px 0; font-size: 11px; font-family: arial; font-weight: normal; }
+.ch2h a { margin: 0 0 15px 0; font-size: 11px; font-family: arial; } /* font-weight: normal;*/
+
+
+
+
+#home,.bar,.bart,.k{font-family:arial}
+body,table,tr,td{font-size:xx-small}
+.foto h5,.foto h6,#rev h5,#tt2 h5,.k{font-weight:bold}
+.bart a,.bart a:visited{color:#fff}
+#a0,#e1,#b0,.bar, {border:1px #cccccc solid;background:url(http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif);}
+
+#a0,#e1,#g0, #g4{width:990px }
+
+
+
+
+
+body, form, h5,h6,hr{margin:0, margin:auto}
+
+body,#a2,.cx,#c2 span,.m b,.m h5,.m h6{margin-left:10px}
+.foto img,#d2a img,#d2b img{margin-right:4px}
+,#g2 b{margin-right:0px}
+.foto h6{margin-right:0px}
+#a0{padding:7px 10px 3px 10px} 
+#d2{padding:1px}
+table{padding:0px}
+.bar a{padding:6px 20px 5px 21px}
+.bart a{padding:8px 5px 7px 5px}
+#c0{padding-top:0px}
+
+span,.foto img,.bar a,.bart a,#d2a img,#d2b img{floa}
+img,#b2 a,#b3 a,table{border:0}
+.bart  {background:url(http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif);}
+.bar {border-right:1px # solid;background:url(http://smg.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_barra-azul.jp);}
+.bart a, .bar a{border-left:1px # solid;border-bottom:1px #  solid;background:url (http://smg.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_baraa.gif);}
+
+
+#navbar-iframe {
+opacity:0.0;
+filter:alpha(Opacity=0)
+}
+#navbar-iframe:hover {
+opacity:1.0;
+filter:alpha(Opacity=100,FinishedOpacity=100)
+}
+
+
+
+
+
+.halfmoon{
+margin-bottom: 4px;
+}
+
+.halfmoon ul{
+padding: 3px 9px 2px 5px;
+margin-left: 0;
+margin-top: 1px;
+margin-bottom: 0;
+font: bold 14px Verdana;
+list-style-type: none;
+text-align: left; /*set to left, center, or right to align the menu as desired*/
+border-bottom: 1px solid #929492;
+}
+
+.halfmoon li{
+display: inline;
+margin: 0;
+}
+
+.halfmoon li a{
+text-decoration: none;
+padding: 3px 9px 2px 5px;
+margin: 0;
+margin-right: 0; /*distance between each tab*/
+border-left: 1px solid #DDD;
+color: black;
+font: bold 11px Verdana;
+background: #FFFFFF url(http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/sombtab.png) top right no-repeat;
+}
+.halfmoon li a:visited{
+color: black;
+}
+
+.halfmoon li a:hover, .halfmoon li a.current{
+background-color: #F8F6F6;
+color: navy;
+}
+
+#tabcontentcontainer{
+width:95%; /*width of 2nd level content*/
+height:1.5em; /*height of 2nd level content. Set to largest's content height to avoid jittering.*/
+}
+
+.tabcontent{
+display:none;
+}
+
+</style>
+
+
+<script type="text/javascript">
+
+
+
+
+--></style>
+
+
+
+
+
+
+
+
+
+
+<!--CABECALHO-->
+<!--/CABECALHO-->
+<!--- ##FBEXCLU (-6)--->
+<!--<p class="fo2" align="left" ><img style="margin-left: -1 px;" src="http://img.photobucket.com/albums/v484/noticiasdonordeste/banners/pubnn.gif" width="775" HEIGHT ="40"  border="0" alt="NN">--->  
+
+
+<td width="990" height="3"colspan="0"   >
+
+
+<table width="990"   cellspacing="0" background="http://smg.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_dfg.gif" cellpadding="0" style="margin-left: -1px;"  style="margin-top:1px;"  border="0">
+<td> 
+ <form name="form1">
+    <font face="Verdana">
+    <select name="pageon" onChange="mudapagina(this);" style="background-color: #cccccc;
+     color: #ffffff; font-size:10px" size="1">
+       <option value="#" ><b> Sites, Jornais, Rádios e Blogs do Nordeste Transmontano </b></option>    
+             
+<option value="http://www.noticiasdonordeste.com/" target="_blank">Notícias do Nordeste</option>
+
+
+<script language="javascript">
+function mudapagina(combo)
+{
+var endereco = combo.value;
+if (endereco != "#")
+{novapagina = window.open(endereco,"NewPage");
+}
+}
+</script>
+
+</form>
+
+<td height='19' align='left' ><font size=0 color=#ece3c4><a href=''><font size=0 color=#ece3c4>
+<!-- DATAHORA"--> <font face=ARIAL color=#000 size=1> <Script Language="JavaScript">
+    <!--
+    today = new Date()
+    if(today.getMinutes() < 10){
+    pad = "0"}
+    else
+    pad = ""
+    document.write ;if((today.getHours() >=6) && (today.getHours() <=9)){
+    document.write("BOM DIA!")
+    }
+    if((today.getHours() >=10) && (today.getHours() <=11)){
+    document.write("BOM DIA!")
+    }
+    if((today.getHours() >=12) && (today.getHours() <=19)){
+    document.write("BOA TARDE!")
+    }
+    if((today.getHours() >=20) && (today.getHours() <=23)){
+    document.write("BOA NOITE!")
+    }
+    if((today.getHours() >=0) && (today.getHours() <=3)){
+    document.write("BOA NOITE!")
+    }
+    if((today.getHours() >=4) && (today.getHours() <=5)){
+    document.write("Boa Noite!")
+    }
+    // -->
+    </script>
+ <font face=ARIAL color=#000 size=1><b>EDIÇÃO DE <script type="text/javascript" language="JavaScript">
+
+var now = new Date();
+var hours = now.getHours();
+var minutes = now.getMinutes();
+var timeValue = "" + ((hours >12) ? hours -12 :hours)
+timeValue += ((minutes < 10) ? ":0" : ":") + minutes
+timeValue += (hours >= 12) ? " PM" : " AM"
+timerRunning = true;
+
+mydate = new Date();
+myday = mydate.getDay();
+mymonth = mydate.getMonth();
+myweekday= mydate.getDate();
+weekday= myweekday;
+myyear= mydate.getYear();
+year = myyear
+
+if(myday == 0)
+day = " DOMINGO, "
+
+else if(myday == 1)
+day = " SEGUNDA-FEIRA, "
+
+else if(myday == 2)
+day = " TERÇA-FEIRA, "
+
+else if(myday == 3)
+day = " QUARTA-FEIRA, "
+
+else if(myday == 4)
+day = " QUINTA-FEIRA, "
+
+else if(myday == 5)
+day = " SEXTA-FEIRA, "
+
+else if(myday == 6)
+day = " SÁBADO, "
+
+if(mymonth == 0)
+month = " DE JANEIRO DE "
+
+else if(mymonth ==1)
+month = " DE FEVEREIRO DE "
+
+else if(mymonth ==2)
+month = " DE MARÇO DE "
+
+else if(mymonth ==3)
+month = " DE ABRIL DE "
+
+else if(mymonth ==4)
+month = " DE MAIO DE "
+
+else if(mymonth ==5)
+month = " DE JUNHO DE "
+
+else if(mymonth ==6)
+month = " DE JULHO DE "
+
+else if(mymonth ==7)
+month = " DE AGOSTO DE "
+
+else if(mymonth ==8)
+month = " DE SETEMBRO DE "
+
+else if(mymonth ==9)
+month = " DE OUTUBRO DE "
+
+else if(mymonth ==10)
+month = " DE NOVEMBRO DE " 
+
+else if(mymonth ==11)
+month = " DE DEZEMBRO DE "
+
+document.write( day + myweekday + month + year + " - " + timeValue);
+
+ </script>       
+ </b>
+ </td>
+ 
+ </table>
+ 
+ 
+ <table width="990" style="margin-left: -1px;" background="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif"  border="0" cellpadding="4" cellspacing="4" style="border: 1px solid #cccccc; margin-bottom: 0px;">
+<td> 
+
+ 
+ <a>
+ <img src=http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/nnriscascores.png width=116 height=64></a>
+
+ 
+<img src="http://img.photobucket.com/albums/v484/noticiasdonordeste/banners/topbannerblogs.gif" margin-top: 0px width="710" height="64" border="0"  alt="PUB" ></a></span>
+
+
+ <img src=http://img.photobucket.com/albums/v484/noticiasdonordeste/publicidade.gif width=8 height=57 hspace=3></span><span id=disc><a href=Potricaentre.html><img src=http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/potlog.gif width=110 height=64 border=0></a>
+</td>
+ 
+ </table>
+
+</div>
+</div>
+
+ 
+
+<div id=z2 > </div></div>
+<div id=g4 class=bart style="margin-left: -1px;"  style= "border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; border-bottom: 0px solid #cccccc;border-top: 0px solid #ccccccc ;" >
+
+<div>
+<a class=k  href=http://www.noticiasdonordeste.com/nnPDF.html  style="padding:4px 7px 2px 12px;background="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif";color:white;border-width:0;border-left:1px #sdkder solid;"><img src=http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/pdfesq.png width=22 height=22 hspace=4 border=0 align=absmiddle><font color=#000> NN: Edição em PDF</font></a>
+
+
+
+<a class=k href= farmaciasservico.html  style="padding:4px 7px 2px 12px;background="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif";color:white;border-width:0;border-left:1px #sdkder solid;"><img src=http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/farmservlogogif.gif width=22 height=22 hspace=4 border=0 align=absmiddle><font color=#000>Farmácias de Serviço</font></a>
+
+<a class=k href=http://www.noticiasdonordeste.com/nnCLASSIFICADOS.html  style="padding:6px 7px 2px 12px;background="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif";color:white;border-width:0;border-left:1px #sdkder solid;"><img src=http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/classiNN1.gif width=18 height=17 hspace=4 border=0 align=absmiddle><font color=#000> Classificados NN</font></a>
+
+ <a class=k href=MAILTO:redaccao@noticiasdonordeste.com style="padding:9px 7px 2px 12px;background="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif";color:white;border-width:0;border-left:1px #sdkder solid;"><img src=http://smg.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_postalcontactonn.gif width=18 height=12 hspace=4 border=0 align=absmiddle><font color=#000> Contacto NN</font></a>
+
+
+<a class=k href=http://br.weather.yahoo.com/POXX/POXX0038/index_c.php style="padding:5px 7px 2px 12px;background="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif";color:white;border-width:0;border-left:1px #sdkder solid;"><img src=http://smg.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_tempo.gif width=30 height=20 hspace=4 border=0 align=absmiddle><font color=#000> O tempo</font></a>
+ 
+<a class=k href=http://www.noticiasdonordeste.com/Pais%26mundo.html  style="padding:5px 7px 2px 12px;background="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif";color:white;border-width:0;border-left:1px #sdkder solid;"><img src=http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/Mundo.png width=21 height=20 hspace=4 border=0 align=absmiddle><font color=#000>País & Mundo</font></a>
+
+<a class=k href=http://www.noticiasdonordeste.com/NNactualidade.html  style="padding:5px 7px 2px 12px;background="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/linhas.gif";color:white;border-width:0;border-left:1px #sdkder solid;"><img src=http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/quiosque.jpg width=18 height=20 hspace=4 border=0 align=absmiddle><font color=#000> Revista de Imprensa Nacional</font></a>
+
+ 
+</span>
+</a></a>
+</div>
+
+<!--CABECALHO-->
+<!--/CABECALHO-->
+<!--- ##FBEXCLU (-6)--->
+<!--<p class="fo2" align="left" ><img style="margin-left: -1 px;" src="http://img.photobucket.com/albums/v484/noticiasdonordeste/banners/pubnn.gif" width="775" HEIGHT ="40"  border="0" alt="NN">--->  
+
+
+<td width="990" height="0"colspan="0"  >
+<table width="990"   cellspacing="0" background="http://smg.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_dfg.gif" cellpadding="0" style="margin-left: -8px;"  style="margin-top:1px;"  border="0">
+
+
+
+ 
+ <IMG src="http://photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_cast.gif" width="990" height="0"   style="margin-top:-200px;"></td></table>
+
+ </div >
+
+
+
+<td width="990" height="0"colspan="0"  >
+<table width="990"   cellspacing="0" background="http://smg.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_dfg.gif" cellpadding="0" style="margin-left: -8px;"  style="margin-top:1px;"  border="0">
+
+
+
+ 
+ <IMG src="http://photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_cast.gif" width="990" height="0"   style="margin-top:-200px;"></td></table>
+
+ </div >
+
+
+
+
+
+      </font>
+        </tr>
+      </table>
+</a></font></small></small><!--mstheme--></font></td>
+  </tr> </> <!--(igual Ã&#131;Æ&#146;Ã&#134;â&#128;&#153;  barra inferior)-->
+</td>
+
+</tr>
+</table>
+
+
+
+
+<td width="990" height="0"colspan="6">
+
+<div IMG src="http://photobucket.com/albums/v484/noticiasdonordeste/geataopagina/th_cast.gif" width="760" height="2"  style="margin-top:0px;"/></td></table>
+
+
+
+<table width="990" style="margin-left: -1px;" style="margin-top: -2px;"  style= "border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; border-bottom: 0px solid #cccccc;border-top: 0px solid #ccccccc ;"  cellspacing="0" background="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/cinza3.jpg"  width="990" height="1" cellpadding="0"   border="0">
+
+
+
+<td height='10'   align='left' >
+
+
+<div  id="ddimagetabs" class="halfmoon">
+<ul>
+<li><a href="http://noticiasdonordeste.com/" onMouseover="expandcontent('sc1', this)">Editorial</a></li>
+<li><a href="http://www.noticiasdonordeste.com/nnregiao.html" onMouseover="expandcontent('sc2', this)">Região</a></li>
+<li class="selected"><a href="http://www.noticiasdonordeste.com/nnpoliticascri1.html" onMouseover="expandcontent('sc3', this)">Política</a></li>
+<li><a href="http://www.noticiasdonordeste.com/nnsociedadecri1.html">Sociedade</span></a></li>
+<li><a href="http://www.noticiasdonordeste.com/nneconomiascri1.html">Economia</a></li>
+
+
+<li><a href="http://www.noticiasdonordeste.com/nnculturascri1.html">Cultura</a></li>
+<li><a href="http://www.noticiasdonordeste.com/nndesportoscri1.html">Desporto</a></li>
+
+<li><a href="http://nnreportagem.blogspot.com/">Reportagem</a></li>
+
+<li><a href="http://nnentrevista.blogspot.com/">Entrevista</a></li>
+
+<li><a href="http://nninformatica.blogspot.com/">Informática</a></li>
+
+<li><a href="http://www.noticiasdonordeste.com/tv/CONTEUDO/VideoINDEX.html">Videos NN</a></li>
+
+<li><a href="http://www.noticiasdonordeste.com/podcastNN.html">Podcast</a></li>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</td>
+</table>
+
+
+
+
+
+
+
+
+</DIV>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </font>
+        </tr>
+      </table>
+</a></font></small></small><!--mstheme--></font></td>
+  </tr> </> <!--(igual ÃƒÆ’  barra inferior)-->
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+<!-- --><style type="text/css">@import url(http://www.blogger.com/static/v1/v-css/navbar/697174003-classic.css);
+div.b-mobile {display:none;}
+</style>
+
+</head><body><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=19686510&amp;blogName=Noticias+do+Nordeste+-+%C3%BAltimas&amp;publishMode=PUBLISH_MODE_BLOGSPOT&amp;navbarType=BLUE&amp;layoutType=CLASSIC&amp;homepageUrl=http%3A%2F%2Fnoticiasdonordesteultimas.blogspot.com%2F&amp;blogLocale=pt_PT&amp;searchRoot=http%3A%2F%2Fnoticiasdonordesteultimas.blogspot.com%2Fsearch" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" title="Blogger Navigation and Search"></iframe>
+<div></div>
+
+
+
+
+
+
+
+
+
+
+<!--BARRA ESQUERDA-->
+<table   width="990"  style="margin-left: -12px;" cellpadding="0"    cellspacing="0"  border="0">
+
+
+
+
+<!--BARRA ESQUERDA--><!--BARRA_ESQUERDA-->
+<!--BARRA_ESQUERDA-->
+<!--BARRA_ESQUERDA-->
+<!--BARRA_ESQUERDA-->
+<!--BARRA_ESQUERDA-->
+<!--BARRA_ESQUERDA-->
+<!--BARRA ESQUERDA-->
+<table width="990"cellpadding="4 cellspacing="4"  style= "border-left: 0px solid #cccccc;><tr valign="top" topmargin="0"> 
+<!--BARRA ESQUERDA-->
+<!--/BARRA_ESQUERDA FIMMMMMMMM-->
+<!--CONTENT-->
+<!--CONTENT-->
+<!--/NAVBAR-->
+<!--NOTICIA-->
+<!--NOTICIA-->
+<!--NOTICIA-->
+<!--NOTICIA-->
+<!--NOTICIA-->
+<!--DESTAQUE-->
+</td><td width="0">
+<table width="633" cellpadding="2" cellspacing="3" style= "border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; border-bottom: 1px solid #BDBABA;border-top: 1px solid #cccccc border="1"  class="content"><tr valign="top"><td width="0" class="content">
+<table width="633" border="0"  cellpadding="4"  cellspacing="4" ><tr><td>
+<!-- Meta Information -->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="MSSmartTagsPreventParsing" content="true" />
+		<meta name="generator" content="Blogger" />
+<br>
+<!-- Blog Posts -->
+	   
+<div style="margin-left: 3px;" align= "left"class="blogPost"; style="margin-top: -10px;"  > 
+
+
+ 
+
+
+
+<font face=georgia color=#02367F size=6> Distrito de Bragança: Sociais-democratas vencem com quase o dobro dos votos do Partido Socialista<br>
+
+
+ </h2>  <BlogItemURL></font>
+ </BlogItemTitle><font> 
+
+
+ <font color=#000 face="georgia" size=2><i>NN - Macedo de Cavaleiros,
+
+Segunda-feira, Junho 08, 2009
+</i></a></a><br>
+
+<img src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/spacernn.jpg" border="0" width="615" height="1" align="center" ><br>
+ 
+<a href="javascript:printWindow()"><img style="margin-top: 3px;"  src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/imprimir.gif" border="0" width="18" height="18"  ><font size="1" face="georgia"></a>&nbsp&nbsp&nbsp&nbsp<img style="margin-top: 3px;"  src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/comentarios.gif" border="0" width="18" height="18"  >&nbsp&nbsp&nbsp&nbsp<a href="javascript:void(0);"Onclick="mudaFonte('mais'); return false"><img style="margin-top: 3px;" src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/fontemais.gif" border="0"></a> 
+<a href="javascript:void(0);" Onclick="mudaFonte('menos'); return false">
+<img style="margin-top: 3px;" src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/fontemenos.gif" border="0"></a>
+&nbsp&nbsp<a href="http://www.noticiasdonordeste.com/tv/CONTEUDO/VideoINDEX.html" ><img style="margin-top: -17px;" src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/camaraindex234.gif"   class="listing-icon" /></a>&nbsp&nbsp&nbsp&nbsp<object type="application/x-shockwave-flash" data="http://channels.ourmedia.org/players/1pixelout/player.swf" id="audioplayer1" height="20" width="195"><param name="movie" value="http://channels.ourmedia.org/players/1pixelout/player.swf"/><param name="FlashVars" value="playerID=1&soundFile=http://www.archive.org/download/nnentrevista/sergioipodf.mp3"/><param name="quality" value="high"/><param name="menu" value="false"/><param name="wmode" value="transparent"/></object>
+
+<br>
+ 
+ <img style="margin-top: -7px;" src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/spacernn.jpg" border="0" width="615" height="1" align="center" > 
+
+<br>
+
+
+
+<div style="margin-left: 3px;" align= "left"class="blogPost"; style="margin-top: -10px;"  > 
+	<font id="txt_home" face=georgia color=#4D4C4C size=3> <div style="clear:both;"></div><a href="http://4.bp.blogspot.com/_zzktSG255WU/SixJFjgjqWI/AAAAAAAAAFI/mNl3Y10nvAs/s1600-h/resulteuroeleic.jpg"></a>O PSD  quase alcançou o dobro dos votos do PS no distrito de Bragança nestas eleições europeias 2009.<br /><br />O Partido social-democrata vence em todos os doze concelhos que constituem o distrito de Bragança por uma larga margem de diferença.<br /><br />No total o PSD conseguiu 23094 votos, logo seguido do PS com 12114 eleitores que escolheram Vital Moreira para liderar a representação socialista no Parlamento europeu.<br /><br />O CDS/PP continua a ser a terceira força política distrital, tendo conseguido a recolha de 4803 votos.<br /><br />Surpreendente é sem dúvida a performance do BE, que numa terra tradicionalmente oposta às facções mais esquerdistas, consegue obter um resultado record de 3285, muito à frente da CDU que surge em quinto lugar com 2087 votos.<br /><br />Mas a abstenção foi a grande vencedora, tendo atingido neste acto eleitoral os 68.30%.<br /><br />De entre os 49562 eleitores nordestinos que foram às urnas, 1424 votaram em branco e 1424 foram considerados nulos.<div style="clear:both; padding-bottom:0.25em"></div> </font> <br>
+ <font face=TAHOMA color=#cccccc align="justify" size=1> <a href="javascript:HaloScan('1922325092565954388');" target="_self"><script type="text/javascript">postCount('1922325092565954388'); </script></a>						
+
+
+
+<br>
+<br>
+
+<img src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/spacernn.jpg" border="0" width="610" height="1" align="center" >
+
+<!-- BENNER FIM--> 
+
+<!--ARQUIVO E OUTRAS-->
+
+
+
+<font face= arial, size=1 align=left color=#000000>
+<b><id="recently"> 
+<font face=georgia color=#02367F size=2>  
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/06/eleicoes-europeias-envoltas-em-polemica.html"><font color=#02367F >Elei&ccedil;&otilde;es europeias envoltas em pol&eacute;mica em Alf&acirc;nde...</font></a></li>
+      
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/06/municipio-de-mogadouro-promove-primeira.html"><font color=#02367F >Munic&iacute;pio de Mogadouro promove a primeira &ldquo;Feira S...</font></a></li>
+      
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/06/eleicoes-europeias-abstencao-pode.html"><font color=#02367F >Elei&ccedil;&otilde;es europeias: absten&ccedil;&atilde;o pode atingir os 66%</font></a></li>
+      
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/06/mercado-de-vestuario-braganca-beja-e.html"><font color=#02367F >Mercado de Vestu&aacute;rio: Bragan&ccedil;a, Beja e Portalegre ...</font></a></li>
+      
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/06/paulo-rangel-veio-ao-nordeste-povoar.html"><font color=#02367F >Paulo Rangel veio ao Nordeste povoar a Casa do Agr...</font></a></li>
+      
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/06/ep-anuncia-um-investimento-de-84.html"><font color=#02367F >EP anuncia um investimento de 84 milh&otilde;es de euros ...</font></a></li>
+      
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/06/mirandela-terceira-edicao-da-mostra.html"><font color=#02367F >Mirandela: terceira edi&ccedil;&atilde;o da &ldquo;Mostra sa&uacute;de Mais&rdquo;</font></a></li>
+      
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/06/baixa-intensidade-no-brilho-do.html"><font color=#02367F >Baixa Intensidade no brilho do Mirandela</font></a></li>
+      
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/05/justica-na-agenda-de-adao-silva.html"><font color=#02367F >Justi&ccedil;a na agenda de Ad&atilde;o Silva: deputado quer exp...</font></a></li>
+      
+        <li><a href="http://noticiasdonordesteultimas.blogspot.com/2009/05/macedo-de-cavaleiros-vai-ter-um.html"><font color=#02367F >Macedo de Cavaleiros vai ter um Depositr&atilde;o</font></a></li>
+     </b></font>
+  </ul>
+  </font>
+<img src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/spacernn.jpg" border="0" width="610" height="1" align="center" >
+
+
+
+
+ <font face= arial, size=2 align=left color=#000000><b>Arquivo</b><br>
+
+<font face= arial size=1 color=#cccccc> <a href='http://noticiasdonordesteultimas.blogspot.com/2005_12_01_archive.html'>Dezembro 2005</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_01_01_archive.html'>Janeiro 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_02_01_archive.html'>Fevereiro 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_03_01_archive.html'>Março 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_04_01_archive.html'>Abril 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_05_01_archive.html'>Maio 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_06_01_archive.html'>Junho 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_07_01_archive.html'>Julho 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_08_01_archive.html'>Agosto 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_09_01_archive.html'>Setembro 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_10_01_archive.html'>Outubro 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_11_01_archive.html'>Novembro 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2006_12_01_archive.html'>Dezembro 2006</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_01_01_archive.html'>Janeiro 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_02_01_archive.html'>Fevereiro 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_03_01_archive.html'>Março 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_04_01_archive.html'>Abril 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_05_01_archive.html'>Maio 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_06_01_archive.html'>Junho 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_07_01_archive.html'>Julho 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_08_01_archive.html'>Agosto 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_09_01_archive.html'>Setembro 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2007_11_01_archive.html'>Novembro 2007</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_01_01_archive.html'>Janeiro 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_02_01_archive.html'>Fevereiro 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_03_01_archive.html'>Março 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_04_01_archive.html'>Abril 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_05_01_archive.html'>Maio 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_06_01_archive.html'>Junho 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_07_01_archive.html'>Julho 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_08_01_archive.html'>Agosto 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_09_01_archive.html'>Setembro 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_10_01_archive.html'>Outubro 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2008_11_01_archive.html'>Novembro 2008</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2009_01_01_archive.html'>Janeiro 2009</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2009_02_01_archive.html'>Fevereiro 2009</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2009_03_01_archive.html'>Março 2009</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2009_04_01_archive.html'>Abril 2009</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2009_05_01_archive.html'>Maio 2009</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2009_06_01_archive.html'>Junho 2009</a> <a href='http://noticiasdonordesteultimas.blogspot.com/2009_07_01_archive.html'>Julho 2009</a> 
+			<!-- Link to the front page, from your archives -->
+			<script type="text/javascript">if (location.href.indexOf("archive")!=-1) document.write("<li><strong><a href=\"http://noticiasdonordesteultimas.blogspot.com/\">Current Posts</a></strong></li>");</script> 
+	
+ </font>
+
+<!--ARQUIVO E OUTRAS-->
+
+
+
+
+
+
+<p class="fo2" align="left" style="margin-top: -0px;" > <img src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/branc.gif" width="492" HEIGHT ="21"  border="0" alt="NN">  
+<!--/NOTICIA-->
+<!--/TEXTO-->
+<!--/NOTICIA-->
+<!-VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV->
+
+<!-VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV->
+<!--VVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV------------------------------------------------------------------------------->
+
+<!--BARRA_DIREITA-->
+<!--/BARRA_DIREITA-->
+<!--BARRA_DIREITA-->
+<!--BARRA_DIREITA-->
+<!--/BARRA_DIREITA-->
+<!--BARRA_DIREITA-->
+
+</td> </tr></table>
+</td> <td width="0" valign="top" >
+<div  align="center">
+<script type="text/javascript" src="http://www.jeroenwijering.com/embed/swfobject.js"></script> <div id="player">This text will be replaced</div> <script type="text/javascript">var so = new SWFObject('http://www.jeroenwijering.com/embed/player.swf','mpl','336','180','9');so.addParam('allowscriptaccess','always');so.addParam('allowfullscreen','true');so.addParam('flashvars','&file=http://www.noticiasdonordeste.blip.tv/rss&playlistsize=87&backcolor=EEEEEE&screencolor=EEEEEE&playlist=right');so.write('player');</script>
+</div>
+<a href="http://www.noticiasdonordeste.com/tv/CONTEUDO/VideoINDEX.html">
+<IMG style="margin-top: 0px;"src="http://img.photobucket.com/albums/v484/noticiasdonordeste/TV/altadefinicao.jpg" width="336" align="center" border="0"><br>
+
+
+<script type="text/javascript" charset=utf-8 src="http://www.howdev.com/products/feedsweep/producer.aspx?feeds=http%3a%2f%2fnoticiasdonordesteultimas.blogspot.com%2fatom.xml&title=Outras+Not%c3%adcias+NN&maxoutput=7&charlimit=200&headlinelimit=1000&amp;datefontsize=6&amp;datetimeformat= NN: dd-MM-yyyy&amp&launchinnewwindow=false&linktitle=feed&width=336&separatorstyle=dotted&titlecolor=+%2302367F&headerfont=georgia&titlefont=georgia&titlefontsize=10&font=georgia&fontsize=8&headerfontweight=none&headerfontstyle=italic&titlefontweight=none&fontstyle=italic"></script>
+
+<div align="center" style="margin-top: -35px;">
+<object type="application/x-shockwave-flash" data="http://flash-mp3-player.net/medias/player_mp3_mini.swf" width="331" height="32"> <param name="movie" value="http://flash-mp3-player.net/medias/player_mp3_mini.swf" /> <param name="bgcolor" value="#ffffff" /> <param name="FlashVars" value="mp3=http%3A//flash-mp3-player.net/medias/another_world.mp3&amp;bgcolor=ffffff&amp;loadingcolor=ffffff&amp;slidercolor=ffffff" /> </object>
+</div>
+<br>
+<!--PUB-->
+
+
+
+
+<table width="330" border="0" cellpadding="0" cellspacing="0"  style="margin-top:-5px;"><tr><td class="me2" align="left">
+           
+<p class="me1i"><a href="http://www.noticiasdonordeste.com/estatutoeditorial.html" target="_blank">Estatuto Editorial do Notícias do Nordeste</a></p>
+<p class="me1i"><a href="http://www.noticiasdonordeste.com/fichatectnica.html" target="_blank">Ficha Técnica do Notícias do Nordeste</a></p>
+<p class="me1i"><a href="MAILTO:noticiasdonordeste@hotmail.com" target="_blank">Contacto da Readcção NN</a></p>
+<p class="me1i"><a href="MAILTO:noticiasdonordeste@hotmail.com" target="_blank">Aceitamos Colaboradores Locais</a></p>
+<p class="me1i"><a href="MAILTO:noticiasdonordeste@hotmail.com" target="_blank">Envie-nos Notícias</a></p>
+<p class="me1i"><a href="http://www.noticiasdonordeste.com/errounn.html" target="_blank">O Notícias do Nordeste Errou</a></p>
+
+</td></tr></table>
+</td></tr></table>
+<!--/BARRA_DIREITA-->
+
+<br>
+<br>
+
+
+<!--/COPYRIGHT-760-->
+<table width=990 cellpadding=5 cellspacing=0 border=0><tr>
+  <td><a href="http://www.noticiasdonordeste.com/tv/CONTEUDO/VideoINDEX.html"><img src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/logowebTVtransparente.png" border=0 width="54" height="52"></a></td>
+  <td><font face=arial color=#888888> A Web TV-NN é um serviço de distribuição de notícias multimédia e está agregado ao Notícias do Nordeste <B><a href=http://www.noticiasdonordeste.com/tv/CONTEUDO/VideoINDEX.html>VER</b></a></font></td>
+
+  <td><a href="http://www.noticiasdonordeste.com/podcastNN.html"><img src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/nnpodcastbaneer.jpg" border=0 width="70" height="52"></a></td>
+  <td><font face=arial color=#888888>NN-Pdcast é um serviço de distribuição de notícias audíveis, no formato mp3, e está agregado ao Notícias do Nordeste <B><a href=http://www.noticiasdonordeste.com/podcastNN.html>OUVIR</b></a></font></td>
+
+  <td><a href="http://www.noticiasdonordeste.com/nnPDF.html "><img src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/nnpdfbanner.jpg" border=0 ></a></td>
+  <td><font face=arial color=#888888>NN-PDF é um serviço de distribuição de notícias que poderão ser impressas a partir da sua impressora e está agregado ao Notícias do Nordeste. <B><a href=http://www.noticiasdonordeste.com/nnPDF.html>IMPRIMIR</b></a></font></td>
+
+  
+  
+  
+  
+  </tr></table>
+
+
+<!--/COPYRIGHT-760-->
+<table style= "margin-top: 10px;" width=990 cellpadding=5 cellspacing=0 border=0><tr>
+  <td><a href="http://potrica.blogspot.com/"><img src="http://img.photobucket.com/albums/v484/noticiasdonordeste/geataopagina/potlog.gif" border=0 width="110" height="64" ></a></td>
+  <td><font face=arial color=#888888>Este sítio é propriedade da <br> <B><a href="MAILTO:associacao.potrica@gmail.com"> <color=#888888>Associação Potrica</b>: (Grupo de acção Cultural do Nordeste Transmontano)</a></font></td>
+  <td><img src="http://img.photobucket.com/albums/v482/noticiasdonordeste1/potrica/bannerNNfundoinformativodigital.png" border=0 width="468" height="60"></a></td>
+  <td><font face=arial color=#888888>O Notícias do Nordeste está registado na Entidade Reguladora para a Comunicação Social (ERC) com o <B><a href="http://www.ics.pt/index.php?op=pesquisa&tipo=11&area=81&pag=0&linhas=50&campo=-1&keywords=Notícias%20do%20Nordeste&distrito=-1">nº 125301</b></a></font></td>
+</tr></table>
+
+<br>
+<!--/RODAPE-->
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+</body>
+</html>

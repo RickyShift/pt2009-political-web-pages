@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="keywords" content="Energie, energia solar termodinâmica, águas quentes sanitárias, aquecimento central, climatização de piscinas, aquecimento de grandes volumes, energia solar, sistemas solares" />
+<meta name="description" content="A Energie é uma empresa dedicada a produção e venda de equipamentos de ultima geração de energia solar temodinânima, energia solar termodinâmica aplicada a águas quentes sanitárias, aquecimento central, climatização de piscinas e aquecimento de grandes volumes."/>
+<meta name="author" content="Cápsula - Soluções Multimédia" />
+<meta name="rating" content="general" />
+<meta name="distribution" content="global" />
+<meta name="copyright" content="Copyright © 2006 CÁPSULA" />
+<meta name="expires" content="never" />
+<meta name="revisit-after" content="15 days" />
+<meta name="robots" content="index,follow" />
+<title>Energie - Energia solar termodin&acirc;mica</title>
+<link href="/_css/estilos.css" rel="stylesheet" type="text/css" media="screen" />
+
+<script language="JavaScript">
+function newWindow(mypage,myname,w,h,features) {
+  if(screen.width){
+  var winl = (screen.width-w)/2;
+  var wint = (screen.height-h)/2;
+  }else{winl = 0;wint =0;}
+  if (winl < 0) winl = 0;
+  if (wint < 0) wint = 0;
+  var settings = 'height=' + h + ',';
+  settings += 'width=' + w + ',';
+  settings += 'top=' + wint + ',';
+  settings += 'left=' + winl + ',';
+  settings += features;
+  win = window.open(mypage,myname,settings);
+  win.window.focus();
+}
+function echeck(str) {	
+	var at="@";
+	var dot=".";
+	var lat=str.indexOf(at);
+	var lstr=str.length;
+	var ldot=str.indexOf(dot);
+	if (str.indexOf(at)==-1){
+	   alert("introduza um email válido");
+	   return false;
+	}
+	if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr){
+	   alert("introduza um email válido");
+	   return false;
+	}
+	if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr){
+		alert("introduza um email válido");
+		return false;
+	}
+	if (str.indexOf(at,(lat+1))!=-1){
+		alert("introduza um email válido");
+		return false;
+	}
+	if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot){
+		alert("introduza um email válido");
+		return false;
+	}
+	if (str.indexOf(dot,(lat+2))==-1){
+		alert("introduza um email válido");
+		return false;
+	}
+	if (str.indexOf(" ")!=-1){
+		alert("introduza um email válido");
+		return false;
+	}
+	return true;
+}
+function ValidateForm(){
+	var emailID=document.form_newsletter.email;
+	if ((emailID.value==null)||(emailID.value=="")){
+		alert("introduza um email válido");
+		emailID.focus();
+		return false;
+	}
+	if (echeck(emailID.value)==false){
+		emailID.value="introduza um email válido";
+		emailID.focus();
+		return false;
+	}
+	return true;
+}
+</script>
+
+<script type="text/javascript" src="/_js/js/prototype.js"></script>
+<script type="text/javascript" src="/_js/js/scriptaculous.js?load=effects"></script>
+<script type="text/javascript" src="/_js/js/lightbox.js"></script>
+</head>
+<link rel="stylesheet" href="/_js/css/lightbox.css" type="text/css" media="screen" />
+</head>
+
+
+<body   >
+<div id="wrapper">
+<div style="position:absolute;left:148px;top:235px;"><img src="/_img/headerRestantes_pt.jpg"></div><a href=/><img src="/_img/logo.jpg" alt=" " width="154" height="49" id="imgLogo"/></a>	
+	
+	<ul id="menuInstitucional">
+        <li><a href="/">Página principal</a></li>
+        <li><a href=/historia.php>História</a></li>
+        <li><a href="/noticias/">Notícias</a></li>
+        <li><a href=/faq.php>FAQ</a></li>
+        <li><a href=/localizacao.php>Localização</a></li>
+        <li><a href=/contactos.php>Contactos</a></li>
+    </ul>
+    <ul id="menuLinguas">
+	<li><a href="/lang.php?cult=es&uri=/noticias/detail.php?">ES</a></li><li><a href="/lang.php?cult=fr&uri=/noticias/detail.php?">FR</a></li><li><a href="/lang.php?cult=de&uri=/noticias/detail.php?">DE</a></li><li><a href="/lang.php?cult=uk&uri=/noticias/detail.php?">UK</a></li>
+    </ul>
+    <ul id="menuComercial">
+        <li><a href=/produtos/>Produtos</a></li>
+	<li><a href=/calculo/>Cálculo</a></li>
+        <li><a href=/portfolio/>Portfolio</a></li>
+        <li><a href=/revendedores.php>Revendedores</a></li>
+        <li><a href=/downloads.php> Downloads</a></li>
+        <li><a href=/testemunhos/>Testemunhos</a></li>
+		<li id="principio"><a href=/principio.php>Princípio de funcionamento</a></li>
+		<li id="principio"><a href=/historiasistemas.php>História dos sistemas solares</a></li>
+    </ul>
+
+    <ul id="menuDestaques">
+        <li id="destaque"><a href=/destaques/?id=2>Feiras</a></li>
+        <li id="destaqueGaleria"><a href=/inauguracao/>Fotos Inauguração</a></li>
+        <li><a href=/destaques/>Destaques</a></li>
+    </ul>
+    
+<a href="/areaclientes/"><img src="/_img/areaclientes_pt.jpg" alt="area de clientes" id="imgAreaClientes"/></a>
+    <div id="wrapperConteudos">
+			<!-- flash -->
+			<div id="bannerFlash">
+				<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="595" height="225">
+					<param name="movie" value="/_swf/bannerNoticias.swf" />
+					<param name="quality" value="high" />
+					<param name="wmode" value="transparent" />
+					<embed src="/_swf/bannerNoticias.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" quality="high" width="595" height="225"></embed>
+			    </object>
+			</div>
+	
+
+		<!-- header -->
+		<div id="header">
+			<div style="height: 135px; font-size: 0.9em; position: relative;">
+				<a href="mailto:energie@energie.pt" style="position: absolute; left:420px; top:30px; width:160px; height: 40px;"><img src="/_img/transparent.gif" width="160" height="40"/></a>
+				<h1>Notícias</h1>			</div>
+		</div>
+		
+		<!-- CRUMB BREAD -->
+		<div id="cb">
+		<a href="/">Página principal</a> > <a href=/noticias class=ultimocb>Notícias</a> > <a href=/noticias/detail.php?id= class="ultimocb"></a></div>
+<div id="colLeft2">
+
+</div>
+
+
+<div id="colRight2">
+	<h3> | <span class="data"></span></h3>
+	<p></p>
+	
+		<p class="userF">
+		<a href="javascript:window.print()" class="imprimir">Imprimir</a>
+		<a href="javascript:newWindow('/sendemail.php?'+document.location.href,'email',450,300,'')" class="recomendar">Recomendar</a>
+	</p>
+
+	<h2>Subscrição de Newsletter</h2>
+	<form id="subsNews" name=form_newsletter method=post action=/newsletter.php onSubmit="return ValidateForm()">
+	<input name="email" id="email" type="text" value="Introduza o seu e-mail" onclick="document.form_newsletter.email.value='' " onchange="if(document.form_newsletter.email.value=='') document.form_newsletter.email.value = 'Introduza o seu e-mail' ">
+	<INPUT TYPE="image" SRC="/_img/btnSubscrever_pt.png" VALUE="subscrever" ALT="subscrever" NAME="subscrever">
+	</form>
+</div>
+		
+
+		<!-- rodape -->
+		<div id="rodape">
+			<ul id="menuLinguasRodape"><li><a href="/lang.php?cult=es&uri=/noticias/detail.php?">ES</a></li><li><a href="/lang.php?cult=fr&uri=/noticias/detail.php?">FR</a></li><li><a href="/lang.php?cult=de&uri=/noticias/detail.php?">DE</a></li><li><a href="/lang.php?cult=uk&uri=/noticias/detail.php?">UK</a></li></ul>Energie - todos os direitos reservados - 2006 | conceito por: <a href="http://www.capsula.com.pt" title="Cápsula - Soluções Multimédia">Cápsula</a>						
+		</div>
+    </div>
+</div>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1270444-1";
+urchinTracker();
+</script>
+
+</body>
+</html>

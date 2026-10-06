@@ -1,0 +1,886 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+<head>
+<script type='text/javascript'>
+/*-----------------------------------------------------------------------------
+Alex Blog Estudos - http://www.alexestudos.eti.br
+Alexandre AD Campos - alexandre@alexestudos.eti.br
+-----------------------------------------------------------------------------
+script: datas.js (Blogger)
+versao: 0.1 (27.MAR.2007)
+descricao: script para manipular datas do blogger para maior liberdade de customizacao do template
+---------------------------------------------------*/
+
+/* global */
+var semana = new Array("Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado");
+var meses = new Array("Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro");
+
+/* trocar conteudo do id especificado */
+function atualizarData(id, fdata) {
+    try {
+        var idtmp = document.getElementById(id);
+        idtmp.innerHTML = fdata;
+    } catch(e) {}
+}
+
+
+function configurarData(jsDate, fmt) {
+    /*  $d = dia do mes
+        $e = $d/$m/$a
+        $E = $d/$m/$A
+        $m = mes (numero)
+        $b = nome do mes abreviado
+        $B = nome do mes completo
+        $y = ano com 2 digitos
+        $Y = ano com 4 digitos
+        $H = hora
+        $M = minuto
+        $S = segundos
+        $T = $h:$m:$s
+        $a = nome do dia da semana abreviado
+        $A = nome do dia da semana completo
+    */
+    fmt = fmt.replace(/\$d/g, jsDate.getDate());
+    fmt = fmt.replace(/\$m/g, jsDate.getMonth()+1);
+    fmt = fmt.replace(/\$y/g, (String(jsDate.getFullYear())).slice(-2));
+    fmt = fmt.replace(/\$e/g, jsDate.getDate() + '/' + (jsDate.getMonth()+1) + '/' + (String(jsDate.getFullYear())).slice(-2));
+    fmt = fmt.replace(/\$E/g, jsDate.getDate() + '/' + (jsDate.getMonth()+1) + '/' + jsDate.getFullYear());
+    fmt = fmt.replace(/\$Y/g, jsDate.getFullYear());
+    fmt = fmt.replace(/\$H/g, jsDate.getHours());
+    fmt = fmt.replace(/\$M/g, jsDate.getMinutes());
+    fmt = fmt.replace(/\$S/g, jsDate.getSeconds());
+    fmt = fmt.replace(/\$T/g, jsDate.getHours() + ':' + jsDate.getMinutes() + ':' + jsDate.getSeconds());
+    fmt = fmt.replace(/\$A/g, semana[jsDate.getDay()]);
+    fmt = fmt.replace(/\$a/g, semana[jsDate.getDay()].slice(0,3));
+    fmt = fmt.replace(/\$B/g, meses[jsDate.getMonth()]);
+    fmt = fmt.replace(/\$b/g, meses[jsDate.getMonth()].slice(0,3));
+
+    return fmt;
+}
+
+function formatarData(id, dt, fmt) {
+    /* configurar o formato da data do timestramp no blogger: mm/dd/aaaa hh:mm:ss AP 
+        id = id do elemento que sera substituido
+        dt = data do blogger no formato: mm/dd/aaaa hh:mm:ss AP
+        fmt = formato que sera impresso */
+    var jsDate = new Date();
+
+    var dat = dt.split(' ');
+    /* hora minuto segundo */
+    var tmp = dat[1].split(':'); /* hh:mm:ss */
+    if (dat[2] == "PM") {
+        tmp[0] += 12;
+    }
+    jsDate.setHours(tmp[0], tmp[1], tmp[2]);
+
+    /* dia mes ano */
+    var tmp = dat[0].split('/'); /* mm/dd/aaaa */
+    jsDate.setFullYear(tmp[2], tmp[0]-1, tmp[1]); /* ano, mes, dia */
+
+    var fdata = configurarData(jsDate, fmt);
+    atualizarData(id, fdata);
+}</script>
+<script language='JavaScript' type='Text/Javascript'>
+var urlAddress = "http://andthisisreality.blogspot.com";
+var pageName = "And This is Reality Blog";
+function addToFavorites() { 
+if (window.external) { window.external.AddFavorite(urlAddress,pageName)}
+else { alert("Sorry! Your browser doesn't support this function.");} 
+}</script>
+<script type="text/javascript">(function() { var a=window;function f(e){this.t={};this.tick=function(d,b,c){var i=c?c:(new Date).getTime();this.t[d]=[i,b]};this.tick("start",null,e)}var g=new f;a.jstiming={Timer:f,load:g};try{a.jstiming.pt=a.external.pageT}catch(h){};a.tickAboveFold=function(e){var d,b=e,c=0;if(b.offsetParent){do c+=b.offsetTop;while(b=b.offsetParent)}d=c;d<=750&&a.jstiming.load.tick("aft")};var j=false;function k(){if(!j){j=true;a.jstiming.load.tick("firstScrollTime")}}a.addEventListener?a.addEventListener("scroll",k,false):a.attachEvent("onscroll",k); })();</script>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='true' name='MSSmartTagsPreventParsing'/>
+<meta content='blogger' name='generator'/>
+<link href='http://www.blogger.com/favicon.ico' rel='icon' type='image/vnd.microsoft.icon'/>
+<link rel="alternate" type="application/atom+xml" title="... And This is Reality - Atom" href="http://andthisisreality.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="... And This is Reality - RSS" href="http://andthisisreality.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="... And This is Reality - Atom" href="http://www.blogger.com/feeds/3956552304616612069/posts/default" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.blogger.com/rsd.g?blogID=3956552304616612069" />
+<link rel="alternate" type="application/atom+xml" title="... And This is Reality - Atom" href="http://andthisisreality.blogspot.com/feeds/577135229762331824/comments/default" />
+<title>... And This is Reality: O QUE OS SEUS CDS DIZEM DE SI</title>
+<style id='page-skin-1' type='text/css'><!--
+
+/*
+Theme Info
+==========
+*//*
+Name:         Grey Press
+Author:       Dan S.
+Author URL:   hrrp://deceblog.net
+Date:         09 Aug 2007
+Inspired by:  http://www.findcreditcards.org/pressrow/
+Images from:  http://www.morguefile.com/
+*/
+/*
+Theme Images
+============
+*/
+body {background-image:url(images/body_bg.gif);}
+#sidebar-wrapper h2 {background-image:url(images/icon_comment.gif);}
+#sidebar-wrapper .LinkList h2 {background-image:url(images/icon_box.gif);}
+#sidebar-wrapper .BlogArchive h2 {background-image:url(images/icon_folder.gif);}
+#sidebar-wrapper .Profile h2 {background-image:url(images/icon_file.gif);}
+#sidebar-wrapper .Search h2 {background-image:url(images/icon_search.gif);}
+#sidebar-wrapper .FeedIt h2 {background-image:url(images/icon_author_alt.gif);}
+#end {background-image:url(images/footer.gif);}
+#head-pic {background-image:url(images/time.jpg);}
+#blog-pager-newer-link { background-image: url(images/icon_previous.gif); }
+#blog-pager-older-link { background-image: url(images/icon_next.gif); }
+.home-link { background-image: url(images/icon_down.gif); }
+/* Variable definitions
+====================
+<Variable name="bgcolor" description="Page Background Color"
+type="color" default="#fff">
+<Variable name="textcolor" description="Text Color"
+type="color" default="#444">
+<Variable name="linkcolor" description="Link Color"
+type="color" default="#1c9bdc">
+<Variable name="visitedlinkcolor" description="Visited Link Color"
+type="color" default="#000">
+<Variable name="hovercolor" description="Over Link Color"
+type="color" default="#1873a1">
+<Variable name="titlecolor" description="Title Color"
+type="color" default="#222">
+<Variable name="descriptioncolor" description="Blog Description Color"
+type="color" default="#999">
+<Variable name="blockcolor" description="Blocks Color"
+type="color" default="#f5f5f5">
+<Variable name="blockbordercolor" description="Blocks Border Color"
+type="color" default="#ccc">
+<Variable name="h2color" description="Header 2 Color"
+type="color" default="#333">
+<Variable name="quotecolor" description="Blockquote Color"
+type="color" default="#666">
+<Variable name="bodyfont" description="Text Font"
+type="font" default="normal normal 62% Georgia, 'Times New Roman', Times, serif">
+<Variable name="maincolor" description="Main Color" type="color" default="#ffffff">
+<Variable name="labelscolor" description="Labels Text Color" type="color" default="#424242">
+*/
+body { background-color: #F9F9F9; color: #444444; font: Arial; text-align: center; background-position:center; background-repeat:repeat-y; }
+* { padding: 0; margin: 0; }
+a { color: #1c9bdc; text-decoration: underline; }
+a img {border:none;}
+a:visited { color: #000000; text-decoration: underline; }
+a:hover { color: #1873a1; text-decoration: underline; }
+p { margin: 0 0 15px 0; }
+blockquote { padding: 5px 10px 5px 10px; margin: 0 0 15px 0; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; background: #6728B2; color: #666666; font-style:italic;}
+blockquote p { margin-bottom: 7px; }
+code { color: #090; font-family: "Courier New", Courier, monospace; }
+pre { width: 500px; margin-bottom: 15px; font-size: 1.2em; float: left; }
+* html pre { font-size: 1.0em; overflow: hidden; }
+.clear{clear:both;}
+h1 { font-weight: bold; font-size: 4.0em; line-height: 1.8em;}
+h1.title { text-align: right; display:block; border-bottom:4px solid #222222; }
+h1 a, h1 a:visited { color: #222222; text-decoration: none; }
+h1 a:hover { color: #1873a1;}
+h2 { font-weight: normal; font-size: 2.0em; width: 190px; background-color: #0099ff;}
+.post h2 { color: #333333; line-height: normal; padding-top: 10px; margin-bottom: 10px;}
+.post h2 a { color: #333333; text-decoration: none; }
+.post h2 a:visited { color: #000000; text-decoration: none; }
+.post h2 a:hover { color: #1c9bdc; text-decoration: none; }
+h3 { font-weight: normal; font-size: 20px; margin-bottom: 40px; color: #999999; padding-left: 10px; padding-right: 10px;}
+h3 a, h3 a:link, h3 a:hover {text-decoration: none; background-color: #009984;}
+h4 { display: inline; font-weight: normal; padding: 4px; line-height: 1.0em; font-size: .8em; text-transform: uppercase;  padding-left: 100px;}
+#outer-wrapper { width: 1020px; margin: 0px auto; text-align:center; padding:0px; background-color:#F9F9F9;}
+#header-wrapper { width: 1020px; text-align: left; float: left; padding-left: 220px;}
+#header {width: 640px; text-align: left; float: left;}
+#main-wrapper {background-color: #F9F9F9; width: 640px; float:left}
+#labels-wrapper {width: 640px; text-align: left; background-image:url(http://pwp.netcabo.pt/dyoxine/atir/topo.jpg); background-repeat: no-repeat; background-position: bottom;}
+#labels-second-wrapper {width: 640px; padding-left: 30px; text-align: left;}
+div#Label1 {width: 580px; height: 45px; text-align: center;}
+#sidebar1-wrap { width: 190px; line-height: 1.5em; float: left;}
+#sidebar2-wrap { width: 190px; line-height: 1.5em; float: left;}
+.sidebar1 h2 {font: bold 15px Arial; color: #ffffff; background-color: #0099ff; text-align: right;}
+.sidebar2 h2 {font: bold 15px Arial; color: #ffffff; background-color: #0099ff; text-align: left;}
+.sidebar1 {font: 12px Arial; color: #424242; text-align: left;}
+.sidebar1 a { color: #0099ff; text-decoration: none;}
+.sidebar1 a:visited { color: #0099ff; text-decoration: none;}
+.sidebar1 a:hover { color: #424242; text-decoration: none;}
+.sidebar2 {font: 12px Arial; color: #424242; text-align: left;}
+.sidebar2 a { color: #0099ff; text-decoration: none;}
+.sidebar2 a:visited { color: #0099ff; text-decoration: none;}
+.sidebar2 a:hover { color: #424242; text-decoration: none;}
+.sidebar1 li {list-style: none;}
+.sidebar2 li {list-style: none;}
+#blog-wrapper {width: 640px; background-image:url(http://pwp.netcabo.pt/dyoxine/atir/fundo.jpg); background-repeat:repeat-y; background-position: left; padding-left: 10px; padding-right: 10px; text-align: left; overflow: hidden;}
+div#Blog1 {width: 618px; font: Arial; text-align: justify; padding-left: 10px; padding-top: 20px; padding-bottom: 20px;}
+#nav-wrapper {background-color: #F9F9F9; width: 640px; height: 30px; float:left; background-image:url(http://pwp.netcabo.pt/dyoxine/atir/base.jpg); background-repeat: no-repeat; font: bold 14px Arial; color: #888888; padding-top: 6px;}
+#Label1 li {display:inline; font: bold 12px Arial; padding: 8px; color: #424242; text-decoration: none;}
+#Label1 li a { color: #424242; text-decoration: none;}
+#Label1 li a:visited { color: #424242; text-decoration: none;}
+#Label1 li a:hover { color: #0099ff; text-decoration: none;}
+#Label1 span { background-color: #0099ff; color: #ffffff; text-decoration: none;}
+#footer-wrapper {clear:both; margin:15px auto 0 auto; width:850px; text-align: center;float:none; font-size: 1.2em; text-transform: uppercase; letter-spacing: .3em; border-top: 4px solid #222222; padding:25px 5px;}
+#footer-wrapper a, #footer-wrap a:visited { color: #999999; text-decoration: underline;}
+#footer-wrapper a:hover { color: #000000; text-decoration: none; }
+#end {background-repeat: no-repeat; background-position: bottom center; margin:0 auto; height:35px;}
+.post { width: 600px; margin-bottom: 20px; margin-top: 20px; font: bold 14px Arial; text-align:justify; float: left; color: #444444; background-color: #f7f7f7;}
+.comments {width: 580px; margin-bottom: 20px; margin-top: 20px; font: bold 14px Arial; text-align:justify; float: left; color: #444444; margin-left: 10px; margin-right: 10px; line-height: 20px;}
+.post-title {font: bold 20px Arial; color: #0099ff; padding-left: 10px; padding-right: 10px; text-decoration: none; text-align: left;}
+.post-title a, .post-title a:link, .post-title a:visited {color: #0099ff; text-decoration: none; text-align: left;}
+.post-title a:hover {color: #424242; text-align: left;}
+.espaco-topo-titulo {width: 600px; height: 10px;}
+.post-body {margin-top:20px; margin-left:10px; margin-bottom: 20px; margin-right:10px; line-height: 20px;}
+.post-body img {}
+h2.date-header {width: 600px; font: bold 22px Arial; color: #ffffff; float: left; text-align: center; background-color: #ffffff;}
+.post-footer-line {background-color: #ffffff; margin-left:10px; margin-right:10px; margin-bottom:5px; font: bold 14px Arial; color: #888888;}
+.post-footer-line a, .post-footer-line a:link, .post-footer-line a:visited {color: #666666; text-decoration: none; text-align: left;}
+.post-footer-line a:hover {color: #0099ff; text-decoration: none; text-align: left;}
+/* Contentor dos links dos favoritos */
+.item-action {text-align: center;}
+.blog-pager {font: bold 14px Arial; color: #888888;}
+.blog-pager a, .blog-pager a:link, .blog-pager a:visited {color: #666666; text-decoration: none;}
+.blog-pager a:hover {color: #0099ff; text-decoration: none;}
+.md1 {font: bold 14px Arial; color: #0099ff; background-color: #6D164F; text-align: left; text-decoration: none;}
+.md1 a, .md1 a:visited {font: bold 14px Arial; color: #0099ff; background-color: #6D164F; text-align: left; text-decoration: none;}
+.md1 a:hover { color: #0099ff;}
+.md2 {font: bold 12px Arial; color: #ffffff; text-align: left; text-decoration: none;}
+.md2 a, .md2 a:visited {font: bold 12px Arial; color: #ffffff; text-align: left; text-decoration: none;}
+.md2 a:hover { color: #0099ff;}
+.md3 {font: bold 18px Arial; color: #0099ff; text-align: center; text-decoration: none;}
+.md4 {font: bold 18px Arial; color: #0099ff; background-color: #6D164F; text-align: left; text-decoration: none;}
+div#HTML10 {width: 618px; text-align: left; padding-left: 10px; padding-top: 20px; padding-bottom: 20px;}
+}
+--></style>
+<link type='text/css' rel='stylesheet' href='http://www.blogger.com/static/v1/widgets/2300090209-widget_css_bundle.css' /> <link rel="stylesheet" type="text/css" href="http://www.blogger.com/static/v1/v-css/3727950723-blog_controls.css"/>
+ <link rel="stylesheet" type="text/css" href="http://www.blogger.com/dyn-css/authorization.css?targetBlogID=3956552304616612069&zx=8e8db830-6a6e-499a-aa3a-7e56325162be"/>
+<style type="text/css">#navbar-iframe { display:block }
+</style>
+
+</head>
+<script type='text/javascript'>
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type='text/javascript'>
+try {
+var pageTracker = _gat._getTracker("UA-1169288-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<body>
+<div class='navbar section' id='navbar'><div class='widget Navbar' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener("load",
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<iframe src="http://www.blogger.com/navbar.g?targetBlogID=3956552304616612069&amp;blogName=...+And+This+is+Reality&amp;publishMode=PUBLISH_MODE_BLOGSPOT&amp;navbarType=SILVER&amp;layoutType=LAYOUTS&amp;homepageUrl=http%3A%2F%2Fandthisisreality.blogspot.com%2F&amp;blogLocale=pt_PT&amp;searchRoot=http%3A%2F%2Fandthisisreality.blogspot.com%2Fsearch" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="30px" width="100%" id="navbar-iframe" title="Blogger Navigation and Search"></iframe>
+<div></div></div></div>
+<!-- begin outer-wrapper -->
+<div id='outer-wrapper'>
+<!-- skip links for text browsers -->
+<span id='skiplinks' style='display:none;'>
+<a href='#main'>skip to main </a> |
+      <a href='#sidebar'>skip to sidebar2</a>
+</span>
+<!-- begin header-wrapper -->
+<div id='header-wrapper'>
+<div class='header section' id='header'><div class='widget Header' id='Header1'>
+<div id='header-inner'>
+<a href='http://andthisisreality.blogspot.com/' style='display: block'>
+<img alt='... And This is Reality' height='170' id='Header1_headerimg' src='http://pwp.netcabo.pt/dyoxine/atir/logo_topo.jpg' style='display: block' width='580'/>
+</a>
+</div>
+</div></div>
+</div>
+<!-- end header-wrapper -->
+<!-- begin sidebar1-wrap -->
+<div id='sidebar1-wrap'>
+<div class='sidebar1 section' id='sidebar1'><div class='widget HTML' id='HTML2'>
+<div class='widget-content'>
+<table>
+<tr>
+<td width="100%" height="70px"></td>
+</tr>
+</table>
+</div>
+</div>
+<div class='widget HTML' id='HTML21'>
+<div class='widget-content'>
+<table>
+<tr>
+<td width="100%" height="20px"></td>
+</tr>
+</table>
+</div>
+</div></div>
+</div>
+<!-- end sidebar1-wrap -->
+<!-- main-wrapper -->
+<div id='main-wrapper'>
+<!-- begin labels-wrapper -->
+<div id='labels-wrapper'>
+<div id='labels-second-wrapper'>
+<div class='labels section' id='labels'><div class='widget Label' id='Label1'>
+<div class='widget-content'>
+<ul>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/arquitectura'>
+arquitectura
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/auto'>
+auto
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/cinema'>
+cinema
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/design'>
+design
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/expos'>
+expos
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/fashion'>
+fashion
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/food'>
+food
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/hi-tech'>
+hi-tech
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/hot%20spot'>
+hot spot
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/interiores'>
+interiores
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/internet'>
+internet
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/musica'>
+musica
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/party'>
+party
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/pub'>
+pub
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/travel'>
+travel
+</a>
+</li>
+<li>
+<a dir='ltr' href='http://andthisisreality.blogspot.com/search/label/trivia'>
+trivia
+</a>
+</li>
+</ul>
+</div>
+</div></div>
+</div>
+</div>
+<!-- end labels-wrapper -->
+<!-- begin blog-wrapper -->
+<div id='blog-wrapper'>
+<div class='main section' id='main'><div class='widget Blog' id='Blog1'>
+<div class='blog-posts hfeed'>
+<!-- google_ad_section_start -->
+<h2 class='date-header'>
+<TABLE CELLSPACING='10'>
+<TR>
+<TH HEIGHT='50' WIDTH='400'></TH>
+<TH BACKGROUND='http://pwp.netcabo.pt/dyoxine/atir/bola.gif' HEIGHT='50' WIDTH='50'><span class='dia' id='d-577135229762331824'></span></TH>
+<TH BACKGROUND='http://pwp.netcabo.pt/dyoxine/atir/bola.gif' HEIGHT='50' WIDTH='50'><span class='mes' id='m-577135229762331824'></span></TH>
+<TH BACKGROUND='http://pwp.netcabo.pt/dyoxine/atir/bola.gif' HEIGHT='50' WIDTH='50'><span class='ano' id='a-577135229762331824'></span></TH>
+</TR>
+</TABLE>
+<script type='text/javascript'>
+formatarData('m-577135229762331824', '4/23/2009 12:10:00 AM', '$b');
+formatarData('d-577135229762331824', '4/23/2009 12:10:00 AM', '$d');
+formatarData('a-577135229762331824', '4/23/2009 12:10:00 AM', '$y');
+</script>
+</h2>
+<div class='post hentry'>
+<a name='577135229762331824'></a>
+<div class='espaco-topo-titulo'></div>
+<div class='post-title'>
+<a href='http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html'>O QUE OS SEUS CDS DIZEM DE SI</a>
+</div>
+<div class='post-header-line-1'></div>
+<div class='post-body entry-content'>
+<a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_5GO0NgK5Fss/Se_TuTNDZDI/AAAAAAAABKQ/EAozfzggm2E/s1600-h/COMIC+SHELVE+fusca.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 400px; height: 300px;" src="http://2.bp.blogspot.com/_5GO0NgK5Fss/Se_TuTNDZDI/AAAAAAAABKQ/EAozfzggm2E/s400/COMIC+SHELVE+fusca.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5327709676585051186" /></a><br />Do estúdio mexicano Fusca chegou-nos uma agradável novidade. A "Comic Shelve"!<br /><br />É uma prateleira em forma de balão de texto saída dos livros de banda desenhada directamente para a sua sala, de dimensões ideais para albergar a sua colecção de cds (se é que ainda os coleccionam).<br /><br />Ideal para quem não vive sem música e para quem não dispensa boa disposição espalhada pela casa.
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'><span class='post-author vcard'>
+By
+<span class='fn'>LUCKY ME</span>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-2'><span class='post-labels'>
+Areas:
+<a href='http://andthisisreality.blogspot.com/search/label/design' rel='tag'>design</a>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-4'><span class='post-comment-link'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'><span class='post-icons'>
+<span class='item-action'>
+<table WIDTH='580'>
+<tr>
+<th><a href='http://www.blogger.com/email-post.g?blogID=3956552304616612069&postID=577135229762331824' target='_blank' title='Enviar a mensagem por correio electrónico'>
+<img alt='' src='http://www.blogger.com/img/icon18_email.gif'/>
+</a></th>
+<th><a href='javascript:addToFavorites()' title='Adicionar aos favoritos'>
+<img alt='' src='http://pwp.netcabo.pt/dyoxine/atir/fav.jpg'/>
+</a></th>
+<th><a href='http://digg.com/submit?phase=3&url=http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html&title=... And This is Reality-O QUE OS SEUS CDS DIZEM DE SI' target='_blank' title='Digg'>
+<img alt='' src='http://pwp.netcabo.pt/dyoxine/atir/digg.jpg'/>
+</a></th>
+<th><a href='http://www.facebook.com/sharer.php?u=http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html' target='_blank' title='Facebook'>
+<img alt='' src='http://pwp.netcabo.pt/dyoxine/atir/facebook.jpg'/>
+</a></th>
+<th><a href='http://del.icio.us/post?url=http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html&title=O QUE OS SEUS CDS DIZEM DE SI' target='_blank' title='Del.icio.us'>
+<img alt='' hspace='10' src='http://pwp.netcabo.pt/dyoxine/atir/delicious.jpg'/>
+</a></th>
+<th><a href='http://www.myspace.com/index.cfm?fuseaction=postto&t=O QUE OS SEUS CDS DIZEM DE SI&c=http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html&l=3' target='_blank' title='My Space'>
+<img alt='' src='http://pwp.netcabo.pt/dyoxine/atir/myspace.jpg'/>
+</a></th>
+<th><a href='http://reddit.com/submit?url=http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html' target='_blank' title='Reddit'>
+<img alt='' src='http://pwp.netcabo.pt/dyoxine/atir/reddit.jpg'/>
+</a></th>
+<th><a href='http://www.stumbleupon.com/submit?url=http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html&title=O QUE OS SEUS CDS DIZEM DE SI' target='_blank' title='Stumble Uppon'>
+<img alt='' src='http://pwp.netcabo.pt/dyoxine/atir/stumble.jpg'/>
+</a></th>
+<th><a href='http://technorati.com/cosmos/search.html?url=http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html' target='_blank' title='Technorati'>
+<img alt='' src='http://pwp.netcabo.pt/dyoxine/atir/technorati.jpg'/>
+</a></th>
+</tr>
+</table></span>
+</span>
+</div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+<h4>
+0
+Reality Comments:
+        
+</h4>
+<dl id='comments-block'>
+</dl>
+<p class='comment-footer'>
+<a href='https://www.blogger.com/comment.g?blogID=3956552304616612069&postID=577135229762331824&isPopup=true' onclick='javascript:window.open(this.href, "bloggerPopup", "toolbar=0,location=0,statusbar=1,menubar=0,scrollbars=yes,width=400,height=450"); return false;'>Enviar um comentário</a>
+</p>
+<div id='backlinks-container'>
+<div id='Blog1_backlinks-container'>
+</div>
+</div>
+</div>
+<!-- google_ad_section_end -->
+</div>
+<div class='post-feeds'>
+</div>
+</div></div>
+</div>
+<!-- end blog-wrapper -->
+<!-- begin nav-wrapper oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo-->
+<div id='nav-wrapper'>
+<div class='nav section' id='nav'><div class='widget Blog' id='Blog2'>
+<div class='blog-pager' id='blog-pager'>
+<TABLE HEIGHT='20' WIDTH='640'>
+<TR>
+<TH HEIGHT='20' WIDTH='250'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='http://andthisisreality.blogspot.com/2009/04/lacoste-red.html' id='Blog2_blog-pager-newer-link' title='Mensagem mais recente'>Mensagem mais recente</a>
+</span>
+</TH>
+<TH HEIGHT='20' WIDTH='140'>
+<a class='home-link' href='http://andthisisreality.blogspot.com/'>Página inicial</a>
+</TH>
+<TH HEIGHT='20' WIDTH='250'>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='http://andthisisreality.blogspot.com/2009/04/mango-escrita-por-paulo-coelho.html' id='Blog2_blog-pager-older-link' title='Mensagem antiga'>Mensagem antiga</a>
+</span>
+</TH>
+</TR>
+</TABLE>
+</div>
+<div class='clear'></div>
+</div></div>
+</div>
+<!-- end nav-wrapper -->
+</div>
+<!-- end main-wrapper -->
+<!-- begin sidebar2-wrap -->
+<div id='sidebar2-wrap'>
+<div class='sidebar2 section' id='sidebar2'><div class='widget HTML' id='HTML4'>
+<div class='widget-content'>
+<br/>
+<table>
+<tr>
+<td width="100%" height="50px"></td>
+</tr>
+</table>
+</div>
+</div><div class='widget Text' id='Text1'>
+<h2 class='title'>... And This is</h2>
+<div class='widget-content'>
+<br/>Este é um Blog sobre o lado positivo da realidade.<br/><br/>Porque ter Estilo é uma constante no dia-a-dia, porque Viver com Estilo é uma questão de informação, porque ter Estilo e Viver com Estilo está ao alcance de todos, tire uma pausa de cinco minutos e dê-se a este mimo diário.<br/><br/>... E a vida fica muito melhor!<br/>
+<br/>
+</div>
+</div><div class='widget HTML' id='HTML5'>
+<h2 class='title'>Reality Translation</h2>
+<div class='widget-content'>
+<center><script src="http://www.gmodules.com/ig/ifr?url=http://www.google.com/ig/modules/translatemypage.xml&up_source_language=pt&w=160&h=60&title=&border=&output=js"></script></center>
+<br/>
+</div>
+</div><div class='widget Text' id='Text3'>
+<h2 class='title'>... And This is Our Team</h2>
+<br/>
+<div class='widget-content'>
+<h9>Editor<br/>Me Self - Tiago da Costa Miranda<br/><br/>Mini Me - Rita Luís<br/>Lucky Me - Rogério Bernardo<br/><br/><br/>Correspondentes<br/><br/>Be Me - João Pedro Polido<br/>So Me - Leonel Roda<br/>Believe Me - Sónia Henriques<br/>Try Me - Marcelo Andrade<br/></h9><br/>
+</div>
+</div><div class='widget HTML' id='HTML3'>
+<h2 class='title'>And This is Our Mail</h2>
+<div class='widget-content'>
+<br/>
+<center><a href="mailto:andthisisreality@gmail.com">Fale connosco</a></center>
+<br/>
+</div>
+</div><div class='widget HTML' id='HTML6'>
+<br/>
+<h2 class='title'>Recent Reality</h2>
+<div class='widget-content'>
+<br/><!-- Wowzio Widget START -->
+<div id="wow_wwrapfca0" rel="simphoto"><script src="http://widgets.wowzio.net/widgets/jscript?wtype=simphoto&w=auto&h=190&ti=...%20And%20This%20is%20Reality&bc=000000&lc=FFFFFF&ap=yes&ps=4&sb=no&sv=3&cid=0&ef=fade&ids=13772" type="text/javascript"></script><div id="wow_signfca0"><a id="wow_srfca0" href="http://www.wowzio.com" title="Panoramic Slideshow Blog Widgets">Wowzio</a><div id="wow_slfca0"><a id="gwl_fca0" class="wow_bl bl_f" href="http://www.wowzio.com/widgets/designer?ids=13772&wtype=simphoto&cid=0" title="grab/edit this widget">grab this</a> &middot; <a id="sml_fca0" class="wow_bl" href="http://www.wowzio.com/widgets/seewidgets?ids=13772&cid=0" title="widgets for ... And This is Reality">widgets</a><div class="wowclear"></div></div></div></div>
+<!-- Wowzio Widget END -->
+<br/>
+</div>
+</div><div class='widget HTML' id='HTML7'>
+<h2 class='title'>Reality Newsletter</h2>
+<br/>
+<div class='widget-content'>
+<table border="0" style="background-color: #f9f9f9; padding: 5px;" cellspacing="0">
+  <tr><td style="padding-left: 5px">
+Subscreva a nossa Newsletter</td></tr>
+  <form action="http://groups.google.com/group/andthisisreality/boxsubscribe">
+  <tr><td style="padding-left: 5px;">
+    Email: <input name="email" type="text"/>
+<p>
+           <input value="Enviar" name="sub" type="submit"/>
+  </p></td></tr>
+</form>
+<tr><td align="left">
+  </td></tr>
+</table><br/>
+</div>
+</div><div class='widget LinkList' id='LinkList1'>
+<br/><h2>Real Tube</h2>
+<div class='widget-content'>
+<br/>
+<ul>
+<li><a href='http://www.youtube.com/andthisisreality'>Visite o nosso canal no YouTube</a></li>
+</ul>
+<br/>
+</div>
+</div><div class='widget Feed' id='Feed2'>
+<h2>And Real Comments ...</h2>
+<div class='widget-content'>
+<br/>
+<ul id='Feed2_feedItemListDisplay'>
+</ul>
+<br/>
+</div>
+</div><div class='widget Image' id='Image5'>
+<h2>Reality Reports</h2>
+<div class='widget-content'>
+<br/>
+<a href='http://andthisisreality.blogspot.com/search?q=COSMO+NY'>
+<img alt='Reality Reports' height='37' id='Image5_img' src='http://pwp.netcabo.pt/dyoxine/atir/ny_botao.jpg' width='190'/>
+</a>
+<br/>
+</div>
+</div><div class='widget Image' id='Image2'>
+<div class='widget-content'>
+<a href='http://andthisisreality.blogspot.com/search?q=paris+glam'>
+<img alt='' height='38' id='Image2_img' src='http://1.bp.blogspot.com/_5GO0NgK5Fss/SMxh4GYmSiI/AAAAAAAAAXM/32YG1Lwk9TQ/S190/paris_botao.jpg' width='190'/>
+</a>
+<br/>
+</div>
+</div><div class='widget Image' id='Image3'>
+<div class='widget-content'>
+<a href='http://andthisisreality.blogspot.com/search?q=london+calling'>
+<img alt='' height='34' id='Image3_img' src='http://pwp.netcabo.pt/dyoxine/atir/londres_botao.jpg' width='190'/>
+</a>
+<br/>
+<br/>
+</div>
+</div><div class='widget Image' id='Image6'>
+<div class='widget-content'>
+<a href='http://andthisisreality.blogspot.com/search?q=SÃO+PAULO+MEXE'>
+<img alt='' height='28' id='Image6_img' src='http://1.bp.blogspot.com/_5GO0NgK5Fss/Sas5K460juI/AAAAAAAABD4/TaM69iKomg0/S190/saopaulo_botao.jpg' width='190'/>
+</a>
+<br/>
+</div>
+</div><div class='widget Image' id='Image4'>
+<div class='widget-content'>
+<a href='http://andthisisreality.blogspot.com/search?q=BARCELONA+M%27ENCANTA'>
+<img alt='' height='86' id='Image4_img' src='http://2.bp.blogspot.com/_5GO0NgK5Fss/Sas4xYNHhzI/AAAAAAAABDw/wlrTA4peCnY/S190/barcelona_botao.jpg' width='190'/>
+</a>
+<br/>
+</div>
+</div><div class='widget BlogArchive' id='BlogArchive1'>
+<h2>Past Realities</h2>
+<br/>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<select id='BlogArchive1_ArchiveMenu'>
+<option value=''>Past Realities</option>
+<option value='http://andthisisreality.blogspot.com/2009_05_01_archive.html'>Maio 2009 (59)</option>
+<option value='http://andthisisreality.blogspot.com/2009_04_01_archive.html'>Abril 2009 (93)</option>
+<option value='http://andthisisreality.blogspot.com/2009_03_01_archive.html'>Março 2009 (91)</option>
+<option value='http://andthisisreality.blogspot.com/2009_02_01_archive.html'>Fevereiro 2009 (85)</option>
+<option value='http://andthisisreality.blogspot.com/2009_01_01_archive.html'>Janeiro 2009 (94)</option>
+<option value='http://andthisisreality.blogspot.com/2008_12_01_archive.html'>Dezembro 2008 (92)</option>
+<option value='http://andthisisreality.blogspot.com/2008_11_01_archive.html'>Novembro 2008 (90)</option>
+<option value='http://andthisisreality.blogspot.com/2008_10_01_archive.html'>Outubro 2008 (94)</option>
+<option value='http://andthisisreality.blogspot.com/2008_09_01_archive.html'>Setembro 2008 (96)</option>
+<option value='http://andthisisreality.blogspot.com/2008_08_01_archive.html'>Agosto 2008 (31)</option>
+<option value='http://andthisisreality.blogspot.com/2008_07_01_archive.html'>Julho 2008 (100)</option>
+<option value='http://andthisisreality.blogspot.com/2008_06_01_archive.html'>Junho 2008 (87)</option>
+<option value='http://andthisisreality.blogspot.com/2008_05_01_archive.html'>Maio 2008 (91)</option>
+<option value='http://andthisisreality.blogspot.com/2008_04_01_archive.html'>Abril 2008 (93)</option>
+<option value='http://andthisisreality.blogspot.com/2008_03_01_archive.html'>Março 2008 (91)</option>
+<option value='http://andthisisreality.blogspot.com/2008_02_01_archive.html'>Fevereiro 2008 (88)</option>
+<option value='http://andthisisreality.blogspot.com/2008_01_01_archive.html'>Janeiro 2008 (98)</option>
+<option value='http://andthisisreality.blogspot.com/2007_12_01_archive.html'>Dezembro 2007 (85)</option>
+<option value='http://andthisisreality.blogspot.com/2007_11_01_archive.html'>Novembro 2007 (93)</option>
+<option value='http://andthisisreality.blogspot.com/2007_10_01_archive.html'>Outubro 2007 (97)</option>
+<option value='http://andthisisreality.blogspot.com/2007_09_01_archive.html'>Setembro 2007 (91)</option>
+<option value='http://andthisisreality.blogspot.com/2007_08_01_archive.html'>Agosto 2007 (34)</option>
+<option value='http://andthisisreality.blogspot.com/2007_07_01_archive.html'>Julho 2007 (98)</option>
+<option value='http://andthisisreality.blogspot.com/2007_06_01_archive.html'>Junho 2007 (89)</option>
+<option value='http://andthisisreality.blogspot.com/2007_05_01_archive.html'>Maio 2007 (102)</option>
+<option value='http://andthisisreality.blogspot.com/2007_04_01_archive.html'>Abril 2007 (92)</option>
+<option value='http://andthisisreality.blogspot.com/2007_03_01_archive.html'>Março 2007 (105)</option>
+<option value='http://andthisisreality.blogspot.com/2007_02_01_archive.html'>Fevereiro 2007 (77)</option>
+<option value='http://andthisisreality.blogspot.com/2007_01_01_archive.html'>Janeiro 2007 (70)</option>
+</select>
+</div>
+<br/>
+</div>
+</div>
+</div><div class='widget LinkList' id='LinkList2'>
+<h2>... And This is Linking</h2>
+<div class='widget-content'><br/>
+<ul>
+<li><a href='http://3liberdades.blogspot.com/'>3 Liberdades</a></li>
+<li><a href='http://31daarmada.blogs.sapo.pt/'>31 da Armada</a></li>
+<li><a href='http://4caprichos.blogspot.com/'>4 Caprichos e um Café</a></li>
+<li><a href='http://4quartetos.blogspot.com/'>4 Quartetos + 1</a></li>
+<li><a href='http://arqandutopie.blogspot.com/'>@rq & Utopie</a></li>
+<li><a href='http://abarrigadeumarquitecto.blogspot.com/'>A Barriga de Um Arquitecto</a></li>
+<li><a href='http://aespumadodia.blogspot.com/'>A Espuma do Dia</a></li>
+<li><a href='http://aglassandahalf.blogspot.com/'>A Glass and a Half</a></li>
+<li><a href='http://aminhavidaeumdespauterio.blogspot.com/'>A Minha Vida é um Despautério</a></li>
+<li><a href='http://apastilha.blogs.sapo.pt/'>A pastilha</a></li>
+<li><a href='http://oaguaceiro.blogspot.com/'>Aguaceiro</a></li>
+<li><a href='http://aiminhavida.blogspot.com/'>Ai a Minha Vida</a></li>
+<li><a href='http://aindasemnome.blogs.sapo.pt/'>Ainda Sem Nome</a></li>
+<li><a href='http://architecturalgrammar.blogspot.com/'>Architectural Gramar Blog</a></li>
+<li><a href='http://architektur.kaywa.ch/'>Architektur</a></li>
+<li><a href='http://atractorestranho.blogspot.com/'>Atractor Estranho</a></li>
+<li><a href='http://batom.blogs.sapo.pt/'>Batom</a></li>
+<li><a href='http://b7ondie.blogspot.com/'>Blondie</a></li>
+<li><a href='http://boxingcommentary.blogspot.com/'>Boxing Commentary</a></li>
+<li><a href='http://brancoazul.blogspot.com/'>Branco e Azul</a></li>
+<li><a href='http://cantaresdeamigo.blogspot.com/'>Cantares de Amigo</a></li>
+<li><a href='http://carambacomessenofim.blogspot.com/'>Carambas</a></li>
+<li><a href='http://carambasproblog.wordpress.com/'>Carambas!</a></li>
+<li><a href='http://cimitan.blogspot.com/'>Cimitan</a></li>
+<li><a href='http://cincosentidosoumais.blogspot.com/'>Cinco Sentidos</a></li>
+<li><a href='http://www.cocktailteam.net/'>Cocktail Team</a></li>
+<li><a href='http://contraculto.blogspot.com/'>Contracultura</a></li>
+<li><a href='http://crettythoughts.blogspot.com/'>CrettyThoughts</a></li>
+<li><a href='http://codigourbano.blogspot.com/'>Código Urbano</a></li>
+<li><a href='http://coisaspoucas.blogspot.com/'>Das Pequenas Coisas</a></li>
+<li><a href='http://radioflyurweb.blogspot.com/'>de Battre Mon Coeur s'Est Arrêté</a></li>
+<li><a href='http://desenhosescritos.blogspot.com/'>Desenhos Escritos</a></li>
+<li><a href='http://donodoarmazem.blogspot.com/'>Dono do Armazém</a></li>
+<li><a href='http://escritoraypeligrosa.blogspot.com/'>Escritora y Peligrosa</a></li>
+<li><a href='http://som3where.blogspot.com/'>Far Far Away</a></li>
+<li><a href='http://flyingpandaxiu.blogspot.com/'>Flying Pan da Xiu</a></li>
+<li><a href='http://vitorespadinha.blogspot.com/'>Foi em Novembro que Partiste</a></li>
+<li><a href='http://gijinha.blogspot.com/'>fOrma de (express)Ar</a></li>
+<li><a href='http://iamfromlx.blogspot.com/'>I Am From Lx | Since 1983</a></li>
+<li><a href='http://jogodepistas.blogspot.com/'>Jogo de Pistas</a></li>
+<li><a href='http://karrocel.blogspot.com/'>Karrocel Mágico</a></li>
+<li><a href='http://lesboa.blogspot.com/'>Lesboa Party</a></li>
+<li><a href='http://liberiosleisures.blogspot.com/'>Liberio's Leisures</a></li>
+<li><a href='http://davidpriolparis.blogspot.com/'>Life is a Bitch, so am I ...</a></li>
+<li><a href='http://makejetomosso.wordpress.com/'>Ma Ke Jeto, Mosso</a></li>
+<li><a href='http://geladomagnum.blogspot.com/'>Magnum</a></li>
+<li><a href='http://mar-da-lua.blogspot.com/'>Mar da Lua</a></li>
+<li><a href='http://marginante.blogs.sapo.pt/'>Marginante</a></li>
+<li><a href='http://mediajam.wordpress.com/'>Media Jam</a></li>
+<li><a href='http://melcomcicuta.blogs.sapo.pt/'>Mel com Cicuta</a></li>
+<li><a href='http://mercadito.canalblog.com/'>Mercadito</a></li>
+<li><a href='http://minisaia.blogspot.com/'>Mini-saia</a></li>
+<li><a href='http://misspearls.blogspot.com/'>Miss Pearls</a></li>
+<li><a href='http://moonlover64.blogspot.com/'>Moonlover</a></li>
+<li><a href='http://lmc-myblacknotebook.blogspot.com/'>My Black Notebook</a></li>
+<li><a href='http://no-mundo.blogspot.com/'>Na Cozinha</a></li>
+<li><a href='http://ni-ta.blogspot.com/'>Nita</a></li>
+<li><a href='http://nobilityobliges.blogspot.com/'>Nobless Oblige</a></li>
+<li><a href='http://noitesdeteclado.blogspot.com/'>Noites de Teclado</a></li>
+<li><a href='http://oartolas.blogspot.com/'>O Artolas</a></li>
+<li><a href='http://oblogazulturquesa.blogspot.com/'>O Blog Azul Turquesa</a></li>
+<li><a href='http://ocursodasestrelas.blogspot.com/'>O Curso das Estrelas</a></li>
+<li><a href='http://odiaoportuno.blogspot.com/'>O Dia Oportuno</a></li>
+<li><a href='http://oinsecto.blogspot.com/'>O Insecto</a></li>
+<li><a href='http://omundodemargarida.blogspot.com/'>O Mundo de Margarida</a></li>
+<li><a href='http://opedroeolobo.blogspot.com/'>O Pedro e o Lobo</a></li>
+<li><a href='http://oquetemdesertemmuitaforca.blogspot.com/'>O Que Tem de Ser... Tem Muita Força!</a></li>
+<li><a href='http://oqueviramosmeusolhos.blogspot.com/'>O que Viram os Meus Olhos</a></li>
+<li><a href='http://osenhorautomatico.blogspot.com/'>O Senhor Automático</a></li>
+<li><a href='http://apastilha.blogs.sapo.pt/'>Pastilha Elástica</a></li>
+<li><a href='http://planetajota.blogspot.com/'>Planeta Jota</a></li>
+<li><a href='http://portugueseboyinny.blogspot.com/'>Portuguese Boy in NY</a></li>
+<li><a href='http://pedireitoduplo.blogspot.com/'>Pé Direito Duplo</a></li>
+<li><a href='http://rarasvezes.blogspot.com/'>Raras Vezes</a></li>
+<li><a href='http://residenciaoficial.blogspot.com/'>Residencia Oficial</a></li>
+<li><a href='http://roxoeverde.blogspot.com/'>Roxo e Verde</a></li>
+<li><a href='http://opesodasaguas.blogspot.com/'>Rê Bordosa</a></li>
+<li><a href='http://sete-cores-esquilo.blogspot.com/'>Sete Cores</a></li>
+<li><a href='http://senordasrosas.blogspot.com/'>Señor das Rosas</a></li>
+<li><a href='http://yggdrasil.blogspot.com/'>Sobre-vivência?</a></li>
+<li><a href='http://sombrasecontrastes.blogspot.com/'>Sombras e Contrastes</a></li>
+<li><a href='http://somelikeithot-somelikeitnot.blogspot.com/'>Some Like it Hot</a></li>
+<li><a href='http://once-upon-never.blogspot.com/'>Storyteller</a></li>
+<li><a href='http://suco-detangerina.blogspot.com/'>Suco de Tangerina</a></li>
+<li><a href='http://teamdustrial.blogspot.com/'>Teamdustrial</a></li>
+<li><a href='http://thedollhouseblog.blogspot.com/'>The Doll House</a></li>
+<li><a href='http://toxicossimpatia.blogspot.com/'>Toxicossimpatia</a></li>
+<li><a href='http://tudoemaisalgumascoisas.blogspot.com/'>Tudo e Mais Algumas Coisas</a></li>
+<li><a href='http://ultraperiferico.blogspot.com/'>Ultraperiférico</a></li>
+<li><a href='http://viagens-na-maionese.blogspot.com/'>Viagens na Maionese</a></li>
+<li><a href='http://experienciazora.blogspot.com/'>Zora</a></li>
+<li><a href='http://asquintashacozido.blogspot.com/'>Às Quintas Há Cozido</a></li>
+</ul>
+<br/>
+</div>
+</div><div class='widget HTML' id='HTML1'>
+<h2 class='title'>... And</h2>
+<br/>
+<div class='widget-content'>
+<a href="http://independentfashionbloggers.org/" target="_blank"><img src="http://independentfashionbloggers.org/images/ifb_banner_pink.gif" 
+alt="Independent Fashion Bloggers/"/></a>
+<div align="center">
+<font face="arial" size="2">
+<form action="http://www.blog-search.info/rating.php">
+<input value="6375" name="id" type="hidden"/>
+<p><strong> <a href="http://www.blog-search.info/detail-and_this_is_reality-6375.html">Este Blog é ...</a></strong>
+</p>
+
+<select name="rating">
+<option value="5"/>Excellent!
+<option value="4"/>Very Good
+<option value="3"/>Good
+<option value="2"/>Fair
+<option value="1"/>Poor
+</select>
+<input value="Vote" type="submit"/>
+</form>
+</font>
+</div>
+
+
+
+<center>
+<a href="http://technorati.com/faves?sub=addfavbtn&amp;add=http://andthisisreality.blogspot.com"><img alt="Add to Technorati Favorites" src="http://static.technorati.com/pix/fave/tech-fav-1.png"/></a></center>
+<p>
+
+<center>
+<a href="http://www.myblog2u.com/"><img border="0" alt="Blog Search, Weblog Directory" width="80" src="http://www.myblog2u.com/myblog80x15.jpg" height="15"/></a></center></p>
+
+<center>
+<a href="http://www.2-review.com/"><img border="0" alt="Blog Review" width="80" src="http://www.2-review.com/button2.gif" height="15"/></a></center>
+<p>
+<center>
+<a href="http://blog.com.pt?trackid=12127" target="_blank">
+<img border="0" alt="Estou no Blog.com.pt" src="http://img.blog.com.pt/estou.gif"/>
+</a> </center> </p>
+
+      <!-- spacer for skins that want sidebar and main to be the same height-->
+      <div class="clear">&#160;</div>
+
+     <!-- end content-wrapper -->
+</div>
+</div></div>
+</div>
+<!-- end sidebar2-wrap -->
+<div class='clear'></div>
+</div>
+<!-- end outer-wrapper -->
+<div id='end'></div>
+<script type="text/javascript" src="http://www.blogger.com/static/v1/widgets/1216256451-widgets.js"></script>
+<script type='text/javascript'>
+_WidgetManager._Init('http://www.blogger.com/rearrange?blogID=3956552304616612069', 'http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html','3956552304616612069');
+_WidgetManager._SetPageActionUrl('http://www.blogger.com/display?blogID=3956552304616612069', '96IPMhTrcNUQtaU8q5hk3oKmm1Q:1242852083469');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'title': '... And This is Reality', 'pageType': 'item', 'url': 'http://andthisisreality.blogspot.com/2009/04/o-que-os-seus-cds-dizem-de-si.html', 'homepageUrl': 'http://andthisisreality.blogspot.com/', 'searchLabel': '', 'searchQuery': '', 'pageName': 'O QUE OS SEUS CDS DIZEM DE SI', 'pageTitle': '... And This is Reality: O QUE OS SEUS CDS DIZEM DE SI', 'encoding': 'UTF-8', 'locale': 'pt-PT', 'isPrivate': false, 'languageDirection': 'ltr', 'feedLinks': '\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42... And This is Reality - Atom\42 href\75\42http://andthisisreality.blogspot.com/feeds/posts/default\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/rss+xml\42 title\75\42... And This is Reality - RSS\42 href\75\42http://andthisisreality.blogspot.com/feeds/posts/default?alt\75rss\42 /\76\n\74link rel\75\42service.post\42 type\75\42application/atom+xml\42 title\75\42... And This is Reality - Atom\42 href\75\42http://www.blogger.com/feeds/3956552304616612069/posts/default\42 /\76\n\74link rel\75\42EditURI\42 type\75\42application/rsd+xml\42 title\75\42RSD\42 href\75\42http://www.blogger.com/rsd.g?blogID\0753956552304616612069\42 /\76\n\74link rel\75\42alternate\42 type\75\42application/atom+xml\42 title\75\42... And This is Reality - Atom\42 href\75\42http://andthisisreality.blogspot.com/feeds/577135229762331824/comments/default\42 /\76\n', 'meTag': '', 'openIdOpTag': '', 'latencyHeadScript': '\74script type\75\42text/javascript\42\76(function() { var a\75window;function f(e){this.t\75{};this.tick\75function(d,b,c){var i\75c?c:(new Date).getTime();this.t[d]\75[i,b]};this.tick(\42start\42,null,e)}var g\75new f;a.jstiming\75{Timer:f,load:g};try{a.jstiming.pt\75a.external.pageT}catch(h){};a.tickAboveFold\75function(e){var d,b\75e,c\0750;if(b.offsetParent){do c+\75b.offsetTop;while(b\75b.offsetParent)}d\75c;d\74\075750\46\46a.jstiming.load.tick(\42aft\42)};var j\75false;function k(){if(!j){j\75true;a.jstiming.load.tick(\42firstScrollTime\42)}}a.addEventListener?a.addEventListener(\42scroll\42,k,false):a.attachEvent(\42onscroll\42,k); })();\74/script\076'}}]);
+_WidgetManager._SetSystemMarkup({'layout': {'varName': '', 'template': '\74div class\75\47widget-wrap1\47\76\n\74div class\75\47widget-wrap2\47\76\n\74div class\75\47widget-wrap3\47\76\n\74div class\75\47widget-content\47\76\n\74div class\75\47layout-title\47\76\74data:layout-title\76\74/data:layout-title\76\74/div\76\n\74a class\75\47editlink\47 expr:href\75\47data:widget.quickEditUrl\47 expr:onclick\75\47\46quot;return _WidgetManager._PopupConfig(document.getElementById(\\\46quot;\46quot; +       data:widget.instanceId + \46quot;\\\46quot;));\46quot;\47 target\75\47chooseWidget\47\76\74data:edit-link\76\74/data:edit-link\76\74/a\76\n\74/div\76\n\74/div\76\n\74/div\76\n\74/div\076'}, 'quickedit': {'varName': '', 'template': '\74div class\75\47clear\47\76\74/div\76\n\74span class\75\47widget-item-control\47\76\n\74span class\75\47item-control blog-admin\47\76\n\74a class\75\47quickedit\47 expr:href\75\47data:widget.quickEditUrl\47 expr:onclick\75\47\46quot;return _WidgetManager._PopupConfig(document.getElementById(\\\46quot;\46quot; +       data:widget.instanceId + \46quot;\\\46quot;));\46quot;\47 expr:target\75\47\46quot;config\46quot; + data:widget.instanceId\47 expr:title\75\47data:edit-link\47\76\n\74img alt\75\47\47 height\75\04718\47 src\75\47http://img1.blogblog.com/img/icon18_wrench_allbkg.png\47 width\75\04718\47/\76\n\74/a\76\n\74/span\76\n\74/span\76\n\74div class\75\47clear\47\76\74/div\076'}, 'all-head-content': {'varName': 'page', 'template': '\74data:blog.latencyHeadScript\76\74/data:blog.latencyHeadScript\76\n\74meta expr:content\75\47\46quot;text/html; charset\75\46quot; + data:page.encoding\47 http-equiv\75\47Content-Type\47/\76\n\74meta content\75\47true\47 name\75\47MSSmartTagsPreventParsing\47/\76\n\74meta content\75\47blogger\47 name\75\47generator\47/\76\n\74link href\75\47http://www.blogger.com/favicon.ico\47 rel\75\47icon\47 type\75\47image/vnd.microsoft.icon\47/\76\n\74data:blog.feedLinks\76\74/data:blog.feedLinks\76\n\74data:blog.meTag\76\74/data:blog.meTag\76\n\74data:blog.openIdOpTag\76\74/data:blog.openIdOpTag\76\n\74b:if cond\75\47data:page.isPrivate\47\76\n\74meta content\75\47NOINDEX,NOFOLLOW\47 name\75\47robots\47/\76\n\74/b:if\076'}});
+_WidgetManager._RegisterWidget('_LabelView', new _WidgetInfo('Label1', 'labels',{'main': {'varName': '', 'template': '\74div class\75\47widget-content\47\76\n\74ul\76\n\74b:loop values\75\47data:labels\47 var\75\47label\47\76\n\74li\76\n\74b:if cond\75\47data:blog.url \75\75 data:label.url\47\76\n\74span expr:dir\75\47data:blog.languageDirection\47\76\n\74data:label.name\76\74/data:label.name\76\n\74/span\76\n\74b:else\76\74/b:else\76\n\74a expr:dir\75\47data:blog.languageDirection\47 expr:href\75\47data:label.url\47\76\n\74data:label.name\76\74/data:label.name\76\n\74/a\76\n\74/b:if\76\n\74/li\76\n\74/b:loop\76\n\74/ul\76\n\74/div\076'}}, document.getElementById('Label1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog2', 'nav',{'main': {'varName': 'top', 'template': '\74b:include name\75\47nextprev\47\76\74/b:include\076'}, 'nextprev': {'varName': '', 'template': '\74div class\75\47blog-pager\47 id\75\47blog-pager\47\76\n\74TABLE HEIGHT\75\04720\47 WIDTH\75\047640\47\76\n\74TR\76\n\74TH HEIGHT\75\04720\47 WIDTH\75\047250\47\76\n\74b:if cond\75\47data:newerPageUrl\47\76\n\74span id\75\47blog-pager-newer-link\47\76\n\74a class\75\47blog-pager-newer-link\47 expr:href\75\47data:newerPageUrl\47 expr:id\75\47data:widget.instanceId + \46quot;_blog-pager-newer-link\46quot;\47 expr:title\75\47data:newerPageTitle\47\76\74data:newerPageTitle\76\74/data:newerPageTitle\76\74/a\76\n\74/span\76\n\74/b:if\76\74/TH\76\n\74TH HEIGHT\75\04720\47 WIDTH\75\047140\47\76\n\74b:if cond\75\47data:blog.homepageUrl !\75 data:blog.url\47\76\n\74a class\75\47home-link\47 expr:href\75\47data:blog.homepageUrl\47\76\74data:homeMsg\76\74/data:homeMsg\76\74/a\76\n\74b:else\76\74/b:else\76\n\74b:if cond\75\47data:newerPageUrl\47\76\n\74a class\75\47home-link\47 expr:href\75\47data:blog.homepageUrl\47\76\74data:homeMsg\76\74/data:homeMsg\76\74/a\76\n\74/b:if\76\n\74/b:if\76\74/TH\76\n\74TH HEIGHT\75\04720\47 WIDTH\75\047250\47\76\n\74b:if cond\75\47data:olderPageUrl\47\76\n\74span id\75\47blog-pager-older-link\47\76\n\74a class\75\47blog-pager-older-link\47 expr:href\75\47data:olderPageUrl\47 expr:id\75\47data:widget.instanceId + \46quot;_blog-pager-older-link\46quot;\47 expr:title\75\47data:olderPageTitle\47\76\74data:olderPageTitle\76\74/data:olderPageTitle\76\74/a\76\n\74/span\76\n\74/b:if\76\74/TH\76\n\74/TR\76\n\74/TABLE\76\n\74/div\76\n\74div class\75\47clear\47\76\74/div\076'}, 'post': {'varName': 'post', 'template': '\74div class\75\47post hentry uncustomized-post-template\47\76\n\74a expr:name\75\47data:post.id\47\76\74/a\76\n\74b:if cond\75\47data:post.title\47\76\n\74h3 class\75\47post-title entry-title\47\76\n\74b:if cond\75\47data:post.link\47\76\n\74a expr:href\75\47data:post.link\47\76\74data:post.title\76\74/data:post.title\76\74/a\76\n\74b:else\76\74/b:else\76\n\74b:if cond\75\47data:post.url\47\76\n\74a expr:href\75\47data:post.url\47\76\74data:post.title\76\74/data:post.title\76\74/a\76\n\74b:else\76\74/b:else\76\n\74data:post.title\76\74/data:post.title\76\n\74/b:if\76\n\74/b:if\76\n\74/h3\76\n\74/b:if\76\n\74div class\75\47post-header-line-1\47\76\74/div\76\n\74div class\75\47post-body entry-content\47\76\n\74data:post.body\76\74/data:post.body\76\n\74div style\75\47clear: both;\47\76\74/div\76\n\74/div\76\n\74b:if cond\75\47data:post.hasJumpLink\47\76\n\74div class\75\47jump-link\47\76\n\74a expr:href\75\47data:post.url + \46quot;#more\46quot;\47\76\74data:post.jumpText\76\74/data:post.jumpText\76\74/a\76\n\74/div\76\n\74/b:if\76\n\74div class\75\47post-footer\47\76\n\74div class\75\47post-footer-line post-footer-line-1\47\76\n\74span class\75\47post-author vcard\47\76\n\74b:if cond\75\47data:top.showAuthor\47\76\n\74data:top.authorLabel\76\74/data:top.authorLabel\76\n\74span class\75\47fn\47\76\74data:post.author\76\74/data:post.author\76\74/span\76\n\74/b:if\76\n\74/span\76\n\74span class\75\47post-timestamp\47\76\n\74b:if cond\75\47data:top.showTimestamp\47\76\n\74data:top.timestampLabel\76\74/data:top.timestampLabel\76\n\74b:if cond\75\47data:post.url\47\76\n\74a class\75\47timestamp-link\47 expr:href\75\47data:post.url\47 rel\75\47bookmark\47 title\75\47permanent link\47\76\74abbr class\75\47published\47 expr:title\75\47data:post.timestampISO8601\47\76\74data:post.timestamp\76\74/data:post.timestamp\76\74/abbr\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/span\76\n\74span class\75\47reaction-buttons\47\76\n\74b:if cond\75\47data:top.showReactions\47\76\n\74table border\75\0470\47 cellpadding\75\0470\47 cellspacing\75\0470\47 width\75\047100%\47\76\74tr\76\n\74td class\75\47reactions-label-cell\47 nowrap\75\47nowrap\47 valign\75\47top\47 width\75\0471%\47\76\n\74span class\75\47reactions-label\47\76\n\74data:top.reactionsLabel\76\74/data:top.reactionsLabel\76\74/span\76\46#160;\74/td\76\n\74td\76\74iframe allowtransparency\75\47true\47 class\75\47reactions-iframe\47 expr:src\75\47data:post.reactionsUrl\47 frameborder\75\0470\47 name\75\47reactions\47 scrolling\75\47no\47\76\74/iframe\76\74/td\76\n\74/tr\76\74/table\76\n\74/b:if\76\n\74/span\76\n\74span class\75\47star-ratings\47\76\n\74b:if cond\75\47data:top.showStars\47\76\n\74div expr:g:background-color\75\47data:backgroundColor\47 expr:g:text-color\75\47data:textColor\47 expr:g:url\75\47data:post.absoluteUrl\47 g:height\75\04742\47 g:type\75\47RatingPanel\47 g:width\75\047280\47\76\74/div\76\n\74/b:if\76\n\74/span\76\n\74span class\75\47post-comment-link\47\76\n\74b:if cond\75\47data:blog.pageType !\75 \46quot;item\46quot;\47\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74a class\75\47comment-link\47 expr:href\75\47data:post.addCommentUrl\47 expr:onclick\75\47data:post.addCommentOnclick\47\76\74b:if cond\75\47data:post.numComments \75\75 1\47\0761 \74data:top.commentLabel\76\74/data:top.commentLabel\76\74b:else\76\74/b:else\76\74data:post.numComments\76\74/data:post.numComments\76\n\74data:top.commentLabelPlural\76\74/data:top.commentLabelPlural\76\74/b:if\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/span\76\n\74span class\75\47post-backlinks post-comment-link\47\76\n\74b:if cond\75\47data:blog.pageType !\75 \46quot;item\46quot;\47\76\n\74b:if cond\75\47data:post.showBacklinks\47\76\n\74a class\75\47comment-link\47 expr:href\75\47data:post.url + \46quot;#links\46quot;\47\76\74data:top.backlinkLabel\76\74/data:top.backlinkLabel\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/span\76\n\74span class\75\47post-icons\47\76\n\74b:if cond\75\47data:post.emailPostUrl\47\76\n\74span class\75\47item-action\47\76\n\74a expr:href\75\47data:post.emailPostUrl\47 expr:title\75\47data:top.emailPostMsg\47\76\n\74img alt\75\47\47 class\75\47icon-action\47 height\75\04713\47 src\75\47http://www.blogger.com/img/icon18_email.gif\47 width\75\04718\47/\76\n\74/a\76\n\74/span\76\n\74/b:if\76\n\74b:include data\75\47post\47 name\75\47postQuickEdit\47\76\74/b:include\76\n\74/span\76\n\74/div\76\n\74div class\75\47post-footer-line post-footer-line-2\47\76\n\74span class\75\47post-labels\47\76\n\74b:if cond\75\47data:post.labels\47\76\n\74data:postLabelsLabel\76\74/data:postLabelsLabel\76\n\74b:loop values\75\47data:post.labels\47 var\75\47label\47\76\n\74a expr:href\75\47data:label.url\47 rel\75\47tag\47\76\74data:label.name\76\74/data:label.name\76\74/a\76\74b:if cond\75\47data:label.isLast !\75 \46quot;true\46quot;\47\76,\74/b:if\76\n\74/b:loop\76\n\74/b:if\76\n\74/span\76\n\74/div\76\n\74div class\75\47post-footer-line post-footer-line-3\47\76\n\74span class\75\47post-location\47\76\n\74b:if cond\75\47data:top.showLocation\47\76\n\74b:if cond\75\47data:post.location\47\76\n\74data:postLocationLabel\76\74/data:postLocationLabel\76\n\74a expr:href\75\47data:post.location.mapsUrl\47 target\75\47_blank\47\76\74data:post.location.name\76\74/data:post.location.name\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/span\76\n\74/div\76\n\74/div\76\n\74/div\076'}, 'postQuickEdit': {'varName': 'post', 'template': '\74b:if cond\75\47data:post.editUrl\47\76\n\74span expr:class\75\47\46quot;item-control \46quot; + data:post.adminClass\47\76\n\74a expr:href\75\47data:post.editUrl\47 expr:title\75\47data:top.editPostMsg\47\76\n\74img alt\75\47\47 class\75\47icon-action\47 height\75\04718\47 src\75\47http://www.blogger.com/img/icon18_edit_allbkg.gif\47 width\75\04718\47/\76\n\74/a\76\n\74/span\76\n\74/b:if\076'}, 'commentDeleteIcon': {'varName': 'comment', 'template': '\74span expr:class\75\47\46quot;item-control \46quot; + data:comment.adminClass\47\76\n\74a expr:href\75\47data:comment.deleteUrl\47 expr:title\75\47data:top.deleteCommentMsg\47\76\n\74img src\75\47http://www.blogger.com/img/icon_delete13.gif\47/\76\n\74/a\76\n\74/span\076'}, 'backlinkDeleteIcon': {'varName': 'backlink', 'template': '\74span expr:class\75\47\46quot;item-control \46quot; + data:backlink.adminClass\47\76\n\74a expr:href\75\47data:backlink.deleteUrl\47 expr:title\75\47data:top.deleteBacklinkMsg\47\76\n\74img src\75\47http://www.blogger.com/img/icon_delete13.gif\47/\76\n\74/a\76\n\74/span\076'}, 'comments': {'varName': 'post', 'template': '\74div class\75\47comments\47 id\75\47comments\47\76\n\74a name\75\47comments\47\76\74/a\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74h4\76\n\74b:if cond\75\47data:post.numComments \75\75 1\47\76\n          1 \74data:commentLabel\76\74/data:commentLabel\76:\n        \74b:else\76\74/b:else\76\n\74data:post.numComments\76\74/data:post.numComments\76\n\74data:commentLabelPlural\76\74/data:commentLabelPlural\76:\n        \74/b:if\76\n\74/h4\76\n\74b:if cond\75\47data:post.commentPagingRequired\47\76\n\74span class\75\47paging-control-container\47\76\n\74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.oldestLinkUrl\47\76\74data:post.oldestLinkText\76\74/data:post.oldestLinkText\76\74/a\76\n          \46#160;\n          \74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.olderLinkUrl\47\76\74data:post.olderLinkText\76\74/data:post.olderLinkText\76\74/a\76\n          \46#160;\n          \74data:post.commentRangeText\76\74/data:post.commentRangeText\76\n          \46#160;\n          \74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newerLinkUrl\47\76\74data:post.newerLinkText\76\74/data:post.newerLinkText\76\74/a\76\n          \46#160;\n          \74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newestLinkUrl\47\76\74data:post.newestLinkText\76\74/data:post.newestLinkText\76\74/a\76\n\74/span\76\n\74/b:if\76\n\74dl id\75\47comments-block\47\76\n\74b:loop values\75\47data:post.comments\47 var\75\47comment\47\76\n\74dt expr:class\75\47\46quot;comment-author \46quot; + data:comment.authorClass\47 expr:id\75\47data:comment.anchorName\47\76\n\74b:if cond\75\47data:comment.favicon\47\76\n\74img expr:src\75\47data:comment.favicon\47 height\75\04716px\47 style\75\47margin-bottom:-2px;\47 width\75\04716px\47/\76\n\74/b:if\76\n\74a expr:name\75\47data:comment.anchorName\47\76\74/a\76\n\74b:if cond\75\47data:comment.authorUrl\47\76\n\74a expr:href\75\47data:comment.authorUrl\47 rel\75\47nofollow\47\76\74data:comment.author\76\74/data:comment.author\76\74/a\76\n\74b:else\76\74/b:else\76\n\74data:comment.author\76\74/data:comment.author\76\n\74/b:if\76\n\74data:commentPostedByMsg\76\74/data:commentPostedByMsg\76\n\74/dt\76\n\74dd class\75\47comment-body\47\76\n\74b:if cond\75\47data:comment.isDeleted\47\76\n\74span class\75\47deleted-comment\47\76\74data:comment.body\76\74/data:comment.body\76\74/span\76\n\74b:else\76\74/b:else\76\n\74p\76\74data:comment.body\76\74/data:comment.body\76\74/p\76\n\74/b:if\76\n\74/dd\76\n\74dd class\75\47comment-footer\47\76\n\74span class\75\47comment-timestamp\47\76\n\74a expr:href\75\47data:comment.url\47 title\75\47comment permalink\47\76\n\74data:comment.timestamp\76\74/data:comment.timestamp\76\n\74/a\76\n\74b:include data\75\47comment\47 name\75\47commentDeleteIcon\47\76\74/b:include\76\n\74/span\76\n\74/dd\76\n\74/b:loop\76\n\74/dl\76\n\74b:if cond\75\47data:post.commentPagingRequired\47\76\n\74span class\75\47paging-control-container\47\76\n\74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.oldestLinkUrl\47\76\n\74data:post.oldestLinkText\76\74/data:post.oldestLinkText\76\n\74/a\76\n\74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.olderLinkUrl\47\76\n\74data:post.olderLinkText\76\74/data:post.olderLinkText\76\n\74/a\76\n          \46#160;\n          \74data:post.commentRangeText\76\74/data:post.commentRangeText\76\n          \46#160;\n          \74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newerLinkUrl\47\76\n\74data:post.newerLinkText\76\74/data:post.newerLinkText\76\n\74/a\76\n\74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newestLinkUrl\47\76\n\74data:post.newestLinkText\76\74/data:post.newestLinkText\76\n\74/a\76\n\74/span\76\n\74/b:if\76\n\74p class\75\47comment-footer\47\76\n\74b:if cond\75\47data:post.embedCommentForm\47\76\n\74b:if cond\75\47data:post.allowNewComments\47\76\n\74b:include data\75\47post\47 name\75\47comment-form\47\76\74/b:include\76\n\74b:else\76\74/b:else\76\n\74data:post.noNewCommentsText\76\74/data:post.noNewCommentsText\76\n\74/b:if\76\n\74b:else\76\74/b:else\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74a expr:href\75\47data:post.addCommentUrl\47 expr:onclick\75\47data:post.addCommentOnclick\47\76\74data:postCommentMsg\76\74/data:postCommentMsg\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/p\76\n\74/b:if\76\n\74div id\75\47backlinks-container\47\76\n\74div expr:id\75\47data:widget.instanceId + \46quot;_backlinks-container\46quot;\47\76\n\74b:if cond\75\47data:post.showBacklinks\47\76\n\74b:include data\75\47post\47 name\75\47backlinks\47\76\74/b:include\76\n\74/b:if\76\n\74/div\76\n\74/div\76\n\74/div\076'}, 'comment-form': {'varName': 'post', 'template': '\74div class\75\47comment-form\47\76\n\74a name\75\47comment-form\47\76\74/a\76\n\74h4 id\75\47comment-post-message\47\76\74data:postCommentMsg\76\74/data:postCommentMsg\76\74/h4\76\n\74p\76\74data:blogCommentMessage\76\74/data:blogCommentMessage\76\74/p\76\n\74data:blogTeamBlogMessage\76\74/data:blogTeamBlogMessage\76\n\74a expr:href\75\47data:post.commentFormIframeSrc\47 id\75\47comment-editor-src\47\76\74/a\76\n\74iframe allowtransparency\75\47true\47 class\75\47blogger-iframe-colorize blogger-comment-from-post\47 frameborder\75\0470\47 height\75\047275\47 id\75\47comment-editor\47 name\75\47comment-editor\47 scrolling\75\47no\47 src\75\47\47 width\75\047100%\47\76\74/iframe\76\n\74data:post.friendConnectJs\76\74/data:post.friendConnectJs\76\n\74data:post.cmtfpIframe\76\74/data:post.cmtfpIframe\76\n\74script type\75\47text/javascript\47\76\n      BLOG_CMT_createIframe(\46#39;\74data:post.appRpcRelayPath\76\74/data:post.appRpcRelayPath\76\46#39;, \46#39;\74data:post.communityId\76\74/data:post.communityId\76\46#39;);\n    \74/script\76\n\74/div\076'}, 'backlinks': {'varName': 'post', 'template': '\74a name\75\47links\47\76\74/a\76\74h4\76\74data:post.backlinksLabel\76\74/data:post.backlinksLabel\76\74/h4\76\n\74b:if cond\75\47data:post.numBacklinks !\75 0\47\76\n\74dl class\75\47comments-block\47 id\75\47comments-block\47\76\n\74b:loop values\75\47data:post.backlinks\47 var\75\47backlink\47\76\n\74div class\75\47collapsed-backlink backlink-control\47\76\n\74dt class\75\47comment-title\47\76\n\74span class\75\47backlink-toggle-zippy\47\76\46#160;\74/span\76\n\74a expr:href\75\47data:backlink.url\47 rel\75\47nofollow\47\76\74data:backlink.title\76\74/data:backlink.title\76\74/a\76\n\74b:include data\75\47backlink\47 name\75\47backlinkDeleteIcon\47\76\74/b:include\76\n\74/dt\76\n\74dd class\75\47comment-body collapseable\47\76\n\74data:backlink.snippet\76\74/data:backlink.snippet\76\n\74/dd\76\n\74dd class\75\47comment-footer collapseable\47\76\n\74span class\75\47comment-author\47\76\74data:post.authorLabel\76\74/data:post.authorLabel\76\n\74data:backlink.author\76\74/data:backlink.author\76\74/span\76\n\74span class\75\47comment-timestamp\47\76\74data:post.timestampLabel\76\74/data:post.timestampLabel\76\n\74data:backlink.timestamp\76\74/data:backlink.timestamp\76\74/span\76\n\74/dd\76\n\74/div\76\n\74/b:loop\76\n\74/dl\76\n\74/b:if\76\n\74p class\75\47comment-footer\47\76\n\74a class\75\47comment-link\47 expr:href\75\47data:post.createLinkUrl\47 expr:id\75\47data:widget.instanceId + \46quot;_backlinks-create-link\46quot;\47 target\75\47_blank\47\76\74data:post.createLinkLabel\76\74/data:post.createLinkLabel\76\74/a\76\n\74/p\076'}, 'feedLinks': {'varName': '', 'template': '\74b:if cond\75\47data:blog.pageType !\75 \46quot;item\46quot;\47\76\n\74b:if cond\75\47data:feedLinks\47\76\n\74div class\75\47blog-feeds\47\76\n\74b:include data\75\47feedLinks\47 name\75\47feedLinksBody\47\76\74/b:include\76\n\74/div\76\n\74/b:if\76\n\74b:else\76\74/b:else\76\n\74div class\75\47post-feeds\47\76\n\74b:loop values\75\47data:posts\47 var\75\47post\47\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74b:if cond\75\47data:post.feedLinks\47\76\n\74b:include data\75\47post.feedLinks\47 name\75\47feedLinksBody\47\76\74/b:include\76\n\74/b:if\76\n\74/b:if\76\n\74/b:loop\76\n\74/div\76\n\74/b:if\076'}, 'feedLinksBody': {'varName': 'links', 'template': '\74div class\75\47feed-links\47\76\n\74data:feedLinksMsg\76\74/data:feedLinksMsg\76\n\74b:loop values\75\47data:links\47 var\75\47f\47\76\n\74a class\75\47feed-link\47 expr:href\75\47data:f.url\47 expr:type\75\47data:f.mimeType\47 target\75\47_blank\47\76\74data:f.name\76\74/data:f.name\76 (\74data:f.feedType\76\74/data:f.feedType\76)\74/a\76\n\74/b:loop\76\n\74/div\076'}, 'status-message': {'varName': '', 'template': '\74b:if cond\75\47data:navMessage\47\76\n\74div class\75\47status-msg-wrap\47\76\n\74div class\75\47status-msg-body\47\76\n\74data:navMessage\76\74/data:navMessage\76\n\74/div\76\n\74div class\75\47status-msg-border\47\76\n\74div class\75\47status-msg-bg\47\76\n\74div class\75\47status-msg-hidden\47\76\74data:navMessage\76\74/data:navMessage\76\74/div\76\n\74/div\76\n\74/div\76\n\74/div\76\n\74div style\75\47clear: both;\47\76\74/div\76\n\74/b:if\076'}}, document.getElementById('Blog2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML2', 'sidebar1',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74data:content\76\74/data:content\76\n\74/div\076'}}, document.getElementById('HTML2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML21', 'sidebar1',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74data:content\76\74/data:content\76\n\74/div\076'}}, document.getElementById('HTML21'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML4', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74br/\76\n\74data:content\76\74/data:content\76\n\74/div\076'}}, document.getElementById('HTML4'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_TextView', new _WidgetInfo('Text1', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74data:content\76\74/data:content\76\n\74br/\76\n\74/div\076'}}, document.getElementById('Text1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML5', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74data:content\76\74/data:content\76\n\74br/\76\n\74/div\076'}}, document.getElementById('HTML5'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_TextView', new _WidgetInfo('Text3', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74br/\76\n\74div class\75\47widget-content\47\76\n\74h9\76\74data:content\76\74/data:content\76\74/h9\76\74br/\76\n\74/div\076'}}, document.getElementById('Text3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML3', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74br/\76\74data:content\76\74/data:content\76\74br/\76\n\74/div\076'}}, document.getElementById('HTML3'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML6', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74br/\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74br/\76\74data:content\76\74/data:content\76\n\74br/\76\n\74/div\076'}}, document.getElementById('HTML6'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML7', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74br/\76\n\74div class\75\47widget-content\47\76\n\74data:content\76\74/data:content\76\74br/\76\n\74/div\076'}}, document.getElementById('HTML7'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title\47\76\74br/\76\74h2\76\74data:title\76\74/data:title\76\74/h2\76\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74br/\76\n\74ul\76\n\74b:loop values\75\47data:links\47 var\75\47link\47\76\n\74li\76\74a expr:href\75\47data:link.target\47\76\74data:link.name\76\74/data:link.name\76\74/a\76\74/li\76\n\74/b:loop\76\n\74/ul\76\n\74br/\76\n\74/div\076'}}, document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_FeedView', new _WidgetInfo('Feed2', 'sidebar2',{'main': {'varName': '', 'template': '\74h2\76\74data:title\76\74/data:title\76\74/h2\76\n\74div class\75\47widget-content\47\76\n\74br/\76\n\74ul expr:id\75\47data:widget.instanceId + \46quot;_feedItemListDisplay\46quot;\47\76\n\74b:loop values\75\47data:feedData.items\47 var\75\47i\47\76\n\74li\76\n\74span class\75\47item-title\47\76\n\74a expr:href\75\47data:i.alternate.href\47\76\n\74data:i.title\76\74/data:i.title\76\n\74/a\76\n\74/span\76\n\74b:if cond\75\47data:showItemDate\47\76\n\74b:if cond\75\47data:i.str_published !\75 \46quot;\46quot;\47\76\n\74span class\75\47item-date\47\76\n                \46#160;-\46#160;\74data:i.str_published\76\74/data:i.str_published\76\n\74/span\76\n\74/b:if\76\n\74/b:if\76\n\74b:if cond\75\47data:showItemAuthor\47\76\n\74b:if cond\75\47data:i.author !\75 \46quot;\46quot;\47\76\n\74span class\75\47item-author\47\76\n                \46#160;-\46#160;\74data:i.author\76\74/data:i.author\76\n\74/span\76\n\74/b:if\76\n\74/b:if\76\n\74/li\76\n\74/b:loop\76\n\74/ul\76\n\74br/\76\n\74/div\076'}}, document.getElementById('Feed2'), {'title': 'And Real Comments ...', 'showItemDate': false, 'showItemAuthor': true, 'feedUrl': 'http://www.blogger.com/feeds/3956552304616612069/comments/default', 'numItemsShow': 3, 'loadingMsg': 'A carregar...'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ImageView', new _WidgetInfo('Image5', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74br/\76\n\74b:if cond\75\47data:link !\75 \46quot;\46quot;\47\76\n\74a expr:href\75\47data:link\47\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/a\76\n\74b:else\76\74/b:else\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/b:if\76\n\74br/\76\n\74b:if cond\75\47data:caption !\75 \46quot;\46quot;\47\76\n\74span class\75\47caption\47\76\74data:caption\76\74/data:caption\76\74/span\76\n\74/b:if\76\n\74/div\076'}}, document.getElementById('Image5'), {'resize': true}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ImageView', new _WidgetInfo('Image2', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74b:if cond\75\47data:link !\75 \46quot;\46quot;\47\76\n\74a expr:href\75\47data:link\47\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/a\76\n\74b:else\76\74/b:else\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/b:if\76\n\74br/\76\n\74b:if cond\75\47data:caption !\75 \46quot;\46quot;\47\76\n\74span class\75\47caption\47\76\74data:caption\76\74/data:caption\76\74/span\76\n\74/b:if\76\n\74/div\076'}}, document.getElementById('Image2'), {'resize': true}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ImageView', new _WidgetInfo('Image3', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74b:if cond\75\47data:link !\75 \46quot;\46quot;\47\76\n\74a expr:href\75\47data:link\47\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/a\76\n\74b:else\76\74/b:else\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/b:if\76\n\74br/\76\n\74b:if cond\75\47data:caption !\75 \46quot;\46quot;\47\76\n\74span class\75\47caption\47\76\74data:caption\76\74/data:caption\76\74/span\76\n\74/b:if\76\n\74br/\76\n\74/div\076'}}, document.getElementById('Image3'), {'resize': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ImageView', new _WidgetInfo('Image6', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74b:if cond\75\47data:link !\75 \46quot;\46quot;\47\76\n\74a expr:href\75\47data:link\47\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/a\76\n\74b:else\76\74/b:else\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/b:if\76\n\74br/\76\n\74b:if cond\75\47data:caption !\75 \46quot;\46quot;\47\76\n\74span class\75\47caption\47\76\74data:caption\76\74/data:caption\76\74/span\76\n\74/b:if\76\n\74/div\076'}}, document.getElementById('Image6'), {'resize': true}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ImageView', new _WidgetInfo('Image4', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74div class\75\47widget-content\47\76\n\74b:if cond\75\47data:link !\75 \46quot;\46quot;\47\76\n\74a expr:href\75\47data:link\47\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/a\76\n\74b:else\76\74/b:else\76\n\74img expr:alt\75\47data:title\47 expr:height\75\47data:height\47 expr:id\75\47data:widget.instanceId + \46quot;_img\46quot;\47 expr:src\75\47data:sourceUrl\47 expr:width\75\47data:width\47/\76\n\74/b:if\76\n\74br/\76\n\74b:if cond\75\47data:caption !\75 \46quot;\46quot;\47\76\n\74span class\75\47caption\47\76\74data:caption\76\74/data:caption\76\74/span\76\n\74/b:if\76\n\74/div\076'}}, document.getElementById('Image4'), {'resize': true}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title\47\76\n\74h2\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74br/\76\n\74div class\75\47widget-content\47\76\n\74div id\75\47ArchiveList\47\76\n\74div expr:id\75\47data:widget.instanceId + \46quot;_ArchiveList\46quot;\47\76\n\74b:if cond\75\47data:style \75\75 \46quot;HIERARCHY\46quot;\47\76\n\74b:include data\75\47data\47 name\75\47interval\47\76\74/b:include\76\n\74/b:if\76\n\74b:if cond\75\47data:style \75\75 \46quot;FLAT\46quot;\47\76\n\74b:include data\75\47data\47 name\75\47flat\47\76\74/b:include\76\n\74/b:if\76\n\74b:if cond\75\47data:style \75\75 \46quot;MENU\46quot;\47\76\n\74b:include data\75\47data\47 name\75\47menu\47\76\74/b:include\76\n\74/b:if\76\n\74/div\76\n\74br/\76\n\74/div\76\n\74/div\076'}, 'flat': {'varName': 'data', 'template': '\74ul\76\n\74b:loop values\75\47data:data\47 var\75\47i\47\76\n\74li class\75\47archivedate\47\76\n\74a expr:href\75\47data:i.url\47\76\74data:i.name\76\74/data:i.name\76\74/a\76 (\74data:i.post-count\76\74/data:i.post-count\76)\n      \74/li\76\n\74/b:loop\76\n\74/ul\076'}, 'menu': {'varName': 'data', 'template': '\74select expr:id\75\47data:widget.instanceId + \46quot;_ArchiveMenu\46quot;\47\76\n\74option value\75\47\47\76\74data:title\76\74/data:title\76\74/option\76\n\74b:loop values\75\47data:data\47 var\75\47i\47\76\n\74option expr:value\75\47data:i.url\47\76\74data:i.name\76\74/data:i.name\76 (\74data:i.post-count\76\74/data:i.post-count\76)\74/option\76\n\74/b:loop\76\n\74/select\076'}, 'interval': {'varName': 'intervalData', 'template': '\74b:loop values\75\47data:intervalData\47 var\75\47i\47\76\n\74ul\76\n\74li expr:class\75\47\46quot;archivedate \46quot; + data:i.expclass\47\76\n\74b:include data\75\47i\47 name\75\47toggle\47\76\74/b:include\76\n\74a class\75\47post-count-link\47 expr:href\75\47data:i.url\47\76\74data:i.name\76\74/data:i.name\76\74/a\76\n\74span class\75\47post-count\47 dir\75\47ltr\47\76(\74data:i.post-count\76\74/data:i.post-count\76)\74/span\76\n\74b:if cond\75\47data:i.data\47\76\n\74b:include data\75\47i.data\47 name\75\47interval\47\76\74/b:include\76\n\74/b:if\76\n\74b:if cond\75\47data:i.posts\47\76\n\74b:include data\75\47i.posts\47 name\75\47posts\47\76\74/b:include\76\n\74/b:if\76\n\74/li\76\n\74/ul\76\n\74/b:loop\076'}, 'toggle': {'varName': 'interval', 'template': '\74b:if cond\75\47data:interval.toggleId\47\76\n\74b:if cond\75\47data:interval.expclass \75\75 \46quot;expanded\46quot;\47\76\n\74a class\75\47toggle\47 expr:href\75\47data:widget.actionUrl + \46quot;\46amp;action\75toggle\46quot; +       \46quot;\46amp;dir\75close\46amp;toggle\75\46quot; + data:interval.toggleId +       \46quot;\46amp;toggleopen\75\46quot; + data:toggleopen\47\76\n\74span class\75\47zippy toggle-open\47\76\46#9660; \74/span\76\n\74/a\76\n\74b:else\76\74/b:else\76\n\74a class\75\47toggle\47 expr:href\75\47data:widget.actionUrl + \46quot;\46amp;action\75toggle\46quot; +         \46quot;\46amp;dir\75open\46amp;toggle\75\46quot; + data:interval.toggleId +         \46quot;\46amp;toggleopen\75\46quot; + data:toggleopen\47\76\n\74span class\75\47zippy\47\76\n\74b:if cond\75\47data:blog.languageDirection \75\75 \46quot;rtl\46quot;\47\76\n              \46#9668;\n            \74b:else\76\74/b:else\76\n              \46#9658;\n            \74/b:if\76\n\74/span\76\n\74/a\76\n\74/b:if\76\n\74/b:if\076'}, 'posts': {'varName': 'posts', 'template': '\74ul class\75\47posts\47\76\n\74b:loop values\75\47data:posts\47 var\75\47i\47\76\n\74li\76\74a expr:href\75\47data:i.url\47\76\74data:i.title\76\74/data:i.title\76\74/a\76\74/li\76\n\74/b:loop\76\n\74/ul\076'}}, document.getElementById('BlogArchive1'), {'languageDirection': 'ltr'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList2', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title\47\76\74h2\76\74data:title\76\74/data:title\76\74/h2\76\74/b:if\76\n\74div class\75\47widget-content\47\76\74br/\76\n\74ul\76\n\74b:loop values\75\47data:links\47 var\75\47link\47\76\n\74li\76\74a expr:href\75\47data:link.target\47\76\74data:link.name\76\74/data:link.name\76\74/a\76\74/li\76\n\74/b:loop\76\n\74/ul\76\n\74br/\76\n\74/div\076'}}, document.getElementById('LinkList2'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HTMLView', new _WidgetInfo('HTML1', 'sidebar2',{'main': {'varName': '', 'template': '\74b:if cond\75\47data:title !\75 \46quot;\46quot;\47\76\n\74h2 class\75\47title\47\76\74data:title\76\74/data:title\76\74/h2\76\n\74/b:if\76\n\74br/\76\n\74div class\75\47widget-content\47\76\n\74data:content\76\74/data:content\76\n\74/div\076'}}, document.getElementById('HTML1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header'));
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main',{'main': {'varName': 'top', 'template': '\74div class\75\47blog-posts hfeed\47\76\n\74b:include data\75\47top\47 name\75\47status-message\47\76\74/b:include\76\n\74data:adStart\76\74/data:adStart\76\n\74b:loop values\75\47data:posts\47 var\75\47post\47\76\n\74b:if cond\75\47data:post.dateHeader\47\76\n\74h2 class\75\47date-header\47\76\n\74TABLE CELLSPACING\75\04710\47\76\n\74TR\76\n\74TH HEIGHT\75\04750\47 WIDTH\75\047400\47\76\74/TH\76\n\74TH BACKGROUND\75\47http://pwp.netcabo.pt/dyoxine/atir/bola.gif\47 HEIGHT\75\04750\47 WIDTH\75\04750\47\76\74span class\75\47dia\47 expr:id\75\47\46quot;d-\46quot; + data:post.id\47\76\74/span\76\74/TH\76\n\74TH BACKGROUND\75\47http://pwp.netcabo.pt/dyoxine/atir/bola.gif\47 HEIGHT\75\04750\47 WIDTH\75\04750\47\76\74span class\75\47mes\47 expr:id\75\47\46quot;m-\46quot; + data:post.id\47\76\74/span\76\74/TH\76\n\74TH BACKGROUND\75\47http://pwp.netcabo.pt/dyoxine/atir/bola.gif\47 HEIGHT\75\04750\47 WIDTH\75\04750\47\76\74span class\75\47ano\47 expr:id\75\47\46quot;a-\46quot; + data:post.id\47\76\74/span\76\74/TH\76\n\74/TR\76\n\74/TABLE\76\n\74script type\75\47text/javascript\47\76\nformatarData(\46#39;m-\74data:post.id\76\74/data:post.id\76\46#39;, \46#39;\74data:post.timestamp\76\74/data:post.timestamp\76\46#39;, \46#39;$b\46#39;);\nformatarData(\46#39;d-\74data:post.id\76\74/data:post.id\76\46#39;, \46#39;\74data:post.timestamp\76\74/data:post.timestamp\76\46#39;, \46#39;$d\46#39;);\nformatarData(\46#39;a-\74data:post.id\76\74/data:post.id\76\46#39;, \46#39;\74data:post.timestamp\76\74/data:post.timestamp\76\46#39;, \46#39;$y\46#39;);\n\74/script\76\n\74/h2\76\n\74/b:if\76\n\74b:include data\75\47post\47 name\75\47post\47\76\74/b:include\76\n\74b:if cond\75\47data:blog.pageType \75\75 \46quot;item\46quot;\47\76\n\74b:include data\75\47post\47 name\75\47comments\47\76\74/b:include\76\n\74/b:if\76\n\74b:if cond\75\47data:post.includeAd\47\76\n\74data:adEnd\76\74/data:adEnd\76\n\74data:adCode\76\74/data:adCode\76\n\74data:adStart\76\74/data:adStart\76\n\74/b:if\76\n\74/b:loop\76\n\74data:adEnd\76\74/data:adEnd\76\n\74/div\76\n\74b:include name\75\47feedLinks\47\76\74/b:include\76\n\74b:if cond\75\47data:top.showStars\47\76\n\74script src\75\47http://www.google.com/jsapi\47 type\75\47text/javascript\47\76\74/script\76\n\74script type\75\47text/javascript\47\76\n      google.load(\46quot;annotations\46quot;, \46quot;1\46quot;, {\46quot;locale\46quot;: \46quot;\74data:top.languageCode\76\74/data:top.languageCode\76\46quot;});\n      function initialize() {\n        google.annotations.setApplicationId(\74data:top.blogspotReviews\76\74/data:top.blogspotReviews\76);\n        google.annotations.createAll();\n        google.annotations.fetch();\n      }\n      google.setOnLoadCallback(initialize);\n    \74/script\76\n\74/b:if\076'}, 'nextprev': {'varName': '', 'template': '\74div class\75\47blog-pager\47 id\75\47blog-pager\47\76\n\74b:if cond\75\47data:newerPageUrl\47\76\n\74span id\75\47blog-pager-newer-link\47\76\n\74a class\75\47blog-pager-newer-link\47 expr:href\75\47data:newerPageUrl\47 expr:id\75\47data:widget.instanceId + \46quot;_blog-pager-newer-link\46quot;\47 expr:title\75\47data:newerPageTitle\47\76\74data:newerPageTitle\76\74/data:newerPageTitle\76\74/a\76\n\74/span\76\n\74/b:if\76\n\74b:if cond\75\47data:olderPageUrl\47\76\n\74span id\75\47blog-pager-older-link\47\76\n\74a class\75\47blog-pager-older-link\47 expr:href\75\47data:olderPageUrl\47 expr:id\75\47data:widget.instanceId + \46quot;_blog-pager-older-link\46quot;\47 expr:title\75\47data:olderPageTitle\47\76\74data:olderPageTitle\76\74/data:olderPageTitle\76\74/a\76\n\74/span\76\n\74/b:if\76\n\74b:if cond\75\47data:blog.homepageUrl !\75 data:blog.url\47\76\n\74a class\75\47home-link\47 expr:href\75\47data:blog.homepageUrl\47\76\74data:homeMsg\76\74/data:homeMsg\76\74/a\76\n\74b:else\76\74/b:else\76\n\74b:if cond\75\47data:newerPageUrl\47\76\n\74a class\75\47home-link\47 expr:href\75\47data:blog.homepageUrl\47\76\74data:homeMsg\76\74/data:homeMsg\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/div\76\n\74div class\75\47clear\47\76\74/div\076'}, 'post': {'varName': 'post', 'template': '\74div class\75\47post hentry\47\76\n\74a expr:name\75\47data:post.id\47\76\74/a\76\n\74div class\75\47espaco-topo-titulo\47\76\74/div\76\n\74b:if cond\75\47data:post.title\47\76\n\74div class\75\47post-title\47\76\n\74b:if cond\75\47data:post.link\47\76\n\74a expr:href\75\47data:post.link\47\76\74data:post.title\76\74/data:post.title\76\74/a\76\n\74b:else\76\74/b:else\76\n\74b:if cond\75\47data:post.url\47\76\n\74a expr:href\75\47data:post.url\47\76\74data:post.title\76\74/data:post.title\76\74/a\76\n\74b:else\76\74/b:else\76\n\74data:post.title\76\74/data:post.title\76\n\74/b:if\76\n\74/b:if\76\n\74/div\76\n\74/b:if\76\n\74div class\75\47post-header-line-1\47\76\74/div\76\n\74div class\75\47post-body entry-content\47\76\n\74data:post.body\76\74/data:post.body\76\n\74div style\75\47clear: both;\47\76\74/div\76\n\74/div\76\n\74div class\75\47post-footer\47\76\n\74div class\75\47post-footer-line post-footer-line-1\47\76\74span class\75\47post-author vcard\47\76\n\74b:if cond\75\47data:top.showAuthor\47\76\n\74data:top.authorLabel\76\74/data:top.authorLabel\76\n\74span class\75\47fn\47\76\74data:post.author\76\74/data:post.author\76\74/span\76\n\74/b:if\76\n\74/span\76\n\74/div\76\n\74div class\75\47post-footer-line post-footer-line-2\47\76\74span class\75\47post-labels\47\76\n\74b:if cond\75\47data:post.labels\47\76\n\74data:postLabelsLabel\76\74/data:postLabelsLabel\76\n\74b:loop values\75\47data:post.labels\47 var\75\47label\47\76\n\74a expr:href\75\47data:label.url\47 rel\75\47tag\47\76\74data:label.name\76\74/data:label.name\76\74/a\76\74b:if cond\75\47data:label.isLast !\75 \46quot;true\46quot;\47\76,\74/b:if\76\n\74/b:loop\76\n\74/b:if\76\n\74/span\76\n\74/div\76\n\74div class\75\47post-footer-line post-footer-line-4\47\76\74span class\75\47post-comment-link\47\76\n\74b:if cond\75\47data:blog.pageType !\75 \46quot;item\46quot;\47\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74a class\75\47comment-link\47 expr:href\75\47data:post.addCommentUrl\47 expr:onclick\75\47data:post.addCommentOnclick\47\76\74b:if cond\75\47data:post.numComments \75\75 1\47\0761 \74data:top.commentLabel\76\74/data:top.commentLabel\76\74b:else\76\74/b:else\76\74data:post.numComments\76\74/data:post.numComments\76\n\74data:top.commentLabelPlural\76\74/data:top.commentLabelPlural\76\74/b:if\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/span\76\n\74/div\76\n\74div class\75\47post-footer-line post-footer-line-3\47\76\74span class\75\47post-icons\47\76\n\74b:if cond\75\47data:post.emailPostUrl\47\76\n\74span class\75\47item-action\47\76\n\74table WIDTH\75\047580\47\76\n\74tr\76\n\74th\76\74a expr:href\75\47data:post.emailPostUrl\47 expr:title\75\47data:top.emailPostMsg\47 target\75\47_blank\47\76\n\74img alt\75\47\47 src\75\47http://www.blogger.com/img/icon18_email.gif\47/\76\n\74/a\76\74/th\76\n\74th\76\74a href\75\47javascript:addToFavorites()\47 title\75\47Adicionar aos favoritos\47\76\n\74img alt\75\47\47 src\75\47http://pwp.netcabo.pt/dyoxine/atir/fav.jpg\47/\76\n\74/a\76\74/th\76\n\74th\76\74a expr:href\75\47\46quot;http://digg.com/submit?phase\0753\46amp;url\75\46quot; + data:post.url + \46quot;\46amp;title\75\46quot; + data:blog.title + \46quot;-\46quot; + data:post.title\47 target\75\47_blank\47 title\75\47Digg\47\76\n\74img alt\75\47\47 src\75\47http://pwp.netcabo.pt/dyoxine/atir/digg.jpg\47/\76\n\74/a\76\74/th\76\n\74th\76\74a expr:href\75\47\46quot;http://www.facebook.com/sharer.php?u\75\46quot; + data:post.url\47 target\75\47_blank\47 title\75\47Facebook\47\76\n\74img alt\75\47\47 src\75\47http://pwp.netcabo.pt/dyoxine/atir/facebook.jpg\47/\76\n\74/a\76\74/th\76\n\74th\76\74a expr:href\75\47\46quot;http://del.icio.us/post?url\75\46quot; + data:post.url + \46quot;\46amp;title\75\46quot; + data:post.title\47 target\75\47_blank\47 title\75\47Del.icio.us\47\76\n\74img alt\75\47\47 hspace\75\04710\47 src\75\47http://pwp.netcabo.pt/dyoxine/atir/delicious.jpg\47/\76\n\74/a\76\74/th\76\n\74th\76\74a expr:href\75\47\46quot;http://www.myspace.com/index.cfm?fuseaction\75postto\46amp;t\75\46quot; + data:post.title + \46quot;\46amp;c\75\46quot; + data:post.url + \46quot;\46amp;l\0753\46quot;\47 target\75\47_blank\47 title\75\47My Space\47\76\n\74img alt\75\47\47 src\75\47http://pwp.netcabo.pt/dyoxine/atir/myspace.jpg\47/\76\n\74/a\76\74/th\76\n\74th\76\74a expr:href\75\47\46quot;http://reddit.com/submit?url\75\46quot; + data:post.url\47 target\75\47_blank\47 title\75\47Reddit\47\76\n\74img alt\75\47\47 src\75\47http://pwp.netcabo.pt/dyoxine/atir/reddit.jpg\47/\76\n\74/a\76\74/th\76\n\74th\76\74a expr:href\75\47\46quot;http://www.stumbleupon.com/submit?url\75\46quot; + data:post.url + \46quot;\46amp;title\75\46quot; + data:post.title\47 target\75\47_blank\47 title\75\47Stumble Uppon\47\76\n\74img alt\75\47\47 src\75\47http://pwp.netcabo.pt/dyoxine/atir/stumble.jpg\47/\76\n\74/a\76\74/th\76\n\74th\76\74a expr:href\75\47\46quot;http://technorati.com/cosmos/search.html?url\75\46quot; + data:post.url\47 target\75\47_blank\47 title\75\47Technorati\47\76\n\74img alt\75\47\47 src\75\47http://pwp.netcabo.pt/dyoxine/atir/technorati.jpg\47/\76\n\74/a\76\74/th\76\n\74/tr\76\n\74/table\76\74/span\76\n\74/b:if\76\n\74b:include data\75\47post\47 name\75\47postQuickEdit\47\76\74/b:include\76\n\74/span\76\n\74/div\76\n\74/div\76\n\74/div\076'}, 'postQuickEdit': {'varName': 'post', 'template': '\74b:if cond\75\47data:post.editUrl\47\76\n\74span expr:class\75\47\46quot;item-control \46quot; + data:post.adminClass\47\76\n\74a expr:href\75\47data:post.editUrl\47 expr:title\75\47data:top.editPostMsg\47\76\n\74img alt\75\47\47 class\75\47icon-action\47 height\75\04718\47 src\75\47http://www.blogger.com/img/icon18_edit_allbkg.gif\47 width\75\04718\47/\76\n\74/a\76\n\74/span\76\n\74/b:if\076'}, 'commentDeleteIcon': {'varName': 'comment', 'template': '\74span expr:class\75\47\46quot;item-control \46quot; + data:comment.adminClass\47\76\n\74a expr:href\75\47data:comment.deleteUrl\47 expr:title\75\47data:top.deleteCommentMsg\47\76\n\74img src\75\47http://www.blogger.com/img/icon_delete13.gif\47/\76\n\74/a\76\n\74/span\076'}, 'backlinkDeleteIcon': {'varName': 'backlink', 'template': '\74span expr:class\75\47\46quot;item-control \46quot; + data:backlink.adminClass\47\76\n\74a expr:href\75\47data:backlink.deleteUrl\47 expr:title\75\47data:top.deleteBacklinkMsg\47\76\n\74img src\75\47http://www.blogger.com/img/icon_delete13.gif\47/\76\n\74/a\76\n\74/span\076'}, 'comments': {'varName': 'post', 'template': '\74div class\75\47comments\47 id\75\47comments\47\76\n\74a name\75\47comments\47\76\74/a\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74h4\76\n\74b:if cond\75\47data:post.numComments \75\75 1\47\76\n          1 \74data:commentLabel\76\74/data:commentLabel\76:\n        \74b:else\76\74/b:else\76\n\74data:post.numComments\76\74/data:post.numComments\76\n\74data:commentLabelPlural\76\74/data:commentLabelPlural\76:\n        \74/b:if\76\n\74/h4\76\n\74b:if cond\75\47data:post.commentPagingRequired\47\76\n\74span class\75\47paging-control-container\47\76\n\74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.oldestLinkUrl\47\76\74data:post.oldestLinkText\76\74/data:post.oldestLinkText\76\74/a\76\n          \46#160;\n          \74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.olderLinkUrl\47\76\74data:post.olderLinkText\76\74/data:post.olderLinkText\76\74/a\76\n          \46#160;\n          \74data:post.commentRangeText\76\74/data:post.commentRangeText\76\n          \46#160;\n          \74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newerLinkUrl\47\76\74data:post.newerLinkText\76\74/data:post.newerLinkText\76\74/a\76\n          \46#160;\n          \74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newestLinkUrl\47\76\74data:post.newestLinkText\76\74/data:post.newestLinkText\76\74/a\76\n\74/span\76\n\74/b:if\76\n\74dl id\75\47comments-block\47\76\n\74b:loop values\75\47data:post.comments\47 var\75\47comment\47\76\n\74dt expr:class\75\47\46quot;comment-author \46quot; + data:comment.authorClass\47 expr:id\75\47data:comment.anchorName\47\76\n\74b:if cond\75\47data:comment.favicon\47\76\n\74img expr:src\75\47data:comment.favicon\47 height\75\04716px\47 style\75\47margin-bottom:-2px;\47 width\75\04716px\47/\76\n\74/b:if\76\n\74a expr:name\75\47data:comment.anchorName\47\76\74/a\76\n\74b:if cond\75\47data:comment.authorUrl\47\76\n\74a expr:href\75\47data:comment.authorUrl\47 rel\75\47nofollow\47\76\74data:comment.author\76\74/data:comment.author\76\74/a\76\n\74b:else\76\74/b:else\76\n\74data:comment.author\76\74/data:comment.author\76\n\74/b:if\76\n\74data:commentPostedByMsg\76\74/data:commentPostedByMsg\76\n\74/dt\76\n\74dd class\75\47comment-body\47\76\n\74b:if cond\75\47data:comment.isDeleted\47\76\n\74span class\75\47deleted-comment\47\76\74data:comment.body\76\74/data:comment.body\76\74/span\76\n\74b:else\76\74/b:else\76\n\74p\76\74data:comment.body\76\74/data:comment.body\76\74/p\76\n\74/b:if\76\n\74/dd\76\n\74dd class\75\47comment-footer\47\76\n\74span class\75\47comment-timestamp\47\76\n\74a expr:href\75\47data:comment.url\47 title\75\47comment permalink\47\76\n\74data:comment.timestamp\76\74/data:comment.timestamp\76\n\74/a\76\n\74b:include data\75\47comment\47 name\75\47commentDeleteIcon\47\76\74/b:include\76\n\74/span\76\n\74/dd\76\n\74/b:loop\76\n\74/dl\76\n\74b:if cond\75\47data:post.commentPagingRequired\47\76\n\74span class\75\47paging-control-container\47\76\n\74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.oldestLinkUrl\47\76\n\74data:post.oldestLinkText\76\74/data:post.oldestLinkText\76\n\74/a\76\n\74a expr:class\75\47data:post.oldLinkClass\47 expr:href\75\47data:post.olderLinkUrl\47\76\n\74data:post.olderLinkText\76\74/data:post.olderLinkText\76\n\74/a\76\n          \46#160;\n          \74data:post.commentRangeText\76\74/data:post.commentRangeText\76\n          \46#160;\n          \74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newerLinkUrl\47\76\n\74data:post.newerLinkText\76\74/data:post.newerLinkText\76\n\74/a\76\n\74a expr:class\75\47data:post.newLinkClass\47 expr:href\75\47data:post.newestLinkUrl\47\76\n\74data:post.newestLinkText\76\74/data:post.newestLinkText\76\n\74/a\76\n\74/span\76\n\74/b:if\76\n\74p class\75\47comment-footer\47\76\n\74b:if cond\75\47data:post.embedCommentForm\47\76\n\74b:if cond\75\47data:post.allowNewComments\47\76\n\74b:include data\75\47post\47 name\75\47comment-form\47\76\74/b:include\76\n\74b:else\76\74/b:else\76\n\74data:post.noNewCommentsText\76\74/data:post.noNewCommentsText\76\n\74/b:if\76\n\74b:else\76\74/b:else\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74a expr:href\75\47data:post.addCommentUrl\47 expr:onclick\75\47data:post.addCommentOnclick\47\76\74data:postCommentMsg\76\74/data:postCommentMsg\76\74/a\76\n\74/b:if\76\n\74/b:if\76\n\74/p\76\n\74/b:if\76\n\74div id\75\47backlinks-container\47\76\n\74div expr:id\75\47data:widget.instanceId + \46quot;_backlinks-container\46quot;\47\76\n\74b:if cond\75\47data:post.showBacklinks\47\76\n\74b:include data\75\47post\47 name\75\47backlinks\47\76\74/b:include\76\n\74/b:if\76\n\74/div\76\n\74/div\76\n\74/div\076'}, 'comment-form': {'varName': 'post', 'template': '\74div class\75\47comment-form\47\76\n\74a name\75\47comment-form\47\76\74/a\76\n\74h4 id\75\47comment-post-message\47\76\74data:postCommentMsg\76\74/data:postCommentMsg\76\74/h4\76\n\74p\76\74data:blogCommentMessage\76\74/data:blogCommentMessage\76\74/p\76\n\74data:blogTeamBlogMessage\76\74/data:blogTeamBlogMessage\76\n\74a expr:href\75\47data:post.commentFormIframeSrc\47 id\75\47comment-editor-src\47\76\74/a\76\n\74iframe allowtransparency\75\47true\47 class\75\47blogger-iframe-colorize blogger-comment-from-post\47 frameborder\75\0470\47 height\75\047275\47 id\75\47comment-editor\47 name\75\47comment-editor\47 scrolling\75\47no\47 src\75\47\47 width\75\047100%\47\76\74/iframe\76\n\74data:post.friendConnectJs\76\74/data:post.friendConnectJs\76\n\74data:post.cmtfpIframe\76\74/data:post.cmtfpIframe\76\n\74script type\75\47text/javascript\47\76\n      BLOG_CMT_createIframe(\46#39;\74data:post.appRpcRelayPath\76\74/data:post.appRpcRelayPath\76\46#39;, \46#39;\74data:post.communityId\76\74/data:post.communityId\76\46#39;);\n    \74/script\76\n\74/div\076'}, 'backlinks': {'varName': 'post', 'template': '\74a name\75\47links\47\76\74/a\76\74h4\76\74data:post.backlinksLabel\76\74/data:post.backlinksLabel\76\74/h4\76\n\74b:if cond\75\47data:post.numBacklinks !\75 0\47\76\n\74dl class\75\47comments-block\47 id\75\47comments-block\47\76\n\74b:loop values\75\47data:post.backlinks\47 var\75\47backlink\47\76\n\74div class\75\47collapsed-backlink backlink-control\47\76\n\74dt class\75\47comment-title\47\76\n\74span class\75\47backlink-toggle-zippy\47\76\46#160;\74/span\76\n\74a expr:href\75\47data:backlink.url\47 rel\75\47nofollow\47\76\74data:backlink.title\76\74/data:backlink.title\76\74/a\76\n\74b:include data\75\47backlink\47 name\75\47backlinkDeleteIcon\47\76\74/b:include\76\n\74/dt\76\n\74dd class\75\47comment-body collapseable\47\76\n\74data:backlink.snippet\76\74/data:backlink.snippet\76\n\74/dd\76\n\74dd class\75\47comment-footer collapseable\47\76\n\74span class\75\47comment-author\47\76\74data:post.authorLabel\76\74/data:post.authorLabel\76\n\74data:backlink.author\76\74/data:backlink.author\76\74/span\76\n\74span class\75\47comment-timestamp\47\76\74data:post.timestampLabel\76\74/data:post.timestampLabel\76\n\74data:backlink.timestamp\76\74/data:backlink.timestamp\76\74/span\76\n\74/dd\76\n\74/div\76\n\74/b:loop\76\n\74/dl\76\n\74/b:if\76\n\74p class\75\47comment-footer\47\76\n\74a class\75\47comment-link\47 expr:href\75\47data:post.createLinkUrl\47 expr:id\75\47data:widget.instanceId + \46quot;_backlinks-create-link\46quot;\47 target\75\47_blank\47\76\74data:post.createLinkLabel\76\74/data:post.createLinkLabel\76\74/a\76\n\74/p\076'}, 'feedLinks': {'varName': '', 'template': '\74b:if cond\75\47data:blog.pageType !\75 \46quot;item\46quot;\47\76\n\74b:if cond\75\47data:feedLinks\47\76\n\74div class\75\47blog-feeds\47\76\n\74/div\76\n\74/b:if\76\n\74b:else\76\74/b:else\76\n\74div class\75\47post-feeds\47\76\n\74b:loop values\75\47data:posts\47 var\75\47post\47\76\n\74b:if cond\75\47data:post.allowComments\47\76\n\74b:if cond\75\47data:post.feedLinks\47\76\n\74/b:if\76\n\74/b:if\76\n\74/b:loop\76\n\74/div\76\n\74/b:if\076'}, 'feedLinksBody': {'varName': 'links', 'template': '\74div class\75\47feed-links\47\76\n\74data:feedLinksMsg\76\74/data:feedLinksMsg\76\n\74b:loop values\75\47data:links\47 var\75\47f\47\76\n\74a class\75\47feed-link\47 expr:href\75\47data:f.url\47 expr:type\75\47data:f.mimeType\47 target\75\47_blank\47\76\74data:f.name\76\74/data:f.name\76 (\74data:f.feedType\76\74/data:f.feedType\76)\74/a\76\n\74/b:loop\76\n\74/div\076'}, 'status-message': {'varName': '', 'template': '\74b:if cond\75\47data:navMessage\47\76\n\74div class\75\47status-msg-wrap\47\76\n\74div class\75\47status-msg-body\47\76\n\74data:navMessage\76\74/data:navMessage\76\n\74/div\76\n\74div class\75\47status-msg-border\47\76\n\74div class\75\47status-msg-bg\47\76\n\74div class\75\47status-msg-hidden\47\76\74data:navMessage\76\74/data:navMessage\76\74/div\76\n\74/div\76\n\74/div\76\n\74/div\76\n\74div style\75\47clear: both;\47\76\74/div\76\n\74/b:if\076'}}, document.getElementById('Blog1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>
